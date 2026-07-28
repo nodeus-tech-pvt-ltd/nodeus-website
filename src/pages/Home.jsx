@@ -7,10 +7,11 @@ import WhyNodeus from "../components/WhyNodeus";
 import ProofSection from "../components/ProofSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
+import AnimatedPage from "../components/AnimatedPage";
 
 function Home() {
   return (
-    <>
+    <AnimatedPage>
       <Navbar />
 
       <main>
@@ -24,7 +25,7 @@ function Home() {
       </main>
 
       <Footer />
-    </>
+    </AnimatedPage>
   );
 }
 

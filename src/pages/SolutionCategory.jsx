@@ -7,7 +7,7 @@ import {
 import { Link, useParams } from "react-router-dom";
 
 import solutionsData from "../data/solutionsData";
-
+import AnimatedPage from "../components/AnimatedPage";
 
 const createSlug = (service) => {
   return service
@@ -38,6 +38,7 @@ function SolutionCategory() {
   const Icon = solution.icon;
 
   return (
+    <AnimatedPage>
     <main className="solution-category-page">
 
       {/* HERO */}
@@ -165,6 +166,7 @@ function SolutionCategory() {
       </section>
 
     </main>
+    </AnimatedPage>
   );
 }
 
