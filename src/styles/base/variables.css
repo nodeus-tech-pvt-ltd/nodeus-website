@@ -1,0 +1,18 @@
+:root {
+  --nodeus-blue: #2563eb;
+  --nodeus-dark: #111827;
+  --nodeus-text: #64748b;
+  --nodeus-light: #f7f9fc;
+  --nodeus-white: #ffffff;
+
+  --container-width: 1400px;
+
+  --navbar-height: 86px;
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
+}

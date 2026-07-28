@@ -1,3 +1,29 @@
+/* =========================================
+   NODEUS CSS ARCHITECTURE
+========================================= */
+
+/* BASE */
+
+@import "./styles/base/variables.css";
+@import "./styles/base/reset.css";
+
+/* LAYOUT */
+
+@import "./styles/layout/navbar.css";
+@import "./styles/layout/footer.css";
+
+/* SHARED COMPONENTS */
+
+@import "./styles/components/buttons.css";
+@import "./styles/components/animations.css";
+
+/* PAGES */
+
+@import "./styles/pages/home.css";
+@import "./styles/pages/solutions.css";
+@import "./styles/pages/industries.css";
+
+
 * {
   margin: 0;
   padding: 0;

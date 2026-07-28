@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 import {
   Headphones,
   BriefcaseBusiness,
@@ -13,6 +15,7 @@ import {
 const solutions = [
   {
     number: "01",
+    slug: "customer-experience",
     icon: Headphones,
     title: "Customer Experience & Support",
     description:
@@ -26,8 +29,10 @@ const solutions = [
       "Complaint Handling",
     ],
   },
+
   {
     number: "02",
+    slug: "business-operations",
     icon: BriefcaseBusiness,
     title: "Business Operations & Back Office",
     description:
@@ -41,8 +46,10 @@ const solutions = [
       "Order Processing",
     ],
   },
+
   {
     number: "03",
+    slug: "sales-revenue",
     icon: TrendingUp,
     title: "Sales & Revenue Operations",
     description:
@@ -56,8 +63,10 @@ const solutions = [
       "Customer Onboarding",
     ],
   },
+
   {
     number: "04",
+    slug: "technology-it",
     icon: Code2,
     title: "Technology & IT Services",
     description:
@@ -71,8 +80,10 @@ const solutions = [
       "Technical Support",
     ],
   },
+
   {
     number: "05",
+    slug: "ai-automation",
     icon: Bot,
     title: "AI & Automation",
     description:
@@ -85,8 +96,10 @@ const solutions = [
       "AI-Assisted Workflows",
     ],
   },
+
   {
     number: "06",
+    slug: "finance-accounting",
     icon: Calculator,
     title: "Finance & Accounting Operations",
     description:
@@ -100,8 +113,10 @@ const solutions = [
       "Collections Support",
     ],
   },
+
   {
     number: "07",
+    slug: "marketing-creative",
     icon: Palette,
     title: "Marketing & Creative Services",
     description:
@@ -116,9 +131,12 @@ const solutions = [
   },
 ];
 
-function Solutions() {
+function SolutionsPreview() {
   return (
-    <section className="solutions-section" id="solutions">
+    <section
+      className="solutions-section"
+      id="solutions"
+    >
       <div className="solutions-header">
         <div>
           <span className="section-eyebrow">
@@ -128,14 +146,18 @@ function Solutions() {
           <h2>
             The right people.
             <br />
-            <span>The right capabilities.</span>
+
+            <span>
+              The right capabilities.
+            </span>
           </h2>
         </div>
 
         <p>
-          From customer experience and business operations to technology,
-          AI, finance, and creative services, we build dedicated teams
-          around the way your business works.
+          From customer experience and business operations
+          to technology, AI, finance, and creative services,
+          we build dedicated teams around the way your
+          business works.
         </p>
       </div>
 
@@ -146,9 +168,15 @@ function Solutions() {
           return (
             <motion.article
               className="solution-card"
-              key={solution.number}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={solution.slug}
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
               viewport={{
                 once: true,
                 amount: 0.2,
@@ -168,7 +196,9 @@ function Solutions() {
                 </div>
               </div>
 
-              <h3>{solution.title}</h3>
+              <h3>
+                {solution.title}
+              </h3>
 
               <p className="solution-description">
                 {solution.description}
@@ -182,19 +212,31 @@ function Solutions() {
                 ))}
               </div>
 
-              <a
-                href="#contact"
+              <Link
+                to={`/solutions/${solution.slug}`}
                 className="solution-link"
               >
                 Explore solution
+
                 <ArrowUpRight size={17} />
-              </a>
+              </Link>
             </motion.article>
           );
         })}
+      </div>
+
+      <div className="solutions-preview-footer">
+        <Link
+          to="/solutions"
+          className="all-solutions-link"
+        >
+          Explore all solutions
+
+          <ArrowUpRight size={18} />
+        </Link>
       </div>
     </section>
   );
 }
 
-export default Solutions;
+export default SolutionsPreview;

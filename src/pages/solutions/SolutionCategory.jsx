@@ -6,8 +6,8 @@ import {
 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 
-import solutionsData from "../data/solutionsData";
-import AnimatedPage from "../components/AnimatedPage";
+import solutionsData from "../../data/solutions/solutionsData";
+import AnimatedPage from "../../components/shared/AnimatedPage";
 
 const createSlug = (service) => {
   return service

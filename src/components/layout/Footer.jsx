@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import nodeusLogo from "../assets/nodeus-logo-white.png";
+import nodeusLogo from "../../assets/nodeus-logo-white.png";
 
 function Footer() {
   return (

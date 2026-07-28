@@ -1,17 +1,47 @@
-import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import {
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
-import Home from "./pages/Home";
-import Solutions from "./pages/Solutions";
-import SolutionCategory from "./pages/SolutionCategory";
+import {
+  AnimatePresence,
+} from "framer-motion";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
-import ScrollProgress from "./components/ScrollProgress";
-import BackToTop from "./components/BackToTop";
+/* =========================
+   PAGES
+========================= */
+
+import Home from "./pages/home/Home";
+import Solutions from "./pages/solutions/Solutions";
+import SolutionCategory from "./pages/solutions/SolutionCategory";
+import Industries from "./pages/industries/Industries";
+
+/* =========================
+   LAYOUT
+========================= */
+
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+
+/* =========================
+   SHARED COMPONENTS
+========================= */
+
+import ScrollToTop from "./components/shared/ScrollToTop";
+import ScrollProgress from "./components/shared/ScrollProgress";
+import BackToTop from "./components/shared/BackToTop";
+
+/* =========================
+   STYLES
+========================= */
 
 import "./App.css";
+
+
+/* =========================
+   ANIMATED ROUTES
+========================= */
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -36,23 +66,44 @@ function AnimatedRoutes() {
           path="/solutions/:category"
           element={<SolutionCategory />}
         />
+
+        <Route
+          path="/industries"
+          element={<Industries />}
+        />
       </Routes>
     </AnimatePresence>
   );
 }
 
+
+/* =========================
+   APP
+========================= */
+
 function App() {
   return (
     <>
+      {/* PAGE UTILITIES */}
+
       <ScrollToTop />
 
       <ScrollProgress />
 
       <BackToTop />
 
+
+      {/* GLOBAL NAVIGATION */}
+
       <Navbar />
 
+
+      {/* PAGE CONTENT */}
+
       <AnimatedRoutes />
+
+
+      {/* GLOBAL FOOTER */}
 
       <Footer />
     </>

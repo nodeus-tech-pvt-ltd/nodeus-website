@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import solutionsData from "../data/solutionsData";
+import solutionsData from "../../data/solutions/solutionsData";
 
 function Solutions() {
   const solutions = Object.values(solutionsData);
