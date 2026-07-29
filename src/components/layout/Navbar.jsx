@@ -1,252 +1,545 @@
-import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import {
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+
+import {
+  Link,
+  useLocation,
+} from "react-router-dom";
+
+import {
+  ArrowUpRight,
+  ChevronDown,
+  Menu,
+  X,
+} from "lucide-react";
+
 import nodeusLogo from "../../assets/nodeus-logo.webp";
+
 import solutionsData from "../../data/solutions/solutionsData";
 import industries from "../../data/industries/industriesData";
 
 import "../../styles/layout/navbar.css";
 
 
-import {
-  Menu,
-  X,
-  ArrowUpRight,
-  ChevronDown,
-} from "lucide-react";
+const serviceCategories =
+  Object.values(solutionsData);
 
-const serviceCategories = Object.values(solutionsData);
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null);
 
-  const closeTimer = useRef(null);
+  const [isOpen, setIsOpen] =
+    useState(false);
+
+  const [activeMenu, setActiveMenu] =
+    useState(null);
+
+  const closeTimer =
+    useRef(null);
+
+  const location =
+    useLocation();
+
+
+  /* =====================================
+     CLOSE MENU WHEN PAGE CHANGES
+  ===================================== */
+
+  useEffect(() => {
+
+    clearTimeout(
+      closeTimer.current
+    );
+
+    setIsOpen(false);
+
+    setActiveMenu(null);
+
+  }, [location.pathname]);
+
+
+  /* =====================================
+     LOCK BODY SCROLL ON MOBILE
+  ===================================== */
+
+  useEffect(() => {
+
+    if (isOpen) {
+
+      document.body.style.overflow =
+        "hidden";
+
+    } else {
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+    return () => {
+
+      document.body.style.overflow =
+        "";
+
+    };
+
+  }, [isOpen]);
+
+
+  /* =====================================
+     DESKTOP DROPDOWN
+  ===================================== */
 
   const openMenu = (menu) => {
-    clearTimeout(closeTimer.current);
+
+    if (
+      window.innerWidth <= 760
+    ) {
+      return;
+    }
+
+    clearTimeout(
+      closeTimer.current
+    );
+
     setActiveMenu(menu);
+
   };
+
 
   const closeMenuWithDelay = () => {
-    closeTimer.current = setTimeout(() => {
-      setActiveMenu(null);
-    }, 300);
+
+    if (
+      window.innerWidth <= 760
+    ) {
+      return;
+    }
+
+    closeTimer.current =
+      setTimeout(() => {
+
+        setActiveMenu(null);
+
+      }, 180);
+
   };
+
+
+  /* =====================================
+     MOBILE DROPDOWN
+  ===================================== */
 
   const toggleMenu = (menu) => {
-    clearTimeout(closeTimer.current);
 
-    setActiveMenu((currentMenu) =>
-      currentMenu === menu ? null : menu
+    clearTimeout(
+      closeTimer.current
     );
+
+    setActiveMenu(
+      (currentMenu) =>
+
+        currentMenu === menu
+          ? null
+          : menu
+    );
+
   };
 
-  // const closeMenu = () => {
-  //   clearTimeout(closeTimer.current);
-  //   setIsOpen(false);
-  //   setActiveMenu(null);
-  // };
 
+  /* =====================================
+     CLOSE NAVIGATION
+  ===================================== */
 
   const closeMenu = () => {
-  clearTimeout(closeTimer.current);
 
-  setIsOpen(false);
-  setActiveMenu(null);
+    clearTimeout(
+      closeTimer.current
+    );
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-};
+    setIsOpen(false);
+
+    setActiveMenu(null);
+
+  };
+
+
+  /* =====================================
+     HOME LOGO
+  ===================================== */
+
+  const handleLogoClick = () => {
+
+    closeMenu();
+
+    if (
+      location.pathname === "/"
+    ) {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+    }
+
+  };
+
 
   return (
+
     <header
       className={`navbar ${
-        activeMenu ? "navbar-menu-active" : ""
+        isOpen
+          ? "navbar-mobile-open"
+          : ""
+      } ${
+        activeMenu
+          ? "navbar-menu-active"
+          : ""
       }`}
     >
-      {/* LOGO */}
+
+
+      {/* =================================
+          LOGO
+      ================================== */}
 
       <Link
         to="/"
         className="logo"
-        onClick={closeMenu}
+        onClick={handleLogoClick}
+        aria-label="Nodeus home"
       >
+
         <img
           src={nodeusLogo}
           alt="Nodeus"
           className="nodeus-logo"
         />
+
       </Link>
+
+
+      {/* =================================
+          MAIN NAVIGATION
+      ================================== */}
 
       <nav
         className={`nav-links ${
-          isOpen ? "open" : ""
+          isOpen
+            ? "open"
+            : ""
         }`}
+        aria-label="Main navigation"
       >
 
-        {/* =========================
+
+        {/* HOME */}
+
+        <Link
+          to="/"
+          className="mobile-home-link"
+          onClick={closeMenu}
+        >
+
+          Home
+
+        </Link>
+
+
+        {/* ===============================
             SOLUTIONS
-        ========================= */}
+        ================================ */}
 
         <div
           className="nav-dropdown-wrapper"
-          onMouseEnter={() => openMenu("solutions")}
-          onMouseLeave={closeMenuWithDelay}
+          onMouseEnter={() =>
+            openMenu("solutions")
+          }
+          onMouseLeave={
+            closeMenuWithDelay
+          }
         >
 
-          <div className="nav-dropdown-heading">
-
-            {/* MAIN SOLUTIONS PAGE LINK */}
+          <div
+            className="nav-dropdown-heading"
+          >
 
             <Link
               to="/solutions"
               className="nav-main-link"
               onClick={closeMenu}
             >
+
               Solutions
+
             </Link>
 
-            {/* DROPDOWN TOGGLE */}
 
             <button
+              type="button"
+
               className={`nav-dropdown-trigger ${
-                activeMenu === "solutions"
+                activeMenu ===
+                "solutions"
                   ? "active"
                   : ""
               }`}
-              onClick={() => toggleMenu("solutions")}
-              aria-label="Open solutions menu"
+
+              onClick={() =>
+                toggleMenu(
+                  "solutions"
+                )
+              }
+
+              aria-label={
+                activeMenu ===
+                "solutions"
+
+                  ? "Close solutions menu"
+
+                  : "Open solutions menu"
+              }
+
+              aria-expanded={
+                activeMenu ===
+                "solutions"
+              }
             >
-              <ChevronDown size={15} />
+
+              <ChevronDown
+                size={16}
+              />
+
             </button>
 
           </div>
 
+
           <div
             className={`mega-menu solutions-menu ${
-              activeMenu === "solutions"
+              activeMenu ===
+              "solutions"
+
                 ? "show"
+
                 : ""
             }`}
-            onMouseEnter={() =>
-              openMenu("solutions")
-            }
-            onMouseLeave={closeMenuWithDelay}
           >
 
-            <div className="mega-menu-header">
+
+            <div
+              className="mega-menu-header"
+            >
 
               <div>
-                <span className="mega-eyebrow">
+
+                <span
+                  className="mega-eyebrow"
+                >
+
                   WHAT WE DO
+
                 </span>
 
+
                 <h2>
+
                   Capabilities built
+
                   <br />
+
                   <span>
+
                     around your needs.
+
                   </span>
+
                 </h2>
+
               </div>
 
+
               <p>
-                From customer experience to technology
-                and operations, Nodeus helps businesses
-                build the capabilities they need to move
-                forward.
+
+                From customer experience
+                to technology, AI, and
+                business operations,
+                Nodeus helps companies
+                build scalable
+                capabilities.
+
               </p>
 
             </div>
 
-            <div className="service-categories-grid">
 
-              {serviceCategories.map((category) => {
+            <div
+              className="service-categories-grid"
+            >
 
-                const Icon = category.icon;
+              {serviceCategories.map(
+                (category) => {
 
-                return (
+                  const Icon =
+                    category.icon;
 
-                  <Link
-                    to={`/solutions/${category.slug}`}
-                    className="service-category-card"
-                    key={category.title}
-                    onClick={closeMenu}
-                  >
 
-                    <div className="service-category-top">
+                  return (
 
-                      <div className="service-category-icon">
-                        <Icon size={21} />
-                      </div>
+                    <Link
 
-                      <ArrowUpRight size={18} />
+                      to={
+                        `/solutions/${category.slug}`
+                      }
 
-                    </div>
+                      className={
+                        "service-category-card"
+                      }
 
-                    <h3>
-                      {category.title}
-                    </h3>
+                      key={
+                        category.slug
+                      }
 
-                    <p>
-                      {category.description}
-                    </p>
+                      onClick={
+                        closeMenu
+                      }
+                    >
 
-                    <div className="service-list">
 
-                      {category.services
-                        .slice(0, 5)
-                        .map((service) => (
+                      <div
+                        className={
+                          "service-category-top"
+                        }
+                      >
 
-                          <span
-                            key={service}
-                          >
-                            {service}
-                          </span>
+                        <div
+                          className={
+                            "service-category-icon"
+                          }
+                        >
 
-                        ))}
+                          <Icon
+                            size={21}
+                          />
 
-                    </div>
+                        </div>
 
-                    {category.services.length > 5 && (
-
-                      <div className="view-all-services">
-
-                        View all services
 
                         <ArrowUpRight
-                          size={15}
+                          size={17}
                         />
 
                       </div>
 
-                    )}
 
-                  </Link>
+                      <h3>
 
-                );
+                        {
+                          category.title
+                        }
 
-              })}
+                      </h3>
+
+
+                      <p>
+
+                        {
+                          category.description
+                        }
+
+                      </p>
+
+
+                      <div
+                        className={
+                          "service-list"
+                        }
+                      >
+
+                        {
+                          category.services
+                            .slice(
+                              0,
+                              4
+                            )
+                            .map(
+                              (
+                                service
+                              ) => (
+
+                                <span
+                                  key={
+                                    service
+                                  }
+                                >
+
+                                  {
+                                    service
+                                  }
+
+                                </span>
+
+                              )
+                            )
+                        }
+
+                      </div>
+
+
+                      <div
+                        className={
+                          "view-all-services"
+                        }
+                      >
+
+                        Explore
+                        solutions
+
+                        <ArrowUpRight
+                          size={14}
+                        />
+
+                      </div>
+
+                    </Link>
+
+                  );
+
+                }
+              )}
 
             </div>
 
-            <div className="mega-menu-bottom">
+
+            <div
+              className="mega-menu-bottom"
+            >
 
               <span>
-                Need something specific?
+
+                Need something
+                specific?
+
               </span>
+
 
               <Link
                 to="/contact"
-                onClick={closeMenu}
+                onClick={
+                  closeMenu
+                }
               >
-                Let's discuss your requirements
+
+                Let’s discuss
+                your requirements
 
                 <ArrowUpRight
                   size={17}
                 />
+
               </Link>
 
             </div>
@@ -256,136 +549,232 @@ function Navbar() {
         </div>
 
 
-        {/* =========================
+        {/* ===============================
             INDUSTRIES
-        ========================= */}
+        ================================ */}
 
         <div
           className="nav-dropdown-wrapper"
           onMouseEnter={() =>
-            openMenu("industries")
+            openMenu(
+              "industries"
+            )
           }
-          onMouseLeave={closeMenuWithDelay}
+          onMouseLeave={
+            closeMenuWithDelay
+          }
         >
 
-          <div className="nav-dropdown-heading">
-
-            {/* MAIN INDUSTRIES PAGE LINK */}
+          <div
+            className="nav-dropdown-heading"
+          >
 
             <Link
               to="/industries"
               className="nav-main-link"
-              onClick={closeMenu}
+              onClick={
+                closeMenu
+              }
             >
+
               Industries
+
             </Link>
 
-            {/* DROPDOWN TOGGLE */}
 
             <button
+              type="button"
+
               className={`nav-dropdown-trigger ${
-                activeMenu === "industries"
+                activeMenu ===
+                "industries"
+
                   ? "active"
+
                   : ""
               }`}
+
               onClick={() =>
-                toggleMenu("industries")
+                toggleMenu(
+                  "industries"
+                )
               }
-              aria-label="Open industries menu"
+
+              aria-label={
+                activeMenu ===
+                "industries"
+
+                  ? "Close industries menu"
+
+                  : "Open industries menu"
+              }
+
+              aria-expanded={
+                activeMenu ===
+                "industries"
+              }
             >
-              <ChevronDown size={15} />
+
+              <ChevronDown
+                size={16}
+              />
+
             </button>
 
           </div>
 
+
           <div
             className={`mega-menu industries-menu ${
-              activeMenu === "industries"
+              activeMenu ===
+              "industries"
+
                 ? "show"
+
                 : ""
             }`}
-            onMouseEnter={() =>
-              openMenu("industries")
-            }
-            onMouseLeave={closeMenuWithDelay}
           >
 
-            <div className="mega-menu-header">
+
+            <div
+              className="mega-menu-header"
+            >
 
               <div>
 
-                <span className="mega-eyebrow">
-                  INDUSTRIES WE SUPPORT
+                <span
+                  className="mega-eyebrow"
+                >
+
+                  INDUSTRIES
+
                 </span>
 
+
                 <h2>
-                  Experience across
+
+                  Built for
+                  businesses
+
                   <br />
+
                   <span>
-                    different industries.
+
+                    across industries.
+
                   </span>
+
                 </h2>
 
               </div>
 
+
               <p>
-                Every industry has different challenges.
-                Our teams adapt to your processes,
-                customers, tools, and goals.
+
+                Our teams adapt to
+                your customers,
+                workflows, tools,
+                compliance needs,
+                and business goals.
+
               </p>
 
             </div>
 
-            <div className="industries-grid">
 
-              {industries.map((industry) => {
+            <div
+              className="industries-grid"
+            >
 
-                const Icon = industry.icon;
+              {industries.map(
+                (industry) => {
 
-                return (
+                  const Icon =
+                    industry.icon;
 
-                  <Link
-                    to={`/industries/${industry.slug}`}
-                    className="industry-card"
-                    key={industry.title}
-                    onClick={closeMenu}
-                  >
 
-                    <div className="industry-icon">
-                      <Icon size={22} />
-                    </div>
+                  return (
 
-                    <span>
-                      {industry.title}
-                    </span>
+                    <Link
 
-                    <ArrowUpRight
-                      size={17}
-                    />
+                      to={
+                        `/industries/${industry.slug}`
+                      }
 
-                  </Link>
+                      className={
+                        "industry-card"
+                      }
 
-                );
+                      key={
+                        industry.slug
+                      }
 
-              })}
+                      onClick={
+                        closeMenu
+                      }
+                    >
+
+                      <div
+                        className={
+                          "industry-icon"
+                        }
+                      >
+
+                        <Icon
+                          size={21}
+                        />
+
+                      </div>
+
+
+                      <span>
+
+                        {
+                          industry.title
+                        }
+
+                      </span>
+
+
+                      <ArrowUpRight
+                        size={16}
+                      />
+
+                    </Link>
+
+                  );
+
+                }
+              )}
 
             </div>
 
-            <div className="mega-menu-bottom">
+
+            <div
+              className="mega-menu-bottom"
+            >
 
               <span>
-                Don't see your industry?
+
+                Don’t see your
+                industry?
+
               </span>
+
 
               <Link
                 to="/contact"
-                onClick={closeMenu}
+                onClick={
+                  closeMenu
+                }
               >
+
                 Talk to our team
 
                 <ArrowUpRight
                   size={17}
                 />
+
               </Link>
 
             </div>
@@ -399,9 +788,13 @@ function Navbar() {
 
         <Link
           to="/insights"
-          onClick={closeMenu}
+          onClick={
+            closeMenu
+          }
         >
+
           Resources
+
         </Link>
 
 
@@ -409,9 +802,13 @@ function Navbar() {
 
         <Link
           to="/about"
-          onClick={closeMenu}
+          onClick={
+            closeMenu
+          }
         >
+
           About
+
         </Link>
 
 
@@ -420,9 +817,12 @@ function Navbar() {
         <Link
           to="/contact"
           className="nav-contact"
-          onClick={closeMenu}
+          onClick={
+            closeMenu
+          }
         >
-          Let's Talk
+
+          Let’s Talk
 
           <ArrowUpRight
             size={16}
@@ -433,24 +833,69 @@ function Navbar() {
       </nav>
 
 
-      {/* MOBILE MENU */}
+      {/* =================================
+          MOBILE MENU BUTTON
+      ================================== */}
 
       <button
-        className="mobile-menu-button"
-        onClick={() =>
-          setIsOpen(!isOpen)
+
+        type="button"
+
+        className={
+          "mobile-menu-button"
         }
-        aria-label="Toggle menu"
+
+        onClick={() => {
+
+          setIsOpen(
+            (current) =>
+              !current
+          );
+
+          setActiveMenu(
+            null
+          );
+
+        }}
+
+        aria-label={
+          isOpen
+
+            ? "Close navigation"
+
+            : "Open navigation"
+        }
+
+        aria-expanded={
+          isOpen
+        }
       >
-        {isOpen ? (
-          <X size={24} />
-        ) : (
-          <Menu size={24} />
-        )}
+
+        {
+
+          isOpen
+
+            ? (
+              <X
+                size={22}
+              />
+            )
+
+            : (
+              <Menu
+                size={22}
+              />
+            )
+
+        }
+
       </button>
 
     </header>
+
   );
+
 }
+
 
 export default Navbar;

@@ -100,8 +100,6 @@ const solutionsData = {
       "Website Maintenance",
       "Full-Stack Development",
       "Mobile App Development",
-      "IT Help Desk Support",
-      "Technical Support",
     ],
   },
 
