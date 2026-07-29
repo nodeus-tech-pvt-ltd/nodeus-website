@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import "../../styles/home/WhyNodeus.css";
+
 import {
   Handshake,
   UserRoundCheck,

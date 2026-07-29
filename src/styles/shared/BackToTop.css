@@ -1,0 +1,65 @@
+/* =========================================
+   BACK TO TOP BUTTON
+========================================= */
+
+.back-to-top {
+  position: fixed;
+
+  right: 30px;
+  bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  color: white;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 15px 35px
+    rgba(37, 99, 235, 0.35);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease,
+    transform 0.35s ease,
+    background 0.35s ease;
+
+  z-index: 999;
+}
+
+/* =========================================
+   VISIBLE STATE
+========================================= */
+
+.back-to-top.show {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+/* =========================================
+   HOVER
+========================================= */
+
+.back-to-top:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-6px);
+}

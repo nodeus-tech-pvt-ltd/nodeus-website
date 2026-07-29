@@ -4,6 +4,8 @@ import nodeusLogo from "../../assets/nodeus-logo.webp";
 import solutionsData from "../../data/solutions/solutionsData";
 import industries from "../../data/industries/industriesData";
 
+import "../../styles/layout/navbar.css";
+
 
 import {
   Menu,
@@ -39,11 +41,24 @@ function Navbar() {
     );
   };
 
+  // const closeMenu = () => {
+  //   clearTimeout(closeTimer.current);
+  //   setIsOpen(false);
+  //   setActiveMenu(null);
+  // };
+
+
   const closeMenu = () => {
-    clearTimeout(closeTimer.current);
-    setIsOpen(false);
-    setActiveMenu(null);
-  };
+  clearTimeout(closeTimer.current);
+
+  setIsOpen(false);
+  setActiveMenu(null);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 
   return (
     <header

@@ -12,6 +12,22 @@
 @import "./styles/layout/navbar.css";
 @import "./styles/layout/footer.css";
 
+
+
+/* =========================================
+   HOME
+========================================= */
+
+@import "./styles/home/Hero.css";
+@import "./styles/home/TrustStrip.css";
+@import "./styles/home/SolutionsPreview.css";
+@import "./styles/home/HowWeWork.css";
+@import "./styles/home/WhyNodeus.css";
+@import "./styles/home/ProofSection.css";
+@import "./styles/home/ContactSection.css";
+
+
+
 /* SHARED COMPONENTS */
 
 @import "./styles/components/buttons.css";
@@ -19,7 +35,7 @@
 
 /* PAGES */
 
-@import "./styles/pages/home.css";
+/* @import "./styles/pages/home.css"; */
 @import "./styles/pages/solutions.css";
 @import "./styles/pages/industries.css";
 

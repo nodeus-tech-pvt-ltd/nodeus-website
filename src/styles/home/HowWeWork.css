@@ -1,0 +1,341 @@
+/* =========================================
+   HOW WE WORK SECTION
+========================================= */
+
+.how-we-work-section {
+  position: relative;
+
+  padding: 150px 6vw;
+
+  overflow: hidden;
+
+  background: #080d17;
+}
+
+/* Background glow */
+
+.how-we-work-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 20%;
+  left: -200px;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.08);
+
+  filter: blur(110px);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.how-we-work-header {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 1fr 0.65fr;
+  gap: 80px;
+
+  max-width: 1250px;
+
+  margin: 0 auto 100px;
+}
+
+.how-we-work-header h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+.how-we-work-header h2 span {
+  color: #60a5fa;
+}
+
+.how-we-work-header > p {
+  align-self: end;
+
+  max-width: 450px;
+
+  margin-bottom: 5px;
+
+  color: #94a3b8;
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* =========================================
+   PROCESS WRAPPER
+========================================= */
+
+.process-wrapper {
+  position: relative;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+/* =========================================
+   PROGRESS LINE
+========================================= */
+
+.process-line {
+  position: absolute;
+
+  top: 35px;
+  left: 10%;
+
+  width: 80%;
+  height: 1px;
+
+  transform-origin: left center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(96, 165, 250, 0.8),
+      rgba(37, 99, 235, 0.2)
+    );
+}
+
+/* =========================================
+   STEPS
+========================================= */
+
+.process-steps {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 20px;
+}
+
+/* =========================================
+   STEP
+========================================= */
+
+.process-step {
+  position: relative;
+
+  min-height: 360px;
+
+  padding: 0 10px;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================================
+   NODE
+========================================= */
+
+.process-node {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 50px;
+}
+
+.process-number {
+  position: absolute;
+
+  top: -24px;
+
+  color: #64748b;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.process-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  border-radius: 50%;
+
+  background: #080d17;
+
+  color: #60a5fa;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.process-step:hover .process-icon {
+  background: #2563eb;
+
+  color: white;
+
+  transform: scale(1.12);
+
+  box-shadow:
+    0 0 0 8px rgba(37, 99, 235, 0.08),
+    0 0 40px rgba(37, 99, 235, 0.35);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.process-content {
+  text-align: center;
+}
+
+.process-step-label {
+  margin-bottom: 12px;
+
+  color: #60a5fa;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.process-content h3 {
+  margin: 0 0 15px;
+
+  color: white;
+
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.process-content p {
+  margin: 0 auto;
+
+  max-width: 210px;
+
+  color: #94a3b8;
+
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   ARROW
+========================================= */
+
+.process-arrow {
+  position: absolute;
+
+  top: 25px;
+  right: -12px;
+
+  color: #334155;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.process-step:hover .process-arrow {
+  color: #60a5fa;
+
+  transform: translateX(5px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .how-we-work-section {
+    padding: 110px 5vw;
+  }
+
+  .how-we-work-header {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 70px;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 60px 30px;
+  }
+
+  .process-line {
+    display: none;
+  }
+
+  .process-arrow {
+    display: none;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .how-we-work-section {
+    padding: 90px 20px;
+  }
+
+  .how-we-work-header h2 {
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .process-step {
+    min-height: auto;
+
+    padding: 0;
+  }
+
+  .process-node {
+    margin-bottom: 30px;
+  }
+
+  .process-content h3 {
+    font-size: 1.7rem;
+  }
+
+  .process-content p {
+    max-width: 330px;
+  }
+}

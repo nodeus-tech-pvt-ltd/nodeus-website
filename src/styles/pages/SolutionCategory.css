@@ -1,0 +1,227 @@
+/* =========================================
+   SOLUTION CATEGORY PAGE
+========================================= */
+
+.solution-category-page {
+  background: #f7f9fc;
+  color: #111827;
+}
+
+/* HERO */
+
+.solution-category-hero {
+  min-height: 620px;
+  padding: 150px 8% 100px;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(37, 99, 235, 0.15),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #eef5ff 100%
+    );
+}
+
+.back-to-solutions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 70px;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.solution-category-hero-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.solution-category-hero h1 {
+  max-width: 850px;
+  margin: 20px 0;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.solution-category-hero p {
+  max-width: 700px;
+  margin: 0 0 35px;
+  color: #64748b;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.category-hero-icon {
+  width: 280px;
+  height: 280px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  box-shadow:
+    0 0 0 30px rgba(37, 99, 235, 0.03),
+    0 0 0 60px rgba(37, 99, 235, 0.02);
+}
+
+/* CTA */
+
+.category-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 22px;
+  border-radius: 8px;
+  color: white;
+  background: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.category-cta:hover {
+  transform: translateY(-3px);
+  background: #1d4ed8;
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+}
+
+/* SERVICES */
+
+.category-services-section {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 130px 8%;
+}
+
+.category-section-heading {
+  margin-bottom: 60px;
+}
+
+.category-section-heading h2 {
+  margin-top: 18px;
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.category-section-heading h2 span {
+  color: #2563eb;
+}
+
+.category-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.category-service-card {
+  position: relative;
+  min-height: 145px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: white;
+  color: #111827;
+  text-decoration: none;
+  transition: 0.35s ease;
+}
+
+.category-service-card:hover {
+  transform: translateY(-7px);
+  border-color: #2563eb;
+  box-shadow:
+    0 20px 50px rgba(37, 99, 235, 0.12);
+}
+
+.category-service-card svg:first-child {
+  color: #2563eb;
+}
+
+.category-service-card h3 {
+  margin: 22px 0 0;
+  font-size: 19px;
+}
+
+.category-service-arrow {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  opacity: 0;
+  color: #2563eb;
+  transition: 0.3s ease;
+}
+
+.category-service-card:hover .category-service-arrow {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+/* BOTTOM CTA */
+
+.category-bottom-cta {
+  padding: 150px 8%;
+  text-align: center;
+  background: #0f172a;
+  color: white;
+}
+
+.category-bottom-cta h2 {
+  margin: 20px 0 35px;
+  font-size: clamp(42px, 6vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.category-bottom-cta h2 span {
+  color: #60a5fa;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .solution-category-hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .category-hero-icon {
+    margin: 30px 0 0;
+  }
+
+  .category-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .solution-category-hero {
+    padding: 130px 6% 80px;
+  }
+
+  .category-services-section {
+    padding: 90px 6%;
+  }
+
+  .category-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-hero-icon {
+    width: 200px;
+    height: 200px;
+  }
+}

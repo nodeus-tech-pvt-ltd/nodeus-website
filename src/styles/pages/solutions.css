@@ -1,0 +1,309 @@
+/* =========================================
+   MAIN SOLUTIONS PAGE
+========================================= */
+
+.solutions-page {
+  min-height: 100vh;
+  padding-top: 110px;
+
+  background: #f7f9fc;
+  color: #111827;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.solutions-page-hero {
+  padding: 100px 8% 120px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(37, 99, 235, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #eef5ff 100%
+    );
+}
+
+.solutions-page-hero h1 {
+  max-width: 900px;
+
+  margin: 20px 0 30px;
+
+  font-size: clamp(52px, 7vw, 100px);
+  line-height: 0.95;
+
+  letter-spacing: -0.06em;
+}
+
+.solutions-page-hero h1 span {
+  color: #2563eb;
+}
+
+.solutions-page-hero p {
+  max-width: 700px;
+
+  color: #64748b;
+
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.solutions-page-grid {
+  max-width: 1400px;
+
+  margin: 0 auto;
+  padding: 120px 8% 150px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.solutions-page-card {
+  position: relative;
+
+  min-height: 390px;
+  padding: 38px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+
+  background: white;
+
+  transition: 0.4s ease;
+}
+
+.solutions-page-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: -100px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.08);
+
+  transition: 0.5s ease;
+}
+
+.solutions-page-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 25px 60px rgba(37, 99, 235, 0.12);
+}
+
+.solutions-page-card:hover::before {
+  transform: scale(1.5);
+}
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.solutions-page-card-top {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.solutions-page-card-top > span {
+  color: #94a3b8;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.solutions-page-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.solutions-page-card h2 {
+  position: relative;
+  z-index: 1;
+
+  max-width: 500px;
+
+  margin: 55px 0 18px;
+
+  font-size: 30px;
+  line-height: 1.1;
+
+  letter-spacing: -0.03em;
+}
+
+.solutions-page-card > p {
+  position: relative;
+  z-index: 1;
+
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   SERVICE TAGS
+========================================= */
+
+.solutions-page-services {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 28px;
+}
+
+.solutions-page-services span {
+  padding: 8px 12px;
+
+  border-radius: 100px;
+
+  color: #475569;
+  background: #f1f5f9;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   EXPLORE SOLUTION LINK
+========================================= */
+
+.solutions-page-card .solution-link {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  width: fit-content;
+
+  /*
+    This pushes the link to the bottom
+    without overlapping the service tags.
+  */
+  margin-top: auto;
+
+  /*
+    Creates space between the service tags
+    and the Explore Solution button.
+  */
+  padding-top: 35px;
+
+  color: #2563eb;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.solutions-page-card:hover .solution-link {
+  transform: translate(4px, -4px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .solutions-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .solutions-page {
+    padding-top: 110px;
+  }
+
+  .solutions-page-hero {
+    padding: 80px 6% 90px;
+  }
+
+  .solutions-page-hero h1 {
+    font-size: clamp(48px, 13vw, 72px);
+  }
+
+  .solutions-page-hero p {
+    font-size: 17px;
+  }
+
+  .solutions-page-grid {
+    padding: 90px 6% 110px;
+  }
+
+  .solutions-page-card {
+    min-height: 390px;
+
+    padding: 30px;
+  }
+
+  .solutions-page-card h2 {
+    font-size: 26px;
+  }
+
+  .solutions-page-card .solution-link {
+    margin-top: auto;
+    padding-top: 35px;
+  }
+}

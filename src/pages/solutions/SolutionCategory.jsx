@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import "../../styles/pages/SolutionCategory.css";
+
 import {
   ArrowLeft,
   ArrowUpRight,

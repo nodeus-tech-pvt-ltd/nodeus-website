@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
 
+import "../../styles/home/Hero.css";
+
 function Hero() {
   return (
     <section className="hero" id="home">

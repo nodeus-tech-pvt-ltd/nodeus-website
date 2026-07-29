@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Quote, CheckCircle2 } from "lucide-react";
+import "../../styles/home/ProofSection.css";
 
 const testimonials = [
   {

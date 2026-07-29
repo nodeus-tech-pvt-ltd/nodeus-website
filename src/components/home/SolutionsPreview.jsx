@@ -1,5 +1,8 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+
+import "../../styles/home/SolutionsPreview.css";
 
 import {
   Headphones,
@@ -10,6 +13,8 @@ import {
   Calculator,
   Palette,
   ArrowUpRight,
+  ArrowLeft,
+  ArrowRight,
 } from "lucide-react";
 
 const solutions = [
@@ -26,7 +31,6 @@ const solutions = [
       "Customer Success",
       "Customer Retention",
       "Omnichannel Support",
-      "Complaint Handling",
     ],
   },
 
@@ -43,7 +47,6 @@ const solutions = [
       "Virtual Assistant Services",
       "Administrative Support",
       "Document Processing",
-      "Order Processing",
     ],
   },
 
@@ -60,7 +63,6 @@ const solutions = [
       "Appointment Setting",
       "Outbound Calling",
       "SDR Services",
-      "Customer Onboarding",
     ],
   },
 
@@ -77,7 +79,6 @@ const solutions = [
       "Mobile App Development",
       "Website Maintenance",
       "IT Help Desk Support",
-      "Technical Support",
     ],
   },
 
@@ -110,7 +111,6 @@ const solutions = [
       "Accounts Receivable",
       "Invoice Processing",
       "Billing Support",
-      "Collections Support",
     ],
   },
 
@@ -132,108 +132,234 @@ const solutions = [
 ];
 
 function SolutionsPreview() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const activeSolution = solutions[activeIndex];
+  const Icon = activeSolution.icon;
+
+  const showNext = () => {
+    setDirection(1);
+
+    setActiveIndex((currentIndex) =>
+      currentIndex === solutions.length - 1
+        ? 0
+        : currentIndex + 1
+    );
+  };
+
+  const showPrevious = () => {
+    setDirection(-1);
+
+    setActiveIndex((currentIndex) =>
+      currentIndex === 0
+        ? solutions.length - 1
+        : currentIndex - 1
+    );
+  };
+
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 80 : -80,
+      opacity: 0,
+    }),
+
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+
+    exit: (direction) => ({
+      x: direction > 0 ? -80 : 80,
+      opacity: 0,
+    }),
+  };
+
   return (
     <section
-      className="solutions-section"
+      className="solutions-slider-section"
       id="solutions"
     >
-      <div className="solutions-header">
-        <div>
-          <span className="section-eyebrow">
-            WHAT WE HELP YOU BUILD
-          </span>
+      <div className="solutions-slider-container">
 
-          <h2>
-            The right people.
-            <br />
+        {/* HEADER */}
 
-            <span>
-              The right capabilities.
+        <div className="solutions-slider-header">
+
+          <div>
+            <span className="section-eyebrow">
+              WHAT WE HELP YOU BUILD
             </span>
-          </h2>
+
+            <h2>
+              The right people.
+              <br />
+
+              <span>
+                The right capabilities.
+              </span>
+            </h2>
+          </div>
+
+          <p>
+            From customer experience and business
+            operations to technology, AI, finance,
+            and creative services, we build dedicated
+            capabilities around your business.
+          </p>
+
         </div>
 
-        <p>
-          From customer experience and business operations
-          to technology, AI, finance, and creative services,
-          we build dedicated teams around the way your
-          business works.
-        </p>
-      </div>
 
-      <div className="solutions-grid">
-        {solutions.map((solution, index) => {
-          const Icon = solution.icon;
+        {/* SLIDER */}
 
-          return (
+        <div className="solutions-slider-wrapper">
+
+          <AnimatePresence
+            mode="wait"
+            custom={direction}
+          >
+
             <motion.article
-              className="solution-card"
-              key={solution.slug}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.2,
-              }}
+              key={activeSolution.slug}
+              className="solution-slider-card"
+
+              custom={direction}
+
+              variants={slideVariants}
+
+              initial="enter"
+
+              animate="center"
+
+              exit="exit"
+
               transition={{
-                duration: 0.6,
-                delay: index * 0.08,
+                duration: 0.45,
+                ease: "easeOut",
               }}
             >
-              <div className="solution-card-top">
-                <span className="solution-number">
-                  {solution.number}
+
+              {/* CARD TOP */}
+
+              <div className="solution-slider-top">
+
+                <span className="solution-slider-number">
+                  {activeSolution.number}
                 </span>
 
-                <div className="solution-icon">
-                  <Icon size={25} />
+                <div className="solution-slider-icon">
+                  <Icon size={30} />
                 </div>
+
               </div>
 
-              <h3>
-                {solution.title}
-              </h3>
 
-              <p className="solution-description">
-                {solution.description}
-              </p>
+              {/* CARD CONTENT */}
 
-              <div className="solution-services">
-                {solution.services.map((service) => (
-                  <span key={service}>
-                    {service}
-                  </span>
-                ))}
+              <div className="solution-slider-content">
+
+                <h3>
+                  {activeSolution.title}
+                </h3>
+
+                <p>
+                  {activeSolution.description}
+                </p>
+
+                <div className="solution-slider-services">
+
+                  {activeSolution.services.map(
+                    (service) => (
+
+                      <span key={service}>
+                        {service}
+                      </span>
+
+                    )
+                  )}
+
+                </div>
+
+                <Link
+                  to={`/solutions/${activeSolution.slug}`}
+                  className="solution-slider-link"
+                >
+                  Explore solution
+
+                  <ArrowUpRight size={18} />
+                </Link>
+
               </div>
 
-              <Link
-                to={`/solutions/${solution.slug}`}
-                className="solution-link"
-              >
-                Explore solution
-
-                <ArrowUpRight size={17} />
-              </Link>
             </motion.article>
-          );
-        })}
-      </div>
 
-      <div className="solutions-preview-footer">
-        <Link
-          to="/solutions"
-          className="all-solutions-link"
-        >
-          Explore all solutions
+          </AnimatePresence>
 
-          <ArrowUpRight size={18} />
-        </Link>
+
+          {/* CONTROLS */}
+
+          <div className="solution-slider-controls">
+
+            <div className="solution-slider-counter">
+
+              <strong>
+                {activeSolution.number}
+              </strong>
+
+              <span>
+                / {String(solutions.length).padStart(2, "0")}
+              </span>
+
+            </div>
+
+
+            <div className="solution-slider-buttons">
+
+              <button
+                type="button"
+                onClick={showPrevious}
+                aria-label="Previous solution"
+              >
+                <ArrowLeft size={19} />
+              </button>
+
+              <button
+                type="button"
+                onClick={showNext}
+                aria-label="Next solution"
+              >
+                <ArrowRight size={19} />
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        {/* VIEW ALL */}
+
+        <div className="solutions-slider-footer">
+
+          <p>
+            Explore all of our capabilities
+            and find the right solution
+            for your business.
+          </p>
+
+          <Link
+            to="/solutions"
+            className="all-solutions-link"
+          >
+            Explore all solutions
+
+            <ArrowUpRight size={18} />
+          </Link>
+
+        </div>
+
       </div>
     </section>
   );
