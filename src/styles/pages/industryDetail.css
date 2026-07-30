@@ -1,0 +1,1583 @@
+/* =========================================
+   INDUSTRY DETAIL PAGE
+========================================= */
+
+.industry-detail-page {
+  width: 100%;
+
+  overflow: hidden;
+
+  background:
+    #070b14;
+
+  color:
+    white;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.industry-detail-hero {
+  position:
+    relative;
+
+  padding:
+    170px
+    24px
+    100px;
+
+  background:
+
+    radial-gradient(
+      circle
+      at
+      85%
+      20%,
+
+      rgba(
+        37,
+        99,
+        235,
+        0.2
+      ),
+
+      transparent
+      30%
+    ),
+
+    radial-gradient(
+      circle
+      at
+      15%
+      75%,
+
+      rgba(
+        59,
+        130,
+        246,
+        0.1
+      ),
+
+      transparent
+      35%
+    );
+}
+
+
+.industry-detail-hero::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  pointer-events:
+    none;
+
+  background-image:
+
+    linear-gradient(
+      rgba(
+        255,
+        255,
+        255,
+        0.025
+      )
+      1px,
+
+      transparent
+      1px
+    ),
+
+    linear-gradient(
+      90deg,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.025
+      )
+      1px,
+
+      transparent
+      1px
+    );
+
+  background-size:
+    70px
+    70px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+
+      black,
+
+      transparent
+    );
+}
+
+
+.industry-back-link {
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  width:
+    min(
+      1240px,
+      100%
+    );
+
+  margin:
+    0
+    auto
+    50px;
+
+  color:
+    #94a3b8;
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    600;
+
+  text-decoration:
+    none;
+
+  transition:
+    color
+    0.25s ease;
+}
+
+
+.industry-back-link:hover {
+  color:
+    #60a5fa;
+}
+
+
+.industry-detail-hero-grid {
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1.25fr
+    )
+    minmax(
+      320px,
+      0.75fr
+    );
+
+  gap:
+    80px;
+
+  align-items:
+    end;
+
+  width:
+    min(
+      1240px,
+      100%
+    );
+
+  margin:
+    0
+    auto;
+}
+
+
+.industry-detail-icon {
+  display:
+    grid;
+
+  width:
+    68px;
+
+  height:
+    68px;
+
+  margin-bottom:
+    28px;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(
+      96,
+      165,
+      250,
+      0.25
+    );
+
+  border-radius:
+    18px;
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.12
+    );
+
+  color:
+    #60a5fa;
+
+  box-shadow:
+    0 18px 50px
+    rgba(
+      37,
+      99,
+      235,
+      0.12
+    );
+}
+
+
+.industry-detail-hero h1 {
+  max-width:
+    800px;
+
+  margin:
+    18px
+    0
+    25px;
+
+  color:
+    white;
+
+  font-size:
+    clamp(
+      3rem,
+      6.3vw,
+      6.5rem
+    );
+
+  font-weight:
+    600;
+
+  line-height:
+    0.94;
+
+  letter-spacing:
+    -0.07em;
+}
+
+
+.industry-detail-hero h1 span {
+  color:
+    #60a5fa;
+}
+
+
+.industry-detail-hero > *,
+.industry-detail-hero-grid > * {
+  min-width:
+    0;
+}
+
+
+.industry-detail-hero-grid > div:first-child > p {
+  max-width:
+    690px;
+
+  margin:
+    0
+    0
+    32px;
+
+  color:
+    #94a3b8;
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.85;
+}
+
+
+.industry-hero-button {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  padding:
+    15px
+    21px;
+
+  border:
+    1px solid
+    rgba(
+      96,
+      165,
+      250,
+      0.4
+    );
+
+  border-radius:
+    999px;
+
+  background:
+    #2563eb;
+
+  color:
+    white;
+
+  font-size:
+    0.84rem;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+
+  box-shadow:
+    0 14px 35px
+    rgba(
+      37,
+      99,
+      235,
+      0.25
+    );
+
+  transition:
+
+    transform
+    0.25s ease,
+
+    background
+    0.25s ease;
+}
+
+
+.industry-hero-button:hover {
+  background:
+    #1d4ed8;
+
+  transform:
+    translateY(
+      -3px
+    );
+}
+
+
+/* =========================================
+   HERO PANEL
+========================================= */
+
+.industry-hero-panel {
+  padding:
+    34px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+
+  border-radius:
+    24px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+
+  box-shadow:
+
+    0 30px 80px
+    rgba(
+      0,
+      0,
+      0,
+      0.22
+    ),
+
+    inset
+    0 1px 0
+    rgba(
+      255,
+      255,
+      255,
+      0.05
+    );
+}
+
+
+.industry-hero-panel > span {
+  color:
+    #60a5fa;
+
+  font-size:
+    0.67rem;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.17em;
+}
+
+
+.industry-hero-panel h2 {
+  margin:
+    20px
+    0;
+
+  color:
+    white;
+
+  font-size:
+    clamp(
+      1.7rem,
+      2.7vw,
+      2.5rem
+    );
+
+  font-weight:
+    600;
+
+  line-height:
+    1.02;
+
+  letter-spacing:
+    -0.05em;
+}
+
+
+.industry-hero-panel p {
+  margin:
+    0;
+
+  color:
+    #7f8da3;
+
+  font-size:
+    0.84rem;
+
+  line-height:
+    1.75;
+}
+
+
+.industry-panel-stat {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    15px;
+
+  margin-top:
+    30px;
+
+  padding-top:
+    24px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+
+.industry-panel-stat strong {
+  color:
+    #60a5fa;
+
+  font-size:
+    1.4rem;
+}
+
+
+.industry-panel-stat span {
+  color:
+    #b8c2d1;
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    600;
+}
+
+
+/* =========================================
+   COMMON CONTENT
+========================================= */
+
+.industry-content-section,
+.industry-capabilities-section,
+.industry-outcomes-section {
+  width:
+    min(
+      1240px,
+      calc(
+        100% - 48px
+      )
+    );
+
+  margin:
+    0
+    auto;
+}
+
+
+.industry-content-section {
+  padding:
+    125px
+    0;
+}
+
+
+.industry-section-heading {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    minmax(
+      300px,
+      0.6fr
+    );
+
+  gap:
+    70px;
+
+  margin-bottom:
+    55px;
+}
+
+
+.industry-section-heading h2,
+.industry-capabilities-content h2,
+.industry-outcomes-section h2 {
+  margin:
+    18px
+    0
+    0;
+
+  color:
+    white;
+
+  font-size:
+    clamp(
+      2.5rem,
+      4.6vw,
+      5rem
+    );
+
+  font-weight:
+    600;
+
+  line-height:
+    0.96;
+
+  letter-spacing:
+    -0.065em;
+}
+
+
+.industry-section-heading h2 span,
+.industry-capabilities-content h2 span,
+.industry-outcomes-section h2 span {
+  color:
+    #60a5fa;
+}
+
+
+.industry-section-heading > p {
+  align-self:
+    end;
+
+  max-width:
+    420px;
+
+  margin:
+    0;
+
+  color:
+    #8491a5;
+
+  font-size:
+    0.94rem;
+
+  line-height:
+    1.8;
+}
+
+
+/* =========================================
+   CHALLENGES
+========================================= */
+
+.industry-challenges-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      5,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    12px;
+}
+
+
+.industry-challenge-card {
+  min-height:
+    210px;
+
+  padding:
+    22px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  border-radius:
+    17px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  transition:
+
+    border-color
+    0.25s ease,
+
+    background
+    0.25s ease,
+
+    transform
+    0.25s ease;
+}
+
+
+.industry-challenge-card:hover {
+  border-color:
+    rgba(
+      96,
+      165,
+      250,
+      0.35
+    );
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.08
+    );
+
+  transform:
+    translateY(
+      -5px
+    );
+}
+
+
+.industry-challenge-card > span {
+  display:
+    block;
+
+  margin-bottom:
+    65px;
+
+  color:
+    #60a5fa;
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    750;
+}
+
+
+.industry-challenge-card h3 {
+  margin:
+    0;
+
+  color:
+    #dbe4f0;
+
+  font-size:
+    0.9rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================
+   CAPABILITIES
+========================================= */
+
+.industry-capabilities-section {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      0.9fr
+    )
+    minmax(
+      0,
+      1.1fr
+    );
+
+  gap:
+    110px;
+
+  padding:
+    115px
+    0;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+}
+
+
+.industry-capabilities-content > p {
+  max-width:
+    470px;
+
+  margin:
+    27px
+    0;
+
+  color:
+    #8491a5;
+
+  font-size:
+    0.94rem;
+
+  line-height:
+    1.85;
+}
+
+
+.industry-text-link {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  color:
+    #60a5fa;
+
+  font-size:
+    0.84rem;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+}
+
+
+.industry-capabilities-list {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+}
+
+
+.industry-capability-item {
+  display:
+    grid;
+
+  grid-template-columns:
+    50px
+    1fr
+    auto;
+
+  align-items:
+    center;
+
+  gap:
+    15px;
+
+  min-height:
+    82px;
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+}
+
+
+.industry-capability-item > span {
+  color:
+    #526176;
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    700;
+}
+
+
+.industry-capability-item h3 {
+  margin:
+    0;
+
+  color:
+    #dbe4f0;
+
+  font-size:
+    0.93rem;
+
+  font-weight:
+    600;
+}
+
+
+.industry-capability-item > svg {
+  color:
+    #60a5fa;
+}
+
+
+/* =========================================
+   OUTCOMES
+========================================= */
+
+.industry-outcomes-section {
+  padding:
+    120px
+    0;
+
+  text-align:
+    center;
+}
+
+
+.industry-outcomes-section h2 {
+  margin-bottom:
+    60px;
+}
+
+
+.industry-outcomes-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    13px;
+
+  text-align:
+    left;
+}
+
+
+.industry-outcome-card {
+  min-height:
+    180px;
+
+  padding:
+    25px;
+
+  border:
+    1px solid
+    rgba(
+      96,
+      165,
+      250,
+      0.17
+    );
+
+  border-radius:
+    18px;
+
+  background:
+
+    linear-gradient(
+
+      145deg,
+
+      rgba(
+        37,
+        99,
+        235,
+        0.11
+      ),
+
+      rgba(
+        255,
+        255,
+        255,
+        0.02
+      )
+
+    );
+}
+
+
+.industry-outcome-card svg {
+  color:
+    #60a5fa;
+}
+
+
+.industry-outcome-card p {
+  margin:
+    55px
+    0
+    0;
+
+  color:
+    #dbe4f0;
+
+  font-size:
+    0.9rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.industry-detail-cta {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    50px;
+
+  width:
+    min(
+      1240px,
+      calc(
+        100% - 48px
+      )
+    );
+
+  margin:
+    0
+    auto
+    110px;
+
+  padding:
+    60px;
+
+  border:
+    1px solid
+    rgba(
+      96,
+      165,
+      250,
+      0.25
+    );
+
+  border-radius:
+    25px;
+
+  background:
+
+    radial-gradient(
+
+      circle
+      at
+      right center,
+
+      rgba(
+        37,
+        99,
+        235,
+        0.2
+      ),
+
+      transparent
+      38%
+
+    ),
+
+    #0d1424;
+}
+
+
+.industry-detail-cta span {
+  color:
+    #60a5fa;
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.17em;
+}
+
+
+.industry-detail-cta h2 {
+  margin:
+    17px
+    0
+    0;
+
+  color:
+    white;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      4rem
+    );
+
+  font-weight:
+    600;
+
+  line-height:
+    0.98;
+
+  letter-spacing:
+    -0.06em;
+}
+
+
+.industry-detail-cta > a {
+  display:
+    inline-flex;
+
+  flex-shrink:
+    0;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  padding:
+    15px
+    22px;
+
+  border-radius:
+    999px;
+
+  background:
+    #2563eb;
+
+  color:
+    white;
+
+  font-size:
+    0.84rem;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+
+  transition:
+    transform
+    0.25s ease;
+}
+
+
+.industry-detail-cta > a:hover {
+  transform:
+    translateY(
+      -3px
+    );
+}
+
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.industry-not-found {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    100vh;
+
+  padding:
+    140px
+    24px
+    80px;
+
+  text-align:
+    center;
+
+  background:
+    #070b14;
+}
+
+
+.industry-not-found > span {
+  color:
+    #2563eb;
+
+  font-size:
+    5rem;
+
+  font-weight:
+    700;
+}
+
+
+.industry-not-found h1 {
+  margin:
+    10px
+    0;
+
+  font-size:
+    2.5rem;
+}
+
+
+.industry-not-found p {
+  color:
+    #94a3b8;
+}
+
+
+.industry-not-found a {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  margin-top:
+    22px;
+
+  color:
+    #60a5fa;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (
+  max-width:
+  1100px
+) {
+
+  .industry-detail-hero-grid {
+    gap:
+      50px;
+  }
+
+
+  .industry-challenges-grid {
+    grid-template-columns:
+      repeat(
+        3,
+        1fr
+      );
+  }
+
+
+  .industry-challenge-card:last-child {
+    grid-column:
+      span 2;
+  }
+
+
+  .industry-capabilities-section {
+    gap:
+      65px;
+  }
+
+}
+
+
+@media (
+  max-width:
+  800px
+) {
+
+  .industry-detail-hero {
+    padding:
+      135px
+      20px
+      75px;
+  }
+
+
+  .industry-detail-hero-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      45px;
+  }
+
+
+  .industry-hero-panel {
+    max-width:
+      600px;
+  }
+
+
+  .industry-content-section,
+  .industry-capabilities-section,
+  .industry-outcomes-section {
+    width:
+      calc(
+        100% - 40px
+      );
+  }
+
+
+  .industry-section-heading {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      25px;
+  }
+
+
+  .industry-challenges-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+  }
+
+
+  .industry-challenge-card:last-child {
+    grid-column:
+      auto;
+  }
+
+
+  .industry-capabilities-section {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      60px;
+  }
+
+
+  .industry-outcomes-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+  }
+
+
+  .industry-detail-cta {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    padding:
+      42px;
+  }
+
+}
+
+
+@media (
+  max-width:
+  560px
+) {
+
+  .industry-detail-hero {
+    padding:
+      120px
+      16px
+      65px;
+  }
+
+
+  .industry-back-link {
+    margin-bottom:
+      35px;
+  }
+
+
+  .industry-detail-icon {
+    width:
+      58px;
+
+    height:
+      58px;
+
+    margin-bottom:
+      22px;
+  }
+
+
+  .industry-detail-hero h1 {
+    font-size:
+      clamp(
+        2.7rem,
+        13vw,
+        4rem
+      );
+  }
+
+
+  .industry-detail-hero-grid > div:first-child > p {
+    font-size:
+      0.9rem;
+  }
+
+
+  .industry-hero-panel {
+    padding:
+      25px;
+  }
+
+
+  .industry-content-section {
+    padding:
+      85px
+      0;
+  }
+
+
+  .industry-content-section,
+  .industry-capabilities-section,
+  .industry-outcomes-section {
+    width:
+      calc(
+        100% - 32px
+      );
+  }
+
+
+  .industry-challenges-grid,
+  .industry-outcomes-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .industry-challenge-card {
+    min-height:
+      165px;
+  }
+
+
+  .industry-challenge-card > span {
+    margin-bottom:
+      42px;
+  }
+
+
+  .industry-capabilities-section {
+    padding:
+      80px
+      0;
+  }
+
+
+  .industry-capability-item {
+    grid-template-columns:
+      38px
+      1fr
+      auto;
+
+    gap:
+      10px;
+  }
+
+
+  .industry-outcomes-section {
+    padding:
+      85px
+      0;
+  }
+
+
+  .industry-outcomes-section h2 {
+    margin-bottom:
+      40px;
+  }
+
+
+  .industry-outcome-card {
+    min-height:
+      145px;
+  }
+
+
+  .industry-outcome-card p {
+    margin-top:
+      35px;
+  }
+
+
+  .industry-detail-cta {
+    width:
+      calc(
+        100% - 32px
+      );
+
+    margin-bottom:
+      70px;
+
+    padding:
+      32px;
+
+    border-radius:
+      20px;
+  }
+
+
+  .industry-detail-cta h2 {
+    font-size:
+      2.15rem;
+  }
+
+}
