@@ -61,31 +61,19 @@ function Navbar() {
 
 
   /* =====================================
-     LOCK BODY SCROLL ON MOBILE
-  ===================================== */
+        MOBILE MENU SCROLL
+      ===================================== */
 
   useEffect(() => {
-
-    if (isOpen) {
-
-      document.body.style.overflow =
-        "hidden";
-
-    } else {
-
-      document.body.style.overflow =
-        "";
-
-    }
 
     return () => {
 
       document.body.style.overflow =
-        "";
+         "";
 
     };
 
-  }, [isOpen]);
+  }, []);
 
 
   /* =====================================
@@ -847,16 +835,28 @@ function Navbar() {
 
         onClick={() => {
 
-          setIsOpen(
-            (current) =>
-              !current
-          );
+        setIsOpen(
+          (current) => {
 
-          setActiveMenu(
-            null
-          );
+            const nextState =
+              !current;
 
-        }}
+            if (
+              !nextState
+            ) {
+
+              setActiveMenu(
+                null
+              );
+
+            }
+
+            return nextState;
+
+          }
+        );
+
+      }}
 
         aria-label={
           isOpen

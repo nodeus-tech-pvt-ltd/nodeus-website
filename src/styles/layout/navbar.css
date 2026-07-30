@@ -413,7 +413,7 @@
 
 
 /* =========================================
-   MEGA MENU
+   DESKTOP MEGA MENU
 ========================================= */
 
 .mega-menu {
@@ -1359,6 +1359,10 @@
   }
 
 
+  /* -------------------------------------
+     MOBILE MENU SCROLL CONTAINER
+  ------------------------------------- */
+
   .nav-links {
     position:
       absolute;
@@ -1383,17 +1387,31 @@
     align-items:
       stretch;
 
+    justify-content:
+      flex-start;
+
     gap:
       4px;
 
     max-height:
-      0;
+      calc(
+        100dvh - 105px
+      );
 
     padding:
       0;
 
-    overflow:
+    overflow-x:
       hidden;
+
+    overflow-y:
+      auto;
+
+    overscroll-behavior:
+      contain;
+
+    -webkit-overflow-scrolling:
+      touch;
 
     border:
       1px solid
@@ -1422,6 +1440,9 @@
     opacity:
       0;
 
+    visibility:
+      hidden;
+
     pointer-events:
       none;
 
@@ -1432,13 +1453,10 @@
 
     transition:
 
-      max-height
-      0.35s ease,
-
-      padding
-      0.35s ease,
-
       opacity
+      0.25s ease,
+
+      visibility
       0.25s ease,
 
       transform
@@ -1447,16 +1465,8 @@
 
 
   .nav-links.open {
-    max-height:
-      calc(
-        100vh - 105px
-      );
-
     padding:
       10px;
-
-    overflow-y:
-      auto;
 
     border-color:
       rgba(
@@ -1468,6 +1478,9 @@
 
     opacity:
       1;
+
+    visibility:
+      visible;
 
     pointer-events:
       auto;
@@ -1519,6 +1532,9 @@
   .nav-dropdown-wrapper {
     width:
       100%;
+
+    flex-shrink:
+      0;
   }
 
 
@@ -1527,7 +1543,10 @@
       grid;
 
     grid-template-columns:
-      1fr
+      minmax(
+        0,
+        1fr
+      )
       48px;
 
     width:
@@ -1548,6 +1567,9 @@
 
 
   .nav-main-link {
+    min-width:
+      0;
+
     padding-right:
       10px;
   }
@@ -1562,8 +1584,15 @@
 
     border-radius:
       12px;
+
+    touch-action:
+      manipulation;
   }
 
+
+  /* -------------------------------------
+     MOBILE DROPDOWN
+  ------------------------------------- */
 
   .mega-menu {
     position:
@@ -1571,6 +1600,9 @@
 
     display:
       none;
+
+    width:
+      100%;
 
     max-height:
       none;
@@ -1619,6 +1651,9 @@
       auto;
 
     transform:
+      none;
+
+    transition:
       none;
   }
 
