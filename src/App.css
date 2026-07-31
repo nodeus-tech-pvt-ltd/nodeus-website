@@ -1,0 +1,16 @@
+/* Prevent page sections from creating
+   horizontal scrolling on mobile */
+
+main,
+section {
+  max-width: 100%;
+}
+
+@media (max-width: 760px) {
+
+  main {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+}

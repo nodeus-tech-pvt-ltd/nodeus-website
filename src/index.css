@@ -56,3 +56,27 @@ body {
   background: #ffffff;
   color: #111111;
 }
+
+/* =========================================
+   GLOBAL MOBILE OVERFLOW FIX
+========================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
