@@ -1,13 +1,17 @@
 import {
-  ArrowLeft,
   ArrowUpRight,
   Check,
+  ChevronRight,
 } from "lucide-react";
 
 import {
   Link,
   useParams,
 } from "react-router-dom";
+
+import {
+  motion,
+} from "framer-motion";
 
 import industries from "../../data/industries/industriesData";
 
@@ -19,65 +23,45 @@ import "../../styles/pages/industryDetail.css";
 function IndustryDetail() {
 
   const {
-    industry: industrySlug,
+    industry,
   } = useParams();
 
 
-  const industry =
+  const industryData =
     industries.find(
       (item) =>
-        item.slug ===
-        industrySlug
+        item.slug === industry
     );
 
 
-  /* =====================================
-     INDUSTRY NOT FOUND
-  ===================================== */
-
-  if (!industry) {
+  if (!industryData) {
 
     return (
 
       <AnimatedPage>
 
         <main
-          className={
-            "industry-not-found"
-          }
+          className="industry-not-found"
         >
 
           <span>
-
-            404
-
+            INDUSTRY NOT FOUND
           </span>
 
-
           <h1>
-
-            Industry not found
-
+            This industry page
+            does not exist.
           </h1>
-
-
-          <p>
-
-            The industry page you are
-            looking for does not exist.
-
-          </p>
-
 
           <Link
             to="/industries"
           >
 
-            <ArrowLeft
-              size={17}
-            />
-
             Back to industries
+
+            <ArrowUpRight
+              size={18}
+            />
 
           </Link>
 
@@ -91,7 +75,22 @@ function IndustryDetail() {
 
 
   const Icon =
-    industry.icon;
+    industryData.icon;
+
+
+  const challenges =
+    industryData.challenges ||
+    [];
+
+
+  const capabilities =
+    industryData.capabilities ||
+    [];
+
+
+  const outcomes =
+    industryData.outcomes ||
+    [];
 
 
   return (
@@ -99,9 +98,7 @@ function IndustryDetail() {
     <AnimatedPage>
 
       <main
-        className={
-          "industry-detail-page"
-        }
+        className="industry-detail-page"
       >
 
 
@@ -110,39 +107,67 @@ function IndustryDetail() {
         ============================== */}
 
         <section
-          className={
-            "industry-detail-hero"
-          }
+          className="industry-detail-hero"
         >
 
-
-          <Link
-
-            to="/industries"
-
-            className={
-              "industry-back-link"
-            }
-
-          >
-
-            <ArrowLeft
-              size={17}
-            />
-
-            All industries
-
-          </Link>
+          <div
+            className="industry-detail-hero-glow"
+          />
 
 
           <div
-            className={
-              "industry-detail-hero-grid"
-            }
+            className="industry-detail-container"
           >
 
 
-            <div>
+            <motion.div
+
+              className={
+                "industry-detail-hero-content"
+              }
+
+              initial={{
+                opacity: 0,
+                y: 35,
+              }}
+
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+
+              transition={{
+                duration: 0.65,
+              }}
+
+            >
+
+
+              <Link
+
+                to="/industries"
+
+                className={
+                  "industry-breadcrumb"
+                }
+
+              >
+
+                Industries
+
+                <ChevronRight
+                  size={15}
+                />
+
+                <span>
+
+                  {
+                    industryData.title
+                  }
+
+                </span>
+
+              </Link>
 
 
               <div
@@ -152,7 +177,7 @@ function IndustryDetail() {
               >
 
                 <Icon
-                  size={32}
+                  size={30}
                 />
 
               </div>
@@ -171,17 +196,10 @@ function IndustryDetail() {
 
               <h1>
 
-                Built for
-
-                <br />
-
-                <span>
-
-                  {
-                    industry.title
-                  }
-
-                </span>
+                {
+                  industryData.heroTitle ||
+                  `Operations built for ${industryData.title}.`
+                }
 
               </h1>
 
@@ -189,95 +207,158 @@ function IndustryDetail() {
               <p>
 
                 {
-                  industry.heroDescription
+                  industryData.heroDescription ||
+                  `Nodeus builds flexible teams and operational capabilities that help ${industryData.title} businesses deliver better customer experiences and scale efficiently.`
                 }
-
-              </p>
-
-
-              <Link
-
-                to="/contact"
-
-                className={
-                  "industry-hero-button"
-                }
-
-              >
-
-                Talk to our team
-
-                <ArrowUpRight
-                  size={18}
-                />
-
-              </Link>
-
-            </div>
-
-
-            <div
-              className={
-                "industry-hero-panel"
-              }
-            >
-
-
-              <span>
-
-                HOW WE HELP
-
-              </span>
-
-
-              <h2>
-
-                Dedicated capabilities
-
-                <br />
-
-                built around your
-
-                <br />
-
-                business.
-
-              </h2>
-
-
-              <p>
-
-                Flexible teams, structured
-                processes, and scalable
-                operations designed to
-                support your goals.
 
               </p>
 
 
               <div
                 className={
-                  "industry-panel-stat"
+                  "industry-detail-actions"
                 }
               >
 
-                <strong>
+                <Link
 
-                  01
+                  to="/contact"
 
-                </strong>
+                  className={
+                    "industry-primary-button"
+                  }
+
+                >
+
+                  Talk to our team
+
+                  <ArrowUpRight
+                    size={18}
+                  />
+
+                </Link>
 
 
-                <span>
+                <Link
 
-                  Industry-focused
-                  operations
+                  to="/solutions"
 
-                </span>
+                  className={
+                    "industry-secondary-button"
+                  }
+
+                >
+
+                  Explore solutions
+
+                </Link>
 
               </div>
 
-            </div>
+
+            </motion.div>
+
+
+            <motion.div
+
+              className={
+                "industry-detail-hero-panel"
+              }
+
+              initial={{
+                opacity: 0,
+                x: 40,
+              }}
+
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+
+              transition={{
+                duration: 0.7,
+                delay: 0.15,
+              }}
+
+            >
+
+
+              <span>
+
+                BUILT TO SUPPORT
+
+              </span>
+
+
+              <h2>
+
+                Flexible teams.
+
+                <br />
+
+                <strong>
+
+                  Better operations.
+
+                </strong>
+
+              </h2>
+
+
+              <div
+                className={
+                  "industry-support-list"
+                }
+              >
+
+                <div>
+
+                  <Check
+                    size={17}
+                  />
+
+                  Dedicated specialists
+
+                </div>
+
+
+                <div>
+
+                  <Check
+                    size={17}
+                  />
+
+                  Scalable team capacity
+
+                </div>
+
+
+                <div>
+
+                  <Check
+                    size={17}
+                  />
+
+                  Industry-aligned workflows
+
+                </div>
+
+
+                <div>
+
+                  <Check
+                    size={17}
+                  />
+
+                  Clear performance reporting
+
+                </div>
+
+              </div>
+
+
+            </motion.div>
+
 
           </div>
 
@@ -289,108 +370,139 @@ function IndustryDetail() {
         ============================== */}
 
         <section
-          className={
-            "industry-content-section"
-          }
+          className="industry-challenges-section"
         >
 
-
           <div
-            className={
-              "industry-section-heading"
-            }
+            className="industry-detail-container"
           >
 
-            <span
+
+            <div
               className={
-                "section-eyebrow"
+                "industry-section-heading"
               }
             >
 
-              INDUSTRY CHALLENGES
+              <span
+                className={
+                  "section-eyebrow"
+                }
+              >
 
-            </span>
-
-
-            <h2>
-
-              Built to handle
-
-              <br />
-
-              <span>
-
-                what matters most.
+                INDUSTRY CHALLENGES
 
               </span>
 
-            </h2>
+
+              <h2>
+
+                The operational challenges
+
+                <br />
+
+                <span>
+
+                  your team should not
+                  have to solve alone.
+
+                </span>
+
+              </h2>
 
 
-            <p>
+              <p>
 
-              We build operational
-              capabilities around the
-              challenges your teams and
-              customers face every day.
+                Growing businesses need
+                reliable operational
+                support without adding
+                unnecessary complexity.
 
-            </p>
+              </p>
 
-          </div>
-
-
-          <div
-            className={
-              "industry-challenges-grid"
-            }
-          >
-
-            {
-              industry.challenges.map(
-                (
-                  challenge,
-                  index
-                ) => (
-
-                  <article
-
-                    key={
-                      challenge
-                    }
-
-                    className={
-                      "industry-challenge-card"
-                    }
-
-                  >
-
-                    <span>
-
-                      {
-                        String(
-                          index + 1
-                        ).padStart(
-                          2,
-                          "0"
-                        )
-                      }
-
-                    </span>
+            </div>
 
 
-                    <h3>
+            <div
+              className={
+                "industry-challenges-grid"
+              }
+            >
 
-                      {
+              {
+
+                challenges.map(
+                  (
+                    challenge,
+                    index
+                  ) => (
+
+                    <motion.article
+
+                      key={
                         challenge
                       }
 
-                    </h3>
+                      className={
+                        "industry-challenge-card"
+                      }
 
-                  </article>
+                      initial={{
+                        opacity: 0,
+                        y: 25,
+                      }}
 
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+
+                      viewport={{
+                        once: true,
+                        amount: 0.2,
+                      }}
+
+                      transition={{
+                        duration: 0.5,
+                        delay:
+                          index * 0.07,
+                      }}
+
+                    >
+
+
+                      <span>
+
+                        {
+                          String(
+                            index + 1
+                          ).padStart(
+                            2,
+                            "0"
+                          )
+                        }
+
+                      </span>
+
+
+                      <h3>
+
+                        {
+                          challenge
+                        }
+
+                      </h3>
+
+
+                    </motion.article>
+
+                  )
                 )
-              )
-            }
+
+              }
+
+            </div>
+
 
           </div>
 
@@ -402,133 +514,341 @@ function IndustryDetail() {
         ============================== */}
 
         <section
-          className={
-            "industry-capabilities-section"
-          }
+          className="industry-capabilities-section"
         >
-
 
           <div
             className={
-              "industry-capabilities-content"
+              "industry-detail-container"
             }
           >
 
 
-            <span
+            <div
               className={
-                "section-eyebrow"
+                "industry-capabilities-layout"
               }
             >
 
-              OUR CAPABILITIES
 
-            </span>
+              <div
+                className={
+                  "industry-capabilities-intro"
+                }
+              >
 
+                <span
+                  className={
+                    "section-eyebrow"
+                  }
+                >
 
-            <h2>
+                  HOW NODEUS HELPS
 
-              The support your
-
-              <br />
-
-              <span>
-
-                business needs.
-
-              </span>
-
-            </h2>
+                </span>
 
 
-            <p>
+                <h2>
 
-              Combine the right people,
-              processes, and expertise to
-              build a support model that
-              fits your business.
+                  Capabilities designed
 
-            </p>
+                  <br />
+
+                  <span>
+
+                    around your business.
+
+                  </span>
+
+                </h2>
 
 
-            <Link
+                <p>
 
-              to="/solutions"
+                  We combine people,
+                  processes, technology,
+                  and performance
+                  management to build
+                  support that fits your
+                  operations.
 
-              className={
-                "industry-text-link"
-              }
+                </p>
 
-            >
 
-              Explore all solutions
+                <Link
 
-              <ArrowUpRight
-                size={17}
-              />
+                  to="/solutions"
 
-            </Link>
+                  className={
+                    "industry-text-link"
+                  }
+
+                >
+
+                  View all solutions
+
+                  <ArrowUpRight
+                    size={17}
+                  />
+
+                </Link>
+
+
+              </div>
+
+
+              <div
+                className={
+                  "industry-capabilities-list"
+                }
+              >
+
+                {
+
+                  capabilities.map(
+                    (
+                      capability,
+                      index
+                    ) => (
+
+                      <motion.div
+
+                        key={
+                          capability
+                        }
+
+                        className={
+                          "industry-capability-item"
+                        }
+
+                        initial={{
+                          opacity: 0,
+                          x: 25,
+                        }}
+
+                        whileInView={{
+                          opacity: 1,
+                          x: 0,
+                        }}
+
+                        viewport={{
+                          once: true,
+                        }}
+
+                        transition={{
+                          duration: 0.5,
+                          delay:
+                            index * 0.08,
+                        }}
+
+                      >
+
+
+                        <span>
+
+                          {
+                            String(
+                              index + 1
+                            ).padStart(
+                              2,
+                              "0"
+                            )
+                          }
+
+                        </span>
+
+
+                        <div>
+
+                          <h3>
+
+                            {
+                              capability
+                            }
+
+                          </h3>
+
+
+                          <p>
+
+                            Dedicated
+                            operational
+                            support built
+                            around your
+                            workflows and
+                            customer needs.
+
+                          </p>
+
+                        </div>
+
+
+                        <ArrowUpRight
+                          size={19}
+                        />
+
+
+                      </motion.div>
+
+                    )
+                  )
+
+                }
+
+              </div>
+
+
+            </div>
+
 
           </div>
 
+        </section>
+
+
+        {/* =============================
+            OPERATING MODEL
+        ============================== */}
+
+        <section
+          className="industry-workflow-section"
+        >
 
           <div
             className={
-              "industry-capabilities-list"
+              "industry-detail-container"
             }
           >
 
-            {
-              industry.capabilities.map(
-                (
-                  capability,
-                  index
-                ) => (
 
-                  <div
+            <div
+              className={
+                "industry-workflow-heading"
+              }
+            >
 
-                    key={
-                      capability
-                    }
+                <span
+                  className={
+                    "section-eyebrow"
+                  }
+                >
 
-                    className={
-                      "industry-capability-item"
-                    }
+                  HOW WE WORK
 
-                  >
-
-                    <span>
-
-                      {
-                        String(
-                          index + 1
-                        ).padStart(
-                          2,
-                          "0"
-                        )
-                      }
-
-                    </span>
+                </span>
 
 
-                    <h3>
+                <h2>
 
-                      {
-                        capability
-                      }
+                  A clear path from
 
-                    </h3>
+                  <span>
+
+                    challenge to scale.
+
+                  </span>
+
+                </h2>
+
+            </div>
 
 
-                    <Check
-                      size={18}
-                    />
+            <div
+              className={
+                "industry-workflow"
+              }
+            >
 
-                  </div>
 
-                )
-              )
-            }
+              <div>
+
+                <span>
+                  01
+                </span>
+
+                <h3>
+                  Discover
+                </h3>
+
+                <p>
+
+                  We learn about your
+                  customers, workflows,
+                  goals, and operational
+                  requirements.
+
+                </p>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  02
+                </span>
+
+                <h3>
+                  Build
+                </h3>
+
+                <p>
+
+                  We design the team,
+                  processes, tools, and
+                  reporting structure.
+
+                </p>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  03
+                </span>
+
+                <h3>
+                  Enable
+                </h3>
+
+                <p>
+
+                  Your dedicated team
+                  is trained and
+                  integrated into your
+                  operations.
+
+                </p>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  04
+                </span>
+
+                <h3>
+                  Scale
+                </h3>
+
+                <p>
+
+                  We continuously
+                  improve performance
+                  and expand capacity
+                  as your needs grow.
+
+                </p>
+
+              </div>
+
+
+            </div>
+
 
           </div>
 
@@ -540,80 +860,109 @@ function IndustryDetail() {
         ============================== */}
 
         <section
-          className={
-            "industry-outcomes-section"
-          }
+          className="industry-outcomes-section"
         >
-
-
-          <span
-            className={
-              "section-eyebrow"
-            }
-          >
-
-            WHAT YOU CAN EXPECT
-
-          </span>
-
-
-          <h2>
-
-            Better experiences.
-
-            <br />
-
-            <span>
-
-              Stronger operations.
-
-            </span>
-
-          </h2>
-
 
           <div
             className={
-              "industry-outcomes-grid"
+              "industry-detail-container"
             }
           >
 
-            {
-              industry.outcomes.map(
-                (
-                  outcome
-                ) => (
 
-                  <div
+            <div
+              className={
+                "industry-outcomes-panel"
+              }
+            >
 
-                    key={
+
+              <div>
+
+                <span
+                  className={
+                    "section-eyebrow"
+                  }
+                >
+
+                  WHAT YOU CAN EXPECT
+
+                </span>
+
+
+                <h2>
+
+                  More focus.
+
+                  <br />
+
+                  <span>
+
+                    Stronger operations.
+
+                  </span>
+
+                </h2>
+
+
+                <p>
+
+                  Nodeus helps your
+                  internal teams focus
+                  on strategic growth
+                  while dedicated
+                  operational teams
+                  manage critical
+                  day-to-day work.
+
+                </p>
+
+              </div>
+
+
+              <div
+                className={
+                  "industry-outcomes-grid"
+                }
+              >
+
+                {
+
+                  outcomes.map(
+                    (
                       outcome
-                    }
+                    ) => (
 
-                    className={
-                      "industry-outcome-card"
-                    }
+                      <div
+                        key={
+                          outcome
+                        }
+                      >
 
-                  >
+                        <Check
+                          size={18}
+                        />
 
-                    <Check
-                      size={19}
-                    />
+                        <span>
+
+                          {
+                            outcome
+                          }
+
+                        </span>
+
+                      </div>
+
+                    )
+                  )
+
+                }
+
+              </div>
 
 
-                    <p>
+            </div>
 
-                      {
-                        outcome
-                      }
-
-                    </p>
-
-                  </div>
-
-                )
-              )
-            }
 
           </div>
 
@@ -625,47 +974,61 @@ function IndustryDetail() {
         ============================== */}
 
         <section
-          className={
-            "industry-detail-cta"
-          }
+          className="industry-detail-cta"
         >
 
-
-          <div>
-
-            <span>
-
-              READY TO SCALE?
-
-            </span>
+          <div
+            className={
+              "industry-detail-container"
+            }
+          >
 
 
-            <h2>
+            <div>
 
-              Build a team around
+              <span>
 
-              <br />
+                READY TO BUILD?
 
-              your business.
+              </span>
 
-            </h2>
+
+              <h2>
+
+                Let’s build the right
+
+                <br />
+
+                <strong>
+
+                  team for your industry.
+
+                </strong>
+
+              </h2>
+
+            </div>
+
+
+            <Link
+
+              to="/contact"
+
+            >
+
+              Start a conversation
+
+              <ArrowUpRight
+                size={19}
+              />
+
+            </Link>
+
 
           </div>
 
-
-          <Link
-            to="/contact"
-          >
-
-            Let’s talk
-
-            <ArrowUpRight
-              size={18}
-            />
-
-          </Link>
-
         </section>
+
 
       </main>
 

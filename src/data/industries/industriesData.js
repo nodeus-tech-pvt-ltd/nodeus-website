@@ -21,34 +21,33 @@ const industries = [
 
     icon: Code2,
 
-    shortDescription:
-      "Scalable customer, technical, and operational support for growing software and technology businesses.",
+    heroTitle:
+      "Scale your SaaS operations without slowing innovation.",
 
     heroDescription:
-      "Nodeus helps SaaS and technology companies create reliable customer experiences, strengthen technical operations, and scale support without sacrificing quality.",
+      "Nodeus helps SaaS and technology companies build flexible customer support, technical operations, and back-office teams that grow alongside their products and customers.",
 
     challenges: [
-      "Managing growing customer volumes",
-      "Providing fast and accurate technical support",
+      "Managing growing customer support volumes",
+      "Delivering fast and accurate technical assistance",
       "Improving onboarding and product adoption",
-      "Supporting customers across multiple channels",
-      "Scaling operations without increasing internal complexity",
+      "Reducing customer churn and support friction",
     ],
 
     capabilities: [
-      "Customer Support",
-      "Technical Support",
-      "Customer Success",
-      "Customer Onboarding",
-      "Software Renewal Support",
-      "Data Operations",
+      "Customer Support Operations",
+      "Technical Support Teams",
+      "Customer Success Support",
+      "SaaS Onboarding Assistance",
+      "Customer Retention Operations",
+      "Data and Back-Office Support",
     ],
 
     outcomes: [
       "Faster customer response times",
-      "Improved product adoption",
       "More consistent customer experiences",
-      "Scalable support operations",
+      "Scalable support capacity",
+      "Greater focus on product innovation",
     ],
   },
 
@@ -60,34 +59,33 @@ const industries = [
 
     icon: ShoppingBag,
 
-    shortDescription:
-      "Responsive customer service and back-office operations for modern retail and e-commerce businesses.",
+    heroTitle:
+      "Deliver better shopping experiences at every stage.",
 
     heroDescription:
-      "From order questions and returns to customer engagement and operational support, Nodeus helps e-commerce and retail companies deliver reliable experiences at every stage of the customer journey.",
+      "Nodeus supports e-commerce and retail businesses with responsive customer service, order operations, customer retention, and scalable teams built around changing demand.",
 
     challenges: [
-      "Handling high volumes of customer inquiries",
-      "Managing order, delivery, and return questions",
-      "Maintaining consistent support across channels",
-      "Supporting seasonal demand spikes",
-      "Reducing operational workload",
+      "Managing high volumes of customer inquiries",
+      "Handling order, delivery, and return requests",
+      "Maintaining support quality during peak seasons",
+      "Creating consistent experiences across channels",
     ],
 
     capabilities: [
-      "Customer Support",
+      "E-commerce Customer Support",
       "Order Management Support",
-      "Customer Retention",
-      "Data Entry",
-      "Back-Office Operations",
-      "Live Chat Support",
+      "Returns and Refund Assistance",
+      "Customer Retention Operations",
+      "Marketplace Support",
+      "Product and Catalog Data Management",
     ],
 
     outcomes: [
-      "Faster issue resolution",
       "Improved customer satisfaction",
-      "More efficient order operations",
-      "Better support during peak periods",
+      "Faster order-related support",
+      "Scalable seasonal capacity",
+      "More efficient retail operations",
     ],
   },
 
@@ -99,34 +97,33 @@ const industries = [
 
     icon: Building2,
 
-    shortDescription:
-      "Reliable customer communication and operational support for real estate and property businesses.",
+    heroTitle:
+      "Keep properties, prospects, and operations moving.",
 
     heroDescription:
-      "Nodeus supports real estate companies, property managers, and related businesses with responsive communication, lead handling, administrative support, and scalable operations.",
+      "Nodeus helps real estate and property management businesses manage customer communication, lead coordination, administrative work, and day-to-day operational support.",
 
     challenges: [
-      "Managing property and tenant inquiries",
-      "Responding quickly to prospective customers",
-      "Coordinating appointments and follow-ups",
-      "Handling large volumes of property data",
-      "Keeping operational workflows organized",
+      "Responding quickly to property inquiries",
+      "Managing leads across multiple channels",
+      "Coordinating tenants, owners, and vendors",
+      "Keeping property information organized",
     ],
 
     capabilities: [
-      "Lead Qualification",
-      "Customer Support",
+      "Real Estate Lead Support",
+      "Tenant and Resident Support",
+      "Property Management Assistance",
       "Appointment Scheduling",
-      "Virtual Assistance",
-      "Data Entry",
-      "Back-Office Operations",
+      "Administrative Operations",
+      "Data Entry and CRM Management",
     ],
 
     outcomes: [
       "Faster lead response",
+      "Better tenant communication",
       "More organized operations",
-      "Improved customer communication",
-      "Reduced administrative workload",
+      "Greater focus on property growth",
     ],
   },
 
@@ -138,33 +135,32 @@ const industries = [
 
     icon: HeartPulse,
 
-    shortDescription:
-      "Patient-focused support and scalable operational capabilities for healthcare and health technology organizations.",
+    heroTitle:
+      "Reliable support for better healthcare experiences.",
 
     heroDescription:
-      "Nodeus helps healthcare and healthtech organizations improve communication, support administrative workflows, and build dependable service operations around patient and customer needs.",
+      "Nodeus provides scalable operational and customer support for healthcare and healthtech organizations while adapting to their workflows, service standards, and compliance requirements.",
 
     challenges: [
-      "Managing high volumes of patient inquiries",
-      "Coordinating appointments and follow-ups",
-      "Maintaining clear and consistent communication",
-      "Supporting complex operational workflows",
-      "Scaling service without reducing quality",
+      "Managing sensitive customer and patient communication",
+      "Handling appointment and service inquiries",
+      "Maintaining consistent support quality",
+      "Scaling operations without increasing complexity",
     ],
 
     capabilities: [
-      "Customer Support",
-      "Patient Communication Support",
+      "Healthcare Customer Support",
       "Appointment Coordination",
-      "Data Entry",
-      "Administrative Support",
-      "Technical Support",
+      "Patient Service Assistance",
+      "Healthcare Administrative Support",
+      "Healthtech Technical Support",
+      "Data and Back-Office Operations",
     ],
 
     outcomes: [
-      "More responsive communication",
+      "More responsive service experiences",
       "Improved operational efficiency",
-      "Better service consistency",
+      "Consistent customer communication",
       "Scalable support capacity",
     ],
   },
@@ -177,34 +173,33 @@ const industries = [
 
     icon: Landmark,
 
-    shortDescription:
-      "Customer and operational support designed for fast-moving financial technology and service businesses.",
+    heroTitle:
+      "Build trusted customer experiences at scale.",
 
     heroDescription:
-      "Nodeus helps fintech and financial service organizations provide responsive customer support, strengthen operational workflows, and manage growing service demands with dedicated teams.",
+      "Nodeus supports fintech and financial service businesses with customer operations, technical assistance, data processes, and scalable teams designed around reliability and trust.",
 
     challenges: [
-      "Managing sensitive and time-critical inquiries",
-      "Supporting customers across multiple channels",
-      "Maintaining accurate operational processes",
-      "Handling growing service volumes",
-      "Providing consistent customer experiences",
+      "Managing time-sensitive customer requests",
+      "Maintaining accurate and consistent communication",
+      "Supporting complex financial products",
+      "Scaling service operations while protecting quality",
     ],
 
     capabilities: [
-      "Customer Support",
-      "Technical Support",
-      "Customer Success",
-      "Data Processing",
+      "Financial Customer Support",
+      "Fintech Technical Support",
+      "Account and Service Assistance",
+      "Customer Retention Operations",
+      "Data Processing Support",
       "Back-Office Operations",
-      "Customer Retention",
     ],
 
     outcomes: [
-      "Faster customer assistance",
-      "More consistent service delivery",
-      "Improved operational accuracy",
-      "Scalable support operations",
+      "More reliable customer support",
+      "Faster issue resolution",
+      "Consistent service quality",
+      "Improved operational scalability",
     ],
   },
 
@@ -216,34 +211,33 @@ const industries = [
 
     icon: Car,
 
-    shortDescription:
-      "Responsive support and operational coordination for automotive, transportation, and logistics businesses.",
+    heroTitle:
+      "Keep customers, vehicles, and operations connected.",
 
     heroDescription:
-      "Nodeus helps automotive and logistics organizations manage customer communication, service requests, operational data, and growing support requirements.",
+      "Nodeus helps automotive and logistics companies manage customer communication, service coordination, operational workflows, and support across fast-moving environments.",
 
     challenges: [
-      "Managing service and delivery inquiries",
-      "Coordinating multiple operational workflows",
-      "Supporting customers in real time",
-      "Handling large volumes of information",
-      "Maintaining service consistency across regions",
+      "Managing high volumes of service requests",
+      "Coordinating deliveries and operational updates",
+      "Providing accurate status information",
+      "Supporting customers across multiple channels",
     ],
 
     capabilities: [
-      "Customer Support",
+      "Customer Service Operations",
+      "Delivery and Shipment Support",
+      "Service Appointment Coordination",
       "Technical Support",
-      "Dispatch and Coordination Support",
-      "Data Entry",
-      "Back-Office Operations",
-      "Customer Retention",
+      "Data and Administrative Operations",
+      "Customer Retention Support",
     ],
 
     outcomes: [
-      "Improved response times",
-      "More organized workflows",
-      "Reduced operational workload",
-      "Better customer communication",
+      "Faster customer updates",
+      "Better service coordination",
+      "More efficient operations",
+      "Improved customer confidence",
     ],
   },
 
@@ -255,34 +249,33 @@ const industries = [
 
     icon: Gamepad2,
 
-    shortDescription:
-      "Always-on customer and community support for gaming and entertainment businesses.",
+    heroTitle:
+      "Create better player and audience experiences.",
 
     heroDescription:
-      "Nodeus helps gaming and entertainment companies provide responsive player support, manage customer interactions, and scale operations as communities grow.",
+      "Nodeus helps gaming and entertainment companies deliver responsive community support, player assistance, content operations, and scalable customer experiences.",
 
     challenges: [
       "Supporting large and active user communities",
-      "Managing high volumes of player inquiries",
-      "Providing support across multiple platforms",
-      "Maintaining fast response times",
-      "Supporting launches and demand spikes",
+      "Managing technical and account-related issues",
+      "Maintaining fast response times during launches",
+      "Delivering consistent experiences across regions",
     ],
 
     capabilities: [
-      "Player Support",
-      "Customer Support",
-      "Technical Support",
-      "Community Support",
+      "Player and Community Support",
+      "Technical Assistance",
+      "Account and Subscription Support",
       "Content Moderation Support",
-      "Data Operations",
+      "Customer Retention Operations",
+      "Data and Back-Office Services",
     ],
 
     outcomes: [
-      "Faster player assistance",
-      "Improved community experiences",
-      "Consistent multi-channel support",
-      "Scalable service capacity",
+      "Better player experiences",
+      "Faster issue resolution",
+      "Scalable launch support",
+      "Stronger customer engagement",
     ],
   },
 
@@ -294,34 +287,33 @@ const industries = [
 
     icon: Plane,
 
-    shortDescription:
-      "Customer-focused support for travel, tourism, accommodation, and hospitality businesses.",
+    heroTitle:
+      "Support every journey from booking to return.",
 
     heroDescription:
-      "Nodeus helps travel and hospitality organizations provide responsive guest support, manage booking-related communication, and deliver dependable service throughout the customer journey.",
+      "Nodeus helps travel and hospitality businesses deliver responsive guest support, booking assistance, service coordination, and customer care across every stage of the journey.",
 
     challenges: [
       "Managing booking and reservation inquiries",
-      "Supporting customers across time zones",
-      "Handling changes and service requests",
-      "Maintaining consistent guest communication",
-      "Managing seasonal demand increases",
+      "Handling time-sensitive travel changes",
+      "Supporting customers across different channels",
+      "Maintaining service quality during peak demand",
     ],
 
     capabilities: [
-      "Customer Support",
-      "Reservation Support",
-      "Booking Assistance",
-      "Customer Retention",
-      "Live Chat Support",
-      "Back-Office Operations",
+      "Travel Customer Support",
+      "Booking and Reservation Assistance",
+      "Guest Service Operations",
+      "Travel Change and Cancellation Support",
+      "Customer Retention Services",
+      "Back-Office Administration",
     ],
 
     outcomes: [
-      "Faster guest support",
-      "Improved customer experiences",
-      "Better service consistency",
+      "More responsive guest support",
+      "Improved booking experiences",
       "Scalable seasonal operations",
+      "Higher customer satisfaction",
     ],
   },
 
@@ -333,33 +325,32 @@ const industries = [
 
     icon: GraduationCap,
 
-    shortDescription:
-      "Scalable learner, customer, and operational support for education and technology-driven learning organizations.",
+    heroTitle:
+      "Support better learning experiences at scale.",
 
     heroDescription:
-      "Nodeus helps education providers and EdTech companies support learners, improve platform experiences, and manage operational workloads with dedicated teams.",
+      "Nodeus helps education and EdTech organizations manage learner support, platform assistance, administrative operations, and scalable service teams.",
 
     challenges: [
-      "Supporting students and learners at scale",
-      "Managing enrollment and onboarding questions",
-      "Providing technical platform assistance",
-      "Handling administrative workloads",
-      "Maintaining consistent learner communication",
+      "Supporting learners across multiple channels",
+      "Managing enrollment and account inquiries",
+      "Providing reliable platform assistance",
+      "Scaling support during enrollment periods",
     ],
 
     capabilities: [
-      "Learner Support",
-      "Customer Support",
-      "Technical Support",
-      "Enrollment Assistance",
-      "Data Entry",
-      "Back-Office Operations",
+      "Student and Learner Support",
+      "EdTech Technical Assistance",
+      "Enrollment Support",
+      "Customer Success Operations",
+      "Education Administration",
+      "Data and Back-Office Support",
     ],
 
     outcomes: [
-      "More responsive learner support",
-      "Improved onboarding experiences",
-      "Reduced administrative workload",
+      "Better learner experiences",
+      "Faster support resolution",
+      "More efficient administration",
       "Scalable education operations",
     ],
   },
@@ -372,34 +363,33 @@ const industries = [
 
     icon: Newspaper,
 
-    shortDescription:
-      "Scalable user support and operational services for media companies and digital platforms.",
+    heroTitle:
+      "Build safer, stronger, and more responsive communities.",
 
     heroDescription:
-      "Nodeus helps media businesses and social platforms manage user interactions, support growing communities, and maintain dependable operational processes.",
+      "Nodeus helps media companies and social platforms manage user support, community operations, content workflows, and scalable digital experiences.",
 
     challenges: [
-      "Supporting large and diverse user bases",
-      "Managing high volumes of user requests",
-      "Maintaining consistent communication",
-      "Supporting fast-moving digital platforms",
-      "Scaling operations as audiences grow",
+      "Managing large volumes of user communication",
+      "Supporting active digital communities",
+      "Handling account and platform issues",
+      "Maintaining consistent service across channels",
     ],
 
     capabilities: [
-      "User Support",
-      "Community Support",
+      "User and Creator Support",
+      "Community Operations",
+      "Platform Technical Support",
       "Content Moderation Support",
-      "Technical Support",
-      "Data Operations",
-      "Customer Retention",
+      "Account and Subscription Assistance",
+      "Data and Back-Office Operations",
     ],
 
     outcomes: [
-      "Improved user experiences",
-      "Faster response times",
-      "More scalable operations",
-      "Consistent platform support",
+      "More responsive user support",
+      "Stronger community experiences",
+      "Scalable platform operations",
+      "Improved service consistency",
     ],
   },
 
