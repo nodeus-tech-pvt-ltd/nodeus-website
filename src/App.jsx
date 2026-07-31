@@ -18,6 +18,7 @@ import SolutionCategory from "./pages/solutions/SolutionCategory";
 import Industries from "./pages/industries/Industries";
 import ServiceDetail from "./pages/Services/ServiceDetail";
 import IndustryDetail from "./pages/industries/IndustryDetail";
+import Contact from "./pages/contact/Contact";
 
 /* =========================
    LAYOUT
@@ -84,6 +85,11 @@ function AnimatedRoutes() {
         <Route
           path="/services/:service"
           element={<ServiceDetail />}
+        />
+
+        <Route
+          path="/contact"
+          element={<Contact />}
         />
       </Routes>
     </AnimatePresence>
