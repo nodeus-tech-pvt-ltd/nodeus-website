@@ -11,7 +11,11 @@ import {
 
 import {
   ArrowUpRight,
+  BookOpen,
+  BriefcaseBusiness,
   ChevronDown,
+  FileText,
+  Megaphone,
   Menu,
   X,
 } from "lucide-react";
@@ -772,18 +776,374 @@ function Navbar() {
         </div>
 
 
-        {/* RESOURCES */}
+        {/* ===============================
+          RESOURCES
+      ================================ */}
 
-        <Link
-          to="/insights"
-          onClick={
-            closeMenu
-          }
+      <div
+        className="nav-dropdown-wrapper"
+        onMouseEnter={() =>
+          openMenu("resources")
+        }
+        onMouseLeave={
+          closeMenuWithDelay
+        }
+      >
+
+        <div
+          className="nav-dropdown-heading"
         >
 
-          Resources
+          <Link
+            to="/resources"
+            className="nav-main-link"
+            onClick={
+              closeMenu
+            }
+          >
 
-        </Link>
+            Resources
+
+          </Link>
+
+
+          <button
+            type="button"
+
+            className={`nav-dropdown-trigger ${
+              activeMenu ===
+              "resources"
+                ? "active"
+                : ""
+            }`}
+
+            onClick={() =>
+              toggleMenu(
+                "resources"
+              )
+            }
+
+            aria-label={
+              activeMenu ===
+              "resources"
+
+                ? "Close resources menu"
+
+                : "Open resources menu"
+            }
+
+            aria-expanded={
+              activeMenu ===
+              "resources"
+            }
+          >
+
+            <ChevronDown
+              size={16}
+            />
+
+          </button>
+
+        </div>
+
+
+        <div
+          className={`mega-menu resources-menu ${
+            activeMenu ===
+            "resources"
+
+              ? "show"
+
+              : ""
+          }`}
+        >
+
+
+          {/* HEADER */}
+
+          <div
+            className="mega-menu-header"
+          >
+
+            <div>
+
+              <span
+                className="mega-eyebrow"
+              >
+
+                KNOWLEDGE & INSIGHTS
+
+              </span>
+
+
+              <h2>
+
+                Practical ideas
+
+                <br />
+
+                <span>
+
+                  for growing teams.
+
+                </span>
+
+              </h2>
+
+            </div>
+
+
+            <p>
+
+              Explore insights, real-world
+              examples, practical guides,
+              and updates designed to help
+              businesses build stronger
+              teams and scalable operations.
+
+            </p>
+
+          </div>
+
+
+          {/* RESOURCE CARDS */}
+
+          <div
+            className="resources-grid"
+          >
+
+
+            {/* INSIGHTS */}
+
+            <Link
+              to="/resources/insights"
+              className="resource-card"
+              onClick={
+                closeMenu
+              }
+            >
+
+              <div
+                className="resource-card-icon"
+              >
+
+                <BookOpen
+                  size={22}
+                />
+
+              </div>
+
+
+              <div>
+
+                <h3>
+
+                  Insights & Blogs
+
+                </h3>
+
+
+                <p>
+
+                  Articles about
+                  outsourcing, customer
+                  experience, technology,
+                  AI, and business growth.
+
+                </p>
+
+              </div>
+
+
+              <ArrowUpRight
+                size={18}
+              />
+
+            </Link>
+
+
+            {/* CASE STUDIES */}
+
+            <Link
+              to="/resources/case-studies"
+              className="resource-card"
+              onClick={
+                closeMenu
+              }
+            >
+
+              <div
+                className="resource-card-icon"
+              >
+
+                <BriefcaseBusiness
+                  size={22}
+                />
+
+              </div>
+
+
+              <div>
+
+                <h3>
+
+                  Case Studies
+
+                </h3>
+
+
+                <p>
+
+                  See how teams,
+                  processes, and
+                  operational support
+                  create measurable value.
+
+                </p>
+
+              </div>
+
+
+              <ArrowUpRight
+                size={18}
+              />
+
+            </Link>
+
+
+            {/* GUIDES
+
+            <Link
+              to="/resources/guides"
+              className="resource-card"
+              onClick={
+                closeMenu
+              }
+            >
+
+              <div
+                className="resource-card-icon"
+              >
+
+                <FileText
+                  size={22}
+                />
+
+              </div>
+
+
+              <div>
+
+                <h3>
+
+                  Guides & Playbooks
+
+                </h3>
+
+
+                <p>
+
+                  Practical frameworks
+                  and step-by-step
+                  resources for building
+                  scalable capabilities.
+
+                </p>
+
+              </div>
+
+
+              <ArrowUpRight
+                size={18}
+              />
+
+            </Link> */}
+
+
+            {/* COMPANY UPDATES
+
+            <Link
+              to="/resources/company-updates"
+              className="resource-card"
+              onClick={
+                closeMenu
+              }
+            >
+
+              <div
+                className="resource-card-icon"
+              >
+
+                <Megaphone
+                  size={22}
+                />
+
+              </div>
+
+
+              <div>
+
+                <h3>
+
+                  Company Updates
+
+                </h3>
+
+
+                <p>
+
+                  News, announcements,
+                  new capabilities, and
+                  updates from Nodeus.
+
+                </p>
+
+              </div>
+
+
+              <ArrowUpRight
+                size={18}
+              />
+
+            </Link> */}
+
+          </div>
+
+
+          {/* BOTTOM */}
+
+          <div
+            className="mega-menu-bottom"
+          >
+
+            <span>
+
+              Looking for a specific
+              topic?
+
+            </span>
+
+
+            <Link
+              to="/contact"
+              onClick={
+                closeMenu
+              }
+            >
+
+              Talk to our team
+
+              <ArrowUpRight
+                size={17}
+              />
+
+            </Link>
+
+          </div>
+
+        </div>
+
+      </div>
 
 
         {/* ABOUT */}

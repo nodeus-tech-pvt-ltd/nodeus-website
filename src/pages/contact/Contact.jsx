@@ -16,13 +16,22 @@ import AnimatedPage from "../../components/shared/AnimatedPage";
 import "../../styles/pages/contact.css";
 
 
+/* =================================
+   API URL
+================================== */
+
+const API_URL =
+  import.meta.env.VITE_API_URL
+  || "http://localhost:5000";
+
+
 function Contact() {
 
   /* =================================
-     FORM STATE
+     INITIAL FORM DATA
   ================================== */
 
-  const [formData, setFormData] = useState({
+  const initialFormData = {
 
     fullName: "",
 
@@ -34,12 +43,25 @@ function Contact() {
 
     message: "",
 
-  });
+  };
+
+
+  /* =================================
+     FORM STATE
+  ================================== */
+
+  const [formData, setFormData] = useState(
+    initialFormData
+  );
 
 
   const [formStatus, setFormStatus] = useState(
     "idle"
   );
+
+
+  const [formMessage, setFormMessage] =
+    useState("");
 
 
   /* =================================
@@ -66,6 +88,28 @@ function Contact() {
 
     });
 
+
+    /*
+      Clear an old success or error
+      message when the user starts
+      editing the form again.
+    */
+
+    if (
+      formStatus !== "sending"
+    ) {
+
+      setFormStatus(
+        "idle"
+      );
+
+
+      setFormMessage(
+        ""
+      );
+
+    }
+
   };
 
 
@@ -75,97 +119,144 @@ function Contact() {
 
   const handleSubmit = async (event) => {
 
-  event.preventDefault();
+    event.preventDefault();
 
 
-  setFormStatus(
-    "sending"
-  );
-
-
-  try {
-
-    const response = await fetch(
-
-      "http://localhost:5000/api/contact",
-
-      {
-
-        method: "POST",
-
-        headers: {
-
-          "Content-Type":
-            "application/json",
-
-        },
-
-        body: JSON.stringify(
-          formData
-        ),
-
-      }
-
-    );
-
-
-    const data =
-      await response.json();
-
+    /*
+      Prevent duplicate requests.
+    */
 
     if (
-      !response.ok
+      formStatus === "sending"
     ) {
 
-      throw new Error(
-
-        data.message
-
-        ||
-
-        "Unable to send your inquiry."
-
-      );
+      return;
 
     }
 
 
     setFormStatus(
-      "success"
+      "sending"
     );
 
 
-    setFormData({
-
-      fullName: "",
-
-      email: "",
-
-      company: "",
-
-      service: "",
-
-      message: "",
-
-    });
-
-  }
-
-  catch (error) {
-
-    console.error(
-      "Contact form error:",
-      error
+    setFormMessage(
+      ""
     );
 
 
-    setFormStatus(
-      "error"
-    );
+    try {
 
-  }
+      const response = await fetch(
 
-};
+        `${API_URL}/api/contact`,
+
+        {
+
+          method: "POST",
+
+          headers: {
+
+            "Content-Type":
+              "application/json",
+
+          },
+
+          body: JSON.stringify(
+            formData
+          ),
+
+        }
+
+      );
+
+
+      /*
+        Read the response safely.
+      */
+
+      const data =
+        await response.json();
+
+
+      if (
+        !response.ok
+      ) {
+
+        throw new Error(
+
+          data.message
+
+          ||
+
+          "Unable to send your inquiry. Please try again."
+
+        );
+
+      }
+
+
+      setFormStatus(
+        "success"
+      );
+
+
+      setFormMessage(
+
+        data.message
+
+        ||
+
+        "Thank you! Your inquiry has been received. We’ll be in touch soon."
+
+      );
+
+
+      /*
+        Clear the form only after
+        the request succeeds.
+      */
+
+      setFormData(
+        initialFormData
+      );
+
+    }
+
+    catch (error) {
+
+      console.error(
+
+        "Contact form error:",
+
+        error
+
+      );
+
+
+      setFormStatus(
+        "error"
+      );
+
+
+      setFormMessage(
+
+        error.message
+
+        ||
+
+        "We couldn’t send your inquiry. Please try again."
+
+      );
+
+    }
+
+  };
+
+
+  const isSending =
+
+    formStatus === "sending";
 
 
   return (
@@ -523,6 +614,10 @@ function Contact() {
                       "Your full name"
                     }
 
+                    disabled={
+                      isSending
+                    }
+
                     required
 
                   />
@@ -563,6 +658,10 @@ function Contact() {
 
                     placeholder={
                       "you@company.com"
+                    }
+
+                    disabled={
+                      isSending
                     }
 
                     required
@@ -607,6 +706,10 @@ function Contact() {
                       "Company name"
                     }
 
+                    disabled={
+                      isSending
+                    }
+
                   />
 
                 </div>
@@ -640,6 +743,10 @@ function Contact() {
 
                     onChange={
                       handleChange
+                    }
+
+                    disabled={
+                      isSending
                     }
 
                     required
@@ -774,6 +881,10 @@ function Contact() {
                     "What are you looking to build, improve, or scale?"
                   }
 
+                  disabled={
+                    isSending
+                  }
+
                   required
 
                 />
@@ -787,19 +898,21 @@ function Contact() {
 
                 type="submit"
 
-                className={
-                  "contact-submit-button"
-                }
+                className="contact-submit-button"
 
                 disabled={
-                  formStatus === "sending"
+                  isSending
+                }
+
+                aria-busy={
+                  isSending
                 }
 
               >
 
                 {
 
-                  formStatus === "sending"
+                  isSending
 
                     ? "Sending inquiry..."
 
@@ -815,62 +928,73 @@ function Contact() {
               </button>
 
 
-              {/* SUCCESS MESSAGE */}
+              {/* FORM STATUS */}
 
-              {
+              <div
+                className="contact-form-status"
+                aria-live="polite"
+              >
 
-                formStatus === "success"
+                {
 
-                &&
+                  formStatus === "success"
 
-                (
+                  &&
 
-                  <div
-                    className="contact-form-success"
-                    role="status"
-                  >
-
-                    <CheckCircle2
-                      size={18}
-                    />
-
-                    <span>
-
-                      Thank you! Your inquiry
-                      has been received.
-                      We&apos;ll be in touch soon.
-
-                    </span>
-
-                  </div>
-
-                )
-
-              }
-
-              {/* ERROR MESSAGE */}
-
-
-              {
-                formStatus === "error"
-
-                &&
-
-                (
+                  (
 
                     <div
-                    className="contact-form-error"
-                    role="alert"
+                      className="contact-form-success"
+                      role="status"
                     >
 
-                    We couldn&apos;t send your
-                    inquiry. Please try again.
+                      <CheckCircle2
+                        size={18}
+                      />
+
+                      <span>
+
+                        {
+                          formMessage
+                        }
+
+                      </span>
 
                     </div>
 
-                )
+                  )
 
-              }
+                }
+
+
+                {
+
+                  formStatus === "error"
+
+                  &&
+
+                  (
+
+                    <div
+                      className="contact-form-error"
+                      role="alert"
+                    >
+
+                      <span>
+
+                        {
+                          formMessage
+                        }
+
+                      </span>
+
+                    </div>
+
+                  )
+
+                }
+
+              </div>
 
 
               {/* FORM NOTE */}
@@ -1092,11 +1216,11 @@ function Contact() {
 
                 <a
                   href={
-                    "mailto:hello@nodeus.tech"
+                    "mailto:info@nodeus.tech"
                   }
                 >
 
-                  hello@nodeus.tech
+                  info@nodeus.tech
 
                   <ArrowUpRight
                     size={16}

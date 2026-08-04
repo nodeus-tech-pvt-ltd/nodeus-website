@@ -19,6 +19,12 @@ import Industries from "./pages/industries/Industries";
 import ServiceDetail from "./pages/Services/ServiceDetail";
 import IndustryDetail from "./pages/industries/IndustryDetail";
 import Contact from "./pages/contact/Contact";
+import About from "./pages/about/About";
+import Insights from "./pages/resources/Insights";
+import InsightDetail from "./pages/resources/InsightDetail";
+import CaseStudies from "./pages/resources/CaseStudies";
+import CaseStudyDetail from "./pages/resources/CaseStudyDetail";
+import Resources from "./pages/resources/Resources";
 
 /* =========================
    LAYOUT
@@ -90,6 +96,36 @@ function AnimatedRoutes() {
         <Route
           path="/contact"
           element={<Contact />}
+        />
+
+        <Route
+          path="/about"
+          element={<About />}
+        />
+
+        <Route
+          path="/resources/insights"
+          element={<Insights />}
+        />
+
+        <Route
+          path="/resources/insights/:slug"
+          element={<InsightDetail />}
+        />
+
+        <Route
+          path="/resources/case-studies"
+          element={<CaseStudies />}
+        />
+
+        <Route
+          path="/resources/case-studies/:slug"
+          element={<CaseStudyDetail />}
+        />
+
+        <Route
+          path="/resources"
+          element={<Resources />}
         />
       </Routes>
     </AnimatePresence>
