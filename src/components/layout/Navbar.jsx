@@ -15,8 +15,10 @@ import {
   BriefcaseBusiness,
   ChevronDown,
   FileText,
+  Lightbulb,
   Megaphone,
   Menu,
+  Users,
   X,
 } from "lucide-react";
 
@@ -1146,18 +1148,348 @@ function Navbar() {
       </div>
 
 
-        {/* ABOUT */}
+        {/* ===============================
+                ABOUT
+            ================================ */}
 
-        <Link
-          to="/about"
-          onClick={
-            closeMenu
-          }
-        >
+            <div
+              className="nav-dropdown-wrapper about-dropdown-wrapper"
+              onMouseEnter={() =>
+                openMenu("about")
+              }
+              onMouseLeave={
+                closeMenuWithDelay
+              }
+            >
 
-          About
+              <div
+                className="nav-dropdown-heading"
+              >
 
-        </Link>
+                {/* ABOUT IS NOT CLICKABLE */}
+
+                <button
+                  type="button"
+
+                  className={`nav-main-link nav-about-trigger ${
+                    activeMenu === "about"
+                      ? "active"
+                      : ""
+                  }`}
+
+                  onClick={() =>
+                    toggleMenu("about")
+                  }
+
+                  aria-expanded={
+                    activeMenu === "about"
+                  }
+                >
+
+                  About
+
+                  <ChevronDown
+                    size={16}
+                  />
+
+                </button>
+
+              </div>
+
+
+              {/* ABOUT DROPDOWN */}
+
+              <div
+                className={`mega-menu about-menu ${
+                  activeMenu === "about"
+                    ? "show"
+                    : ""
+                }`}
+              >
+
+
+                {/* HEADER */}
+
+                <div
+                  className="mega-menu-header"
+                >
+
+                  <div>
+
+                    <span
+                      className="mega-eyebrow"
+                    >
+
+                      ABOUT NODEUS
+
+                    </span>
+
+
+                    <h2>
+
+                      The people and
+
+                      <br />
+
+                      <span>
+
+                        purpose behind Nodeus.
+
+                      </span>
+
+                    </h2>
+
+                  </div>
+
+
+                  <p>
+
+                    Learn about our company,
+                    our approach, the people
+                    behind our capabilities,
+                    and the values that guide
+                    how we work.
+
+                  </p>
+
+                </div>
+
+
+                {/* ABOUT LINKS */}
+
+                <div
+                  className="about-menu-grid"
+                >
+
+
+                  {/* OUR COMPANY */}
+
+                  <Link
+                    to="/about/company"
+                    className="about-menu-card"
+                    onClick={
+                      closeMenu
+                    }
+                  >
+
+                    <div
+                      className="about-menu-icon"
+                    >
+
+                      <BriefcaseBusiness
+                        size={22}
+                      />
+
+                    </div>
+
+
+                    <div>
+
+                      <h3>
+
+                        Our Company
+
+                      </h3>
+
+
+                      <p>
+
+                        Learn about Nodeus,
+                        our mission, and the
+                        capabilities we build.
+
+                      </p>
+
+                    </div>
+
+
+                    <ArrowUpRight
+                      size={18}
+                    />
+
+                  </Link>
+
+
+                  {/* OUR TEAM */}
+
+                  <Link
+                    to="/about/team"
+                    className="about-menu-card"
+                    onClick={
+                      closeMenu
+                    }
+                  >
+
+                    <div
+                      className="about-menu-icon"
+                    >
+
+                      <Users
+                        size={22}
+                      />
+
+                    </div>
+
+
+                    <div>
+
+                      <h3>
+
+                        Our Team
+
+                      </h3>
+
+
+                      <p>
+
+                        Meet the people and
+                        leadership behind
+                        Nodeus.
+
+                      </p>
+
+                    </div>
+
+
+                    <ArrowUpRight
+                      size={18}
+                    />
+
+                  </Link>
+
+
+                  {/* HOW WE WORK */}
+
+                  <Link
+                    to="/about/how-we-work"
+                    className="about-menu-card"
+                    onClick={
+                      closeMenu
+                    }
+                  >
+
+                    <div
+                      className="about-menu-icon"
+                    >
+
+                      <Lightbulb
+                        size={22}
+                      />
+
+                    </div>
+
+
+                    <div>
+
+                      <h3>
+
+                        How We Work
+
+                      </h3>
+
+
+                      <p>
+
+                        Explore our approach
+                        to building reliable
+                        and scalable teams.
+
+                      </p>
+
+                    </div>
+
+
+                    <ArrowUpRight
+                      size={18}
+                    />
+
+                  </Link>
+
+
+                  {/* CAREERS */}
+
+                  <Link
+                    to="/careers"
+                    className="about-menu-card"
+                    onClick={
+                      closeMenu
+                    }
+                  >
+
+                    <div
+                      className="about-menu-icon"
+                    >
+
+                      <BriefcaseBusiness
+                        size={22}
+                      />
+
+                    </div>
+
+
+                    <div>
+
+                      <h3>
+
+                        Careers
+
+                      </h3>
+
+
+                      <p>
+
+                        Explore opportunities
+                        to grow and build
+                        with Nodeus.
+
+                      </p>
+
+                    </div>
+
+
+                    <ArrowUpRight
+                      size={18}
+                    />
+
+                  </Link>
+
+
+                </div>
+
+
+                {/* BOTTOM */}
+
+                <div
+                  className="mega-menu-bottom"
+                >
+
+                  <span>
+
+                    Want to work with Nodeus?
+
+                  </span>
+
+
+                  <Link
+                    to="/contact"
+                    onClick={
+                      closeMenu
+                    }
+                  >
+
+                    Start a conversation
+
+                    <ArrowUpRight
+                      size={17}
+                    />
+
+                  </Link>
+
+                </div>
+
+              </div>
+
+            </div>
 
 
         {/* CONTACT */}

@@ -2353,3 +2353,1198 @@
   }
 
 }
+
+
+/* =========================================
+   ABOUT DROPDOWN
+========================================= */
+
+.about-dropdown-wrapper {
+  position: static;
+}
+
+
+/* =========================================
+   ABOUT NAVIGATION TRIGGER
+========================================= */
+
+.nav-about-trigger {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding:
+    10px
+    12px !important;
+
+  border:
+    none;
+
+  border-radius:
+    10px;
+
+  background:
+    transparent;
+
+  color:
+    #b8c2d1;
+
+  font-family:
+    inherit;
+
+  font-size:
+    0.84rem;
+
+  font-weight:
+    500;
+
+  line-height:
+    1;
+
+  cursor:
+    pointer;
+
+  white-space:
+    nowrap;
+
+  transition:
+    color
+    0.25s ease,
+    background
+    0.25s ease;
+}
+
+
+.nav-about-trigger:hover,
+.nav-about-trigger.active {
+  color:
+    white;
+
+  background:
+    rgba(
+      96,
+      165,
+      250,
+      0.1
+    );
+}
+
+
+.nav-about-trigger svg {
+  color:
+    #94a3b8;
+
+  transition:
+    color
+    0.25s ease,
+    transform
+    0.25s ease;
+}
+
+
+.nav-about-trigger:hover svg,
+.nav-about-trigger.active svg {
+  color:
+    #dbeafe;
+}
+
+
+.nav-about-trigger.active svg {
+  transform:
+    rotate(
+      180deg
+    );
+}
+
+
+/* =========================================
+   ABOUT MEGA MENU
+========================================= */
+
+.about-menu {
+  position:
+    absolute;
+
+  top:
+    calc(
+      100% + 14px
+    );
+
+  left:
+    0;
+
+  right:
+    0;
+
+  width:
+    auto;
+
+  max-height:
+    calc(
+      100vh - 115px
+    );
+
+  margin:
+    0;
+
+  padding:
+    34px;
+
+  overflow-y:
+    auto;
+
+  box-sizing:
+    border-box;
+
+  border:
+    1px solid
+    rgba(
+      96,
+      165,
+      250,
+      0.2
+    );
+
+  border-radius:
+    22px;
+
+  background:
+    radial-gradient(
+      circle
+      at
+      top right,
+      rgba(
+        37,
+        99,
+        235,
+        0.16
+      ),
+      transparent
+      38%
+    ),
+    #0d1424;
+
+  box-shadow:
+    0 35px 85px
+    rgba(
+      0,
+      0,
+      0,
+      0.48
+    ),
+    inset
+    0 1px 0
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
+  opacity:
+    0;
+
+  visibility:
+    hidden;
+
+  pointer-events:
+    none;
+
+  transform:
+    translateY(
+      -10px
+    )
+    scale(
+      0.985
+    );
+
+  transform-origin:
+    top center;
+
+  transition:
+    opacity
+    0.22s ease,
+    visibility
+    0.22s ease,
+    transform
+    0.22s ease;
+
+  z-index:
+    1100;
+}
+
+
+.about-menu.show {
+  opacity:
+    1;
+
+  visibility:
+    visible;
+
+  pointer-events:
+    auto;
+
+  transform:
+    translateY(
+      0
+    )
+    scale(
+      1
+    );
+}
+
+
+/* =========================================
+   ABOUT HEADER
+========================================= */
+
+.about-menu
+.mega-menu-header {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    minmax(
+      280px,
+      0.55fr
+    );
+
+  align-items:
+    end;
+
+  gap:
+    70px;
+
+  margin-bottom:
+    30px;
+
+  padding-bottom:
+    28px;
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+
+.about-menu
+.mega-menu-header > div {
+  min-width:
+    0;
+}
+
+
+.about-menu
+.mega-eyebrow {
+  display:
+    block;
+
+  margin-bottom:
+    13px;
+
+  color:
+    #60a5fa;
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.17em;
+}
+
+
+.about-menu
+.mega-menu-header h2 {
+  max-width:
+    680px;
+
+  margin:
+    0;
+
+  color:
+    white;
+
+  font-size:
+    clamp(
+      2rem,
+      3.3vw,
+      3.3rem
+    );
+
+  font-weight:
+    600;
+
+  line-height:
+    0.96;
+
+  letter-spacing:
+    -0.06em;
+}
+
+
+.about-menu
+.mega-menu-header h2 span {
+  color:
+    #60a5fa;
+}
+
+
+.about-menu
+.mega-menu-header > p {
+  max-width:
+    400px;
+
+  margin:
+    0;
+
+  color:
+    #94a3b8;
+
+  font-size:
+    0.92rem;
+
+  line-height:
+    1.75;
+}
+
+
+/* =========================================
+   ABOUT CARDS GRID
+========================================= */
+
+.about-menu-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    14px;
+
+  margin:
+    0;
+
+  padding:
+    0;
+}
+
+
+/* =========================================
+   ABOUT CARD
+========================================= */
+
+.about-menu-card {
+  position:
+    relative;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    50px
+    minmax(
+      0,
+      1fr
+    )
+    20px;
+
+  align-items:
+    center;
+
+  gap:
+    17px;
+
+  min-height:
+    132px;
+
+  padding:
+    22px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.075
+    );
+
+  border-radius:
+    17px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  color:
+    inherit;
+
+  text-decoration:
+    none;
+
+  transition:
+    transform
+    0.28s ease,
+    border-color
+    0.28s ease,
+    background
+    0.28s ease,
+    box-shadow
+    0.28s ease;
+}
+
+
+/* Blue hover glow */
+
+.about-menu-card::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  top:
+    -55px;
+
+  left:
+    -45px;
+
+  width:
+    150px;
+
+  height:
+    150px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.12
+    );
+
+  filter:
+    blur(
+      38px
+    );
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+
+  transition:
+    opacity
+    0.3s ease;
+}
+
+
+.about-menu-card:hover {
+  transform:
+    translateY(
+      -4px
+    );
+
+  border-color:
+    rgba(
+      96,
+      165,
+      250,
+      0.35
+    );
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.075
+    );
+
+  box-shadow:
+    0 18px 40px
+    rgba(
+      0,
+      0,
+      0,
+      0.22
+    );
+}
+
+
+.about-menu-card:hover::before {
+  opacity:
+    1;
+}
+
+
+/* =========================================
+   ABOUT CARD ICON
+========================================= */
+
+.about-menu-icon {
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  display:
+    grid;
+
+  width:
+    50px;
+
+  height:
+    50px;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(
+      96,
+      165,
+      250,
+      0.2
+    );
+
+  border-radius:
+    14px;
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.11
+    );
+
+  color:
+    #60a5fa;
+
+  transition:
+    color
+    0.28s ease,
+    background
+    0.28s ease,
+    transform
+    0.28s ease;
+}
+
+
+.about-menu-card:hover
+.about-menu-icon {
+  color:
+    white;
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.35
+    );
+
+  transform:
+    scale(
+      1.05
+    );
+}
+
+
+/* =========================================
+   ABOUT CARD CONTENT
+========================================= */
+
+.about-menu-card
+> div:nth-child(2) {
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  min-width:
+    0;
+}
+
+
+.about-menu-card h3 {
+  margin:
+    2px
+    0
+    8px;
+
+  color:
+    #eef5ff;
+
+  font-size:
+    0.98rem;
+
+  font-weight:
+    650;
+
+  line-height:
+    1.25;
+
+  transition:
+    color
+    0.25s ease;
+}
+
+
+.about-menu-card p {
+  max-width:
+    390px;
+
+  margin:
+    0;
+
+  color:
+    #7f8da1;
+
+  font-size:
+    0.78rem;
+
+  line-height:
+    1.65;
+}
+
+
+.about-menu-card:hover h3 {
+  color:
+    #8ec0ff;
+}
+
+
+/* =========================================
+   ABOUT CARD ARROW
+========================================= */
+
+.about-menu-card
+> svg {
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  margin-top:
+    4px;
+
+  color:
+    #58677c;
+
+  transition:
+    color
+    0.25s ease,
+    transform
+    0.25s ease;
+}
+
+
+.about-menu-card:hover
+> svg {
+  color:
+    #60a5fa;
+
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+}
+
+
+/* =========================================
+   ABOUT BOTTOM
+========================================= */
+
+.about-menu
+.mega-menu-bottom {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    20px;
+
+  margin-top:
+    27px;
+
+  padding-top:
+    23px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+
+.about-menu
+.mega-menu-bottom span {
+  color:
+    #64748b;
+
+  font-size:
+    0.8rem;
+}
+
+
+.about-menu
+.mega-menu-bottom a {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+
+  color:
+    #60a5fa;
+
+  font-size:
+    0.8rem;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+}
+
+
+.about-menu
+.mega-menu-bottom a:hover {
+  color:
+    white;
+}
+
+
+.about-menu
+.mega-menu-bottom a svg {
+  transition:
+    transform
+    0.25s ease;
+}
+
+
+.about-menu
+.mega-menu-bottom a:hover svg {
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+}
+
+
+/* =========================================
+   ABOUT TABLET
+========================================= */
+
+@media (
+  max-width:
+  1000px
+) {
+
+  .about-menu {
+    padding:
+      28px;
+  }
+
+
+  .about-menu
+  .mega-menu-header {
+    grid-template-columns:
+      1fr;
+
+    align-items:
+      start;
+
+    gap:
+      20px;
+  }
+
+
+  .about-menu
+  .mega-menu-header > p {
+    max-width:
+      650px;
+  }
+
+
+  .about-menu
+  .mega-menu-header h2 {
+    font-size:
+      clamp(
+        2.2rem,
+        5vw,
+        3.3rem
+      );
+  }
+
+}
+
+
+/* =========================================
+   ABOUT MOBILE
+========================================= */
+
+@media (
+  max-width:
+  760px
+) {
+
+  .nav-about-trigger {
+    display:
+      flex;
+
+    align-items:
+      center;
+
+    justify-content:
+      space-between;
+
+    width:
+      100%;
+
+    min-height:
+      48px;
+
+    padding:
+      14px;
+
+    border-radius:
+      12px;
+
+    font-size:
+      0.9rem;
+  }
+
+
+  .nav-about-trigger svg {
+    width:
+      18px;
+
+    height:
+      18px;
+  }
+
+
+  .about-menu {
+    position:
+      static;
+
+    display:
+      none;
+
+    width:
+      100%;
+
+    max-width:
+      none;
+
+    max-height:
+      none;
+
+    margin:
+      3px
+      0
+      8px;
+
+    padding:
+      14px;
+
+    overflow:
+      visible;
+
+    box-sizing:
+      border-box;
+
+    border:
+      1px solid
+      rgba(
+        255,
+        255,
+        255,
+        0.07
+      );
+
+    border-radius:
+      14px;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.025
+      );
+
+    box-shadow:
+      none;
+
+    opacity:
+      1;
+
+    visibility:
+      visible;
+
+    pointer-events:
+      auto;
+
+    transform:
+      none;
+
+    transition:
+      none;
+
+    z-index:
+      auto;
+  }
+
+
+  .about-menu.show {
+    display:
+      block;
+
+    transform:
+      none;
+  }
+
+
+  .about-menu
+  .mega-menu-header {
+    display:
+      block;
+
+    margin-bottom:
+      18px;
+
+    padding:
+      5px
+      5px
+      18px;
+
+    border-bottom:
+      1px solid
+      rgba(
+        255,
+        255,
+        255,
+        0.08
+      );
+  }
+
+
+  .about-menu
+  .mega-eyebrow {
+    margin-bottom:
+      10px;
+
+    font-size:
+      0.64rem;
+  }
+
+
+  .about-menu
+  .mega-menu-header h2 {
+    font-size:
+      1.65rem;
+
+    line-height:
+      1;
+  }
+
+
+  .about-menu
+  .mega-menu-header > p {
+    margin-top:
+      15px;
+
+    font-size:
+      0.82rem;
+  }
+
+
+  .about-menu-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      8px;
+  }
+
+
+  .about-menu-card {
+    grid-template-columns:
+      46px
+      minmax(
+        0,
+        1fr
+      )
+      18px;
+
+    min-height:
+      auto;
+
+    gap:
+      14px;
+
+    padding:
+      17px;
+
+    border-radius:
+      14px;
+  }
+
+
+  .about-menu-icon {
+    width:
+      46px;
+
+    height:
+      46px;
+
+    border-radius:
+      12px;
+  }
+
+
+  .about-menu-card h3 {
+    margin-top:
+      1px;
+
+    font-size:
+      0.9rem;
+  }
+
+
+  .about-menu-card p {
+    font-size:
+      0.75rem;
+
+    line-height:
+      1.6;
+  }
+
+
+  .about-menu
+  .mega-menu-bottom {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap:
+      12px;
+
+    margin-top:
+      18px;
+
+    padding:
+      18px
+      5px
+      4px;
+  }
+
+}
+
+
+/* =========================================
+   ABOUT SMALL MOBILE
+========================================= */
+
+@media (
+  max-width:
+  430px
+) {
+
+  .about-menu {
+    padding:
+      11px;
+  }
+
+
+  .about-menu-card {
+    grid-template-columns:
+      42px
+      minmax(
+        0,
+        1fr
+      )
+      16px;
+
+    gap:
+      12px;
+
+    padding:
+      15px;
+  }
+
+
+  .about-menu-icon {
+    width:
+      42px;
+
+    height:
+      42px;
+  }
+
+
+  .about-menu-card p {
+    display:
+      none;
+  }
+
+}

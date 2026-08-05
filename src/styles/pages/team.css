@@ -1,0 +1,1881 @@
+/* =========================================
+   TEAM PAGE
+========================================= */
+
+.team-page {
+  min-height:
+    100vh;
+
+  overflow:
+    hidden;
+
+  background:
+    #07101d;
+
+  color:
+    #ffffff;
+}
+
+
+/* =========================================
+   GLOBAL CONTAINER
+========================================= */
+
+.team-container {
+  width:
+    min(
+      1240px,
+      calc(
+        100% - 48px
+      )
+    );
+
+  margin:
+    0 auto;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.team-hero {
+  position:
+    relative;
+
+  padding:
+    185px 0
+    105px;
+
+  overflow:
+    hidden;
+
+  background:
+    radial-gradient(
+      circle at
+      90% 15%,
+      rgba(
+        37,
+        99,
+        235,
+        0.18
+      ),
+      transparent
+      30%
+    ),
+    radial-gradient(
+      circle at
+      10% 100%,
+      rgba(
+        59,
+        130,
+        246,
+        0.08
+      ),
+      transparent
+      35%
+    );
+}
+
+
+.team-hero-glow {
+  position:
+    absolute;
+
+  top:
+    -180px;
+
+  right:
+    -120px;
+
+  width:
+    560px;
+
+  height:
+    560px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.16
+    );
+
+  filter:
+    blur(
+      110px
+    );
+
+  pointer-events:
+    none;
+}
+
+
+.team-hero
+.team-container {
+  position:
+    relative;
+
+  z-index:
+    1;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.team-hero-content {
+  max-width:
+    850px;
+}
+
+
+.team-hero-label {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  margin-bottom:
+    22px;
+
+  color:
+    #60a5fa;
+
+  font-size:
+    0.7rem;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.2em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.team-hero h1 {
+  margin:
+    0;
+
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(
+      3.4rem,
+      7vw,
+      6.5rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    0.95;
+
+  letter-spacing:
+    -0.065em;
+}
+
+
+.team-hero h1 span {
+  color:
+    #60a5fa;
+}
+
+
+.team-hero-content > p {
+  max-width:
+    650px;
+
+  margin:
+    31px 0
+    0;
+
+  color:
+    rgba(
+      216,
+      229,
+      247,
+      0.68
+    );
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.8;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.team-hero-actions {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  align-items:
+    center;
+
+  gap:
+    13px;
+
+  margin-top:
+    32px;
+}
+
+
+.team-primary-button,
+.team-secondary-button {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    9px;
+
+  min-height:
+    50px;
+
+  padding:
+    13px 21px;
+
+  border-radius:
+    999px;
+
+  font-size:
+    0.8rem;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+
+  transition:
+    transform
+    0.25s ease,
+    background
+    0.25s ease,
+    border-color
+    0.25s ease;
+}
+
+
+.team-primary-button {
+  border:
+    1px solid
+    #2563eb;
+
+  background:
+    #2563eb;
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 14px 35px
+    rgba(
+      37,
+      99,
+      235,
+      0.25
+    );
+}
+
+
+.team-primary-button:hover {
+  background:
+    #1d4ed8;
+
+  transform:
+    translateY(
+      -2px
+    );
+}
+
+
+.team-secondary-button {
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+
+  color:
+    #dce9fb;
+}
+
+
+.team-secondary-button:hover {
+  border-color:
+    rgba(
+      96,
+      165,
+      250,
+      0.35
+    );
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.1
+    );
+
+  transform:
+    translateY(
+      -2px
+    );
+}
+
+
+/* =========================================
+   HERO STATISTICS
+========================================= */
+
+.team-hero-stats {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    13px;
+
+  max-width:
+    800px;
+
+  margin-top:
+    72px;
+}
+
+
+.team-stat-card {
+  padding:
+    21px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  border-radius:
+    17px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  backdrop-filter:
+    blur(
+      12px
+    );
+}
+
+
+.team-stat-card strong {
+  display:
+    block;
+
+  margin-bottom:
+    7px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    1.8rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    -0.04em;
+}
+
+
+.team-stat-card span {
+  color:
+    #8292a8;
+
+  font-size:
+    0.74rem;
+
+  font-weight:
+    600;
+}
+
+
+/* =========================================
+   TEAM INTRODUCTION
+========================================= */
+
+.team-introduction {
+  padding:
+    120px 0;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.055
+    );
+}
+
+
+.team-introduction-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1.1fr
+    )
+    minmax(
+      330px,
+      0.75fr
+    );
+
+  gap:
+    100px;
+
+  align-items:
+    start;
+}
+
+
+.team-section-heading > span,
+.team-section-eyebrow {
+  display:
+    block;
+
+  margin-bottom:
+    18px;
+
+  color:
+    #60a5fa;
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.2em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.team-section-heading h2 {
+  margin:
+    0;
+
+  font-size:
+    clamp(
+      2.5rem,
+      4.5vw,
+      4.5rem
+    );
+
+  font-weight:
+    650;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -0.06em;
+}
+
+
+.team-section-heading h2 strong {
+  color:
+    #60a5fa;
+
+  font-weight:
+    inherit;
+}
+
+
+.team-introduction-content {
+  display:
+    grid;
+
+  gap:
+    24px;
+
+  padding-top:
+    42px;
+}
+
+
+.team-introduction-content p {
+  margin:
+    0;
+
+  color:
+    rgba(
+      205,
+      220,
+      240,
+      0.66
+    );
+
+  font-size:
+    0.95rem;
+
+  line-height:
+    1.85;
+}
+
+
+/* =========================================
+   TEAM DIRECTORY
+========================================= */
+
+.team-directory {
+  padding:
+    45px 0
+    125px;
+}
+
+
+.team-directory-header {
+  display:
+    flex;
+
+  align-items:
+    end;
+
+  justify-content:
+    space-between;
+
+  gap:
+    50px;
+
+  margin-bottom:
+    48px;
+}
+
+
+.team-directory-header h2 {
+  max-width:
+    700px;
+
+  margin:
+    0;
+
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(
+      2.5rem,
+      5vw,
+      5rem
+    );
+
+  font-weight:
+    650;
+
+  line-height:
+    0.98;
+
+  letter-spacing:
+    -0.065em;
+}
+
+
+.team-directory-header h2 span {
+  display:
+    block;
+
+  color:
+    #60a5fa;
+}
+
+
+.team-directory-header > p {
+  max-width:
+    370px;
+
+  margin:
+    0;
+
+  color:
+    rgba(
+      201,
+      217,
+      239,
+      0.6
+    );
+
+  font-size:
+    0.9rem;
+
+  line-height:
+    1.8;
+}
+
+
+/* =========================================
+   TEAM GRID
+========================================= */
+
+.team-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    18px;
+}
+
+
+/* =========================================
+   TEAM CARD
+========================================= */
+
+.team-card {
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.075
+    );
+
+  border-radius:
+    20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.05
+      ),
+      rgba(
+        255,
+        255,
+        255,
+        0.018
+      )
+    );
+
+  transition:
+    transform
+    0.35s ease,
+    border-color
+    0.35s ease,
+    box-shadow
+    0.35s ease;
+}
+
+
+.team-card:hover {
+  transform:
+    translateY(
+      -7px
+    );
+
+  border-color:
+    rgba(
+      96,
+      165,
+      250,
+      0.3
+    );
+
+  box-shadow:
+    0 25px 55px
+    rgba(
+      0,
+      0,
+      0,
+      0.3
+    );
+}
+
+
+/* =========================================
+   TEAM IMAGE
+========================================= */
+
+.team-card-image {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    1 / 1.08;
+
+  overflow:
+    hidden;
+
+  background:
+    #111d2e;
+}
+
+
+.team-card-image img {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center;
+
+  transition:
+    transform
+    0.55s ease;
+}
+
+
+.team-card:hover
+.team-card-image img {
+  transform:
+    scale(
+      1.055
+    );
+}
+
+
+.team-card-image-overlay {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(
+        4,
+        10,
+        19,
+        0.55
+      ),
+      transparent
+      55%
+    );
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================
+   LINKEDIN BUTTON
+========================================= */
+
+.team-linkedin-button {
+  position:
+    absolute;
+
+  right:
+    14px;
+
+  bottom:
+    14px;
+
+  display:
+    grid;
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.17
+    );
+
+  border-radius:
+    12px;
+
+  background:
+    rgba(
+      7,
+      14,
+      26,
+      0.8
+    );
+
+  color:
+    #dbe9fb;
+
+  backdrop-filter:
+    blur(
+      12px
+    );
+
+  opacity:
+    0;
+
+  transform:
+    translateY(
+      7px
+    );
+
+  transition:
+    opacity
+    0.25s ease,
+    transform
+    0.25s ease,
+    background
+    0.25s ease;
+}
+
+
+.team-card:hover
+.team-linkedin-button {
+  opacity:
+    1;
+
+  transform:
+    translateY(
+      0
+    );
+}
+
+
+.team-linkedin-button:hover {
+  background:
+    #0a66c2;
+
+  color:
+    #ffffff;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.team-card-content {
+  padding:
+    20px;
+}
+
+
+.team-department {
+  display:
+    inline-flex;
+
+  max-width:
+    100%;
+
+  margin-bottom:
+    12px;
+
+  padding:
+    6px 9px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      96,
+      165,
+      250,
+      0.15
+    );
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(
+      37,
+      99,
+      235,
+      0.08
+    );
+
+  color:
+    #78adf3;
+
+  font-size:
+    0.58rem;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.07em;
+
+  line-height:
+    1.2;
+
+  text-overflow:
+    ellipsis;
+
+  text-transform:
+    uppercase;
+
+  white-space:
+    nowrap;
+}
+
+
+.team-card-content h3 {
+  margin:
+    0;
+
+  color:
+    #ffffff;
+
+  font-size:
+    1.05rem;
+
+  font-weight:
+    650;
+
+  line-height:
+    1.35;
+
+  letter-spacing:
+    -0.025em;
+}
+
+
+.team-card-content p {
+  min-height:
+    42px;
+
+  margin:
+    8px 0
+    0;
+
+  color:
+    rgba(
+      204,
+      219,
+      239,
+      0.62
+    );
+
+  font-size:
+    0.77rem;
+
+  line-height:
+    1.55;
+}
+
+
+/* =========================================
+   CULTURE
+========================================= */
+
+.team-culture {
+  padding:
+    0 0
+    120px;
+}
+
+
+.team-culture-card {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    minmax(
+      380px,
+      0.85fr
+    );
+
+  gap:
+    70px;
+
+  padding:
+    70px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      96,
+      165,
+      250,
+      0.16
+    );
+
+  border-radius:
+    27px;
+
+  background:
+    radial-gradient(
+      circle at
+      95% 5%,
+      rgba(
+        37,
+        99,
+        235,
+        0.18
+      ),
+      transparent
+      35%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(
+        37,
+        99,
+        235,
+        0.11
+      ),
+      rgba(
+        255,
+        255,
+        255,
+        0.02
+      )
+    );
+}
+
+
+.team-culture-content > span,
+.team-careers-card > div > span {
+  display:
+    block;
+
+  margin-bottom:
+    18px;
+
+  color:
+    #60a5fa;
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.2em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.team-culture-content h2 {
+  margin:
+    0;
+
+  font-size:
+    clamp(
+      2.4rem,
+      4vw,
+      4.3rem
+    );
+
+  font-weight:
+    650;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -0.06em;
+}
+
+
+.team-culture-content h2 strong {
+  color:
+    #60a5fa;
+
+  font-weight:
+    inherit;
+}
+
+
+.team-culture-content > p {
+  max-width:
+    570px;
+
+  margin:
+    25px 0;
+
+  color:
+    rgba(
+      210,
+      224,
+      243,
+      0.66
+    );
+
+  font-size:
+    0.92rem;
+
+  line-height:
+    1.8;
+}
+
+
+.team-culture-link {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  color:
+    #8bbcff;
+
+  font-size:
+    0.8rem;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+}
+
+
+.team-culture-link:hover {
+  color:
+    #ffffff;
+}
+
+
+.team-culture-values {
+  display:
+    grid;
+
+  gap:
+    12px;
+}
+
+
+.team-culture-values > div {
+  padding:
+    23px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  border-radius:
+    17px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+}
+
+
+.team-culture-values span {
+  color:
+    #60a5fa;
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    0.14em;
+}
+
+
+.team-culture-values h3 {
+  margin:
+    10px 0
+    7px;
+
+  font-size:
+    1rem;
+}
+
+
+.team-culture-values p {
+  margin:
+    0;
+
+  color:
+    rgba(
+      204,
+      220,
+      240,
+      0.58
+    );
+
+  font-size:
+    0.78rem;
+
+  line-height:
+    1.6;
+}
+
+
+/* =========================================
+   CAREERS CTA
+========================================= */
+
+.team-careers {
+  padding:
+    0 0
+    120px;
+}
+
+
+.team-careers-card {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    50px;
+
+  padding:
+    65px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  border-radius:
+    25px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+}
+
+
+.team-careers-card h2 {
+  margin:
+    0;
+
+  font-size:
+    clamp(
+      2.3rem,
+      4vw,
+      4.2rem
+    );
+
+  font-weight:
+    650;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -0.06em;
+}
+
+
+.team-careers-card h2 strong {
+  color:
+    #60a5fa;
+
+  font-weight:
+    inherit;
+}
+
+
+.team-careers-card p {
+  max-width:
+    570px;
+
+  margin:
+    22px 0
+    0;
+
+  color:
+    rgba(
+      204,
+      220,
+      240,
+      0.62
+    );
+
+  font-size:
+    0.9rem;
+
+  line-height:
+    1.75;
+}
+
+
+.team-careers-button {
+  display:
+    inline-flex;
+
+  flex-shrink:
+    0;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    9px;
+
+  min-height:
+    53px;
+
+  padding:
+    14px 23px;
+
+  border:
+    1px solid
+    #2563eb;
+
+  border-radius:
+    999px;
+
+  background:
+    #2563eb;
+
+  color:
+    #ffffff;
+
+  font-size:
+    0.8rem;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+
+  transition:
+    transform
+    0.25s ease,
+    background
+    0.25s ease;
+}
+
+
+.team-careers-button:hover {
+  background:
+    #1d4ed8;
+
+  transform:
+    translateY(
+      -3px
+    );
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (
+  max-width:
+  1050px
+) {
+
+  .team-grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+
+  .team-introduction-grid {
+    gap:
+      55px;
+  }
+
+
+  .team-culture-card {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      50px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (
+  max-width:
+  850px
+) {
+
+  .team-hero {
+    padding:
+      155px 0
+      80px;
+  }
+
+
+  .team-introduction {
+    padding:
+      90px 0;
+  }
+
+
+  .team-introduction-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      25px;
+  }
+
+
+  .team-introduction-content {
+    padding-top:
+      0;
+  }
+
+
+  .team-directory-header {
+    align-items:
+      start;
+
+    flex-direction:
+      column;
+
+    gap:
+      25px;
+  }
+
+
+  .team-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+
+  .team-culture-card {
+    padding:
+      50px;
+  }
+
+
+  .team-careers-card {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    padding:
+      50px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (
+  max-width:
+  650px
+) {
+
+  .team-container {
+    width:
+      calc(
+        100% - 28px
+      );
+  }
+
+
+  .team-hero {
+    padding:
+      135px 0
+      65px;
+  }
+
+
+  .team-hero h1 {
+    font-size:
+      clamp(
+        3rem,
+        14vw,
+        4.5rem
+      );
+  }
+
+
+  .team-hero-content > p {
+    font-size:
+      0.9rem;
+  }
+
+
+  .team-hero-actions {
+    align-items:
+      stretch;
+
+    flex-direction:
+      column;
+  }
+
+
+  .team-primary-button,
+  .team-secondary-button {
+    width:
+      100%;
+  }
+
+
+  .team-hero-stats {
+    grid-template-columns:
+      1fr;
+
+    margin-top:
+      48px;
+  }
+
+
+  .team-stat-card {
+    padding:
+      18px;
+  }
+
+
+  .team-introduction {
+    padding:
+      75px 0;
+  }
+
+
+  .team-section-heading h2 {
+    font-size:
+      2.7rem;
+  }
+
+
+  .team-directory {
+    padding:
+      10px 0
+      80px;
+  }
+
+
+  .team-directory-header h2 {
+    font-size:
+      3rem;
+  }
+
+
+  .team-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      14px;
+  }
+
+
+  .team-card {
+    display:
+      grid;
+
+    grid-template-columns:
+      125px
+      minmax(
+        0,
+        1fr
+      );
+
+    min-height:
+      175px;
+  }
+
+
+  .team-card-image {
+    height:
+      100%;
+
+    min-height:
+      175px;
+
+    aspect-ratio:
+      auto;
+  }
+
+
+  .team-card-content {
+    padding:
+      18px;
+  }
+
+
+  .team-linkedin-button {
+    right:
+      10px;
+
+    bottom:
+      10px;
+
+    width:
+      36px;
+
+    height:
+      36px;
+
+    opacity:
+      1;
+
+    transform:
+      none;
+  }
+
+
+  .team-card-content p {
+    min-height:
+      auto;
+  }
+
+
+  .team-culture {
+    padding-bottom:
+      80px;
+  }
+
+
+  .team-culture-card {
+    padding:
+      35px 23px;
+
+    border-radius:
+      21px;
+  }
+
+
+  .team-culture-content h2 {
+    font-size:
+      2.5rem;
+  }
+
+
+  .team-careers {
+    padding-bottom:
+      80px;
+  }
+
+
+  .team-careers-card {
+    padding:
+      35px 23px;
+
+    border-radius:
+      21px;
+  }
+
+
+  .team-careers-card h2 {
+    font-size:
+      2.45rem;
+  }
+
+
+  .team-careers-button {
+    width:
+      100%;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (
+  max-width:
+  420px
+) {
+
+  .team-card {
+    grid-template-columns:
+      108px
+      minmax(
+        0,
+        1fr
+      );
+
+    min-height:
+      160px;
+  }
+
+
+  .team-card-image {
+    min-height:
+      160px;
+  }
+
+
+  .team-card-content {
+    padding:
+      15px;
+  }
+
+
+  .team-card-content h3 {
+    font-size:
+      0.92rem;
+  }
+
+
+  .team-card-content p {
+    font-size:
+      0.7rem;
+  }
+
+
+  .team-department {
+    max-width:
+      145px;
+
+    font-size:
+      0.53rem;
+  }
+
+}
