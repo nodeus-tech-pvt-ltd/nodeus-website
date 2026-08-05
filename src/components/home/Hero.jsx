@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import "../../styles/home/Hero.css";
 
@@ -48,14 +49,24 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45 }}
         >
-          <a href="#solutions" className="primary-button">
+          <Link
+            to="/solutions"
+            className="primary-button"
+          >
             Explore Solutions
-            <ArrowUpRight size={18} />
-          </a>
 
-          <a href="#process" className="secondary-button">
+            <ArrowUpRight
+              size={18}
+            />
+
+          </Link>
+
+          <Link
+            to="/about/how-we-work"
+            className="secondary-button"
+          >
             How We Work
-          </a>
+          </Link>
         </motion.div>
       </div>
 

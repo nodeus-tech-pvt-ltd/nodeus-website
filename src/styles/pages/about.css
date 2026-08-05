@@ -15,9 +15,9 @@
     radial-gradient(
       circle at 84% 7%,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.16
       ),
       transparent 27%
@@ -26,9 +26,9 @@
     radial-gradient(
       circle at 8% 38%,
       rgba(
-        59,
-        130,
-        246,
+        57,
+        123,
+        255,
         0.07
       ),
       transparent 25%
@@ -93,9 +93,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.07
     );
 
@@ -121,9 +121,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.06
     );
 
@@ -175,7 +175,7 @@
 .about-hero-content h1 span {
   display: block;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -253,27 +253,23 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.5
     );
 
   background:
-    linear-gradient(
-      135deg,
-      #2563eb,
-      #3b82f6
-    );
+    #397bff;
 
   color: white;
 
   box-shadow:
     0 16px 38px
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.25
     );
 }
@@ -285,12 +281,15 @@
       -3px
     );
 
+  background:
+    #2869e8;
+
   box-shadow:
     0 22px 45px
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.38
     );
 }
@@ -326,17 +325,17 @@
 
   border-color:
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.3
     );
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.08
     );
 }
@@ -376,9 +375,9 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.2
     );
 
@@ -414,9 +413,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.23
     );
 
@@ -427,9 +426,9 @@
     linear-gradient(
       145deg,
       rgba(
-        30,
-        58,
-        104,
+        20,
+        52,
+        110,
         0.5
       ),
       rgba(
@@ -478,9 +477,9 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.16
     );
 
@@ -511,9 +510,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.28
     );
 
@@ -521,13 +520,13 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.14
     );
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -540,7 +539,7 @@
 
   margin-bottom: 15px;
 
-  color: #60a5fa;
+  color: #397bff;
 
   font-size: 0.67rem;
 
@@ -652,7 +651,7 @@
 .about-floating-card svg {
   flex-shrink: 0;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -763,9 +762,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.2
     );
 
@@ -773,13 +772,13 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.1
     );
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -815,7 +814,7 @@
 .about-introduction-content h2 span {
   display: block;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -876,7 +875,7 @@
 .about-section-heading h2 span {
   display: block;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -993,17 +992,17 @@
 
   border-color:
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.23
     );
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.07
     );
 }
@@ -1012,7 +1011,7 @@
 .about-capability-item svg {
   flex-shrink: 0;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -1147,17 +1146,17 @@
 
   border-color:
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.25
     );
 
   background:
     rgba(
-      17,
-      34,
-      60,
+      14,
+      35,
+      75,
       0.58
     );
 }
@@ -1186,9 +1185,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.2
     );
 
@@ -1196,13 +1195,13 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.1
     );
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -1322,7 +1321,7 @@
 .about-process-intro h2 span {
   display: block;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -1400,9 +1399,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.19
     );
 
@@ -1410,13 +1409,13 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.09
     );
 
-  color: #60a5fa;
+  color: #397bff;
 
   font-size: 0.7rem;
 
@@ -1456,9 +1455,9 @@
 
   color:
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.65
     );
 
@@ -1505,9 +1504,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.2
     );
 
@@ -1518,9 +1517,9 @@
     linear-gradient(
       135deg,
       rgba(
-        21,
-        54,
-        106,
+        18,
+        49,
+        108,
         0.55
       ),
       rgba(
@@ -1567,9 +1566,9 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.22
     );
 
@@ -1616,7 +1615,7 @@
 
 
 .about-cta h2 span {
-  color: #60a5fa;
+  color: #397bff;
 }
 
 

@@ -3548,3 +3548,503 @@
   }
 
 }
+
+/* =========================================
+   NODEUS BRAND COLOR OVERRIDES
+   Primary Color: #397BFF
+========================================= */
+
+:root {
+  --nodeus-blue: #397bff;
+
+  --nodeus-blue-light: #72a4ff;
+
+  --nodeus-blue-lighter: #dce9ff;
+
+  --nodeus-blue-dark: #2368ed;
+
+  --nodeus-blue-deep: #1658d6;
+
+  --nodeus-blue-glow:
+    rgba(
+      57,
+      123,
+      255,
+      0.16
+    );
+
+  --nodeus-blue-soft:
+    rgba(
+      57,
+      123,
+      255,
+      0.1
+    );
+
+  --nodeus-blue-border:
+    rgba(
+      57,
+      123,
+      255,
+      0.35
+    );
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar-menu-active,
+.navbar-mobile-open {
+  border-color:
+    var(
+      --nodeus-blue-border
+    );
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links > a:hover,
+.nav-main-link:hover,
+.nav-about-trigger:hover,
+.nav-about-trigger.active {
+  color:
+    white;
+
+  background:
+    var(
+      --nodeus-blue-soft
+    );
+}
+
+
+.nav-dropdown-heading:hover {
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.08
+    );
+}
+
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown-trigger.active {
+  color:
+    white;
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.12
+    );
+}
+
+
+.nav-about-trigger:hover svg,
+.nav-about-trigger.active svg {
+  color:
+    var(
+      --nodeus-blue-lighter
+    );
+}
+
+
+/* =========================================
+   CONTACT BUTTON
+========================================= */
+
+.nav-contact {
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.48
+    );
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.18
+    );
+
+  color:
+    var(
+      --nodeus-blue-lighter
+    ) !important;
+
+  box-shadow:
+    0 8px 25px
+    rgba(
+      57,
+      123,
+      255,
+      0.18
+    );
+}
+
+
+.nav-contact:hover {
+  background:
+    var(
+      --nodeus-blue
+    ) !important;
+
+  color:
+    white !important;
+
+  box-shadow:
+    0 13px 30px
+    rgba(
+      57,
+      123,
+      255,
+      0.34
+    );
+}
+
+
+/* =========================================
+   MEGA MENUS
+========================================= */
+
+.mega-menu,
+.resources-menu,
+.about-menu {
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.22
+    );
+
+  background:
+    radial-gradient(
+      circle
+      at
+      top right,
+      rgba(
+        57,
+        123,
+        255,
+        0.17
+      ),
+      transparent
+      38%
+    ),
+    #0d1424;
+}
+
+
+/* =========================================
+   MENU HEADINGS
+========================================= */
+
+.mega-eyebrow,
+.about-menu
+.mega-eyebrow {
+  color:
+    var(
+      --nodeus-blue
+    );
+}
+
+
+.mega-menu-header h2 span,
+.about-menu
+.mega-menu-header h2 span {
+  color:
+    var(
+      --nodeus-blue
+    );
+}
+
+
+/* =========================================
+   SERVICE CARDS
+========================================= */
+
+.service-category-card:hover {
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.48
+    );
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.1
+    );
+}
+
+
+.service-category-icon {
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.14
+    );
+
+  color:
+    var(
+      --nodeus-blue
+    );
+}
+
+
+.view-all-services {
+  color:
+    var(
+      --nodeus-blue
+    );
+}
+
+
+/* =========================================
+   INDUSTRY CARDS
+========================================= */
+
+.industry-card:hover {
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.48
+    );
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.1
+    );
+}
+
+
+.industry-icon {
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.14
+    );
+
+  color:
+    var(
+      --nodeus-blue
+    );
+}
+
+
+/* =========================================
+   RESOURCE CARDS
+========================================= */
+
+.resource-card::before {
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.14
+    );
+}
+
+
+.resource-card:hover {
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.32
+    );
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.075
+    );
+}
+
+
+.resource-card-icon {
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.25
+    );
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.12
+    );
+
+  color:
+    var(
+      --nodeus-blue
+    );
+}
+
+
+.resource-card:hover
+> svg {
+  color:
+    var(
+      --nodeus-blue
+    );
+}
+
+
+/* =========================================
+   MEGA MENU LINKS
+========================================= */
+
+.mega-menu-bottom a,
+.about-menu
+.mega-menu-bottom a {
+  color:
+    var(
+      --nodeus-blue
+    );
+}
+
+
+/* =========================================
+   ABOUT CARDS
+========================================= */
+
+.about-menu-card::before {
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.14
+    );
+}
+
+
+.about-menu-card:hover {
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.4
+    );
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.075
+    );
+}
+
+
+.about-menu-icon {
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.25
+    );
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.12
+    );
+
+  color:
+    var(
+      --nodeus-blue
+    );
+}
+
+
+.about-menu-card:hover
+.about-menu-icon {
+  color:
+    white;
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.38
+    );
+}
+
+
+.about-menu-card:hover h3 {
+  color:
+    var(
+      --nodeus-blue-light
+    );
+}
+
+
+.about-menu-card:hover
+> svg {
+  color:
+    var(
+      --nodeus-blue
+    );
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (
+  max-width:
+  760px
+) {
+
+  .nav-links.open {
+    border-color:
+      rgba(
+        57,
+        123,
+        255,
+        0.2
+      );
+  }
+
+}

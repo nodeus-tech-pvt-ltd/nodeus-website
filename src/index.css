@@ -40,6 +40,35 @@
 @import "./styles/pages/industries.css";
 @import "./styles/services/ServiceDetail.css";
 
+@import url(
+  "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+);
+
+:root {
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:root {
+  --nodeus-blue: #347cff;
+  --nodeus-blue-light: #72a8f3;
+  --nodeus-blue-dark: #2f64b5;
+}
 
 * {
   margin: 0;

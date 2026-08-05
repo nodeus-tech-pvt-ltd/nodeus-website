@@ -12,7 +12,10 @@
   background: #080d17;
 }
 
-/* Background glow */
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
 
 .why-nodeus-section::before {
   content: "";
@@ -27,12 +30,14 @@
 
   border-radius: 50%;
 
-  background: rgba(37, 99, 235, 0.08);
+  background:
+    rgba(52, 124, 255, 0.08);
 
   filter: blur(120px);
 
   pointer-events: none;
 }
+
 
 /* =========================================
    MAIN LAYOUT
@@ -40,11 +45,14 @@
 
 .why-nodeus-layout {
   position: relative;
+
   z-index: 1;
 
   display: grid;
 
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns:
+    0.8fr
+    1.2fr;
 
   gap: 100px;
 
@@ -52,6 +60,7 @@
 
   margin: 0 auto;
 }
+
 
 /* =========================================
    LEFT CONTENT
@@ -65,12 +74,18 @@
   align-self: start;
 }
 
+
 .why-nodeus-heading h2 {
   margin: 0 0 28px;
 
   color: white;
 
-  font-size: clamp(3.2rem, 6vw, 6.5rem);
+  font-size:
+    clamp(
+      3.2rem,
+      6vw,
+      6.5rem
+    );
 
   font-weight: 600;
 
@@ -79,9 +94,11 @@
   letter-spacing: -0.07em;
 }
 
+
 .why-nodeus-heading h2 span {
-  color: #60a5fa;
+  color: #347cff;
 }
+
 
 .why-nodeus-heading > p {
   max-width: 400px;
@@ -95,6 +112,7 @@
   line-height: 1.8;
 }
 
+
 /* =========================================
    LINK
 ========================================= */
@@ -106,7 +124,7 @@
 
   gap: 9px;
 
-  color: #60a5fa;
+  color: #347cff;
 
   font-size: 0.85rem;
 
@@ -114,12 +132,18 @@
 
   text-decoration: none;
 
-  transition: gap 0.3s ease;
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
 }
+
 
 .why-nodeus-link:hover {
   gap: 15px;
+
+  color: #5b95ff;
 }
+
 
 /* =========================================
    STATEMENT
@@ -136,12 +160,14 @@
 
   padding-top: 25px;
 
-  border-top: 1px solid
+  border-top:
+    1px solid
     rgba(255, 255, 255, 0.1);
 }
 
+
 .why-nodeus-statement > span {
-  color: #60a5fa;
+  color: #347cff;
 
   font-size: 0.7rem;
 
@@ -149,6 +175,7 @@
 
   letter-spacing: 0.15em;
 }
+
 
 .why-nodeus-statement p {
   margin: 0;
@@ -160,9 +187,11 @@
   line-height: 1.35;
 }
 
+
 .why-nodeus-statement strong {
   color: white;
 }
+
 
 /* =========================================
    ADVANTAGES GRID
@@ -171,10 +200,12 @@
 .advantages-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns:
+    repeat(2, 1fr);
 
   gap: 18px;
 }
+
 
 /* =========================================
    ADVANTAGE CARD
@@ -193,7 +224,8 @@
 
   overflow: hidden;
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(255, 255, 255, 0.08);
 
   border-radius: 22px;
@@ -211,6 +243,9 @@
     background 0.4s ease;
 }
 
+
+/* Brand glow inside card */
+
 .advantage-card::before {
   content: "";
 
@@ -226,31 +261,38 @@
 
   border-radius: 50%;
 
-  background: rgba(37, 99, 235, 0.15);
+  background:
+    rgba(52, 124, 255, 0.15);
 
   filter: blur(60px);
 
   opacity: 0;
 
-  transition: opacity 0.4s ease;
+  transition:
+    opacity 0.4s ease;
 }
 
-.advantage-card:hover {
-  transform: translateY(-7px);
 
-  border-color: rgba(96, 165, 250, 0.4);
+.advantage-card:hover {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(52, 124, 255, 0.4);
 
   background:
     linear-gradient(
       145deg,
-      rgba(37, 99, 235, 0.1),
+      rgba(52, 124, 255, 0.10),
       rgba(255, 255, 255, 0.02)
     );
 }
 
+
 .advantage-card:hover::before {
   opacity: 1;
 }
+
 
 /* =========================================
    CARD TOP
@@ -258,16 +300,20 @@
 
 .advantage-card-top {
   position: relative;
+
   z-index: 1;
 
   display: flex;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
-  align-items: flex-start;
+  align-items:
+    flex-start;
 
   margin-bottom: 55px;
 }
+
 
 .advantage-number {
   color: #64748b;
@@ -279,6 +325,11 @@
   letter-spacing: 0.15em;
 }
 
+
+/* =========================================
+   ADVANTAGE ICON
+========================================= */
+
 .advantage-icon {
   width: 50px;
 
@@ -288,25 +339,37 @@
 
   place-items: center;
 
-  border: 1px solid
-    rgba(96, 165, 250, 0.25);
+  border:
+    1px solid
+    rgba(52, 124, 255, 0.25);
 
   border-radius: 14px;
 
-  background: rgba(37, 99, 235, 0.1);
+  background:
+    rgba(52, 124, 255, 0.10);
 
-  color: #60a5fa;
+  color: #347cff;
 
   transition:
     transform 0.4s ease,
-    background 0.4s ease;
+    background 0.4s ease,
+    box-shadow 0.4s ease;
 }
+
 
 .advantage-card:hover .advantage-icon {
-  transform: rotate(-8deg) scale(1.08);
+  transform:
+    rotate(-8deg)
+    scale(1.08);
 
-  background: rgba(37, 99, 235, 0.25);
+  background:
+    rgba(52, 124, 255, 0.25);
+
+  box-shadow:
+    0 0 30px
+    rgba(52, 124, 255, 0.18);
 }
+
 
 /* =========================================
    CARD CONTENT
@@ -330,6 +393,7 @@
   letter-spacing: -0.03em;
 }
 
+
 .advantage-card p {
   position: relative;
 
@@ -343,6 +407,7 @@
 
   line-height: 1.7;
 }
+
 
 /* =========================================
    ARROW
@@ -362,64 +427,95 @@
     transform 0.3s ease;
 }
 
-.advantage-card:hover .advantage-arrow {
-  color: #60a5fa;
 
-  transform: translate(4px, -4px);
+.advantage-card:hover .advantage-arrow {
+  color: #347cff;
+
+  transform:
+    translate(4px, -4px);
 }
+
 
 /* =========================================
    TABLET
 ========================================= */
 
 @media (max-width: 1000px) {
+
   .why-nodeus-section {
-    padding: 110px 5vw;
+    padding:
+      110px 5vw;
   }
 
+
   .why-nodeus-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
     gap: 70px;
   }
 
+
   .why-nodeus-heading {
-    position: static;
+    position:
+      static;
   }
 
+
   .why-nodeus-statement {
-    margin-top: 60px;
+    margin-top:
+      60px;
   }
+
 }
+
 
 /* =========================================
    MOBILE
 ========================================= */
 
 @media (max-width: 600px) {
+
   .why-nodeus-section {
-    padding: 90px 20px;
+    padding:
+      90px 20px;
   }
+
 
   .why-nodeus-heading h2 {
-    font-size: clamp(3rem, 14vw, 4.5rem);
+    font-size:
+      clamp(
+        3rem,
+        14vw,
+        4.5rem
+      );
   }
+
 
   .advantages-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
+
 
   .advantage-card {
-    min-height: 270px;
+    min-height:
+      270px;
 
-    padding: 24px;
+    padding:
+      24px;
   }
+
 
   .advantage-card-top {
-    margin-bottom: 45px;
+    margin-bottom:
+      45px;
   }
 
+
   .why-nodeus-statement p {
-    font-size: 1.1rem;
+    font-size:
+      1.1rem;
   }
+
 }

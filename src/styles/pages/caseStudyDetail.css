@@ -17,7 +17,7 @@
 .case-study-detail-page .section-eyebrow {
   display: inline-flex;
   align-items: center;
-  color: #246bfd;
+  color: #397bff;
   font-size: 0.73rem;
   font-weight: 800;
   line-height: 1.2;
@@ -38,7 +38,7 @@
   background:
     radial-gradient(
       circle at 50% 0%,
-      rgba(36, 107, 253, 0.1),
+      rgba(57, 123, 255, 0.1),
       transparent 42%
     ),
     #f7f9fd;
@@ -63,7 +63,7 @@
   height: 72px;
   padding: 17px;
   margin-bottom: 25px;
-  color: #246bfd;
+  color: #397bff;
   border-radius: 22px;
   background: #edf4ff;
 }
@@ -92,7 +92,7 @@
 
 .case-study-not-found h1 span {
   display: block;
-  color: #246bfd;
+  color: #397bff;
 }
 
 
@@ -117,7 +117,7 @@
   font-weight: 700;
   text-decoration: none;
   border-radius: 13px;
-  background: #246bfd;
+  background: #397bff;
   transition:
     transform 0.25s ease,
     background 0.25s ease,
@@ -127,11 +127,11 @@
 
 .case-study-back-button:hover {
   color: #ffffff;
-  background: #1558df;
+  background: #2469e8;
   transform: translateY(-3px);
   box-shadow:
     0 13px 28px
-    rgba(36, 107, 253, 0.25);
+    rgba(57, 123, 255, 0.25);
 }
 
 
@@ -151,7 +151,7 @@
     ),
     radial-gradient(
       circle at 10% 95%,
-      rgba(36, 107, 253, 0.1),
+      rgba(57, 123, 255, 0.1),
       transparent 32%
     ),
     linear-gradient(
@@ -292,7 +292,7 @@
   border-color:
     rgba(91, 145, 255, 0.35);
   background:
-    rgba(36, 107, 253, 0.2);
+    rgba(57, 123, 255, 0.2);
 }
 
 
@@ -399,7 +399,7 @@
   background:
     linear-gradient(
       145deg,
-      rgba(36, 107, 253, 0.28),
+      rgba(57, 123, 255, 0.28),
       rgba(255, 255, 255, 0.05)
     );
   box-shadow:
@@ -441,7 +441,7 @@
     radial-gradient(
       circle,
       rgba(79, 140, 255, 0.7),
-      rgba(36, 107, 253, 0.14) 52%,
+      rgba(57, 123, 255, 0.14) 52%,
       transparent 72%
     );
   filter:
@@ -468,8 +468,8 @@
   background:
     linear-gradient(
       145deg,
-      #3179ff,
-      #1555d8
+      #4a8aff,
+      #2469e8
     );
   box-shadow:
     0 25px 55px
@@ -544,7 +544,7 @@
 .related-case-studies-header h2 span,
 .case-study-detail-cta h2 span {
   display: block;
-  color: #246bfd;
+  color: #397bff;
 }
 
 
@@ -595,7 +595,7 @@
   position: relative;
   z-index: 1;
   margin-bottom: 28px;
-  color: #72a5ff;
+  color: #397bff;
 }
 
 
@@ -686,7 +686,7 @@
 
 
 .case-study-content-label > span {
-  color: #246bfd;
+  color: #397bff;
   font-size: 0.78rem;
   font-weight: 850;
   letter-spacing: 0.16em;
@@ -702,7 +702,7 @@
 
 
 .case-study-content-label > div svg {
-  color: #246bfd;
+  color: #397bff;
 }
 
 
@@ -762,7 +762,7 @@
 .case-study-approach-list svg {
   flex: 0 0 auto;
   margin-top: 2px;
-  color: #246bfd;
+  color: #397bff;
 }
 
 
@@ -775,7 +775,7 @@
   background:
     radial-gradient(
       circle at 50% 0%,
-      rgba(36, 107, 253, 0.09),
+      rgba(57, 123, 255, 0.09),
       transparent 36%
     ),
     #ffffff;
@@ -841,7 +841,7 @@
 
 .case-study-results-grid > div:hover {
   border-color:
-    rgba(36, 107, 253, 0.28);
+    rgba(57, 123, 255, 0.28);
   transform:
     translateY(-7px);
   box-shadow:
@@ -855,7 +855,7 @@
   height: 50px;
   padding: 13px;
   margin-bottom: 29px;
-  color: #246bfd;
+  color: #397bff;
   border-radius: 15px;
   background: #edf4ff;
 }
@@ -942,9 +942,9 @@
 
 
 .case-study-detail-footer button:hover {
-  color: #246bfd;
+  color: #397bff;
   border-color:
-    rgba(36, 107, 253, 0.28);
+    rgba(57, 123, 255, 0.28);
   background: #f4f8ff;
   transform:
     translateY(-2px);
@@ -955,7 +955,7 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  color: #246bfd;
+  color: #397bff;
   font-size: 0.9rem;
   font-weight: 750;
   text-decoration: none;
@@ -967,7 +967,7 @@
 
 .case-study-detail-footer > a:hover {
   gap: 13px;
-  color: #1558df;
+  color: #2469e8;
 }
 
 
@@ -1004,13 +1004,13 @@
   align-items: center;
   gap: 9px;
   padding-bottom: 7px;
-  color: #246bfd;
+  color: #397bff;
   font-size: 0.9rem;
   font-weight: 750;
   white-space: nowrap;
   text-decoration: none;
   border-bottom: 1px solid
-    rgba(36, 107, 253, 0.25);
+    rgba(57, 123, 255, 0.25);
   transition:
     gap 0.25s ease,
     color 0.25s ease;
@@ -1019,7 +1019,7 @@
 
 .related-case-studies-header > a:hover {
   gap: 14px;
-  color: #1558df;
+  color: #2469e8;
 }
 
 
@@ -1060,7 +1060,7 @@
 
 .related-case-study-card:hover {
   border-color:
-    rgba(36, 107, 253, 0.3);
+    rgba(57, 123, 255, 0.3);
   transform:
     translateY(-7px);
   box-shadow:
@@ -1075,7 +1075,7 @@
   width: 55px;
   height: 55px;
   margin-bottom: 27px;
-  color: #246bfd;
+  color: #397bff;
   border-radius: 16px;
   background: #edf4ff;
 }
@@ -1084,7 +1084,7 @@
 .related-case-study-card > span {
   display: block;
   margin-bottom: 13px;
-  color: #246bfd;
+  color: #397bff;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -1115,7 +1115,7 @@
   gap: 9px;
   width: fit-content;
   margin-top: auto;
-  color: #246bfd;
+  color: #397bff;
   font-size: 0.87rem;
   font-weight: 750;
   text-decoration: none;
@@ -1127,7 +1127,7 @@
 
 .related-case-study-card a:hover {
   gap: 14px;
-  color: #1558df;
+  color: #2469e8;
 }
 
 
@@ -1190,7 +1190,7 @@
 
 
 .case-study-detail-cta h2 span {
-  color: #82adff;
+  color: #397bff;
 }
 
 

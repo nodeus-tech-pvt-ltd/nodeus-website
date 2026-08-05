@@ -55,9 +55,9 @@
       circle at
       12% 12%,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.16
       ),
       transparent
@@ -67,9 +67,9 @@
       circle at
       88% 25%,
       rgba(
-        59,
-        130,
-        246,
+        57,
+        123,
+        255,
         0.11
       ),
       transparent
@@ -102,9 +102,9 @@
       to right,
       transparent,
       rgba(
-        96,
-        165,
-        250,
+        57,
+        123,
+        255,
         0.22
       ),
       transparent
@@ -143,9 +143,9 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.12
     );
 
@@ -171,9 +171,9 @@
 
   background:
     rgba(
-      59,
-      130,
-      246,
+      57,
+      123,
+      255,
       0.08
     );
 
@@ -237,7 +237,7 @@
     10px;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-size:
     0.7rem;
@@ -269,7 +269,7 @@
     1px;
 
   background:
-    #60a5fa;
+    #397bff;
 }
 
 
@@ -314,7 +314,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 }
 
 
@@ -412,14 +412,14 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
-      0.42
+      57,
+      123,
+      255,
+      0.45
     );
 
   background:
-    #2563eb;
+    #397bff;
 
   color:
     #ffffff;
@@ -427,10 +427,10 @@
   box-shadow:
     0 15px 35px
     rgba(
-      37,
-      99,
-      235,
-      0.25
+      57,
+      123,
+      255,
+      0.28
     );
 }
 
@@ -442,15 +442,15 @@
     );
 
   background:
-    #3474f2;
+    #4d89ff;
 
   box-shadow:
     0 20px 42px
     rgba(
-      37,
-      99,
-      235,
-      0.35
+      57,
+      123,
+      255,
+      0.38
     );
 }
 
@@ -486,17 +486,17 @@
 
   border-color:
     rgba(
-      96,
-      165,
-      250,
-      0.25
+      57,
+      123,
+      255,
+      0.3
     );
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.1
     );
 }
@@ -580,9 +580,9 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.18
     );
 
@@ -637,7 +637,7 @@
 
 .careers-panel-top span:first-child {
   color:
-    #70aaf5;
+    #73a3ff;
 }
 
 
@@ -844,7 +844,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-weight:
     inherit;
@@ -946,7 +946,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-weight:
     inherit;
@@ -1043,19 +1043,19 @@
 
   border-color:
     rgba(
-      96,
-      165,
-      250,
-      0.27
+      57,
+      123,
+      255,
+      0.3
     );
 
   background:
     linear-gradient(
       150deg,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.13
       ),
       rgba(
@@ -1079,7 +1079,7 @@
 
 .careers-benefit-number {
   color:
-    #5f92d2;
+    #6e9fff;
 
   font-size:
     0.68rem;
@@ -1134,7 +1134,7 @@
     22px;
 
   color:
-    #69a5f4;
+    #79a9ff;
 
   font-size:
     1.1rem;
@@ -1175,10 +1175,10 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
-      0.15
+      57,
+      123,
+      255,
+      0.18
     );
 
   border-radius:
@@ -1189,9 +1189,9 @@
       circle at
       85% 15%,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.17
       ),
       transparent
@@ -1200,9 +1200,9 @@
     linear-gradient(
       140deg,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.11
       ),
       rgba(
@@ -1243,7 +1243,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-weight:
     inherit;
@@ -1288,7 +1288,7 @@
     30px;
 
   color:
-    #79b1fa;
+    #7eabff;
 
   font-size:
     0.78rem;
@@ -1356,7 +1356,7 @@
 
 .careers-value-card > span {
   color:
-    #5f92d2;
+    #6e9fff;
 
   font-size:
     0.62rem;
@@ -1482,17 +1482,17 @@
 
   border-color:
     rgba(
-      96,
-      165,
-      250,
-      0.24
+      57,
+      123,
+      255,
+      0.28
     );
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.08
     );
 }
@@ -1500,7 +1500,7 @@
 
 .careers-opening-main > span {
   color:
-    #669bdd;
+    #6f9fff;
 
   font-size:
     0.62rem;
@@ -1590,17 +1590,17 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
-      0.26
+      57,
+      123,
+      255,
+      0.3
     );
 
   border-radius:
     999px;
 
   color:
-    #a9cdfb;
+    #a9c8ff;
 
   font-size:
     0.72rem;
@@ -1628,7 +1628,7 @@
     );
 
   background:
-    #2563eb;
+    #397bff;
 
   color:
     #ffffff;
@@ -1668,10 +1668,10 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
-      0.18
+      57,
+      123,
+      255,
+      0.2
     );
 
   border-radius:
@@ -1682,9 +1682,9 @@
       circle at
       88% 18%,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.24
       ),
       transparent
@@ -1693,9 +1693,9 @@
     linear-gradient(
       135deg,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.13
       ),
       rgba(
@@ -1739,7 +1739,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-weight:
     inherit;
@@ -1813,17 +1813,17 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
-      0.4
+      57,
+      123,
+      255,
+      0.45
     );
 
   border-radius:
     999px;
 
   background:
-    #2563eb;
+    #397bff;
 
   color:
     #ffffff;
@@ -1840,10 +1840,10 @@
   box-shadow:
     0 16px 38px
     rgba(
-      37,
-      99,
-      235,
-      0.27
+      57,
+      123,
+      255,
+      0.3
     );
 
   transition:
@@ -1861,7 +1861,7 @@
     );
 
   background:
-    #3474f2;
+    #4d89ff;
 }
 
 

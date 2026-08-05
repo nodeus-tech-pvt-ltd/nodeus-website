@@ -41,12 +41,12 @@
   background:
     radial-gradient(
       circle at 82% 28%,
-      rgba(37, 99, 235, 0.2),
+      rgba(57, 123, 255, 0.2),
       transparent 31%
     ),
     radial-gradient(
       circle at 18% 90%,
-      rgba(59, 130, 246, 0.07),
+      rgba(57, 123, 255, 0.07),
       transparent 28%
     ),
     #080d17;
@@ -106,7 +106,7 @@
 
   border:
     1px solid
-    rgba(96, 165, 250, 0.13);
+    rgba(57, 123, 255, 0.13);
 
   border-radius: 50%;
 
@@ -115,10 +115,10 @@
 
   box-shadow:
     0 0 0 85px
-    rgba(37, 99, 235, 0.025),
+    rgba(57, 123, 255, 0.025),
 
     0 0 0 170px
-    rgba(37, 99, 235, 0.012);
+    rgba(57, 123, 255, 0.012);
 
   pointer-events: none;
 }
@@ -169,7 +169,7 @@
 
 
 .service-back-link:hover {
-  color: #60a5fa;
+  color: #397bff;
 
   transform:
     translateX(-4px);
@@ -191,14 +191,14 @@
 
   border:
     1px solid
-    rgba(96, 165, 250, 0.28);
+    rgba(57, 123, 255, 0.28);
 
   border-radius: 999px;
 
   background:
-    rgba(37, 99, 235, 0.1);
+    rgba(57, 123, 255, 0.1);
 
-  color: #93c5fd;
+  color: #397bff;
 
   font-size: 0.68rem;
 
@@ -272,7 +272,7 @@
 
   border-radius: 999px;
 
-  background: #2563eb;
+  background: #397bff;
 
   color: #ffffff;
 
@@ -284,7 +284,7 @@
 
   box-shadow:
     0 14px 32px
-    rgba(37, 99, 235, 0.25);
+    rgba(57, 123, 255, 0.25);
 
   transition:
     transform 0.3s ease,
@@ -294,14 +294,14 @@
 
 
 .service-primary-button:hover {
-  background: #1d4ed8;
+  background: #2467e8;
 
   transform:
     translateY(-4px);
 
   box-shadow:
     0 20px 42px
-    rgba(37, 99, 235, 0.36);
+    rgba(57, 123, 255, 0.36);
 }
 
 
@@ -317,7 +317,7 @@
   background:
     radial-gradient(
       circle at 12% 42%,
-      rgba(37, 99, 235, 0.065),
+      rgba(57, 123, 255, 0.065),
       transparent 27%
     ),
     #0a101c;
@@ -365,7 +365,7 @@
 
 
 .service-overview h2 span {
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -403,7 +403,7 @@
   background:
     radial-gradient(
       circle at 90% 15%,
-      rgba(37, 99, 235, 0.09),
+      rgba(57, 123, 255, 0.09),
       transparent 28%
     ),
     #0a101c;
@@ -532,8 +532,8 @@
   background:
     linear-gradient(
       90deg,
-      rgba(37, 99, 235, 0.14),
-      rgba(37, 99, 235, 0.025)
+      rgba(57, 123, 255, 0.14),
+      rgba(57, 123, 255, 0.025)
     );
 
   opacity: 0;
@@ -569,7 +569,7 @@
 
   border-radius: 99px;
 
-  background: #60a5fa;
+  background: #397bff;
 
   opacity: 0;
 
@@ -588,7 +588,7 @@
   padding-left: 42px;
 
   border-color:
-    rgba(96, 165, 250, 0.28);
+    rgba(57, 123, 255, 0.28);
 }
 
 
@@ -637,7 +637,7 @@
 
 .service-capability-card:hover
 .service-capability-number {
-  color: #60a5fa;
+  color: #397bff;
 
   transform:
     translateX(5px);
@@ -679,7 +679,7 @@
 
 
 .service-capability-card:hover h3 {
-  color: #93c5fd;
+  color: #397bff;
 
   transform:
     translateX(5px);
@@ -740,7 +740,7 @@
 
 .service-capability-card:hover
 .service-capability-arrow {
-  color: #60a5fa;
+  color: #397bff;
 
   transform:
     translate(7px, -7px);
@@ -891,6 +891,7 @@
 
 }
 
+
 /* =========================================
    BENEFITS
 ========================================= */
@@ -929,7 +930,7 @@
 
 
 .service-benefits h2 span {
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -1002,7 +1003,7 @@
   border-radius: 50%;
 
   background:
-    rgba(37, 99, 235, 0.12);
+    rgba(57, 123, 255, 0.12);
 
   filter:
     blur(70px);
@@ -1016,7 +1017,7 @@
 
 .service-benefit-card:hover {
   border-color:
-    rgba(96, 165, 250, 0.38);
+    rgba(57, 123, 255, 0.38);
 
   transform:
     translateY(-7px);
@@ -1053,14 +1054,14 @@
 
   border:
     1px solid
-    rgba(96, 165, 250, 0.25);
+    rgba(57, 123, 255, 0.25);
 
   border-radius: 14px;
 
   background:
-    rgba(37, 99, 235, 0.12);
+    rgba(57, 123, 255, 0.12);
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -1120,7 +1121,7 @@
   background:
     radial-gradient(
       circle at 50% 25%,
-      rgba(37, 99, 235, 0.19),
+      rgba(57, 123, 255, 0.19),
       transparent 35%
     ),
     #0b1220;
@@ -1140,7 +1141,7 @@
 
   border:
     1px solid
-    rgba(96, 165, 250, 0.08);
+    rgba(57, 123, 255, 0.08);
 
   border-radius: 50%;
 
@@ -1149,10 +1150,10 @@
 
   box-shadow:
     0 0 0 85px
-    rgba(37, 99, 235, 0.015),
+    rgba(57, 123, 255, 0.015),
 
     0 0 0 170px
-    rgba(37, 99, 235, 0.01);
+    rgba(57, 123, 255, 0.01);
 
   pointer-events: none;
 }
@@ -1193,7 +1194,7 @@
 
 
 .service-detail-cta h2 span {
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -1260,7 +1261,7 @@
 
 
 .service-not-found a {
-  color: #60a5fa;
+  color: #397bff;
 
   font-weight: 700;
 
@@ -1467,11 +1468,15 @@
 }
 
 
-/* HERO TOP AREA */
+/* =========================================
+   HERO TOP AREA
+========================================= */
 
 .service-back-link {
   display: inline-flex;
+
   align-items: center;
+
   gap: 9px;
 
   margin-bottom: 34px;
@@ -1479,6 +1484,7 @@
   color: #94a3b8;
 
   font-size: 0.88rem;
+
   font-weight: 600;
 
   text-decoration: none;
@@ -1488,24 +1494,34 @@
     transform 0.25s ease;
 }
 
+
 .service-detail-eyebrow {
   display: flex;
+
   width: fit-content;
+
   align-items: center;
 
   padding: 9px 15px;
 
   margin-bottom: 25px;
 
-  border: 1px solid rgba(96, 165, 250, 0.28);
+  border:
+    1px solid
+    rgba(57, 123, 255, 0.28);
+
   border-radius: 999px;
 
-  background: rgba(37, 99, 235, 0.1);
+  background:
+    rgba(57, 123, 255, 0.1);
 
-  color: #93c5fd;
+  color: #397bff;
 
   font-size: 0.7rem;
+
   font-weight: 700;
+
   letter-spacing: 0.17em;
+
   line-height: 1;
 }

@@ -12,214 +12,235 @@
   background:
     radial-gradient(
       circle at 85% 15%,
-      rgba(37,99,235,.10),
+      rgba(52, 124, 255, 0.10),
       transparent 30%
     ),
     #080d17;
 }
 
-/* background grid */
 
-.trust-strip::before{
+/* =========================================
+   BACKGROUND GRID
+========================================= */
 
-  content:"";
+.trust-strip::before {
 
-  position:absolute;
+  content: "";
 
-  inset:0;
+  position: absolute;
+
+  inset: 0;
 
   background-image:
     linear-gradient(
-      rgba(255,255,255,.03) 1px,
+      rgba(255, 255, 255, 0.03) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255,255,255,.03) 1px,
+      rgba(255, 255, 255, 0.03) 1px,
       transparent 1px
     );
 
-  background-size:70px 70px;
+  background-size: 70px 70px;
 
-  opacity:.35;
+  opacity: 0.35;
 
-  pointer-events:none;
+  pointer-events: none;
 
 }
 
-/* blue glow */
 
-.trust-strip::after{
+/* =========================================
+   BRAND GLOW
+========================================= */
 
-  content:"";
+.trust-strip::after {
 
-  position:absolute;
+  content: "";
 
-  width:420px;
-  height:420px;
+  position: absolute;
 
-  right:-150px;
-  top:-120px;
+  width: 420px;
+  height: 420px;
 
-  border-radius:50%;
+  right: -150px;
+  top: -120px;
+
+  border-radius: 50%;
 
   background:
-    rgba(37,99,235,.12);
+    rgba(52, 124, 255, 0.12);
 
-  filter:blur(120px);
+  filter: blur(120px);
+
+  pointer-events: none;
 
 }
+
 
 /* =========================================
    GRID
 ========================================= */
 
-.trust-grid{
+.trust-grid {
 
-  position:relative;
+  position: relative;
 
-  z-index:2;
+  z-index: 2;
 
-  display:grid;
+  display: grid;
 
   grid-template-columns:
     430px
     1fr;
 
-  gap:70px;
+  gap: 70px;
 
-  max-width:1300px;
+  max-width: 1300px;
 
-  margin:auto;
+  margin: auto;
 
 }
+
 
 /* =========================================
    INTRO
 ========================================= */
 
-.trust-intro{
+.trust-intro {
 
-  position:sticky;
+  position: sticky;
 
-  top:120px;
+  top: 120px;
 
-  align-self:start;
+  align-self: start;
 
 }
 
-.trust-intro h2{
 
-  margin:18px 0 24px;
+.trust-intro h2 {
 
-  color:white;
+  margin: 18px 0 24px;
+
+  color: white;
 
   font-size:
-  clamp(
-    3rem,
-    5vw,
-    5.7rem
-  );
+    clamp(
+      3rem,
+      5vw,
+      5.7rem
+    );
 
-  line-height:.92;
+  line-height: 0.92;
 
-  letter-spacing:-.06em;
-
-}
-
-.trust-intro h2 span{
-
-  color:#60a5fa;
+  letter-spacing: -0.06em;
 
 }
 
-.trust-intro p{
 
-  max-width:360px;
+.trust-intro h2 span {
 
-  color:#94a3b8;
-
-  line-height:1.8;
+  color: #347cff;
 
 }
+
+
+.trust-intro p {
+
+  max-width: 360px;
+
+  color: #94a3b8;
+
+  line-height: 1.8;
+
+}
+
 
 /* =========================================
    CARDS
 ========================================= */
 
-.capabilities-grid{
+.capabilities-grid {
 
-  display:grid;
+  display: grid;
 
   grid-template-columns:
-    repeat(2,1fr);
+    repeat(2, 1fr);
 
-  gap:24px;
+  gap: 24px;
 
 }
+
 
 /* =========================================
    CARD
 ========================================= */
 
-.capability-card{
+.capability-card {
 
-  position:relative;
+  position: relative;
 
-  overflow:hidden;
+  overflow: hidden;
 
-  padding:34px;
+  padding: 34px;
 
-  min-height:240px;
+  min-height: 240px;
 
-  border-radius:26px;
+  border-radius: 26px;
 
   border:
     1px solid
-    rgba(255,255,255,.08);
+    rgba(255, 255, 255, 0.08);
 
   background:
     linear-gradient(
       145deg,
-      rgba(255,255,255,.06),
-      rgba(255,255,255,.02)
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
     );
 
   backdrop-filter:
     blur(18px);
 
   transition:
-    transform .45s ease,
-    border-color .45s ease,
-    box-shadow .45s ease;
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
 
 }
 
-/* animated shine */
 
-.capability-card::before{
+/* =========================================
+   ANIMATED SHINE
+========================================= */
 
-  content:"";
+.capability-card::before {
 
-  position:absolute;
+  content: "";
 
-  inset:-200%;
+  position: absolute;
+
+  inset: -200%;
 
   background:
     linear-gradient(
       120deg,
       transparent 35%,
-      rgba(255,255,255,.10),
+      rgba(255, 255, 255, 0.10),
       transparent 65%
     );
 
-  transform:rotate(18deg);
+  transform:
+    rotate(18deg);
 
-  transition:.8s;
+  transition:
+    0.8s;
 
 }
 
-.capability-card:hover::before{
+
+.capability-card:hover::before {
 
   transform:
     translateX(60%)
@@ -227,156 +248,184 @@
 
 }
 
-.capability-card:hover{
+
+.capability-card:hover {
 
   transform:
     translateY(-10px);
 
   border-color:
-    rgba(96,165,250,.45);
+    rgba(52, 124, 255, 0.45);
 
   box-shadow:
-    0 30px 80px rgba(0,0,0,.35),
-    0 0 40px rgba(37,99,235,.10);
+    0 30px 80px
+    rgba(0, 0, 0, 0.35),
+
+    0 0 40px
+    rgba(52, 124, 255, 0.10);
 
 }
+
 
 /* =========================================
    TOP
 ========================================= */
 
-.capability-top{
+.capability-top {
 
-  display:flex;
+  display: flex;
 
   justify-content:
     space-between;
 
-  align-items:center;
+  align-items:
+    center;
 
-  margin-bottom:55px;
+  margin-bottom: 55px;
+
+}
+
+
+.capability-top span {
+
+  color: #64748b;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.2em;
+
+  font-weight: 700;
 
 }
 
-.capability-top span{
-
-  color:#64748b;
-
-  font-size:.75rem;
-
-  letter-spacing:.2em;
-
-  font-weight:700;
-
-}
 
 /* =========================================
    ICON
 ========================================= */
 
-.capability-top svg{
+.capability-top svg {
 
-  width:58px;
-  height:58px;
+  width: 58px;
+  height: 58px;
 
-  padding:16px;
+  padding: 16px;
 
-  border-radius:18px;
+  border-radius: 18px;
 
-  color:#60a5fa;
+  color: #347cff;
 
   background:
-    rgba(37,99,235,.10);
+    rgba(52, 124, 255, 0.10);
 
   border:
     1px solid
-    rgba(96,165,250,.25);
+    rgba(52, 124, 255, 0.25);
 
-  transition:.4s;
+  transition:
+    0.4s;
 
 }
 
-.capability-card:hover svg{
+
+.capability-card:hover svg {
 
   transform:
     rotate(-10deg)
     scale(1.08);
 
   background:
-    rgba(37,99,235,.22);
+    rgba(52, 124, 255, 0.22);
 
 }
+
 
 /* =========================================
    CONTENT
 ========================================= */
 
-.capability-card h3{
+.capability-card h3 {
 
-  margin:0 0 16px;
+  margin: 0 0 16px;
 
-  color:white;
+  color: white;
 
-  font-size:1.7rem;
+  font-size: 1.7rem;
 
-  letter-spacing:-.04em;
+  letter-spacing: -0.04em;
+
+}
+
+
+.capability-card p {
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  line-height: 1.8;
 
 }
 
-.capability-card p{
-
-  margin:0;
-
-  color:#94a3b8;
-
-  line-height:1.8;
-
-}
 
 /* =========================================
    RESPONSIVE
 ========================================= */
 
-@media(max-width:1000px){
+@media (max-width: 1000px) {
 
-.trust-grid{
+  .trust-grid {
 
-grid-template-columns:1fr;
+    grid-template-columns:
+      1fr;
 
-}
+  }
 
-.trust-intro{
 
-position:static;
+  .trust-intro {
 
-}
+    position:
+      static;
 
-}
-
-@media(max-width:700px){
-
-.trust-strip{
-
-padding:90px 20px;
+  }
 
 }
 
-.capabilities-grid{
 
-grid-template-columns:1fr;
+@media (max-width: 700px) {
 
-}
+  .trust-strip {
 
-.capability-card{
+    padding:
+      90px 20px;
 
-min-height:auto;
+  }
 
-}
 
-.trust-intro h2{
+  .capabilities-grid {
 
-font-size:clamp(2.8rem,13vw,4.5rem);
+    grid-template-columns:
+      1fr;
 
-}
+  }
+
+
+  .capability-card {
+
+    min-height:
+      auto;
+
+  }
+
+
+  .trust-intro h2 {
+
+    font-size:
+      clamp(
+        2.8rem,
+        13vw,
+        4.5rem
+      );
+
+  }
 
 }

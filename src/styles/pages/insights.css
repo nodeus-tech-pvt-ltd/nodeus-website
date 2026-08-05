@@ -176,7 +176,7 @@
 
 
 .insights-hero-content h1 span {
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -228,7 +228,7 @@
 .insights-hero-points svg {
   flex-shrink: 0;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -361,7 +361,7 @@
       0.14
     );
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -374,7 +374,7 @@
 
   margin-bottom: 15px;
 
-  color: #60a5fa;
+  color: #397bff;
 
   font-size: 0.68rem;
 
@@ -466,7 +466,7 @@
 
   margin-top: 2px;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -591,7 +591,7 @@
 .insight-library-header h2 span {
   display: block;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -843,7 +843,7 @@
       0.16
     );
 
-  color: #93c5fd;
+  color: #397bff;
 
   box-shadow:
 
@@ -924,7 +924,7 @@
 
 
 .article-meta span:first-child {
-  color: #60a5fa;
+  color: #397bff;
 
   font-size: 0.68rem;
 
@@ -1013,7 +1013,7 @@
 .insight-card-link:hover {
   gap: 13px;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -1510,7 +1510,7 @@
       0.14
     );
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -1678,7 +1678,7 @@
 .insights-empty-state > svg {
   margin-bottom: 18px;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -1869,7 +1869,7 @@
 .insights-value-content h2 span {
   display: block;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -1916,7 +1916,7 @@
 .insights-value-points svg {
   flex-shrink: 0;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -2007,7 +2007,7 @@
 .insights-value-stat-grid strong {
   margin-bottom: 14px;
 
-  color: #76adf8;
+  color: #397bff;
 
   font-size:
     clamp(
@@ -2143,7 +2143,7 @@
 .insights-cta h2 span {
   display: block;
 
-  color: #60a5fa;
+  color: #397bff;
 }
 
 
@@ -2192,8 +2192,8 @@
 
     linear-gradient(
       135deg,
-      #2563eb,
-      #3b82f6
+      #397bff,
+      #397bff
     );
 
   color: white;

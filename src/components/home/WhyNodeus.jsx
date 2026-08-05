@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import "../../styles/home/WhyNodeus.css";
+import { Link } from "react-router-dom";
 
 import {
   Handshake,
@@ -75,13 +76,20 @@ function WhyNodeus() {
             your business, take ownership, and grow with you.
           </p>
 
-          <a
+          {/* <a
             href="#contact"
             className="why-nodeus-link"
           >
             Let's build something together
             <ArrowUpRight size={18} />
-          </a>
+          </a> */}
+
+          <Link
+            to="/contact"
+            className="why-nodeus-link"
+          >
+            Let's build something together
+          </Link>
 
           <div className="why-nodeus-statement">
             <span>01</span>

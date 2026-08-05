@@ -156,7 +156,7 @@ function ProofSection() {
               ))}
             </div>
 
-            <a href="#contact" className="case-study-link">
+            <a href="/resources/case-studies/reliable-back-office-support-for-ecommerce" className="case-study-link">
               View case study
               <ArrowUpRight size={17} />
             </a>

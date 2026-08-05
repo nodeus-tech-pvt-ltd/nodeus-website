@@ -38,9 +38,9 @@
     radial-gradient(
       circle at 78% 28%,
       rgba(
-        54,
-        116,
-        220,
+        57,
+        123,
+        255,
         0.22
       ),
       transparent 28%
@@ -48,9 +48,9 @@
     radial-gradient(
       circle at 20% 90%,
       rgba(
-        46,
-        104,
-        195,
+        57,
+        123,
+        255,
         0.12
       ),
       transparent 35%
@@ -79,9 +79,9 @@
 
     linear-gradient(
       rgba(
-        130,
-        170,
-        230,
+        57,
+        123,
+        255,
         0.08
       )
       1px,
@@ -94,9 +94,9 @@
       90deg,
 
       rgba(
-        130,
-        170,
-        230,
+        57,
+        123,
+        255,
         0.08
       )
       1px,
@@ -160,7 +160,7 @@
 
 
 .insight-breadcrumb:hover {
-  color: #8ab8ff;
+  color: #397bff;
 
   transform:
     translateX(
@@ -214,13 +214,13 @@
     8px
     13px;
 
-  color: #91bdff;
+  color: #8fb5ff;
 
   border:
     1px solid
     rgba(
-      94,
-      157,
+      57,
+      123,
       255,
       0.28
     );
@@ -229,9 +229,9 @@
 
   background:
     rgba(
-      55,
-      115,
-      211,
+      57,
+      123,
+      255,
       0.13
     );
 }
@@ -279,8 +279,8 @@
   background:
     linear-gradient(
       90deg,
-      #5d9eff,
-      #a7caff
+      #397bff,
+      #9cc0ff
     );
 }
 
@@ -340,9 +340,9 @@
   border:
     1px solid
     rgba(
-      128,
-      175,
-      246,
+      57,
+      123,
+      255,
       0.22
     );
 
@@ -352,9 +352,9 @@
     linear-gradient(
       145deg,
       rgba(
-        35,
-        60,
-        100,
+        25,
+        58,
+        112,
         0.74
       ),
       rgba(
@@ -387,9 +387,9 @@
 
     linear-gradient(
       rgba(
-        118,
-        165,
-        234,
+        57,
+        123,
+        255,
         0.12
       )
       1px,
@@ -402,9 +402,9 @@
       90deg,
 
       rgba(
-        118,
-        165,
-        234,
+        57,
+        123,
+        255,
         0.12
       )
       1px,
@@ -432,8 +432,8 @@
     radial-gradient(
       circle,
       rgba(
-        76,
-        143,
+        57,
+        123,
         255,
         0.45
       ),
@@ -461,13 +461,13 @@
 
   height: 86px;
 
-  color: #8bbaff;
+  color: #8fb5ff;
 
   border:
     1px solid
     rgba(
-      128,
-      181,
+      57,
+      123,
       255,
       0.32
     );
@@ -476,18 +476,18 @@
 
   background:
     rgba(
-      21,
-      49,
-      87,
+      20,
+      48,
+      95,
       0.72
     );
 
   box-shadow:
     0 20px 50px
     rgba(
-      20,
-      80,
-      170,
+      57,
+      123,
+      255,
       0.23
     );
 }
@@ -573,7 +573,7 @@
 
   border-left:
     3px solid
-    #4e91f3;
+    #397bff;
 
   font-size:
     clamp(
@@ -615,21 +615,21 @@
 
   margin-top: 4px;
 
-  color: #397edb;
+  color: #397bff;
 
   border:
     1px solid
     rgba(
-      61,
-      128,
-      220,
+      57,
+      123,
+      255,
       0.18
     );
 
   border-radius: 14px;
 
   background:
-    #edf5ff;
+    #edf4ff;
 
   font-size: 0.74rem;
 
@@ -692,9 +692,9 @@
   border:
     1px solid
     rgba(
-      49,
-      102,
-      177,
+      57,
+      123,
+      255,
       0.13
     );
 
@@ -703,16 +703,16 @@
   background:
     linear-gradient(
       145deg,
-      #f1f7ff,
-      #f9fbfe
+      #f1f6ff,
+      #f9fbff
     );
 
   box-shadow:
     0 22px 60px
     rgba(
-      28,
-      61,
-      105,
+      57,
+      123,
+      255,
       0.07
     );
 }
@@ -738,14 +738,14 @@
 
   height: 52px;
 
-  color: #4c91f0;
+  color: #397bff;
 
   border:
     1px solid
     rgba(
-      63,
-      131,
-      224,
+      57,
+      123,
+      255,
       0.2
     );
 
@@ -761,7 +761,7 @@
 
   margin-bottom: 5px;
 
-  color: #5b88c4;
+  color: #397bff;
 
   font-size: 0.68rem;
 
@@ -821,7 +821,7 @@
 
   margin-top: 3px;
 
-  color: #4d93ef;
+  color: #397bff;
 }
 
 
@@ -910,10 +910,10 @@
 
 
 .insight-article-footer button:hover {
-  color: #2475d8;
+  color: #397bff;
 
   border-color:
-    #9cc6fb;
+    #9fc2ff;
 
   transform:
     translateY(
@@ -929,7 +929,7 @@
 
   gap: 9px;
 
-  color: #276fc9;
+  color: #397bff;
 
   font-size: 0.88rem;
 
@@ -946,7 +946,7 @@
 .insight-article-footer > a:hover {
   gap: 13px;
 
-  color: #155eb7;
+  color: #2468e8;
 }
 
 
@@ -977,9 +977,9 @@
   border:
     1px solid
     rgba(
-      81,
-      138,
-      221,
+      57,
+      123,
+      255,
       0.2
     );
 
@@ -989,9 +989,9 @@
     radial-gradient(
       circle at 90% 10%,
       rgba(
-        65,
-        132,
-        238,
+        57,
+        123,
+        255,
         0.2
       ),
       transparent 35%
@@ -1018,7 +1018,7 @@
 
   margin-bottom: 17px;
 
-  color: #78adf3;
+  color: #7faeff;
 
   font-size: 0.65rem;
 
@@ -1070,7 +1070,7 @@
 
   gap: 9px;
 
-  color: #9bc5ff;
+  color: #9fc2ff;
 
   font-size: 0.86rem;
 
@@ -1162,7 +1162,7 @@
 .insight-sidebar-topics a:hover {
   padding-left: 5px;
 
-  color: #2675d2;
+  color: #397bff;
 }
 
 
@@ -1229,7 +1229,7 @@
 .related-insights-header h2 span {
   display: block;
 
-  color: #4b82c8;
+  color: #397bff;
 }
 
 
@@ -1242,7 +1242,7 @@
 
   padding-bottom: 7px;
 
-  color: #246fc9;
+  color: #397bff;
 
   font-size: 0.9rem;
 
@@ -1314,7 +1314,7 @@
 
 .related-insight-card:hover {
   border-color:
-    #b9d5f6;
+    #a8c7ff;
 
   transform:
     translateY(
@@ -1324,9 +1324,9 @@
   box-shadow:
     0 25px 60px
     rgba(
-      30,
-      73,
-      130,
+      57,
+      123,
+      255,
       0.11
     );
 }
@@ -1347,7 +1347,7 @@
     24px
     25px;
 
-  color: #4d8ee7;
+  color: #397bff;
 
   border-bottom:
     1px solid
@@ -1356,7 +1356,7 @@
   background:
     linear-gradient(
       145deg,
-      #edf5ff,
+      #edf4ff,
       #f7faff
     );
 }
@@ -1375,8 +1375,8 @@
     1px solid
     rgba(
       57,
-      128,
-      223,
+      123,
+      255,
       0.18
     );
 
@@ -1480,7 +1480,7 @@
 
   gap: 8px;
 
-  color: #2876d2;
+  color: #397bff;
 
   font-size: 0.86rem;
 
@@ -1555,7 +1555,7 @@
 .insight-detail-cta h2 span {
   display: block;
 
-  color: #4a84cb;
+  color: #397bff;
 }
 
 
@@ -1594,9 +1594,9 @@
   border:
     1px solid
     rgba(
-      91,
-      153,
-      244,
+      57,
+      123,
+      255,
       0.4
     );
 
@@ -1605,16 +1605,16 @@
   background:
     linear-gradient(
       135deg,
-      #246ac3,
-      #3d89e9
+      #397bff,
+      #5b94ff
     );
 
   box-shadow:
     0 17px 35px
     rgba(
-      40,
-      111,
-      202,
+      57,
+      123,
+      255,
       0.2
     );
 
@@ -1639,9 +1639,9 @@
   box-shadow:
     0 22px 42px
     rgba(
-      40,
-      111,
-      202,
+      57,
+      123,
+      255,
       0.28
     );
 }
@@ -1682,7 +1682,7 @@
 .insight-not-found > div > svg {
   margin-bottom: 25px;
 
-  color: #4b8ee8;
+  color: #397bff;
 }
 
 
@@ -1711,7 +1711,7 @@
 .insight-not-found h1 span {
   display: block;
 
-  color: #4a84ca;
+  color: #397bff;
 }
 
 
@@ -1745,7 +1745,7 @@
   border-radius: 13px;
 
   background:
-    #173258;
+    #397bff;
 
   font-size: 0.9rem;
 
@@ -1761,7 +1761,7 @@
 
 .insight-back-button:hover {
   background:
-    #23518b;
+    #2468e8;
 
   transform:
     translateY(

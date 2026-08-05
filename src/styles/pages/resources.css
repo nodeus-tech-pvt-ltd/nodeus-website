@@ -2,6 +2,14 @@
    RESOURCES PAGE
 ================================== */
 
+:root {
+  --resources-primary: #397bff;
+  --resources-primary-dark: #2467eb;
+  --resources-primary-light: #397bff;
+  --resources-primary-soft: #edf4ff;
+  --resources-primary-glow: rgba(57, 123, 255, 0.18);
+}
+
 .resources-page {
   width: 100%;
   overflow: hidden;
@@ -17,7 +25,7 @@
 .resources-page .section-eyebrow {
   display: inline-flex;
   align-items: center;
-  color: #2368dd;
+  color: var(--resources-primary);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -64,13 +72,13 @@
   background:
     radial-gradient(
       circle at 83% 23%,
-      rgba(47, 128, 255, 0.24),
+      rgba(57, 123, 255, 0.24),
       transparent 34%
     ),
 
     radial-gradient(
       circle at 12% 90%,
-      rgba(42, 132, 255, 0.12),
+      rgba(57, 123, 255, 0.12),
       transparent 40%
     ),
 
@@ -176,7 +184,7 @@
 
 
 .resources-hero .section-eyebrow {
-  color: #7db5ff;
+  color: var(--resources-primary-light);
 }
 
 
@@ -208,7 +216,7 @@
 .resources-hero h1 span {
   display: block;
 
-  color: #6caaff;
+  color: var(--resources-primary-light);
 }
 
 
@@ -301,7 +309,7 @@
   transform:
     translateY(-3px);
 
-  background: #edf5ff;
+  background: var(--resources-primary-soft);
 }
 
 
@@ -504,8 +512,8 @@
   background:
 
     rgba(
-      55,
-      139,
+      57,
+      123,
       255,
       0.28
     );
@@ -545,17 +553,17 @@
 
     linear-gradient(
       145deg,
-      #4a96ff,
-      #1d5fce
+      #5b91ff,
+      var(--resources-primary)
     );
 
   box-shadow:
 
     0 24px 55px
     rgba(
-      22,
-      92,
-      205,
+      57,
+      123,
+      255,
       0.42
     );
 }
@@ -618,7 +626,7 @@
 .resources-visual-card svg {
   flex-shrink: 0;
 
-  color: #7db5ff;
+  color: var(--resources-primary-light);
 }
 
 
@@ -745,7 +753,7 @@
 .resource-types-header h2 span {
   display: block;
 
-  color: #2368dd;
+  color: var(--resources-primary);
 }
 
 
@@ -841,9 +849,9 @@
   background:
 
     rgba(
-      41,
-      112,
-      231,
+      57,
+      123,
+      255,
       0.07
     );
 
@@ -860,9 +868,9 @@
   border-color:
 
     rgba(
-      36,
-      104,
-      220,
+      57,
+      123,
+      255,
       0.24
     );
 
@@ -899,11 +907,11 @@
 
   place-items: center;
 
-  color: #2368dd;
+  color: var(--resources-primary);
 
   border-radius: 19px;
 
-  background: #edf4ff;
+  background: var(--resources-primary-soft);
 }
 
 
@@ -912,7 +920,7 @@
 
   margin-top: 28px;
 
-  color: #2368dd;
+  color: var(--resources-primary);
 
   font-size: 0.72rem;
 
@@ -974,7 +982,7 @@
 
   padding-top: 30px;
 
-  color: #173e7a;
+  color: var(--resources-primary);
 
   font-size: 0.91rem;
 
@@ -1060,7 +1068,7 @@
 .resources-featured-header h2 span {
   display: block;
 
-  color: #2368dd;
+  color: var(--resources-primary);
 }
 
 
@@ -1143,9 +1151,9 @@
   border-color:
 
     rgba(
-      35,
-      104,
-      221,
+      57,
+      123,
+      255,
       0.25
     );
 
@@ -1178,16 +1186,16 @@
 
   place-items: center;
 
-  color: #2368dd;
+  color: var(--resources-primary);
 
   border-radius: 17px;
 
-  background: #edf4ff;
+  background: var(--resources-primary-soft);
 }
 
 
 .resources-featured-card-top > span {
-  color: #2368dd;
+  color: var(--resources-primary);
 
   font-size: 0.69rem;
 
@@ -1265,7 +1273,7 @@
 
   padding-top: 28px;
 
-  color: #173e7a;
+  color: var(--resources-primary);
 
   font-size: 0.9rem;
 
@@ -1344,7 +1352,7 @@
 .resources-value-content h2 span {
   display: block;
 
-  color: #2368dd;
+  color: var(--resources-primary);
 }
 
 
@@ -1410,9 +1418,9 @@
   border-color:
 
     rgba(
-      35,
-      104,
-      221,
+      57,
+      123,
+      255,
       0.24
     );
 }
@@ -1423,7 +1431,7 @@
 
   margin-top: 2px;
 
-  color: #2874e8;
+  color: var(--resources-primary);
 }
 
 
@@ -1486,8 +1494,8 @@
       circle at 85% 20%,
 
       rgba(
-        72,
-        147,
+        57,
+        123,
         255,
         0.3
       ),
@@ -1554,7 +1562,7 @@
 
 
 .resources-cta .section-eyebrow {
-  color: #79b4ff;
+  color: var(--resources-primary-light);
 }
 
 
@@ -1586,7 +1594,7 @@
 .resources-cta h2 span {
   display: block;
 
-  color: #70adff;
+  color: var(--resources-primary-light);
 }
 
 
@@ -1659,7 +1667,7 @@
   transform:
     translateY(-3px);
 
-  background: #eaf3ff;
+  background: var(--resources-primary-soft);
 }
 
 

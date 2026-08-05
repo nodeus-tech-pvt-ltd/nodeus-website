@@ -55,9 +55,9 @@
       circle at
       90% 15%,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.18
       ),
       transparent
@@ -67,9 +67,9 @@
       circle at
       10% 100%,
       rgba(
-        59,
-        130,
-        246,
+        57,
+        123,
+        255,
         0.08
       ),
       transparent
@@ -99,9 +99,9 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.16
     );
 
@@ -149,7 +149,7 @@
     22px;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-size:
     0.7rem;
@@ -192,7 +192,7 @@
 
 .team-hero h1 span {
   color:
-    #60a5fa;
+    #397bff;
 }
 
 
@@ -287,10 +287,10 @@
 .team-primary-button {
   border:
     1px solid
-    #2563eb;
+    #397bff;
 
   background:
-    #2563eb;
+    #397bff;
 
   color:
     #ffffff;
@@ -298,9 +298,9 @@
   box-shadow:
     0 14px 35px
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.25
     );
 }
@@ -308,7 +308,7 @@
 
 .team-primary-button:hover {
   background:
-    #1d4ed8;
+    #2468e8;
 
   transform:
     translateY(
@@ -343,17 +343,17 @@
 .team-secondary-button:hover {
   border-color:
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.35
     );
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.1
     );
 
@@ -506,7 +506,7 @@
     18px;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-size:
     0.68rem;
@@ -546,7 +546,7 @@
 
 .team-section-heading h2 strong {
   color:
-    #60a5fa;
+    #397bff;
 
   font-weight:
     inherit;
@@ -647,7 +647,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 }
 
 
@@ -751,9 +751,9 @@
 
   border-color:
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.3
     );
 
@@ -968,10 +968,10 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
-      0.15
+      57,
+      123,
+      255,
+      0.18
     );
 
   border-radius:
@@ -979,14 +979,14 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
-      0.08
+      57,
+      123,
+      255,
+      0.09
     );
 
   color:
-    #78adf3;
+    #397bff;
 
   font-size:
     0.58rem;
@@ -1093,9 +1093,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.16
     );
 
@@ -1107,9 +1107,9 @@
       circle at
       95% 5%,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.18
       ),
       transparent
@@ -1118,9 +1118,9 @@
     linear-gradient(
       145deg,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.11
       ),
       rgba(
@@ -1142,7 +1142,7 @@
     18px;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-size:
     0.68rem;
@@ -1182,7 +1182,7 @@
 
 .team-culture-content h2 strong {
   color:
-    #60a5fa;
+    #397bff;
 
   font-weight:
     inherit;
@@ -1223,7 +1223,7 @@
     9px;
 
   color:
-    #8bbcff;
+    #397bff;
 
   font-size:
     0.8rem;
@@ -1279,7 +1279,7 @@
 
 .team-culture-values span {
   color:
-    #60a5fa;
+    #397bff;
 
   font-size:
     0.68rem;
@@ -1395,7 +1395,7 @@
 
 .team-careers-card h2 strong {
   color:
-    #60a5fa;
+    #397bff;
 
   font-weight:
     inherit;
@@ -1450,13 +1450,13 @@
 
   border:
     1px solid
-    #2563eb;
+    #397bff;
 
   border-radius:
     999px;
 
   background:
-    #2563eb;
+    #397bff;
 
   color:
     #ffffff;
@@ -1480,7 +1480,7 @@
 
 .team-careers-button:hover {
   background:
-    #1d4ed8;
+    #2468e8;
 
   transform:
     translateY(

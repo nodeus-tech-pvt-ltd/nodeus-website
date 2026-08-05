@@ -1,29 +1,56 @@
 /* =================================
+   NODEUS COLORS
+================================= */
+
+.case-studies-page {
+  --nodeus-blue: #347cff;
+  --nodeus-blue-dark: #2468d9;
+  --nodeus-blue-soft: rgba(52, 124, 255, 0.12);
+  --nodeus-blue-glow: rgba(52, 124, 255, 0.22);
+}
+
+
+/* =================================
    CASE STUDIES PAGE
-================================== */
+================================= */
 
 .case-studies-page {
   width: 100%;
   overflow: hidden;
+  color: #10213a;
+  font-family: "Inter", sans-serif;
   background:
     radial-gradient(
       circle at 82% 8%,
-      rgba(63, 125, 220, 0.1),
+      rgba(52, 124, 255, 0.1),
       transparent 28%
     ),
     #f7f9fc;
-  color: #10213a;
+}
+
+
+.case-studies-page,
+.case-studies-page * {
+  font-family: "Inter", sans-serif;
+}
+
+
+.case-studies-page button,
+.case-studies-page input,
+.case-studies-page select,
+.case-studies-page textarea {
+  font-family: inherit;
 }
 
 
 /* =================================
    SHARED EYEBROW
-================================== */
+================================= */
 
 .case-studies-page .section-eyebrow {
   display: inline-flex;
   align-items: center;
-  color: #4f8ee8;
+  color: var(--nodeus-blue);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.18em;
@@ -33,7 +60,7 @@
 
 /* =================================
    HERO
-================================== */
+================================= */
 
 .case-studies-hero {
   position: relative;
@@ -48,10 +75,11 @@
     11rem
     max(6vw, 2rem)
     7rem;
+  color: #ffffff;
   background:
     radial-gradient(
       circle at 78% 22%,
-      rgba(64, 132, 230, 0.18),
+      rgba(52, 124, 255, 0.18),
       transparent 25%
     ),
     linear-gradient(
@@ -60,7 +88,6 @@
       #0a1526 48%,
       #0d1b30 100%
     );
-  color: #ffffff;
 }
 
 
@@ -71,13 +98,13 @@
   pointer-events: none;
   background-image:
     linear-gradient(
-      rgba(111, 157, 220, 0.045)
+      rgba(52, 124, 255, 0.06)
       1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(111, 157, 220, 0.045)
+      rgba(52, 124, 255, 0.06)
       1px,
       transparent 1px
     );
@@ -110,6 +137,9 @@
     1.2rem
     0
     1.7rem;
+  font-family:
+    "Inter",
+    sans-serif;
   font-size:
     clamp(
       3.4rem,
@@ -117,13 +147,14 @@
       6.7rem
     );
   font-weight: 800;
-  letter-spacing: -0.065em;
-  line-height: 0.95;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  text-wrap: balance;
 }
 
 
 .case-studies-hero h1 span {
-  color: #72a8f3;
+  color: var(--nodeus-blue);
 }
 
 
@@ -162,13 +193,13 @@
 
 
 .case-studies-hero-points svg {
-  color: #65a1ef;
+  color: var(--nodeus-blue);
 }
 
 
 /* =================================
    HERO CARD
-================================== */
+================================= */
 
 .case-studies-hero-card {
   width: 100%;
@@ -179,8 +210,9 @@
     2.3rem;
   border:
     1px solid
-    rgba(122, 166, 226, 0.22);
+    rgba(52, 124, 255, 0.25);
   border-radius: 28px;
+  overflow: hidden;
   background:
     linear-gradient(
       145deg,
@@ -193,7 +225,6 @@
     inset
     0 1px 0
     rgba(255, 255, 255, 0.05);
-  overflow: hidden;
 }
 
 
@@ -206,7 +237,7 @@
   content: "";
   border-radius: 50%;
   background:
-    rgba(62, 128, 230, 0.18);
+    rgba(52, 124, 255, 0.18);
   filter:
     blur(18px);
 }
@@ -222,11 +253,11 @@
   place-items: center;
   border:
     1px solid
-    rgba(105, 164, 244, 0.32);
+    rgba(52, 124, 255, 0.35);
   border-radius: 18px;
-  color: #75adf6;
+  color: var(--nodeus-blue);
   background:
-    rgba(53, 108, 190, 0.15);
+    rgba(52, 124, 255, 0.14);
 }
 
 
@@ -235,7 +266,7 @@
   z-index: 1;
   display: block;
   margin-bottom: 1rem;
-  color: #79aef3;
+  color: var(--nodeus-blue);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -260,7 +291,7 @@
 
 
 .case-studies-hero-card h2 br + * {
-  color: #78acf4;
+  color: var(--nodeus-blue);
 }
 
 
@@ -302,7 +333,7 @@
 .case-studies-card-detail > svg {
   flex: 0 0 auto;
   margin-top: 0.12rem;
-  color: #72aaf3;
+  color: var(--nodeus-blue);
 }
 
 
@@ -327,7 +358,7 @@
 
 /* =================================
    FEATURED CASE STUDY
-================================== */
+================================= */
 
 .featured-case-study-section {
   width: min(
@@ -361,16 +392,23 @@
     0.9rem
     0
     0;
-  color: #10213a;
+  color:
+    #10213a;
+  font-family:
+    "Inter",
+    sans-serif;
   font-size:
     clamp(
       2.4rem,
       4.5vw,
       4.7rem
     );
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  line-height: 1;
+  font-weight:
+    800;
+  letter-spacing:
+    -0.045em;
+  line-height:
+    1.05;
 }
 
 
@@ -379,7 +417,7 @@
 .case-studies-value-content h2 span,
 .case-studies-cta h2 span {
   display: block;
-  color: #4e88dc;
+  color: var(--nodeus-blue);
 }
 
 
@@ -399,6 +437,7 @@
     minmax(340px, 0.95fr)
     minmax(0, 1.05fr);
   min-height: 550px;
+  overflow: hidden;
   border:
     1px solid
     #dce5f0;
@@ -407,7 +446,6 @@
   box-shadow:
     0 25px 70px
     rgba(22, 43, 76, 0.09);
-  overflow: hidden;
 }
 
 
@@ -421,7 +459,7 @@
   background:
     radial-gradient(
       circle at 74% 24%,
-      rgba(94, 158, 245, 0.3),
+      rgba(52, 124, 255, 0.3),
       transparent 25%
     ),
     linear-gradient(
@@ -438,13 +476,13 @@
   opacity: 0.55;
   background-image:
     linear-gradient(
-      rgba(129, 177, 241, 0.09)
+      rgba(52, 124, 255, 0.1)
       1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(129, 177, 241, 0.09)
+      rgba(52, 124, 255, 0.1)
       1px,
       transparent 1px
     );
@@ -461,11 +499,11 @@
   height: 260px;
   border:
     1px solid
-    rgba(127, 181, 250, 0.18);
+    rgba(52, 124, 255, 0.22);
   border-radius: 50%;
   box-shadow:
     0 0 100px
-    rgba(69, 137, 231, 0.22);
+    rgba(52, 124, 255, 0.24);
 }
 
 
@@ -479,11 +517,11 @@
   place-items: center;
   border:
     1px solid
-    rgba(124, 180, 250, 0.3);
+    rgba(52, 124, 255, 0.35);
   border-radius: 30px;
-  color: #7db3f7;
+  color: var(--nodeus-blue);
   background:
-    rgba(58, 119, 207, 0.16);
+    rgba(52, 124, 255, 0.15);
   box-shadow:
     0 20px 50px
     rgba(0, 0, 0, 0.22);
@@ -537,7 +575,7 @@
 
 
 .case-study-meta span:first-child {
-  color: #4a86da;
+  color: var(--nodeus-blue);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -593,7 +631,7 @@
 .featured-case-study-result > svg {
   flex: 0 0 auto;
   margin-top: 0.1rem;
-  color: #4d89dc;
+  color: var(--nodeus-blue);
 }
 
 
@@ -640,7 +678,7 @@
     0.95rem
     1.35rem;
   color: #ffffff;
-  background: #183b69;
+  background: var(--nodeus-blue);
 }
 
 
@@ -648,15 +686,16 @@
 .case-studies-cta-button:hover {
   transform:
     translateY(-3px);
+  background: var(--nodeus-blue-dark);
   box-shadow:
     0 14px 30px
-    rgba(38, 87, 153, 0.25);
+    rgba(52, 124, 255, 0.28);
 }
 
 
 /* =================================
    CASE STUDY LIBRARY
-================================== */
+================================= */
 
 .case-study-library {
   width: min(
@@ -694,7 +733,7 @@
     1px solid
     #d8e1ec;
   border-radius: 16px;
-  color: #7290b5;
+  color: var(--nodeus-blue);
   background: #ffffff;
   box-shadow:
     0 8px 25px
@@ -703,10 +742,10 @@
 
 
 .case-study-search:focus-within {
-  border-color: #79a8e8;
+  border-color: var(--nodeus-blue);
   box-shadow:
     0 0 0 4px
-    rgba(80, 141, 223, 0.1);
+    rgba(52, 124, 255, 0.1);
 }
 
 
@@ -759,21 +798,26 @@
 .case-study-category-button:hover {
   transform:
     translateY(-2px);
-  border-color: #9bbce8;
-  color: #3977ca;
+  border-color:
+    var(--nodeus-blue);
+  color:
+    var(--nodeus-blue);
 }
 
 
 .case-study-category-button.active {
-  border-color: #1d4d88;
-  color: #ffffff;
-  background: #1b426f;
+  border-color:
+    var(--nodeus-blue);
+  color:
+    #ffffff;
+  background:
+    var(--nodeus-blue);
 }
 
 
 /* =================================
    CASE STUDY GRID
-================================== */
+================================= */
 
 .case-study-grid {
   display: grid;
@@ -790,6 +834,7 @@
   display: flex;
   min-width: 0;
   flex-direction: column;
+  overflow: hidden;
   border:
     1px solid
     #dce5ef;
@@ -798,7 +843,6 @@
   box-shadow:
     0 12px 35px
     rgba(22, 45, 79, 0.055);
-  overflow: hidden;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
@@ -809,7 +853,8 @@
 .case-study-card:hover {
   transform:
     translateY(-7px);
-  border-color: #b9d0ee;
+  border-color:
+    rgba(52, 124, 255, 0.4);
   box-shadow:
     0 24px 55px
     rgba(23, 55, 97, 0.12);
@@ -824,11 +869,11 @@
   justify-content: space-between;
   padding: 1.45rem;
   overflow: hidden;
-  color: #7bb0f4;
+  color: var(--nodeus-blue);
   background:
     radial-gradient(
       circle at 80% 15%,
-      rgba(83, 151, 238, 0.26),
+      rgba(52, 124, 255, 0.27),
       transparent 24%
     ),
     linear-gradient(
@@ -846,13 +891,13 @@
   opacity: 0.45;
   background-image:
     linear-gradient(
-      rgba(139, 185, 246, 0.07)
+      rgba(52, 124, 255, 0.1)
       1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(139, 185, 246, 0.07)
+      rgba(52, 124, 255, 0.1)
       1px,
       transparent 1px
     );
@@ -876,10 +921,10 @@
   place-items: center;
   border:
     1px solid
-    rgba(126, 179, 246, 0.28);
+    rgba(52, 124, 255, 0.32);
   border-radius: 16px;
   background:
-    rgba(58, 121, 207, 0.16);
+    rgba(52, 124, 255, 0.14);
 }
 
 
@@ -896,7 +941,7 @@
 
 
 .case-study-card-visual > svg {
-  color: #9bc4f7;
+  color: var(--nodeus-blue);
 }
 
 
@@ -951,32 +996,32 @@
 .case-study-card-result svg {
   flex: 0 0 auto;
   margin-top: 0.08rem;
-  color: #4c89dc;
+  color: var(--nodeus-blue);
 }
 
 
 .case-study-card-link {
   margin-top: auto;
-  color: #255eaa;
+  color: var(--nodeus-blue);
   font-size: 0.87rem;
 }
 
 
 .case-study-card-link:hover {
-  color: #153d73;
   gap: 0.9rem;
+  color: var(--nodeus-blue-dark);
 }
 
 
 /* =================================
    EMPTY STATE
-================================== */
+================================= */
 
 .case-studies-empty-state {
   display: grid;
   min-height: 380px;
-  place-items: center;
   align-content: center;
+  place-items: center;
   gap: 0.75rem;
   padding: 3rem;
   border:
@@ -989,7 +1034,7 @@
 
 
 .case-studies-empty-state > svg {
-  color: #6598dc;
+  color: var(--nodeus-blue);
 }
 
 
@@ -1014,7 +1059,8 @@
   border: 0;
   border-radius: 999px;
   color: #ffffff;
-  background: #1b426f;
+  background:
+    var(--nodeus-blue);
   font: inherit;
   font-weight: 700;
   cursor: pointer;
@@ -1023,7 +1069,7 @@
 
 /* =================================
    VALUE SECTION
-================================== */
+================================= */
 
 .case-studies-value-section {
   display: grid;
@@ -1044,7 +1090,7 @@
   background:
     radial-gradient(
       circle at 75% 40%,
-      rgba(55, 119, 211, 0.2),
+      rgba(52, 124, 255, 0.2),
       transparent 27%
     ),
     linear-gradient(
@@ -1066,7 +1112,7 @@
 
 
 .case-studies-value-content h2 span {
-  color: #75abf2;
+  color: var(--nodeus-blue);
 }
 
 
@@ -1100,7 +1146,7 @@
 
 
 .case-studies-value-points svg {
-  color: #70a9f2;
+  color: var(--nodeus-blue);
 }
 
 
@@ -1122,7 +1168,7 @@
   padding: 1.5rem;
   border:
     1px solid
-    rgba(133, 169, 219, 0.17);
+    rgba(52, 124, 255, 0.18);
   border-radius: 22px;
   background:
     rgba(255, 255, 255, 0.045);
@@ -1134,7 +1180,7 @@
 
 
 .case-studies-value-grid strong {
-  color: #7bb0f4;
+  color: var(--nodeus-blue);
   font-size: 0.85rem;
   letter-spacing: 0.1em;
 }
@@ -1150,7 +1196,7 @@
 
 /* =================================
    CTA
-================================== */
+================================= */
 
 .case-studies-cta {
   display: flex;
@@ -1177,7 +1223,7 @@
   background:
     radial-gradient(
       circle at 90% 20%,
-      rgba(78, 142, 225, 0.13),
+      rgba(52, 124, 255, 0.13),
       transparent 28%
     ),
     #ffffff;
@@ -1220,13 +1266,14 @@
     1rem
     1.45rem;
   color: #ffffff;
-  background: #1b426f;
+  background:
+    var(--nodeus-blue);
 }
 
 
 /* =================================
    RESPONSIVE
-================================== */
+================================= */
 
 @media (
   max-width: 1180px

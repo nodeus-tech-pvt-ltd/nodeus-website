@@ -13,9 +13,9 @@
     radial-gradient(
       circle at 8% 8%,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.13
       ),
       transparent 28%
@@ -23,9 +23,9 @@
     radial-gradient(
       circle at 92% 25%,
       rgba(
-        59,
-        130,
-        246,
+        57,
+        123,
+        255,
         0.08
       ),
       transparent 30%
@@ -99,9 +99,9 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.14
     );
 
@@ -127,9 +127,9 @@
 
   background:
     rgba(
-      59,
-      130,
-      246,
+      57,
+      123,
+      255,
       0.08
     );
 
@@ -192,7 +192,7 @@
     22px;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-size:
     0.7rem;
@@ -216,7 +216,7 @@
     1px;
 
   background:
-    #60a5fa;
+    #397bff;
 }
 
 
@@ -253,7 +253,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 }
 
 
@@ -351,17 +351,17 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.45
     );
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.22
     );
 
@@ -371,9 +371,9 @@
   box-shadow:
     0 14px 35px
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.16
     );
 }
@@ -381,7 +381,7 @@
 
 .hww-primary-button:hover {
   background:
-    #2563eb;
+    #397bff;
 
   transform:
     translateY(
@@ -391,9 +391,9 @@
   box-shadow:
     0 20px 42px
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.3
     );
 }
@@ -425,17 +425,17 @@
 .hww-secondary-button:hover {
   border-color:
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.3
     );
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.08
     );
 
@@ -523,7 +523,7 @@
 
 .hww-hero-side-top span {
   color:
-    #67a8f8;
+    #397bff;
 
   font-size:
     0.62rem;
@@ -596,9 +596,9 @@
 
   background:
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.35
     );
 }
@@ -654,7 +654,7 @@
     18px;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-size:
     0.66rem;
@@ -702,7 +702,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-weight:
     650;
@@ -783,7 +783,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 }
 
 
@@ -901,9 +901,9 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.18
     );
 
@@ -932,9 +932,9 @@
 
   border-color:
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.3
     );
 
@@ -942,9 +942,9 @@
     linear-gradient(
       150deg,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.12
       ),
       rgba(
@@ -1024,9 +1024,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.17
     );
 
@@ -1035,14 +1035,14 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.1
     );
 
   color:
-    #69a9f7;
+    #397bff;
 }
 
 
@@ -1164,7 +1164,7 @@
     1px;
 
   color:
-    #5d9ff2;
+    #397bff;
 }
 
 
@@ -1214,7 +1214,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 }
 
 
@@ -1251,7 +1251,7 @@
     30px;
 
   color:
-    #69a9f7;
+    #397bff;
 
   font-size:
     0.77rem;
@@ -1344,17 +1344,17 @@
 
   border-color:
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.23
     );
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.06
     );
 }
@@ -1362,7 +1362,7 @@
 
 .hww-principle-card > span {
   color:
-    #4f7db4;
+    #397bff;
 
   font-size:
     0.68rem;
@@ -1443,9 +1443,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.15
     );
 
@@ -1457,9 +1457,9 @@
       circle at
       90% 10%,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.2
       ),
       transparent
@@ -1468,9 +1468,9 @@
     linear-gradient(
       145deg,
       rgba(
-        37,
-        99,
-        235,
+        57,
+        123,
+        255,
         0.11
       ),
       rgba(
@@ -1485,7 +1485,7 @@
 
 .hww-collaboration-content > span {
   color:
-    #69a9f7;
+    #397bff;
 
   font-size:
     0.65rem;
@@ -1529,7 +1529,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-weight:
     650;
@@ -1597,7 +1597,7 @@
 
 .hww-collaboration-points span {
   color:
-    #5e91cc;
+    #397bff;
 
   font-size:
     0.64rem;
@@ -1692,7 +1692,7 @@
 
 .hww-cta-card > div > span {
   color:
-    #65a7f7;
+    #397bff;
 
   font-size:
     0.64rem;
@@ -1736,7 +1736,7 @@
     block;
 
   color:
-    #60a5fa;
+    #397bff;
 
   font-weight:
     650;
@@ -1787,9 +1787,9 @@
   border:
     1px solid
     rgba(
-      96,
-      165,
-      250,
+      57,
+      123,
+      255,
       0.42
     );
 
@@ -1798,9 +1798,9 @@
 
   background:
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.2
     );
 
@@ -1819,9 +1819,9 @@
   box-shadow:
     0 13px 34px
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.16
     );
 
@@ -1837,7 +1837,7 @@
 
 .hww-cta-button:hover {
   background:
-    #2563eb;
+    #397bff;
 
   transform:
     translateY(
@@ -1847,9 +1847,9 @@
   box-shadow:
     0 20px 42px
     rgba(
-      37,
-      99,
-      235,
+      57,
+      123,
+      255,
       0.3
     );
 }
