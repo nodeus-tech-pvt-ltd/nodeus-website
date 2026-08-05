@@ -27,6 +27,9 @@ import CaseStudyDetail from "./pages/resources/CaseStudyDetail";
 import Resources from "./pages/resources/Resources";
 import Company from "./pages/about/Company";
 import Team from "./pages/about/Team";
+import HowWeWork from "./pages/about/HowWeWork";
+import Careers from "./pages/about/Careers";
+import JobDetails from "./pages/about/JobDetails";
 
 /* =========================
    LAYOUT
@@ -138,6 +141,23 @@ function AnimatedRoutes() {
         <Route
           path="/about/team"
           element={<Team />}
+        />
+
+        <Route
+          path="/about/how-we-work"
+          element={<HowWeWork />}
+        />
+
+        <Route
+          path="/careers"
+          element={<Careers />}
+        />
+
+        <Route
+          path="/careers/:slug"
+          element={
+            <JobDetails />
+          }
         />
       </Routes>
     </AnimatePresence>
