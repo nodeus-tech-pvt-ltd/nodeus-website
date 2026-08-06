@@ -1579,13 +1579,13 @@ function Insights() {
 
           <div>
 
-            <span
+            {/* <span
               className="section-eyebrow"
             >
 
               READY TO MOVE FORWARD?
 
-            </span>
+            </span> */}
 
 
             <h2>

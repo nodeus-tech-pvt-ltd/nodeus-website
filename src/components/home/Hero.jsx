@@ -15,7 +15,7 @@ function Hero() {
       <div className="hero-glow hero-glow-two"></div>
 
       <div className="hero-content">
-        <motion.div
+        {/* <motion.div
           className="hero-label"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ function Hero() {
         >
           <Sparkles size={16} />
           <span>Managed teams. Measurable growth.</span>
-        </motion.div>
+        </motion.div> */}
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}

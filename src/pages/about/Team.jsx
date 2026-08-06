@@ -218,7 +218,7 @@ function Team() {
           >
 
 
-            <div
+            {/* <div
               className="team-section-heading"
             >
 
@@ -279,7 +279,7 @@ function Team() {
 
 
             </div>
-
+ */}
 
           </div>
 

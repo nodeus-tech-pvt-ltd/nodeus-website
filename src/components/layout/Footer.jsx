@@ -376,10 +376,10 @@ function Footer() {
 
 
           <a
-            href="mailto:hello@nodeus.tech"
+            href="mailto:info@nodeus.tech"
           >
 
-            hello@nodeus.tech
+            info@nodeus.tech
 
           </a>
 

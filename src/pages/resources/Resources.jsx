@@ -370,11 +370,11 @@ function Resources() {
             </div>
 
 
-            <span>
+            {/* <span>
 
               NODEUS RESOURCES
 
-            </span>
+            </span> */}
 
 
           </motion.div>

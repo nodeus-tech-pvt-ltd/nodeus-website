@@ -70,9 +70,9 @@ function ServiceDetail() {
             </Link>
 
 
-            <span className="service-detail-eyebrow">
+            {/* <span className="service-detail-eyebrow">
               {serviceData.category}
-            </span>
+            </span> */}
 
 
             <h1>

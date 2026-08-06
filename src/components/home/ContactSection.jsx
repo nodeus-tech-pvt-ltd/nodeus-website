@@ -183,13 +183,13 @@ ${formData.message}`;
         >
 
 
-          <span
+          {/* <span
             className="contact-eyebrow"
           >
 
             GET IN TOUCH
 
-          </span>
+          </span> */}
 
 
           <h2>
@@ -352,7 +352,7 @@ ${formData.message}`;
             </a>
 
 
-            <div
+            {/* <div
               className="contact-response-note"
             >
 
@@ -374,7 +374,7 @@ ${formData.message}`;
               </p>
 
 
-            </div>
+            </div> */}
 
 
           </motion.div>

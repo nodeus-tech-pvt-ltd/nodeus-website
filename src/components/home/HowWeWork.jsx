@@ -11,35 +11,35 @@ import {
 
 const steps = [
   {
-    number: "01",
+    // number: "01",
     icon: Search,
     title: "Discover",
     description:
       "We understand your business, goals, challenges, and the exact capabilities your operation needs.",
   },
   {
-    number: "02",
+    // number: "02",
     icon: Users,
     title: "Build",
     description:
       "We recruit and assemble the right people to create a dedicated team aligned with your requirements.",
   },
   {
-    number: "03",
+    // number: "03",
     icon: GraduationCap,
     title: "Enable",
     description:
       "Your team receives the training, tools, processes, and knowledge needed to represent your business effectively.",
   },
   {
-    number: "04",
+    // number: "04",
     icon: Settings,
     title: "Manage",
     description:
       "We manage the day-to-day operation, monitor performance, maintain quality, and continuously improve processes.",
   },
   {
-    number: "05",
+    // number: "05",
     icon: TrendingUp,
     title: "Scale",
     description:
@@ -68,7 +68,7 @@ function HowWeWork() {
 
         <p>
           We take care of the people, processes, and operations behind
-          the work — so you can focus on growing your business.
+          the work. So, you can focus on growing your business.
         </p>
       </div>
 

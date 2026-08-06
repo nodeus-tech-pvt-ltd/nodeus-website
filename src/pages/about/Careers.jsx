@@ -272,7 +272,7 @@ function Careers() {
             </div>
 
 
-            <div
+            {/* <div
               className="careers-panel-bottom"
             >
 
@@ -331,7 +331,7 @@ function Careers() {
 
             </div>
 
-
+ */}
           </div>
 
 
@@ -348,12 +348,12 @@ function Careers() {
         className="careers-intro"
       >
 
-        <div
+        {/* <div
           className="careers-container"
-        >
+        > */}
 
 
-          <div
+          {/* <div
             className="careers-intro-heading"
           >
 
@@ -408,9 +408,9 @@ function Careers() {
             </p>
 
           </div>
+ */}
 
-
-        </div>
+        {/* </div> */}
 
       </section>
 
@@ -419,7 +419,7 @@ function Careers() {
           BENEFITS
       ================================== */}
 
-      <section
+      {/* <section
         className="careers-benefits"
       >
 
@@ -538,14 +538,14 @@ function Careers() {
 
         </div>
 
-      </section>
+      </section> */}
 
 
       {/* =================================
           CULTURE
       ================================== */}
 
-      <section
+      {/* <section
         className="careers-culture"
       >
 
@@ -679,7 +679,7 @@ function Careers() {
 
         </div>
 
-      </section>
+      </section> */}
 
 
       {/* =================================

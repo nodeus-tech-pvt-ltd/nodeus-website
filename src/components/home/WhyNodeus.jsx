@@ -92,7 +92,7 @@ function WhyNodeus() {
           </Link>
 
           <div className="why-nodeus-statement">
-            <span>01</span>
+            {/* <span>01</span> */}
 
             <p>
               Your goals.
