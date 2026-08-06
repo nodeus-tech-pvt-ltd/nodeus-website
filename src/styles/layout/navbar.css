@@ -243,50 +243,43 @@
 
 
 .nav-dropdown-trigger {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    width: 48px;
-    min-width: 48px;
-    height: 48px;
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
 
-    padding: 0;
+  padding: 0;
 
-    border: none;
-    border-radius: 12px;
+  border: none;
+  border-radius: 12px;
 
-    background: transparent;
+  background: transparent;
+  color: #b8c2d1; /* Default arrow color */
 }
-
 
 .nav-dropdown-trigger:hover,
 .nav-dropdown-trigger.active {
-  color:
-    white;
-
-  background:
-    rgba(
-      96,
-      165,
-      250,
-      0.12
-    );
+  color: #ffffff; /* Arrow becomes white */
+  background: rgba(96, 165, 250, 0.12);
 }
-
 
 .nav-dropdown-trigger svg {
+  width: 18px;
+  height: 18px;
+
+  stroke: currentColor; /* Force SVG to use the button color */
+  color: inherit;
+
   transition:
-    transform
-    0.25s ease;
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-
 .nav-dropdown-trigger.active svg {
-  transform:
-    rotate(
-      180deg
-    );
+  transform: rotate(180deg);
 }
 
 
@@ -4031,3 +4024,4 @@
   color: #fff;
   background: rgba(57,123,255,.10);
 }
+
