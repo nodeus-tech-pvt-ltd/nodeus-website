@@ -1152,344 +1152,361 @@ function Navbar() {
                 ABOUT
             ================================ */}
 
-            <div
-              className="nav-dropdown-wrapper about-dropdown-wrapper"
-              onMouseEnter={() =>
-                openMenu("about")
-              }
-              onMouseLeave={
-                closeMenuWithDelay
-              }
-            >
+<div
+  className="nav-dropdown-wrapper about-dropdown"
+  onMouseEnter={() =>
+    openMenu("about")
+  }
+  onMouseLeave={
+    closeMenuWithDelay
+  }
+>
 
-              <div
-                className="nav-dropdown-heading"
-              >
+  {/* ABOUT NAVIGATION */}
 
-                {/* ABOUT IS NOT CLICKABLE */}
+  <div
+    className="nav-dropdown-heading"
+  >
 
-                <button
-                  type="button"
+    <button
+      type="button"
+      className="nav-main-link nav-main-button"
+      onClick={() => toggleMenu("about")}
+      aria-expanded={activeMenu === "about"}
+    >
+      About
+    </button>
 
-                  className={`nav-main-link nav-about-trigger ${
-                    activeMenu === "about"
-                      ? "active"
-                      : ""
-                  }`}
 
-                  onClick={() =>
-                    toggleMenu("about")
-                  }
+    <button
+      type="button"
 
-                  aria-expanded={
-                    activeMenu === "about"
-                  }
-                >
+      className={`nav-dropdown-trigger ${
+        activeMenu === "about"
+          ? "active"
+          : ""
+      }`}
 
-                  About
+      onClick={() =>
+        toggleMenu("about")
+      }
 
-                  <ChevronDown
-                    size={16}
-                  />
+      aria-label={
+        activeMenu === "about"
 
-                </button>
+          ? "Close about menu"
 
-              </div>
+          : "Open about menu"
+      }
 
+      aria-expanded={
+        activeMenu === "about"
+      }
+    >
 
-              {/* ABOUT DROPDOWN */}
+      <ChevronDown
+        size={16}
+      />
 
-              <div
-                className={`mega-menu about-menu ${
-                  activeMenu === "about"
-                    ? "show"
-                    : ""
-                }`}
-              >
+    </button>
 
+  </div>
 
-                {/* HEADER */}
 
-                <div
-                  className="mega-menu-header"
-                >
+  {/* ABOUT DROPDOWN */}
 
-                  <div>
+  <div
+    className={`mega-menu about-menu ${
+      activeMenu === "about"
+        ? "show"
+        : ""
+    }`}
+  >
 
-                    <span
-                      className="mega-eyebrow"
-                    >
 
-                      ABOUT NODEUS
+    {/* HEADER */}
 
-                    </span>
+    <div
+      className="mega-menu-header"
+    >
 
+      <div>
 
-                    <h2>
+        <span
+          className="mega-eyebrow"
+        >
 
-                      The people and
+          ABOUT NODEUS
 
-                      <br />
+        </span>
 
-                      <span>
 
-                        purpose behind Nodeus.
+        <h2>
 
-                      </span>
+          The people and
 
-                    </h2>
+          <br />
 
-                  </div>
+          <span>
 
+            purpose behind Nodeus.
 
-                  <p>
+          </span>
 
-                    Learn about our company,
-                    our approach, the people
-                    behind our capabilities,
-                    and the values that guide
-                    how we work.
+        </h2>
 
-                  </p>
+      </div>
 
-                </div>
 
+      <p>
 
-                {/* ABOUT LINKS */}
+        Learn about our company,
+        our approach, the people
+        behind our capabilities,
+        and the values that guide
+        how we work.
 
-                <div
-                  className="about-menu-grid"
-                >
+      </p>
 
+    </div>
 
-                  {/* OUR COMPANY */}
 
-                  <Link
-                    to="/about/company"
-                    className="about-menu-card"
-                    onClick={
-                      closeMenu
-                    }
-                  >
+    {/* ABOUT CARDS */}
 
-                    <div
-                      className="about-menu-icon"
-                    >
+    <div
+      className="about-menu-grid"
+    >
 
-                      <BriefcaseBusiness
-                        size={22}
-                      />
 
-                    </div>
+      {/* OUR COMPANY */}
 
+      <Link
+        to="/about/company"
+        className="about-menu-card"
+        onClick={
+          closeMenu
+        }
+      >
 
-                    <div>
+        <div
+          className="about-menu-icon"
+        >
 
-                      <h3>
+          <BriefcaseBusiness
+            size={22}
+          />
 
-                        Our Company
+        </div>
 
-                      </h3>
 
+        <div>
 
-                      <p>
+          <h3>
 
-                        Learn about Nodeus,
-                        our mission, and the
-                        capabilities we build.
+            Our Company
 
-                      </p>
+          </h3>
 
-                    </div>
 
+          <p>
 
-                    <ArrowUpRight
-                      size={18}
-                    />
+            Learn about Nodeus,
+            our mission, and the
+            capabilities we build.
 
-                  </Link>
+          </p>
 
+        </div>
 
-                  {/* OUR TEAM */}
 
-                  <Link
-                    to="/about/team"
-                    className="about-menu-card"
-                    onClick={
-                      closeMenu
-                    }
-                  >
+        <ArrowUpRight
+          size={18}
+        />
 
-                    <div
-                      className="about-menu-icon"
-                    >
+      </Link>
 
-                      <Users
-                        size={22}
-                      />
 
-                    </div>
+      {/* OUR TEAM */}
 
+      <Link
+        to="/about/team"
+        className="about-menu-card"
+        onClick={
+          closeMenu
+        }
+      >
 
-                    <div>
+        <div
+          className="about-menu-icon"
+        >
 
-                      <h3>
+          <Users
+            size={22}
+          />
 
-                        Our Team
+        </div>
 
-                      </h3>
 
+        <div>
 
-                      <p>
+          <h3>
 
-                        Meet the people and
-                        leadership behind
-                        Nodeus.
+            Meet the Team
 
-                      </p>
+          </h3>
 
-                    </div>
 
+          <p>
 
-                    <ArrowUpRight
-                      size={18}
-                    />
+            Meet the people and
+            leadership behind
+            Nodeus.
 
-                  </Link>
+          </p>
 
+        </div>
 
-                  {/* HOW WE WORK */}
 
-                  <Link
-                    to="/about/how-we-work"
-                    className="about-menu-card"
-                    onClick={
-                      closeMenu
-                    }
-                  >
+        <ArrowUpRight
+          size={18}
+        />
 
-                    <div
-                      className="about-menu-icon"
-                    >
+      </Link>
 
-                      <Lightbulb
-                        size={22}
-                      />
 
-                    </div>
+      {/* HOW WE WORK */}
 
+      <Link
+        to="/about/how-we-work"
+        className="about-menu-card"
+        onClick={
+          closeMenu
+        }
+      >
 
-                    <div>
+        <div
+          className="about-menu-icon"
+        >
 
-                      <h3>
+          <Lightbulb
+            size={22}
+          />
 
-                        How We Work
+        </div>
 
-                      </h3>
 
+        <div>
 
-                      <p>
+          <h3>
 
-                        Explore our approach
-                        to building reliable
-                        and scalable teams.
+            How We Work
 
-                      </p>
+          </h3>
 
-                    </div>
 
+          <p>
 
-                    <ArrowUpRight
-                      size={18}
-                    />
+            Explore our approach
+            to building reliable
+            and scalable teams.
 
-                  </Link>
+          </p>
 
+        </div>
 
-                  {/* CAREERS */}
 
-                  <Link
-                    to="/careers"
-                    className="about-menu-card"
-                    onClick={
-                      closeMenu
-                    }
-                  >
+        <ArrowUpRight
+          size={18}
+        />
 
-                    <div
-                      className="about-menu-icon"
-                    >
+      </Link>
 
-                      <BriefcaseBusiness
-                        size={22}
-                      />
 
-                    </div>
+      {/* CAREERS */}
 
+      <Link
+        to="/careers"
+        className="about-menu-card"
+        onClick={
+          closeMenu
+        }
+      >
 
-                    <div>
+        <div
+          className="about-menu-icon"
+        >
 
-                      <h3>
+          <BriefcaseBusiness
+            size={22}
+          />
 
-                        Careers
+        </div>
 
-                      </h3>
 
+        <div>
 
-                      <p>
+          <h3>
 
-                        Explore opportunities
-                        to grow and build
-                        with Nodeus.
+            Careers
 
-                      </p>
+          </h3>
 
-                    </div>
 
+          <p>
 
-                    <ArrowUpRight
-                      size={18}
-                    />
+            Explore opportunities
+            to grow and build
+            with Nodeus.
 
-                  </Link>
+          </p>
 
+        </div>
 
-                </div>
 
+        <ArrowUpRight
+          size={18}
+        />
 
-                {/* BOTTOM */}
+      </Link>
 
-                <div
-                  className="mega-menu-bottom"
-                >
 
-                  <span>
+    </div>
 
-                    Want to work with Nodeus?
 
-                  </span>
+    {/* BOTTOM */}
 
+    <div
+      className="mega-menu-bottom"
+    >
 
-                  <Link
-                    to="/contact"
-                    onClick={
-                      closeMenu
-                    }
-                  >
+      <span>
 
-                    Start a conversation
+        Want to work with Nodeus?
 
-                    <ArrowUpRight
-                      size={17}
-                    />
+      </span>
 
-                  </Link>
 
-                </div>
+      <Link
+        to="/contact"
+        onClick={
+          closeMenu
+        }
+      >
 
-              </div>
+        Start a conversation
 
-            </div>
+        <ArrowUpRight
+          size={17}
+        />
+
+      </Link>
+
+    </div>
+
+
+  </div>
+
+</div>
 
 
         {/* CONTACT */}

@@ -650,11 +650,11 @@ function CaseStudies() {
                   </div>
 
 
-                  <span>
+                  {/* <span>
 
                     NODEUS CASE STUDY
 
-                  </span>
+                  </span> */}
 
 
                 </div>

@@ -285,6 +285,16 @@
     );
 }
 
+.orbit-logo {
+  width: 58%;
+  height: auto;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+}
+
 .orbit-center span {
   font-size: 3rem;
   font-weight: 800;

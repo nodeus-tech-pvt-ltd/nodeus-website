@@ -373,11 +373,11 @@ function InsightDetail() {
               </div>
 
 
-              <span>
+              {/* <span>
 
                 NODEUS INSIGHTS
 
-              </span>
+              </span> */}
 
 
             </motion.div>

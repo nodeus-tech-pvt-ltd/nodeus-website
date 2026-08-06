@@ -554,11 +554,11 @@ function CaseStudyDetail() {
                 </div>
 
 
-                <span>
+                {/* <span>
 
                   NODEUS CASE STUDY
 
-                </span>
+                </span> */}
 
 
               </motion.div>

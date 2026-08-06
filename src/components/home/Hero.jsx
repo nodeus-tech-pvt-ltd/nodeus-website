@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import nodeusLogo from "../../assets/blue-icon.png";
+
 import "../../styles/home/Hero.css";
 
 function Hero() {
@@ -84,7 +86,11 @@ function Hero() {
         <div className="orbit orbit-two"></div>
 
         <div className="orbit-center">
-          <span>N</span>
+          <img
+            src={nodeusLogo}
+            alt="Nodeus"
+            className="orbit-logo"
+          />
         </div>
       </div>
     </section>

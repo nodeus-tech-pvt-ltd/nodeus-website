@@ -209,21 +209,12 @@
 
 
 .nav-dropdown-heading {
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  padding:
-    2px;
-
-  border-radius:
-    11px;
-
-  transition:
-    background
-    0.25s ease;
+    display: grid;
+    grid-template-columns: 1fr 48px;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    border-radius: 12px;
 }
 
 
@@ -239,50 +230,33 @@
 
 
 .nav-main-link {
-  padding-right:
-    5px;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 48px;
+
+    padding: 14px;
+
+    min-width: 0;
 }
 
 
 .nav-dropdown-trigger {
-  display:
-    inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  align-items:
-    center;
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
 
-  justify-content:
-    center;
+    padding: 0;
 
-  width:
-    30px;
+    border: none;
+    border-radius: 12px;
 
-  height:
-    34px;
-
-  padding:
-    0;
-
-  border:
-    none;
-
-  border-radius:
-    8px;
-
-  background:
-    transparent;
-
-  color:
-    #94a3b8;
-
-  cursor:
-    pointer;
-
-  transition:
-    color
-    0.25s ease,
-    background
-    0.25s ease;
+    background: transparent;
 }
 
 
@@ -2372,92 +2346,60 @@
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
-
   gap: 7px;
 
-  padding:
-    10px
-    12px !important;
+  padding: 10px 12px;
 
-  border:
-    none;
+  border: none;
+  border-radius: 10px;
 
-  border-radius:
-    10px;
+  background: transparent;
 
-  background:
-    transparent;
+  color: #b8c2d1;
 
-  color:
-    #b8c2d1;
+  /* font-family: inherit; */
+  font-size: 0.44rem;      /* Same as other nav items */
+  font-weight: 500;         /* Same as other nav items */
+  line-height: 1;
 
-  font-family:
-    inherit;
+  cursor: pointer;
+  white-space: nowrap;
 
-  font-size:
-    0.84rem;
-
-  font-weight:
-    500;
-
-  line-height:
-    1;
-
-  cursor:
-    pointer;
-
-  white-space:
-    nowrap;
+  appearance: none;
+  -webkit-appearance: none;
 
   transition:
-    color
-    0.25s ease,
-    background
-    0.25s ease;
+    color .25s ease,
+    background .25s ease;
 }
 
 
 .nav-about-trigger:hover,
 .nav-about-trigger.active {
-  color:
-    white;
-
-  background:
-    rgba(
-      96,
-      165,
-      250,
-      0.1
-    );
+  color: white;
+  background: rgba(57, 123, 255, 0.10);
 }
 
 
 .nav-about-trigger svg {
-  color:
-    #94a3b8;
+  width: 16px;
+  height: 16px;
+
+  color: #94a3b8;
 
   transition:
-    color
-    0.25s ease,
-    transform
-    0.25s ease;
+    color .25s ease,
+    transform .25s ease;
 }
-
 
 .nav-about-trigger:hover svg,
 .nav-about-trigger.active svg {
-  color:
-    #dbeafe;
+  color: white;
 }
 
-
 .nav-about-trigger.active svg {
-  transform:
-    rotate(
-      180deg
-    );
+  transform: rotate(180deg);
 }
 
 
@@ -4047,4 +3989,45 @@
       );
   }
 
+}
+
+
+
+/* =====================================
+   FORCE ABOUT TO MATCH OTHER MOBILE ROWS
+===================================== */
+
+
+
+.nav-main-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 10px 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: #b8c2d1;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1;
+
+  cursor: pointer;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color .25s ease,
+    background .25s ease;
+}
+
+.nav-main-button:hover {
+  color: #fff;
+  background: rgba(57,123,255,.10);
 }

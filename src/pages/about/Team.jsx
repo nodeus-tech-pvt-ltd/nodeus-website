@@ -128,7 +128,7 @@ function Team() {
 
           {/* TEAM STATISTICS */}
 
-          <div
+          {/* <div
             className="team-hero-stats"
           >
 
@@ -193,7 +193,7 @@ function Team() {
 
 
           </div>
-
+ */}
 
         </div>
 
@@ -424,7 +424,7 @@ function Team() {
                     >
 
 
-                      <span
+                      {/* <span
                         className="team-department"
                       >
 
@@ -432,7 +432,7 @@ function Team() {
                           member.department
                         }
 
-                      </span>
+                      </span> */}
 
 
                       <h3>

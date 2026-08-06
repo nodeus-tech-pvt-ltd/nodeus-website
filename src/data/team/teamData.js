@@ -12,7 +12,7 @@ import muhammadGulsher from "../../assets/team/Muhammad Gulsher.png";
 
 import hamidSaeedKhan from "../../assets/team/Hamid Saeed Khan.png";
 
-import uraidUlHassan from "../../assets/team/Uraid ul Hassan.png";
+import uraidUlHassan from "../../assets/team/Uraid ul Hassan.jpg";
 
 import abdullahHafeez from "../../assets/team/Abdullah Hafeez.png";
 
@@ -24,7 +24,7 @@ import muhammadMahad from "../../assets/team/Muhammad Mahad.png";
 
 import sohaibIftikhar from "../../assets/team/Sohaib Iftikhar.png";
 
-import muhammadAbubakarSaeed from "../../assets/team/Muhammad Abubakar Saeed.png";
+import muhammadAbubakarSaeed from "../../assets/team/Muhammad Abubakar Saeed.jpg";
 
 
 /* =========================================
@@ -42,8 +42,8 @@ const teamData = [
     position:
       "Operations Manager",
 
-    department:
-      "Concierge",
+    // department:
+    //   "Concierge",
 
     image:
       syedZulqarnainHyder,
@@ -65,8 +65,8 @@ const teamData = [
     position:
       "Senior Customer Support Specialist",
 
-    department:
-      "Concierge",
+    // department:
+    //   "Concierge",
 
     image:
       fahadMajid,
@@ -88,8 +88,8 @@ const teamData = [
     position:
       "Senior Customer Support Specialist",
 
-    department:
-      "Concierge",
+    // department:
+    //   "Concierge",
 
     image:
       mirzaNoumanBaig,
@@ -111,8 +111,8 @@ const teamData = [
     position:
       "Customer Support Representative",
 
-    department:
-      "PBBP",
+    // department:
+    //   "PBBP",
 
     image:
       muhammadGulsher,
@@ -134,8 +134,8 @@ const teamData = [
     position:
       "Customer Support Specialist",
 
-    department:
-      "Customer Support",
+    // department:
+    //   "Customer Support",
 
     image:
       hamidSaeedKhan,
@@ -157,8 +157,8 @@ const teamData = [
     position:
       "Customer Support Specialist",
 
-    department:
-      "Featured Partner Support",
+    // department:
+    //   "Featured Partner Support",
 
     image:
       uraidUlHassan,
@@ -180,8 +180,8 @@ const teamData = [
     position:
       "Customer Support Specialist (L2)",
 
-    department:
-      "Featured Partner Support",
+    // department:
+    //   "Featured Partner Support",
 
     image:
       abdullahHafeez,
@@ -203,8 +203,8 @@ const teamData = [
     position:
       "Customer Support Representative",
 
-    department:
-      "PBBP",
+    // department:
+    //   "PBBP",
 
     image:
       ahmadMukhtar,
@@ -226,8 +226,8 @@ const teamData = [
     position:
       "Customer Success Specialist",
 
-    department:
-      "PBBP",
+    // department:
+    //   "PBBP",
 
     image:
       hamzaMushtaq,
@@ -249,8 +249,8 @@ const teamData = [
     position:
       "Customer Support Representative",
 
-    department:
-      "PBBP",
+    // department:
+    //   "PBBP",
 
     image:
       muhammadMahad,
@@ -272,8 +272,8 @@ const teamData = [
     position:
       "Customer Support Specialist (L2)",
 
-    department:
-      "Featured Partner Support",
+    // department:
+    //   "Featured Partner Support",
 
     image:
       sohaibIftikhar,
@@ -295,8 +295,8 @@ const teamData = [
     position:
       "Manager Operations",
 
-    department:
-      "BiggerPockets Concierge",
+    // department:
+    //   "BiggerPockets Concierge",
 
     image:
       muhammadAbubakarSaeed,

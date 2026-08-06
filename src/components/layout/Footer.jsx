@@ -6,7 +6,8 @@ import {
   Link,
 } from "react-router-dom";
 
-import nodeusLogo from "../../assets/nodeus-logo-white.png";
+import nodeusLogo from "../../assets/white_logo.webp";
+
 
 import "../../styles/layout/footer.css";
 
