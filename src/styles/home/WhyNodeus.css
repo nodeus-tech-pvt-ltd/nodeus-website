@@ -74,7 +74,6 @@
   align-self: start;
 }
 
-
 .why-nodeus-heading h2 {
   margin: 0 0 28px;
 
@@ -94,11 +93,9 @@
   letter-spacing: -0.07em;
 }
 
-
 .why-nodeus-heading h2 span {
   color: #347cff;
 }
-
 
 .why-nodeus-heading > p {
   max-width: 400px;
@@ -137,7 +134,6 @@
     color 0.3s ease;
 }
 
-
 .why-nodeus-link:hover {
   gap: 15px;
 
@@ -165,7 +161,6 @@
     rgba(255, 255, 255, 0.1);
 }
 
-
 .why-nodeus-statement > span {
   color: #347cff;
 
@@ -176,7 +171,6 @@
   letter-spacing: 0.15em;
 }
 
-
 .why-nodeus-statement p {
   margin: 0;
 
@@ -186,7 +180,6 @@
 
   line-height: 1.35;
 }
-
 
 .why-nodeus-statement strong {
   color: white;
@@ -214,7 +207,7 @@
 .advantage-card {
   position: relative;
 
-  min-height: 300px;
+  min-height: 245px;
 
   display: flex;
 
@@ -244,7 +237,9 @@
 }
 
 
-/* Brand glow inside card */
+/* =========================================
+   BRAND GLOW INSIDE CARD
+========================================= */
 
 .advantage-card::before {
   content: "";
@@ -252,11 +247,9 @@
   position: absolute;
 
   top: -100px;
-
   right: -100px;
 
   width: 230px;
-
   height: 230px;
 
   border-radius: 50%;
@@ -270,8 +263,9 @@
 
   transition:
     opacity 0.4s ease;
-}
 
+  pointer-events: none;
+}
 
 .advantage-card:hover {
   transform:
@@ -287,7 +281,6 @@
       rgba(255, 255, 255, 0.02)
     );
 }
-
 
 .advantage-card:hover::before {
   opacity: 1;
@@ -311,9 +304,9 @@
   align-items:
     flex-start;
 
-  margin-bottom: 55px;
+  /* Reduced from 55px */
+  margin-bottom: 28px;
 }
-
 
 .advantage-number {
   color: #64748b;
@@ -356,7 +349,6 @@
     box-shadow 0.4s ease;
 }
 
-
 .advantage-card:hover .advantage-icon {
   transform:
     rotate(-8deg)
@@ -380,7 +372,7 @@
 
   z-index: 1;
 
-  margin: 0 0 14px;
+  margin: 0 0 12px;
 
   color: white;
 
@@ -393,7 +385,6 @@
   letter-spacing: -0.03em;
 }
 
-
 .advantage-card p {
   position: relative;
 
@@ -401,11 +392,13 @@
 
   margin: 0;
 
+  max-width: 95%;
+
   color: #94a3b8;
 
   font-size: 0.85rem;
 
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 
@@ -427,7 +420,6 @@
     transform 0.3s ease;
 }
 
-
 .advantage-card:hover .advantage-arrow {
   color: #347cff;
 
@@ -447,7 +439,6 @@
       110px 5vw;
   }
 
-
   .why-nodeus-layout {
     grid-template-columns:
       1fr;
@@ -455,12 +446,10 @@
     gap: 70px;
   }
 
-
   .why-nodeus-heading {
     position:
       static;
   }
-
 
   .why-nodeus-statement {
     margin-top:
@@ -481,7 +470,6 @@
       90px 20px;
   }
 
-
   .why-nodeus-heading h2 {
     font-size:
       clamp(
@@ -491,31 +479,89 @@
       );
   }
 
-
   .advantages-grid {
     grid-template-columns:
       1fr;
-  }
 
+    gap: 16px;
+  }
 
   .advantage-card {
     min-height:
-      270px;
+      0;
 
     padding:
       24px;
   }
 
-
   .advantage-card-top {
     margin-bottom:
-      45px;
+      22px;
   }
 
+  .advantage-icon {
+    width: 48px;
+
+    height: 48px;
+  }
+
+  .advantage-card h3 {
+    font-size:
+      1.4rem;
+  }
+
+  .advantage-card p {
+    font-size:
+      0.9rem;
+  }
+
+  .why-nodeus-statement {
+    flex-direction:
+      column;
+
+    gap: 12px;
+  }
 
   .why-nodeus-statement p {
     font-size:
       1.1rem;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+  .why-nodeus-section {
+    padding:
+      75px 18px;
+  }
+
+  .advantage-card {
+    padding:
+      22px;
+  }
+
+  .advantage-card-top {
+    margin-bottom:
+      20px;
+  }
+
+  .advantage-card h3 {
+    font-size:
+      1.3rem;
+  }
+
+  .advantage-card p {
+    font-size:
+      0.88rem;
+
+    line-height:
+      1.6;
   }
 
 }
