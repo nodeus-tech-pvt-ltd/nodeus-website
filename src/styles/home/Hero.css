@@ -1,14 +1,17 @@
-/* =========================
+/* =========================================================
    HERO SECTION
-========================= */
+========================================================= */
 
 .hero {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+
   display: flex;
   align-items: center;
+
   padding: 140px 8% 80px;
+
   background:
     radial-gradient(
       circle at 75% 45%,
@@ -16,83 +19,67 @@
       transparent 30%
     ),
     #070b14;
+
   color: white;
 }
 
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  opacity: 0.18;
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.06) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.06) 1px,
-      transparent 1px
-    );
-  background-size: 80px 80px;
-  mask-image: linear-gradient(
-    to bottom,
-    black,
-    transparent
-  );
-}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 760px;
+  z-index: 3;
+
+  width: min(100%, 760px);
 }
 
-.hero-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 28px;
-  padding: 9px 14px;
-  border:
-    1px solid
-    rgba(52, 124, 255, 0.35);
-  border-radius: 999px;
-  color: #347cff;
-  background:
-    rgba(52, 124, 255, 0.1);
-  font-size: 0.82rem;
-}
+
+/* =========================================================
+   HEADLINE
+========================================================= */
 
 .hero h1 {
   max-width: 850px;
-  font-size:
-    clamp(
-      3.5rem,
-      7vw,
-      7rem
-    );
+
+  margin: 0 0 30px;
+
+  font-size: clamp(
+    3.5rem,
+    7vw,
+    7rem
+  );
+
   line-height: 0.98;
+
   letter-spacing: -0.07em;
-  margin-bottom: 30px;
 }
 
 .hero h1 span {
   color: #347cff;
 }
 
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
 .hero p {
   max-width: 620px;
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.65
-    );
+
+  margin: 0 0 38px;
+
+  color: rgba(255, 255, 255, 0.65);
+
   font-size: 1.15rem;
   line-height: 1.7;
-  margin-bottom: 38px;
 }
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .hero-actions {
   display: flex;
@@ -105,11 +92,19 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+
   padding: 15px 22px;
+
   border-radius: 999px;
+
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .primary-button {
@@ -118,20 +113,12 @@
 }
 
 .primary-button:hover {
-  transform:
-    translateY(-3px);
+  transform: translateY(-3px);
   background: #246be0;
 }
 
 .secondary-button {
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.2
-    );
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
 }
 
@@ -140,260 +127,19 @@
   color: #347cff;
 }
 
+
+/* =========================================================
+   SCROLL BUTTON
+========================================================= */
+
 .hero-scroll {
   position: absolute;
-  bottom: 35px;
+
   left: 8%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.45
-    );
-  font-size: 0.8rem;
-}
+  bottom: 35px;
 
-.hero-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-}
+  z-index: 5;
 
-.hero-glow-one {
-  width: 350px;
-  height: 350px;
-  right: 8%;
-  top: 20%;
-  background:
-    rgba(
-      52,
-      124,
-      255,
-      0.2
-    );
-}
-
-.hero-glow-two {
-  width: 250px;
-  height: 250px;
-  right: 30%;
-  bottom: 10%;
-  background:
-    rgba(
-      52,
-      124,
-      255,
-      0.1
-    );
-}
-
-
-/* =========================
-   ORBIT ANIMATION
-========================= */
-
-.hero-orbit {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  right: -120px;
-  top: 50%;
-  transform:
-    translateY(-50%);
-  opacity: 0.8;
-}
-
-.orbit {
-  position: absolute;
-  inset: 0;
-  border:
-    1px solid
-    rgba(
-      52,
-      124,
-      255,
-      0.2
-    );
-  border-radius: 50%;
-}
-
-.orbit-one {
-  transform:
-    rotate(25deg)
-    scaleY(0.45);
-
-  animation:
-    orbitRotate
-    18s
-    linear
-    infinite;
-}
-
-.orbit-two {
-  transform:
-    rotate(-25deg)
-    scaleY(0.45);
-
-  animation:
-    orbitRotateReverse
-    22s
-    linear
-    infinite;
-}
-
-.orbit-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120px;
-  height: 120px;
-  transform:
-    translate(
-      -50%,
-      -50%
-    );
-  display: grid;
-  place-items: center;
-  border:
-    1px solid
-    rgba(
-      52,
-      124,
-      255,
-      0.5
-    );
-  border-radius: 50%;
-  background:
-    rgba(
-      52,
-      124,
-      255,
-      0.15
-    );
-  box-shadow:
-    0 0 80px
-    rgba(
-      52,
-      124,
-      255,
-      0.4
-    );
-}
-
-.orbit-logo {
-  width: 58%;
-  height: auto;
-
-  object-fit: contain;
-
-  user-select: none;
-  pointer-events: none;
-}
-
-.orbit-center span {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #347cff;
-}
-
-
-@keyframes orbitRotate {
-
-  from {
-    transform:
-      rotate(25deg)
-      scaleY(0.45);
-  }
-
-  to {
-    transform:
-      rotate(385deg)
-      scaleY(0.45);
-  }
-
-}
-
-
-@keyframes orbitRotateReverse {
-
-  from {
-    transform:
-      rotate(-25deg)
-      scaleY(0.45);
-  }
-
-  to {
-    transform:
-      rotate(-385deg)
-      scaleY(0.45);
-  }
-
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (
-  max-width: 900px
-) {
-
-  .hero {
-    padding:
-      140px
-      6%
-      100px;
-  }
-
-  .hero-orbit {
-    right: -250px;
-    opacity: 0.35;
-  }
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (
-  max-width: 600px
-) {
-
-  .hero h1 {
-    font-size: 3.4rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-orbit {
-    width: 450px;
-    height: 450px;
-    right: -250px;
-  }
-
-  .hero-scroll {
-    left: 6%;
-  }
-
-}
-
-
-.hero-scroll {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -426,4 +172,524 @@
 
 .hero-scroll:hover svg {
   transform: translateY(3px);
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.hero-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.hero-glow-one {
+  width: clamp(250px, 25vw, 350px);
+  height: clamp(250px, 25vw, 350px);
+
+  right: clamp(5%, 8vw, 12%);
+  top: 20%;
+
+  background: rgba(52, 124, 255, 0.2);
+}
+
+.hero-glow-two {
+  width: clamp(180px, 20vw, 250px);
+  height: clamp(180px, 20vw, 250px);
+
+  right: clamp(15%, 30vw, 30%);
+  bottom: 10%;
+
+  background: rgba(52, 124, 255, 0.1);
+}
+
+
+/* =========================================================
+   ORBIT SYSTEM
+========================================================= */
+
+/*
+   IMPORTANT:
+
+   The orbit is now sized relative to the viewport rather
+   than using a fixed 600px + negative right offset.
+
+   This keeps the logo/orbit "attached" to the hero
+   composition when zooming in/out.
+*/
+
+.hero-orbit {
+  position: absolute;
+
+  z-index: 1;
+
+  width: clamp(
+    360px,
+    42vw,
+    600px
+  );
+
+  height: clamp(
+    360px,
+    42vw,
+    600px
+  );
+
+  /*
+    Keep the orbit inside the hero.
+  */
+  right: clamp(
+    20px,
+    5vw,
+    100px
+  );
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ORBIT RINGS
+========================================================= */
+
+.orbit {
+  position: absolute;
+
+  inset: 0;
+
+  border:
+    1px solid
+    rgba(52, 124, 255, 0.2);
+
+  border-radius: 50%;
+}
+
+
+/*
+   IMPORTANT:
+
+   The animation rotates the ring itself.
+   The center logo does NOT move.
+
+   transform-origin ensures the ring always rotates
+   around its own center.
+*/
+
+.orbit-one {
+  transform:
+    rotate(25deg)
+    scaleY(0.45);
+
+  animation:
+    orbitRotate
+    18s
+    linear
+    infinite;
+
+  transform-origin: center;
+}
+
+.orbit-two {
+  transform:
+    rotate(-25deg)
+    scaleY(0.45);
+
+  animation:
+    orbitRotateReverse
+    22s
+    linear
+    infinite;
+
+  transform-origin: center;
+}
+
+
+/* =========================================================
+   ORBIT CENTER / LOGO
+========================================================= */
+
+.orbit-center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  /*
+    Responsive logo size.
+  */
+  width: clamp(
+    80px,
+    8vw,
+    120px
+  );
+
+  height: clamp(
+    80px,
+    8vw,
+    120px
+  );
+
+  transform: translate(-50%, -50%);
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(52, 124, 255, 0.5);
+
+  border-radius: 50%;
+
+  background:
+    rgba(52, 124, 255, 0.15);
+
+  box-shadow:
+    0 0 80px
+    rgba(52, 124, 255, 0.4);
+}
+
+
+.orbit-logo {
+  width: 58%;
+  height: auto;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ORBIT ANIMATION
+========================================================= */
+
+@keyframes orbitRotate {
+  from {
+    transform:
+      rotate(25deg)
+      scaleY(0.45);
+  }
+
+  to {
+    transform:
+      rotate(385deg)
+      scaleY(0.45);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  from {
+    transform:
+      rotate(-25deg)
+      scaleY(0.45);
+  }
+
+  to {
+    transform:
+      rotate(-385deg)
+      scaleY(0.45);
+  }
+}
+
+
+/* =========================================================
+   LARGE TABLETS / SMALL LAPTOPS
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .hero {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .hero-content {
+    max-width: 650px;
+  }
+
+  .hero-orbit {
+    width: clamp(
+      340px,
+      40vw,
+      500px
+    );
+
+    height: clamp(
+      340px,
+      40vw,
+      500px
+    );
+
+    right: 2%;
+  }
+
+  .hero h1 {
+    font-size: clamp(
+      3.2rem,
+      6.5vw,
+      5.5rem
+    );
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: 100svh;
+
+    padding:
+      130px
+      6%
+      100px;
+  }
+
+  /*
+     Move orbit further into the background.
+  */
+  .hero-orbit {
+    width: 430px;
+    height: 430px;
+
+    right: -80px;
+
+    opacity: 0.35;
+  }
+
+  .hero-content {
+    max-width: 620px;
+  }
+
+  .hero p {
+    max-width: 560px;
+  }
+
+  .hero-scroll {
+    left: 6%;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 100svh;
+
+    align-items: center;
+
+    padding:
+      120px
+      6%
+      100px;
+  }
+
+
+  /*
+     IMPORTANT:
+
+     On mobile the orbit is deliberately placed BEHIND
+     the hero content instead of being pushed to the side.
+
+     This gives the hero some visual depth without
+     interfering with the text/buttons.
+  */
+
+  .hero-orbit {
+    width: 420px;
+    height: 420px;
+
+    /*
+       Center it horizontally.
+    */
+    left: 50%;
+    right: auto;
+
+    /*
+       Put it slightly behind the content.
+    */
+    top: 55%;
+
+    transform:
+      translate(-50%, -50%);
+
+    opacity: 0.16;
+
+    z-index: 1;
+
+    /*
+       Prevent it from creating horizontal overflow.
+    */
+    max-width: none;
+  }
+
+
+  .hero-content {
+    width: 100%;
+
+    max-width: 100%;
+
+    z-index: 3;
+  }
+
+
+  .hero h1 {
+    max-width: 100%;
+
+    font-size: clamp(
+      3rem,
+      13vw,
+      4rem
+    );
+
+    line-height: 0.98;
+
+    letter-spacing: -0.065em;
+  }
+
+
+  .hero p {
+    max-width: 100%;
+
+    font-size: 1rem;
+
+    line-height: 1.65;
+  }
+
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+
+  .primary-button,
+  .secondary-button {
+    padding:
+      13px
+      19px;
+  }
+
+
+  .hero-scroll {
+    left: 6%;
+    bottom: 24px;
+
+    font-size: 0.78rem;
+  }
+
+
+  /*
+     Smaller glow on mobile.
+  */
+
+  .hero-glow-one {
+    width: 260px;
+    height: 260px;
+
+    right: -80px;
+    top: 20%;
+
+    opacity: 0.7;
+  }
+
+  .hero-glow-two {
+    width: 200px;
+    height: 200px;
+
+    right: -60px;
+    bottom: 15%;
+
+    opacity: 0.6;
+  }
+
+
+  /*
+     Smaller center logo on mobile.
+  */
+
+  .orbit-center {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .hero {
+    padding:
+      110px
+      5%
+      90px;
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-orbit {
+    width: 360px;
+    height: 360px;
+
+    top: 56%;
+
+    opacity: 0.14;
+  }
+
+  .orbit-center {
+    width: 72px;
+    height: 72px;
+  }
+
+  .hero-scroll {
+    left: 5%;
+    bottom: 18px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .orbit-one,
+  .orbit-two,
+  .hero-scroll {
+    animation: none;
+  }
 }
