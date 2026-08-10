@@ -22,7 +22,7 @@ const values = [
   {
     icon: HeartHandshake,
 
-    number: "01",
+    // number: "01",
 
     title: "Partnership",
 
@@ -33,7 +33,7 @@ const values = [
   {
     icon: Target,
 
-    number: "02",
+    // number: "02",
 
     title: "Ownership",
 
@@ -44,7 +44,7 @@ const values = [
   {
     icon: Zap,
 
-    number: "03",
+    // number: "03",
 
     title: "Adaptability",
 
@@ -55,7 +55,7 @@ const values = [
   {
     icon: Users,
 
-    number: "04",
+    // number: "04",
 
     title: "People First",
 

@@ -19,8 +19,8 @@ import "../../styles/pages/howWeWork.css";
 const processSteps = [
 
   {
-    number:
-      "01",
+    // number:
+    //   "01",
 
     title:
       "Discover",
@@ -40,8 +40,8 @@ const processSteps = [
 
 
   {
-    number:
-      "02",
+    // number:
+    //   "02",
 
     title:
       "Build",
@@ -61,8 +61,8 @@ const processSteps = [
 
 
   {
-    number:
-      "03",
+    // number:
+    //   "03",
 
     title:
       "Enable",
@@ -82,8 +82,8 @@ const processSteps = [
 
 
   {
-    number:
-      "04",
+    // number:
+    //   "04",
 
     title:
       "Manage",
@@ -103,8 +103,8 @@ const processSteps = [
 
 
   {
-    number:
-      "05",
+    // number:
+    //   "05",
 
     title:
       "Scale",
@@ -128,8 +128,8 @@ const processSteps = [
 const principles = [
 
   {
-    number:
-      "01",
+    // number:
+    //   "01",
 
     title:
       "Clear communication",
@@ -140,8 +140,8 @@ const principles = [
 
 
   {
-    number:
-      "02",
+    // number:
+    //   "02",
 
     title:
       "Ownership",
@@ -152,8 +152,8 @@ const principles = [
 
 
   {
-    number:
-      "03",
+    // number:
+    //   "03",
 
     title:
       "Quality and consistency",
@@ -164,8 +164,8 @@ const principles = [
 
 
   {
-    number:
-      "04",
+    // number:
+    //   "04",
 
     title:
       "Continuous improvement",
@@ -647,7 +647,7 @@ function HowWeWork() {
           PRINCIPLES
       ================================== */}
 
-      <section
+      {/* <section
         className="hww-principles"
       >
 
@@ -777,7 +777,7 @@ function HowWeWork() {
         </div>
 
       </section>
-
+ */}
 
       {/* =================================
           COLLABORATION
@@ -844,11 +844,11 @@ function HowWeWork() {
 
               <div>
 
-                <span>
+                {/* <span>
 
                   01
 
-                </span>
+                </span> */}
 
                 <h3>
 
@@ -869,11 +869,11 @@ function HowWeWork() {
 
               <div>
 
-                <span>
+                {/* <span>
 
                   02
 
-                </span>
+                </span> */}
 
                 <h3>
 
@@ -894,11 +894,11 @@ function HowWeWork() {
 
               <div>
 
-                <span>
+                {/* <span>
 
                   03
 
-                </span>
+                </span> */}
 
                 <h3>
 

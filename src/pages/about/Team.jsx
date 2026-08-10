@@ -555,11 +555,11 @@ function Team() {
 
               <div>
 
-                <span>
+                {/* <span>
 
                   01
 
-                </span>
+                </span> */}
 
 
                 <h3>
@@ -583,11 +583,11 @@ function Team() {
 
               <div>
 
-                <span>
+                {/* <span>
 
                   02
 
-                </span>
+                </span> */}
 
 
                 <h3>
@@ -611,11 +611,11 @@ function Team() {
 
               <div>
 
-                <span>
+                {/* span>
 
                   03
 
-                </span>
+                </span>< */}
 
 
                 <h3>

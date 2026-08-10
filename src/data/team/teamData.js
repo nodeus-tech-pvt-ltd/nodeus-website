@@ -2,7 +2,13 @@
    TEAM IMAGES
 ========================================= */
 
+import umairAurangzeb from "../../assets/team/Umair Aurangzeb.webp";
+
 import syedZulqarnainHyder from "../../assets/team/Syed Zulqarnain Hyder.jpg";
+
+import arslanAslam from "../../assets/team/Arslan Aslam.webp";
+
+import muhammadZeeshan from "../../assets/team/Muhammad Zeeshan.jpeg";
 
 import fahadMajid from "../../assets/team/Fahad majid.png";
 
@@ -37,6 +43,28 @@ const teamData = [
     id: 1,
 
     name:
+      "Umair Aurangzeb",
+
+    position:
+      "Chief Executive Officer",
+
+    // department:
+    //   "Concierge",
+
+    image:
+      umairAurangzeb,
+
+    linkedin:
+      "https://www.linkedin.com/in/umair-aurangzeb-759a94156/",
+
+    featured:
+      true,
+  },
+
+  {
+    id: 2,
+
+    name:
       "Syed Zulqarnain Hyder",
 
     position:
@@ -55,9 +83,54 @@ const teamData = [
       true,
   },
 
+  {
+    id: 3,
+
+    name:
+      "Arslan Aslam",
+
+    position:
+      "Automation Engineer",
+
+    // department:
+    //   "Concierge",
+
+    image:
+      arslanAslam,
+
+    linkedin:
+      "https://www.linkedin.com/in/arslan-aslam-031b13220/",
+
+    featured:
+      true,
+  },
+
 
   {
-    id: 2,
+    id: 4,
+
+    name:
+      "Muhammad Zeeshan",
+
+    position:
+      "IT Specialist",
+
+    // department:
+    //   "Concierge",
+
+    image:
+      muhammadZeeshan,
+
+    linkedin:
+      "https://www.linkedin.com/in/muhammadzeeshan555/",
+
+    featured:
+      true,
+  },
+
+
+  {
+    id: 5,
 
     name:
       "Fahad Majid",
@@ -80,7 +153,7 @@ const teamData = [
 
 
   {
-    id: 3,
+    id: 6,
 
     name:
       "Mirza Nouman Baig",
@@ -103,7 +176,7 @@ const teamData = [
 
 
   {
-    id: 4,
+    id: 7,
 
     name:
       "Muhammad Gulsher",
@@ -126,7 +199,7 @@ const teamData = [
 
 
   {
-    id: 5,
+    id: 8,
 
     name:
       "Hamid Saeed Khan",
@@ -149,7 +222,7 @@ const teamData = [
 
 
   {
-    id: 6,
+    id: 9,
 
     name:
       "Uraid ul Hassan",
@@ -172,7 +245,7 @@ const teamData = [
 
 
   {
-    id: 7,
+    id: 10,
 
     name:
       "Abdullah Hafeez",
@@ -195,7 +268,7 @@ const teamData = [
 
 
   {
-    id: 8,
+    id: 11,
 
     name:
       "Ahmad Mukhtar",
@@ -218,7 +291,7 @@ const teamData = [
 
 
   {
-    id: 9,
+    id: 12,
 
     name:
       "Hamza Mushtaq",
@@ -241,7 +314,7 @@ const teamData = [
 
 
   {
-    id: 10,
+    id: 13,
 
     name:
       "Muhammad Mahad",
@@ -264,7 +337,7 @@ const teamData = [
 
 
   {
-    id: 11,
+    id: 14,
 
     name:
       "Sohaib Iftikhar",
@@ -287,13 +360,13 @@ const teamData = [
 
 
   {
-    id: 12,
+    id: 15,
 
     name:
       "Muhammad Abubakar Saeed",
 
     position:
-      "Manager Operations",
+      "Operations Manager",
 
     // department:
     //   "BiggerPockets Concierge",
