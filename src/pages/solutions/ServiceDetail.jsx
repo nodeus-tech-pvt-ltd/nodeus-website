@@ -113,9 +113,9 @@ function ServiceDetail() {
 
               <div>
 
-                <span className="section-eyebrow">
+                {/* <span className="section-eyebrow">
                   SERVICE OVERVIEW
-                </span>
+                </span> */}
 
 
                 <h2>

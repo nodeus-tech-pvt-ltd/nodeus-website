@@ -251,52 +251,39 @@
 ========================================= */
 
 .industry-page-card-top {
-  position: relative;
-
-  z-index: 1;
-
   display: flex;
-
+  justify-content: flex-end;
   align-items: center;
-
-  justify-content: space-between;
 }
 
 
 .industry-page-icon {
-  width: 58px;
+  width: 42px;
+  height: 42px;
 
-  height: 58px;
+  display: grid;
 
-  display: flex;
+  place-items: center;
 
-  align-items: center;
+  border: 1px solid rgba(52, 124, 255, 0.22);
 
-  justify-content: center;
+  border-radius: 15px;
 
-  border-radius: 16px;
+  background: rgba(52, 124, 255, 0.1);
 
-  color: #397bff;
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.09
-    );
+  color: #347cff;
 }
 
 
-.industry-page-card-top > span {
+/* .industry-page-card-top > span {
   color: #94a3b8;
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-weight: 700;
 
-  letter-spacing: 0.13em;
-}
+  letter-spacing: 0.12em;
+} */
 
 
 /* =========================================

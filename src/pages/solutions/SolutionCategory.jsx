@@ -58,9 +58,9 @@ function SolutionCategory() {
         <div className="solution-category-hero-content">
 
           <div>
-            <span className="section-eyebrow">
+            {/* <span className="section-eyebrow">
               SOLUTION {solution.number}
-            </span>
+            </span> */}
 
             <h1>
               {solution.title}

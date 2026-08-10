@@ -259,7 +259,7 @@ function Footer() {
 
 
           <Link
-            to="/team"
+            to="/about/team"
           >
 
             Our Team

@@ -11,7 +11,7 @@ import {
 const solutionsData = {
   "customer-experience": {
     slug: "customer-experience",
-    number: "01",
+    // number: "01",
     icon: Headphones,
     title: "Customer Experience & Support",
     shortTitle: "Customer Experience",
@@ -37,7 +37,7 @@ const solutionsData = {
 
   "business-operations": {
     slug: "business-operations",
-    number: "02",
+    // number: "02",
     icon: BriefcaseBusiness,
     title: "Business Operations & Back Office",
     shortTitle: "Business Operations",
@@ -66,7 +66,7 @@ const solutionsData = {
 
   "sales-revenue": {
     slug: "sales-revenue",
-    number: "03",
+    // number: "03",
     icon: TrendingUp,
     title: "Sales & Revenue Operations",
     shortTitle: "Sales & Revenue",
@@ -88,7 +88,7 @@ const solutionsData = {
 
   "technology-it": {
     slug: "technology-it",
-    number: "04",
+    // number: "04",
     icon: Code2,
     title: "Technology & IT Services",
     shortTitle: "Technology & IT",
@@ -105,7 +105,7 @@ const solutionsData = {
 
   "ai-automation": {
     slug: "ai-automation",
-    number: "05",
+    // number: "05",
     icon: Bot,
     title: "AI & Automation",
     shortTitle: "AI & Automation",
@@ -123,7 +123,7 @@ const solutionsData = {
 
   "finance-accounting": {
     slug: "finance-accounting",
-    number: "06",
+    // number: "06",
     icon: Calculator,
     title: "Finance & Accounting Operations",
     shortTitle: "Finance & Accounting",
@@ -142,7 +142,7 @@ const solutionsData = {
 
   "marketing-creative": {
     slug: "marketing-creative",
-    number: "07",
+    // number: "07",
     icon: Palette,
     title: "Marketing & Creative Services",
     shortTitle: "Marketing & Creative",

@@ -35,7 +35,7 @@ function Industries() {
 
         <section className="industries-page-grid">
 
-          {industries.map((industry, index) => {
+          {industries.map((industry) => {
             const Icon = industry.icon;
 
             return (
@@ -56,18 +56,14 @@ function Industries() {
                 }}
                 transition={{
                   duration: 0.55,
-                  delay: index * 0.06,
                 }}
               >
+
                 <div className="industry-page-card-top">
 
                   <div className="industry-page-icon">
-                    <Icon size={26} />
+                    <Icon size={25} />
                   </div>
-
-                  <span>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
 
                 </div>
 
