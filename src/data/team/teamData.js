@@ -12,7 +12,7 @@ import muhammadGulsher from "../../assets/team/Muhammad Gulsher.png";
 
 import hamidSaeedKhan from "../../assets/team/Hamid Saeed Khan.png";
 
-import uraidUlHassan from "../../assets/team/Uraid ul Hassan.jpg";
+import uraidUlHassan from "../../assets/team/Uraid ul Hassan.png";
 
 import abdullahHafeez from "../../assets/team/Abdullah Hafeez.png";
 
