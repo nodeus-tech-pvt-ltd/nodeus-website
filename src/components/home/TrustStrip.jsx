@@ -10,25 +10,25 @@ import {
 const capabilities = [
   {
     icon: Users,
-    number: "01",
+    // number: "01",
     title: "Dedicated Teams",
     text: "Build a team designed around your business needs.",
   },
   {
     icon: Globe2,
-    number: "02",
+    // number: "02",
     title: "Global Delivery",
     text: "Access skilled talent and operational support across borders.",
   },
   {
     icon: TrendingUp,
-    number: "03",
+    // number: "03",
     title: "Scalable Operations",
     text: "Grow your team and capabilities as your business evolves.",
   },
   {
     icon: Target,
-    number: "04",
+    // number: "04",
     title: "Performance Focused",
     text: "Every process is built around measurable business outcomes.",
   },
@@ -36,7 +36,7 @@ const capabilities = [
 
 function TrustStrip() {
   return (
-    <section className="trust-strip">
+    <section id="trust-strip" className="trust-strip">
 
       <div className="trust-grid">
 

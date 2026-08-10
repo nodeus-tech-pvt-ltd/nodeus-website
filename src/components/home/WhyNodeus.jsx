@@ -14,37 +14,37 @@ import {
 
 const advantages = [
   {
-    number: "01",
+    // number: "01",
     icon: Handshake,
     title: "A true extension of your team",
     text: "We work as an extension of your organization, aligned with your goals, processes, and standards.",
   },
   {
-    number: "02",
+    // number: "02",
     icon: UserRoundCheck,
     title: "People chosen for your needs",
     text: "We help build teams around the skills, experience, and capabilities your operation requires.",
   },
   {
-    number: "03",
+    // number: "03",
     icon: Settings2,
     title: "Managed operations",
     text: "We take care of the day-to-day people and operational management so you can focus on your core business.",
   },
   {
-    number: "04",
+    // number: "04",
     icon: Expand,
     title: "Built to scale",
     text: "Start with the capabilities you need today and expand your operation as your business grows.",
   },
   {
-    number: "05",
+    // number: "05",
     icon: BarChart3,
     title: "Performance visibility",
     text: "Clear processes, quality standards, and performance tracking help keep your operation moving forward.",
   },
   {
-    number: "06",
+    // number: "06",
     icon: WalletCards,
     title: "Operational efficiency",
     text: "Access dedicated capabilities without the complexity of building and managing every function internally.",

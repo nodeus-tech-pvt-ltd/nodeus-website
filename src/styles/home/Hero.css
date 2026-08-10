@@ -391,3 +391,39 @@
   }
 
 }
+
+
+.hero-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  border: 0;
+  padding: 8px 4px;
+
+  background: transparent;
+
+  color: #94a3b8;
+
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero-scroll:hover {
+  color: #ffffff;
+}
+
+.hero-scroll svg {
+  transition: transform 0.3s ease;
+}
+
+.hero-scroll:hover svg {
+  transform: translateY(3px);
+}

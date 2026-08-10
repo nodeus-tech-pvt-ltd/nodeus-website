@@ -72,14 +72,23 @@ function Hero() {
         </motion.div>
       </div>
 
-      <motion.div
+      <motion.button
+        type="button"
         className="hero-scroll"
+        onClick={() => {
+          document
+            .getElementById("trust-strip")
+            ?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+        }}
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.8, repeat: Infinity }}
       >
         <ArrowDown size={18} />
         <span>Scroll to explore</span>
-      </motion.div>
+      </motion.button>
 
       <div className="hero-orbit">
         <div className="orbit orbit-one"></div>

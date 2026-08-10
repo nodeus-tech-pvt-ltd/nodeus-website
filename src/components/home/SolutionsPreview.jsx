@@ -19,7 +19,7 @@ import {
 
 const solutions = [
   {
-    number: "01",
+    // number: "01",
     slug: "customer-experience",
     icon: Headphones,
     title: "Customer Experience & Support",
@@ -33,9 +33,8 @@ const solutions = [
       "Omnichannel Support",
     ],
   },
-
   {
-    number: "02",
+    // number: "02",
     slug: "business-operations",
     icon: BriefcaseBusiness,
     title: "Business Operations & Back Office",
@@ -49,9 +48,8 @@ const solutions = [
       "Document Processing",
     ],
   },
-
   {
-    number: "03",
+    // number: "03",
     slug: "sales-revenue",
     icon: TrendingUp,
     title: "Sales & Revenue Operations",
@@ -65,9 +63,8 @@ const solutions = [
       "SDR Services",
     ],
   },
-
   {
-    number: "04",
+    // number: "04",
     slug: "technology-it",
     icon: Code2,
     title: "Technology & IT Services",
@@ -81,9 +78,8 @@ const solutions = [
       "IT Help Desk Support",
     ],
   },
-
   {
-    number: "05",
+    // number: "05",
     slug: "ai-automation",
     icon: Bot,
     title: "AI & Automation",
@@ -97,9 +93,8 @@ const solutions = [
       "AI-Assisted Workflows",
     ],
   },
-
   {
-    number: "06",
+    // number: "06",
     slug: "finance-accounting",
     icon: Calculator,
     title: "Finance & Accounting Operations",
@@ -113,9 +108,8 @@ const solutions = [
       "Billing Support",
     ],
   },
-
   {
-    number: "07",
+    // number: "07",
     slug: "marketing-creative",
     icon: Palette,
     title: "Marketing & Creative Services",
@@ -176,16 +170,11 @@ function SolutionsPreview() {
   };
 
   return (
-    <section
-      className="solutions-slider-section"
-      id="solutions"
-    >
+    <section className="solutions-slider-section">
       <div className="solutions-slider-container">
 
         {/* HEADER */}
-
         <div className="solutions-slider-header">
-
           <div>
             <span className="section-eyebrow">
               WHAT WE HELP YOU BUILD
@@ -194,125 +183,106 @@ function SolutionsPreview() {
             <h2>
               The right people.
               <br />
-
-              <span>
-                The right capabilities.
-              </span>
+              <span>The right capabilities.</span>
             </h2>
           </div>
 
           <p>
-            From customer experience and business
-            operations to technology, AI, finance,
-            and creative services, we build dedicated
-            capabilities around your business.
+            From customer experience and business operations to
+            technology, AI, finance, and creative services, we build
+            dedicated capabilities around your business.
           </p>
-
         </div>
 
-
         {/* SLIDER */}
-
         <div className="solutions-slider-wrapper">
 
           <AnimatePresence
             mode="wait"
             custom={direction}
           >
-
-            <motion.article
+            <motion.div
               key={activeSolution.slug}
-              className="solution-slider-card"
-
+              className="solution-slider-motion"
               custom={direction}
-
               variants={slideVariants}
-
               initial="enter"
-
               animate="center"
-
               exit="exit"
-
               transition={{
                 duration: 0.45,
                 ease: "easeOut",
               }}
             >
+              {/* ENTIRE CARD IS CLICKABLE */}
+              <Link
+                to={`/solutions/${activeSolution.slug}`}
+                className="solution-slider-card-link"
+                aria-label={`Explore ${activeSolution.title}`}
+              >
+                <article className="solution-slider-card">
 
-              {/* CARD TOP */}
+                  {/* LEFT SIDE */}
+                  <div className="solution-slider-left">
 
-              <div className="solution-slider-top">
+                    <span className="solution-slider-number">
+                      {activeSolution.number}
+                    </span>
 
-                <span className="solution-slider-number">
-                  {activeSolution.number}
-                </span>
+                    <div className="solution-slider-content">
 
-                <div className="solution-slider-icon">
-                  <Icon size={30} />
-                </div>
+                      <h3>
+                        {activeSolution.title}
+                      </h3>
 
-              </div>
+                      <p>
+                        {activeSolution.description}
+                      </p>
 
+                      <div className="solution-slider-services">
+                        {activeSolution.services.map((service) => (
+                          <span key={service}>
+                            {service}
+                          </span>
+                        ))}
+                      </div>
 
-              {/* CARD CONTENT */}
-
-              <div className="solution-slider-content">
-
-                <h3>
-                  {activeSolution.title}
-                </h3>
-
-                <p>
-                  {activeSolution.description}
-                </p>
-
-                <div className="solution-slider-services">
-
-                  {activeSolution.services.map(
-                    (service) => (
-
-                      <span key={service}>
-                        {service}
+                      <span className="solution-slider-link">
+                        Explore solution
+                        <ArrowUpRight size={18} />
                       </span>
 
-                    )
-                  )}
+                    </div>
+                  </div>
 
-                </div>
+                  {/* RIGHT SIDE ICON */}
+                  <div className="solution-slider-right">
+                    <div className="solution-slider-icon">
+                      <Icon size={34} strokeWidth={1.7} />
+                    </div>
 
-                <Link
-                  to={`/solutions/${activeSolution.slug}`}
-                  className="solution-slider-link"
-                >
-                  Explore solution
+                    <span className="solution-slider-arrow">
+                      <ArrowUpRight size={24} />
+                    </span>
+                  </div>
 
-                  <ArrowUpRight size={18} />
-                </Link>
-
-              </div>
-
-            </motion.article>
-
+                </article>
+              </Link>
+            </motion.div>
           </AnimatePresence>
 
-
           {/* CONTROLS */}
-
           <div className="solution-slider-controls">
 
             <div className="solution-slider-counter">
-
               <strong>
-                {activeSolution.number}
+                {String(activeIndex + 1).padStart(2, "0")}
               </strong>
 
               <span>
                 / {String(solutions.length).padStart(2, "0")}
               </span>
-
             </div>
-
 
             <div className="solution-slider-buttons">
 
@@ -335,18 +305,14 @@ function SolutionsPreview() {
             </div>
 
           </div>
-
         </div>
 
-
-        {/* VIEW ALL */}
-
+        {/* FOOTER */}
         <div className="solutions-slider-footer">
 
           <p>
-            Explore all of our capabilities
-            and find the right solution
-            for your business.
+            Explore all of our capabilities and find the right
+            solution for your business.
           </p>
 
           <Link
@@ -354,7 +320,6 @@ function SolutionsPreview() {
             className="all-solutions-link"
           >
             Explore all solutions
-
             <ArrowUpRight size={18} />
           </Link>
 
