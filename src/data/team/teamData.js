@@ -10,7 +10,7 @@ import arslanAslam from "../../assets/team/Arslan Aslam.webp";
 
 import muhammadZeeshan from "../../assets/team/Muhammad Zeeshan.jpeg";
 
-import fahadMajid from "../../assets/team/Fahad majid.png";
+import fahadMajid from "../../assets/team/Fahad Majid.png";
 
 import mirzaNoumanBaig from "../../assets/team/Mirza Nouman Baig.png";
 
