@@ -1393,7 +1393,7 @@ function Insights() {
             VALUE SECTION
         ================================== */}
 
-        <section
+        {/* <section
           className="insights-value-section"
         >
 
@@ -1565,7 +1565,7 @@ function Insights() {
           </div>
 
 
-        </section>
+        </section> */}
 
 
         {/* =================================

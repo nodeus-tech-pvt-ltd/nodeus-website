@@ -2,7 +2,7 @@
    TEAM IMAGES
 ========================================= */
 
-import umairAurangzeb from "../../assets/team/Umair Aurangzeb.webp";
+import umairAurangzeb from "../../assets/team/Umair Aurangzeb.jpg";
 
 import syedZulqarnainHyder from "../../assets/team/Syed Zulqarnain Hyder.jpg";
 

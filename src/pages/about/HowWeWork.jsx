@@ -783,7 +783,7 @@ function HowWeWork() {
           COLLABORATION
       ================================== */}
 
-      <section
+      {/* <section
         className="hww-collaboration"
       >
 
@@ -837,18 +837,18 @@ function HowWeWork() {
             </div>
 
 
-            <div
+            {/* <div
               className="hww-collaboration-points"
             >
 
 
               <div>
 
-                {/* <span>
+                <span>
 
                   01
 
-                </span> */}
+                </span>
 
                 <h3>
 
@@ -869,11 +869,11 @@ function HowWeWork() {
 
               <div>
 
-                {/* <span>
+                <span>
 
                   02
 
-                </span> */}
+                </span>
 
                 <h3>
 
@@ -894,11 +894,11 @@ function HowWeWork() {
 
               <div>
 
-                {/* <span>
+                <span>
 
                   03
 
-                </span> */}
+                </span>
 
                 <h3>
 
@@ -919,13 +919,13 @@ function HowWeWork() {
 
             </div>
 
+ */}
+          {/* </div>
 
-          </div>
 
+        </div> */}
 
-        </div>
-
-      </section>
+      {/* // </section> */}
 
 
       {/* =================================

@@ -887,44 +887,45 @@
 ========================================= */
 
 .industry-challenges-section {
-  padding:
-    125px 0;
+  padding: 95px 0;
 
-  background:
-    #070b14;
+  background: #070b14;
 }
 
 
+/* =========================================
+   CHALLENGES GRID
+========================================= */
+
 .industry-challenges-grid {
-  display:
-    grid;
+  display: grid;
 
   grid-template-columns:
     repeat(
       4,
-      minmax(
-        0,
-        1fr
-      )
+      minmax(0, 1fr)
     );
 
-  gap:
-    15px;
+  gap: 14px;
 }
 
 
+/* =========================================
+   CHALLENGE CARD
+========================================= */
+
 .industry-challenge-card {
-  position:
-    relative;
+  position: relative;
 
-  min-height:
-    220px;
+  /* min-height: 185px; */
 
-  padding:
-    26px;
+  padding: 24px;
 
-  overflow:
-    hidden;
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
 
   border:
     1px solid
@@ -935,8 +936,7 @@
       0.08
     );
 
-  border-radius:
-    18px;
+  border-radius: 17px;
 
   background:
     rgba(
@@ -947,39 +947,29 @@
     );
 
   transition:
-
-    transform
-    0.3s ease,
-
-    border-color
-    0.3s ease,
-
-    background
-    0.3s ease;
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 
+/* =========================================
+   CARD GLOW
+========================================= */
+
 .industry-challenge-card::after {
-  content:
-    "";
+  content: "";
 
-  position:
-    absolute;
+  position: absolute;
 
-  right:
-    -40px;
+  right: -40px;
+  bottom: -70px;
 
-  bottom:
-    -70px;
+  width: 150px;
+  height: 150px;
 
-  width:
-    150px;
-
-  height:
-    150px;
-
-  border-radius:
-    50%;
+  border-radius: 50%;
 
   background:
     rgba(
@@ -989,21 +979,25 @@
       0.1
     );
 
-  filter:
-    blur(
-      30px
-    );
+  filter: blur(30px);
 
-  opacity:
-    0;
+  opacity: 0;
+
+  pointer-events: none;
 
   transition:
-    opacity
-    0.3s ease;
+    opacity 0.3s ease;
 }
 
 
+/* =========================================
+   HOVER
+========================================= */
+
 .industry-challenge-card:hover {
+  transform:
+    translateY(-4px);
+
   border-color:
     rgba(
       57,
@@ -1017,64 +1011,154 @@
       57,
       123,
       255,
-      0.065
+      0.055
     );
 
-  transform:
-    translateY(
-      -6px
+  box-shadow:
+    0 14px 35px
+    rgba(
+      0,
+      0,
+      0,
+      0.18
     );
 }
 
 
 .industry-challenge-card:hover::after {
-  opacity:
-    1;
+  opacity: 1;
 }
 
 
-.industry-challenge-card > span {
-  display:
-    block;
+/* =========================================
+   CARD LABEL
+========================================= */
 
-  margin-bottom:
-    55px;
+.industry-challenge-card > span {
+  position: relative;
+
+  z-index: 1;
+
+  display: block;
+
+  margin: 0 0 22px;
 
   color:
     #397bff;
 
   font-size:
-    0.72rem;
+    0.68rem;
 
   font-weight:
     750;
+
+  line-height:
+    1.2;
 
   letter-spacing:
     0.12em;
 }
 
 
+/* =========================================
+   CARD TITLE
+========================================= */
+
 .industry-challenge-card h3 {
-  position:
-    relative;
+  position: relative;
 
-  z-index:
-    1;
+  z-index: 1;
 
-  margin:
-    0;
+  max-width: 260px;
+
+  margin: 0;
 
   color:
     #dbe4f0;
 
   font-size:
-    1.02rem;
+    1rem;
 
   font-weight:
     600;
 
   line-height:
-    1.45;
+    1.4;
+
+  letter-spacing:
+    -0.01em;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .industry-challenges-section {
+    padding: 80px 0;
+  }
+
+  .industry-challenges-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 14px;
+  }
+
+  /* .industry-challenge-card {
+    min-height: 175px;
+  } */
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .industry-challenges-section {
+    padding: 70px 0;
+  }
+
+  .industry-challenges-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 12px;
+  }
+
+  .industry-challenge-card {
+    /* min-height: 150px; */
+
+    padding: 21px;
+
+    border-radius: 15px;
+  }
+
+  .industry-challenge-card > span {
+    margin-bottom: 17px;
+
+    font-size:
+      0.63rem;
+  }
+
+  .industry-challenge-card h3 {
+    max-width: 100%;
+
+    font-size:
+      0.95rem;
+
+    line-height:
+      1.4;
+  }
+
 }
 
 
@@ -1554,39 +1638,30 @@
 ========================================= */
 
 .industry-outcomes-section {
-  padding:
-    0 0 125px;
+  padding: 0 0 105px;
 
-  background:
-    #070b14;
+  background: #070b14;
 }
 
 
+/* =========================================
+   OUTCOMES PANEL
+========================================= */
+
 .industry-outcomes-panel {
-  display:
-    grid;
+  display: grid;
 
   grid-template-columns:
-    minmax(
-      0,
-      0.9fr
-    )
-    minmax(
-      350px,
-      0.8fr
-    );
+    minmax(0, 0.9fr)
+    minmax(350px, 0.8fr);
 
-  align-items:
-    center;
+  align-items: center;
 
-  gap:
-    90px;
+  gap: 70px;
 
-  padding:
-    65px;
+  padding: 48px 52px;
 
-  overflow:
-    hidden;
+  overflow: hidden;
 
   border:
     1px solid
@@ -1597,95 +1672,84 @@
       0.17
     );
 
-  border-radius:
-    28px;
+  border-radius: 26px;
 
   background:
-
     radial-gradient(
       circle at 100% 0,
-
       rgba(
         57,
         123,
         255,
         0.2
       ),
-
       transparent 37%
     ),
-
     linear-gradient(
       145deg,
-
       #0d1728,
-
       #09101c
     );
 
   box-shadow:
-
-    0 35px 80px
+    0 30px 70px
     rgba(
       0,
       0,
       0,
-      0.25
+      0.23
     );
 }
 
 
-.industry-outcomes-panel > div:first-child > p {
-  max-width:
-    520px;
+/* =========================================
+   LEFT CONTENT
+========================================= */
 
-  margin:
-    25px 0 0;
+.industry-outcomes-panel
+> div:first-child
+> p {
+  max-width: 520px;
 
-  color:
-    #8997aa;
+  margin: 22px 0 0;
 
-  font-size:
-    0.94rem;
+  color: #8997aa;
 
-  line-height:
-    1.8;
+  font-size: 0.94rem;
+
+  line-height: 1.7;
 }
 
 
+/* =========================================
+   OUTCOMES GRID
+========================================= */
+
 .industry-outcomes-grid {
-  display:
-    grid;
+  display: grid;
 
   grid-template-columns:
     repeat(
       2,
-      minmax(
-        0,
-        1fr
-      )
+      minmax(0, 1fr)
     );
 
-  gap:
-    13px;
+  gap: 11px;
 }
 
 
+/* =========================================
+   OUTCOME ITEM
+========================================= */
+
 .industry-outcomes-grid > div {
-  display:
-    flex;
+  display: flex;
 
-  align-items:
-    flex-start;
+  align-items: flex-start;
 
-  gap:
-    11px;
+  gap: 10px;
 
-  min-height:
-    105px;
-
-  padding:
-    21px;
+  padding: 17px 18px;
 
   border:
     1px solid
@@ -1696,8 +1760,7 @@
       0.08
     );
 
-  border-radius:
-    16px;
+  border-radius: 15px;
 
   background:
     rgba(
@@ -1709,29 +1772,100 @@
 }
 
 
-.industry-outcomes-grid svg {
-  flex-shrink:
-    0;
+/* =========================================
+   ICON
+========================================= */
 
-  color:
-    #397bff;
+.industry-outcomes-grid svg {
+  flex-shrink: 0;
+
+  margin-top: 1px;
+
+  color: #397bff;
 }
 
+
+/* =========================================
+   TEXT
+========================================= */
 
 .industry-outcomes-grid span {
-  color:
-    #c4cfdd;
+  color: #c4cfdd;
 
-  font-size:
-    0.82rem;
+  font-size: 0.82rem;
 
-  font-weight:
-    600;
+  font-weight: 600;
 
-  line-height:
-    1.55;
+  line-height: 1.45;
 }
 
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .industry-outcomes-section {
+    padding-bottom: 85px;
+  }
+
+  .industry-outcomes-panel {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    padding: 40px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .industry-outcomes-section {
+    padding-bottom: 70px;
+  }
+
+  .industry-outcomes-panel {
+    gap: 28px;
+
+    padding: 30px 24px;
+
+    border-radius: 21px;
+  }
+
+  .industry-outcomes-panel
+  > div:first-child
+  > p {
+    margin-top: 18px;
+
+    font-size: 0.87rem;
+
+    line-height: 1.65;
+  }
+
+  .industry-outcomes-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .industry-outcomes-grid > div {
+    padding: 15px 16px;
+
+    border-radius: 13px;
+  }
+
+  .industry-outcomes-grid span {
+    font-size: 0.8rem;
+  }
+
+}
 
 /* =========================================
    FINAL CTA
@@ -2359,8 +2493,8 @@
 
 
   .industry-challenge-card {
-    min-height:
-      175px;
+    /* min-height:
+      175px; */
 
     padding:
       22px;
@@ -2599,6 +2733,29 @@
   .industry-challenge-card {
     padding:
       19px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 460px) {
+
+  .industry-challenges-section {
+    padding: 60px 0;
+  }
+
+  .industry-challenge-card {
+    /* min-height: 140px; */
+
+    padding: 19px;
+  }
+
+  .industry-challenge-card > span {
+    margin-bottom: 15px;
   }
 
 }

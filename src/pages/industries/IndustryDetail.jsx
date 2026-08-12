@@ -471,7 +471,7 @@ function IndustryDetail() {
                     >
 
 
-                      <span>
+                      {/* <span>
 
                         {
                           String(
@@ -482,7 +482,7 @@ function IndustryDetail() {
                           )
                         }
 
-                      </span>
+                      </span> */}
 
 
                       <h3>

@@ -545,6 +545,8 @@
   padding:
     105px
     6%;
+
+  box-sizing: border-box;
 }
 
 
@@ -554,6 +556,8 @@
 
 .insight-article {
   min-width: 0;
+
+  width: 100%;
 }
 
 
@@ -601,6 +605,8 @@
   gap: 25px;
 
   margin-bottom: 65px;
+
+  width: 100%;
 }
 
 
@@ -685,9 +691,13 @@
 ========================================= */
 
 .insight-takeaways {
+  width: 100%;
+
   margin-top: 82px;
 
   padding: 42px;
+
+  box-sizing: border-box;
 
   border:
     1px solid
@@ -737,6 +747,8 @@
   width: 52px;
 
   height: 52px;
+
+  flex-shrink: 0;
 
   color: #397bff;
 
@@ -798,6 +810,8 @@
   gap:
     17px
     28px;
+
+  width: 100%;
 }
 
 
@@ -807,6 +821,8 @@
   align-items: flex-start;
 
   gap: 11px;
+
+  min-width: 0;
 
   color: #435269;
 
@@ -854,6 +870,8 @@
   align-items: center;
 
   gap: 15px;
+
+  min-width: 0;
 }
 
 
@@ -964,6 +982,8 @@
   flex-direction: column;
 
   gap: 25px;
+
+  min-width: 0;
 }
 
 
@@ -1177,6 +1197,8 @@
     105px
     6%;
 
+  box-sizing: border-box;
+
   background:
     #eef3f9;
 }
@@ -1285,6 +1307,8 @@
 
 
 .related-insight-card {
+  min-width: 0;
+
   overflow: hidden;
 
   border:
@@ -1371,6 +1395,8 @@
 
   height: 48px;
 
+  flex-shrink: 0;
+
   border:
     1px solid
     rgba(
@@ -1411,6 +1437,8 @@
     28px
     27px
     29px;
+
+  box-sizing: border-box;
 }
 
 
@@ -1522,11 +1550,15 @@
   padding:
     100px
     6%;
+
+  box-sizing: border-box;
 }
 
 
 .insight-detail-cta > div {
   max-width: 720px;
+
+  min-width: 0;
 }
 
 
@@ -1771,13 +1803,130 @@
 
 
 /* =========================================
+   LARGE DESKTOP / ZOOM OUT
+   Keeps normal layout unchanged.
+   Only expands containers when the CSS
+   viewport becomes very wide.
+========================================= */
+
+@media (min-width: 1500px) {
+
+  .insight-detail-hero-inner {
+    max-width: 1400px;
+  }
+
+  .insight-article-section {
+    max-width: 1400px;
+  }
+
+  .related-insights-header,
+  .related-insights-grid {
+    max-width: 1400px;
+  }
+
+  .insight-detail-cta {
+    max-width: 1400px;
+  }
+}
+
+
+@media (min-width: 1800px) {
+
+  .insight-detail-hero-inner {
+    max-width: 1600px;
+  }
+
+  .insight-article-section {
+    max-width: 1600px;
+
+    grid-template-columns:
+      minmax(
+        0,
+        1fr
+      )
+      330px;
+
+    gap: 100px;
+  }
+
+  .related-insights-header,
+  .related-insights-grid {
+    max-width: 1600px;
+  }
+
+  .insight-detail-cta {
+    max-width: 1600px;
+  }
+}
+
+
+@media (min-width: 2200px) {
+
+  .insight-detail-hero-inner {
+    max-width: 1850px;
+  }
+
+  .insight-article-section {
+    max-width: 1850px;
+
+    grid-template-columns:
+      minmax(
+        0,
+        1fr
+      )
+      350px;
+
+    gap: 110px;
+  }
+
+  .related-insights-header,
+  .related-insights-grid {
+    max-width: 1850px;
+  }
+
+  .insight-detail-cta {
+    max-width: 1850px;
+  }
+}
+
+
+@media (min-width: 2600px) {
+
+  .insight-detail-hero-inner {
+    max-width: 2150px;
+  }
+
+  .insight-article-section {
+    max-width: 2150px;
+
+    grid-template-columns:
+      minmax(
+        0,
+        1fr
+      )
+      370px;
+
+    gap: 120px;
+  }
+
+  .related-insights-header,
+  .related-insights-grid {
+    max-width: 2150px;
+  }
+
+  .insight-detail-cta {
+    max-width: 2150px;
+  }
+}
+
+
+/* =========================================
    TABLET
 ========================================= */
 
 @media (
   max-width: 1080px
 ) {
-
 
   .insight-detail-hero {
     padding:
@@ -1861,7 +2010,6 @@
 @media (
   max-width: 760px
 ) {
-
 
   .insight-detail-hero {
     padding:
@@ -1948,6 +2096,8 @@
 
 
   .insight-article-section {
+    max-width: none;
+
     padding:
       70px
       20px;
@@ -2091,6 +2241,8 @@
   .related-insights-grid {
     grid-template-columns:
       1fr;
+
+    max-width: none;
   }
 
 
@@ -2108,6 +2260,8 @@
 
 
   .insight-detail-cta {
+    max-width: none;
+
     padding:
       75px
       20px;
@@ -2148,7 +2302,6 @@
 @media (
   max-width: 430px
 ) {
-
 
   .insight-detail-hero {
     padding-top: 112px;

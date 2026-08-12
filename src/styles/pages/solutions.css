@@ -3,13 +3,18 @@
 ========================================= */
 
 .solutions-page {
+  width: 100%;
   min-height: 100vh;
 
-  padding-top: 110px;
+  padding-top: var(--navbar-height);
 
-  background: #f7f9fc;
+  background:
+    #080b12;
 
-  color: #111827;
+  color:
+    #f8fafc;
+
+  overflow-x: clip;
 }
 
 
@@ -18,31 +23,95 @@
 ========================================= */
 
 .solutions-page-hero {
-  padding: 100px 8% 120px;
+  position: relative;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  padding:
+    85px
+    max(24px, calc((100vw - 1240px) / 2))
+    90px;
 
   background:
     radial-gradient(
-      circle at 80% 20%,
-      rgba(
-        57,
-        123,
-        255,
-        0.14
-      ),
-      transparent 35%
+      circle at 82% 15%,
+      rgba(57, 123, 255, 0.16),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 8% 90%,
+      rgba(57, 123, 255, 0.07),
+      transparent 30%
     ),
     linear-gradient(
       135deg,
-      #f8fbff 0%,
-      #eef5ff 100%
+      #0d121c 0%,
+      #0a0f18 55%,
+      #080b12 100%
     );
+
+  border-bottom:
+    1px solid
+    rgba(148, 163, 184, 0.07);
 }
 
 
+/* =========================================
+   HERO DECORATIVE CIRCLE
+========================================= */
+
+.solutions-page-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 460px;
+  height: 460px;
+
+  top: -250px;
+  right: -150px;
+
+  border:
+    1px solid
+    rgba(57, 123, 255, 0.13);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.solutions-page-hero > * {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
 .solutions-page-hero h1 {
+  width: 100%;
+
   max-width: 900px;
 
-  margin: 20px 0 30px;
+  margin:
+    16px
+    0
+    22px;
+
+  color:
+    #f8fafc;
 
   font-size:
     clamp(
@@ -51,135 +120,265 @@
       100px
     );
 
-  line-height: 0.95;
+  font-weight:
+    700;
 
-  letter-spacing: -0.06em;
+  line-height:
+    0.95;
+
+  letter-spacing:
+    -0.06em;
 }
 
 
 .solutions-page-hero h1 span {
-  color: #397bff;
-}
-
-
-.solutions-page-hero p {
-  max-width: 700px;
-
-  color: #64748b;
-
-  font-size: 20px;
-
-  line-height: 1.7;
+  color:
+    #397bff;
 }
 
 
 /* =========================================
-   GRID
+   HERO DESCRIPTION
+========================================= */
+
+.solutions-page-hero p {
+  width: 100%;
+
+  max-width: 700px;
+
+  margin: 0;
+
+  color:
+    #94a3b8;
+
+  font-size:
+    18px;
+
+  line-height:
+    1.65;
+}
+
+
+/* =========================================
+   SOLUTIONS GRID
 ========================================= */
 
 .solutions-page-grid {
-  max-width: 1400px;
+  width:
+    min(
+      1240px,
+      calc(100% - 48px)
+    );
 
-  margin: 0 auto;
+  box-sizing: border-box;
 
-  padding: 120px 8% 150px;
+  margin:
+    0 auto;
 
-  display: grid;
+  padding:
+    55px
+    0
+    80px;
+
+  display:
+    grid;
 
   grid-template-columns:
     repeat(
       2,
-      1fr
+      minmax(0, 1fr)
     );
 
-  gap: 22px;
+  gap:
+    16px;
+
+  align-items:
+    stretch;
 }
 
 
 /* =========================================
-   CARD
+   SOLUTION CARD
 ========================================= */
 
 .solutions-page-card {
   position: relative;
 
-  min-height: 390px;
+  width: 100%;
 
-  padding: 38px;
+  min-width: 0;
 
-  display: flex;
+  min-height: 300px;
 
-  flex-direction: column;
+  box-sizing: border-box;
 
-  overflow: hidden;
+  padding:
+    24px
+    27px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  overflow:
+    hidden;
 
   border:
     1px solid
-    #e2e8f0;
+    #202938;
 
-  border-radius: 22px;
+  border-radius:
+    16px;
 
-  background: #ffffff;
+  background:
+    linear-gradient(
+      145deg,
+      #111823 0%,
+      #0d131d 100%
+    );
+
+  color:
+    inherit;
+
+  text-decoration:
+    none;
+
+  cursor:
+    pointer;
 
   transition:
-    transform 0.4s ease,
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+
+/* =========================================
+   CARD DECORATIVE CIRCLE
+========================================= */
 
 .solutions-page-card::before {
   content: "";
 
   position: absolute;
 
-  width: 260px;
+  width: 220px;
+  height: 220px;
 
-  height: 260px;
+  top: -105px;
+  right: -105px;
 
-  top: -100px;
-
-  right: -80px;
-
-  border-radius: 50%;
+  border-radius:
+    50%;
 
   background:
     rgba(
       57,
       123,
       255,
-      0.08
+      0.075
     );
 
+  pointer-events:
+    none;
+
   transition:
-    transform
-    0.5s ease;
+    transform 0.45s ease,
+    background 0.3s ease;
 }
 
 
-.solutions-page-card:hover {
-  transform:
-    translateY(
-      -8px
-    );
+/* =========================================
+   SECONDARY DECORATIVE GLOW
+========================================= */
 
-  border-color: #397bff;
+.solutions-page-card::after {
+  content: "";
 
-  box-shadow:
-    0 25px 60px
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  left: -75px;
+  bottom: -75px;
+
+  border-radius:
+    50%;
+
+  background:
     rgba(
       57,
       123,
       255,
-      0.13
+      0.045
+    );
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.solutions-page-card:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.42
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      #131c2b 0%,
+      #0e1520 100%
+    );
+
+  box-shadow:
+    0 18px 40px
+    rgba(
+      0,
+      0,
+      0,
+      0.28
+    ),
+    0 0 25px
+    rgba(
+      57,
+      123,
+      255,
+      0.045
     );
 }
 
 
 .solutions-page-card:hover::before {
   transform:
-    scale(
-      1.5
+    scale(1.25);
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.105
     );
 }
 
@@ -189,43 +388,97 @@
 ========================================= */
 
 .solutions-page-card-top {
-  position: relative;
+  position:
+    absolute;
 
-  z-index: 1;
+  z-index:
+    3;
 
-  display: flex;
+  top:
+    24px;
 
-  align-items: center;
+  left:
+    27px;
 
-  justify-content: space-between;
+  right:
+    27px;
+
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  justify-content:
+    space-between;
+
+  pointer-events:
+    none;
 }
 
+
+/* =========================================
+   CARD NUMBER
+========================================= */
 
 .solutions-page-card-top > span {
-  color: #94a3b8;
+  color:
+    #526174;
 
-  font-size: 14px;
+  font-size:
+    11px;
 
-  font-weight: 700;
+  font-weight:
+    700;
 
-  letter-spacing: 0.12em;
+  letter-spacing:
+    0.14em;
 }
 
 
+/* =========================================
+   CARD ICON
+========================================= */
+
 .solutions-page-icon {
-  width: 58px;
+  position:
+    relative;
 
-  height: 58px;
+  z-index:
+    2;
 
-  display: flex;
+  flex-shrink:
+    0;
 
-  align-items: center;
+  width:
+    42px;
 
-  justify-content: center;
+  height:
+    42px;
 
-  border-radius: 14px;
+  display:
+    flex;
 
-  color: #397bff;
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  box-sizing:
+    border-box;
+
+  border:
+    1px solid
+    rgba(
+      57,
+      123,
+      255,
+      0.22
+    );
+
+  border-radius:
+    11px;
 
   background:
     rgba(
@@ -234,45 +487,118 @@
       255,
       0.09
     );
+
+  color:
+    #4d8cff;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.solutions-page-card:hover
+.solutions-page-icon {
+  transform:
+    translateY(-2px);
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.14
+    );
+
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.35
+    );
 }
 
 
 /* =========================================
-   CARD CONTENT
+   CARD MAIN CONTENT
 ========================================= */
 
-.solutions-page-card h2 {
-  position: relative;
+.solutions-page-card h2,
+.solutions-page-card > p,
+.solutions-page-services,
+.solutions-page-card .solution-link {
+  position:
+    relative;
 
-  z-index: 1;
-
-  max-width: 500px;
-
-  margin:
-    55px 0 18px;
-
-  font-size: 30px;
-
-  line-height: 1.1;
-
-  letter-spacing: -0.03em;
+  z-index:
+    2;
 }
 
 
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.solutions-page-card h2 {
+  width:
+    100%;
+
+  max-width:
+    520px;
+
+  margin:
+    0
+    auto
+    10px;
+
+  color:
+    #f1f5f9;
+
+  font-size:
+    26px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.08;
+
+  letter-spacing:
+    -0.035em;
+
+  text-align:
+    center;
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+========================================= */
+
 .solutions-page-card > p {
-  position: relative;
+  width:
+    100%;
 
-  z-index: 1;
+  max-width:
+    520px;
 
-  max-width: 500px;
+  margin:
+    0
+    auto;
 
-  margin: 0;
+  color:
+    #8b99ab;
 
-  color: #64748b;
+  font-size:
+    14px;
 
-  font-size: 16px;
+  line-height:
+    1.55;
 
-  line-height: 1.6;
+  text-align:
+    center;
 }
 
 
@@ -281,92 +607,332 @@
 ========================================= */
 
 .solutions-page-services {
-  position: relative;
+  width:
+    100%;
 
-  z-index: 1;
+  max-width:
+    560px;
 
-  display: flex;
+  display:
+    flex;
 
-  flex-wrap: wrap;
+  flex-wrap:
+    wrap;
 
-  gap: 8px;
+  align-items:
+    center;
 
-  margin-top: 28px;
-}
+  justify-content:
+    center;
 
+  gap:
+    5px
+    6px;
 
-.solutions-page-services span {
-  padding: 8px 12px;
+  margin:
+    13px
+    auto
+    0;
 
-  border-radius: 100px;
-
-  color: #475569;
-
-  background: #f1f5f9;
-
-  font-size: 13px;
+  min-width:
+    0;
 }
 
 
 /* =========================================
-   EXPLORE SOLUTION LINK
+   SERVICE TAG
 ========================================= */
 
-.solutions-page-card
-.solution-link {
-  position: relative;
+.solutions-page-services span {
+  max-width:
+    100%;
 
-  z-index: 2;
+  box-sizing:
+    border-box;
 
-  display: flex;
+  padding:
+    5px
+    9px;
 
-  align-items: center;
+  border:
+    1px solid
+    rgba(
+      148,
+      163,
+      184,
+      0.10
+    );
 
-  gap: 8px;
+  border-radius:
+    999px;
 
-  width: fit-content;
+  color:
+    #94a3b8;
 
-  /*
-    This pushes the link to the bottom
-    without overlapping the service tags.
-  */
+  background:
+    #151c27;
 
-  margin-top: auto;
+  font-size:
+    11px;
 
-  /*
-    Creates space between the service tags
-    and the Explore Solution button.
-  */
+  font-weight:
+    500;
 
-  padding-top: 35px;
+  line-height:
+    1.25;
 
-  color: #397bff;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  text-decoration: none;
+  white-space:
+    nowrap;
 
   transition:
-    transform 0.3s ease,
-    color 0.3s ease;
-}
-
-
-.solutions-page-card
-.solution-link:hover {
-  color: #1f67e8;
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 
 .solutions-page-card:hover
+.solutions-page-services span {
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.16
+    );
+
+  background:
+    #172131;
+
+  color:
+    #a9b8ca;
+}
+
+
+/* =========================================
+   EXPLORE SOLUTION BUTTON
+========================================= */
+
+.solutions-page-card .solution-link {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    8px;
+
+  width:
+    fit-content;
+
+  margin:
+    18px
+    auto
+    0;
+
+  padding:
+    9px
+    15px;
+
+  box-sizing:
+    border-box;
+
+  border:
+    1px solid
+    rgba(
+      57,
+      123,
+      255,
+      0.25
+    );
+
+  border-radius:
+    8px;
+
+  color:
+    #70a3ff;
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.09
+    );
+
+  font-size:
+    12px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.2;
+
+  text-decoration:
+    none;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================
+   CARD HOVER BUTTON
+========================================= */
+
+.solutions-page-card:hover
 .solution-link {
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.42
+    );
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.13
+    );
+}
+
+
+/* =========================================
+   BUTTON HOVER
+========================================= */
+
+.solutions-page-card
+.solution-link:hover {
+  transform:
+    translateY(-2px);
+
+  color:
+    #ffffff;
+
+  background:
+    #397bff;
+
+  border-color:
+    #397bff;
+
+  box-shadow:
+    0 8px 20px
+    rgba(
+      57,
+      123,
+      255,
+      0.25
+    );
+}
+
+
+/* =========================================
+   BUTTON ICON
+========================================= */
+
+.solutions-page-card
+.solution-link svg {
+  width:
+    14px;
+
+  height:
+    14px;
+
+  flex-shrink:
+    0;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.solutions-page-card
+.solution-link:hover svg {
   transform:
     translate(
-      4px,
-      -4px
+      2px,
+      -2px
     );
+}
+
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .solutions-page-hero {
+    padding:
+      75px
+      6%
+      80px;
+  }
+
+
+  .solutions-page-grid {
+    width:
+      calc(
+        100% - 40px
+      );
+
+    padding:
+      55px
+      0
+      75px;
+
+    gap:
+      14px;
+  }
+
+
+  .solutions-page-card {
+    min-height:
+      300px;
+
+    padding:
+      23px
+      24px;
+  }
+
+
+  .solutions-page-card-top {
+    top:
+      22px;
+
+    left:
+      24px;
+
+    right:
+      24px;
+  }
+
+
+  .solutions-page-card h2 {
+    font-size:
+      24px;
+  }
+
+
+  .solutions-page-card > p {
+    max-width:
+      480px;
+
+    font-size:
+      14px;
+  }
 }
 
 
@@ -374,15 +940,79 @@
    TABLET
 ========================================= */
 
-@media (
-  max-width: 900px
-) {
+@media (max-width: 900px) {
 
-  .solutions-page-grid {
-    grid-template-columns:
-      1fr;
+  .solutions-page-hero {
+    padding:
+      70px
+      6%
+      75px;
   }
 
+
+  .solutions-page-grid {
+    width:
+      calc(
+        100% - 40px
+      );
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      14px;
+
+    padding:
+      50px
+      0
+      70px;
+  }
+
+
+  .solutions-page-card {
+    min-height:
+      285px;
+
+    padding:
+      22px
+      27px;
+  }
+
+
+  .solutions-page-card-top {
+    top:
+      22px;
+
+    left:
+      27px;
+
+    right:
+      27px;
+  }
+
+
+  .solutions-page-card h2 {
+    max-width:
+      560px;
+
+    font-size:
+      25px;
+  }
+
+
+  .solutions-page-card > p {
+    max-width:
+      560px;
+
+    font-size:
+      14px;
+  }
+
+
+  .solutions-page-services {
+    max-width:
+      600px;
+  }
 }
 
 
@@ -390,59 +1020,445 @@
    MOBILE
 ========================================= */
 
-@media (
-  max-width: 600px
-) {
+@media (max-width: 600px) {
 
   .solutions-page {
-    padding-top: 110px;
+    padding-top:
+      var(--navbar-height);
   }
 
 
+  /* =====================================
+     HERO
+  ===================================== */
+
   .solutions-page-hero {
     padding:
-      80px 6% 90px;
+      65px
+      6%
+      70px;
+  }
+
+
+  .solutions-page-hero h1 {
+    margin:
+      13px
+      0
+      18px;
+
+    font-size:
+      clamp(
+        45px,
+        13vw,
+        70px
+      );
+
+    line-height:
+      0.96;
+  }
+
+
+  .solutions-page-hero p {
+    font-size:
+      16px;
+
+    line-height:
+      1.6;
+  }
+
+
+  /* =====================================
+     GRID
+  ===================================== */
+
+  .solutions-page-grid {
+    width:
+      calc(
+        100% - 28px
+      );
+
+    padding:
+      45px
+      0
+      65px;
+
+    gap:
+      12px;
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  /* =====================================
+     CARD
+  ===================================== */
+
+  .solutions-page-card {
+    min-height:
+      285px;
+
+    padding:
+      22px
+      21px;
+
+    border-radius:
+      15px;
+  }
+
+
+  /* =====================================
+     TOP
+  ===================================== */
+
+  .solutions-page-card-top {
+    top:
+      20px;
+
+    left:
+      21px;
+
+    right:
+      21px;
+  }
+
+
+  /* =====================================
+     ICON
+  ===================================== */
+
+  .solutions-page-icon {
+    width:
+      40px;
+
+    height:
+      40px;
+
+    border-radius:
+      10px;
+  }
+
+
+  /* =====================================
+     TITLE
+  ===================================== */
+
+  .solutions-page-card h2 {
+    max-width:
+      460px;
+
+    margin-bottom:
+      9px;
+
+    font-size:
+      23px;
+
+    line-height:
+      1.08;
+  }
+
+
+  /* =====================================
+     DESCRIPTION
+  ===================================== */
+
+  .solutions-page-card > p {
+    max-width:
+      460px;
+
+    font-size:
+      13.5px;
+
+    line-height:
+      1.55;
+  }
+
+
+  /* =====================================
+     TAGS
+  ===================================== */
+
+  .solutions-page-services {
+    gap:
+      5px;
+
+    margin-top:
+      11px;
+  }
+
+
+  .solutions-page-services span {
+    padding:
+      5px
+      8px;
+
+    font-size:
+      10px;
+  }
+
+
+  /* =====================================
+     BUTTON
+  ===================================== */
+
+  .solutions-page-card .solution-link {
+    margin-top:
+      14px;
+
+    padding:
+      8px
+      13px;
+
+    border-radius:
+      8px;
+
+    font-size:
+      11px;
+  }
+
+
+  .solutions-page-card
+  .solution-link svg {
+    width:
+      13px;
+
+    height:
+      13px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+  .solutions-page-hero {
+    padding:
+      55px
+      6%
+      60px;
   }
 
 
   .solutions-page-hero h1 {
     font-size:
       clamp(
-        48px,
-        13vw,
-        72px
+        38px,
+        12vw,
+        56px
       );
   }
 
 
-  .solutions-page-hero p {
-    font-size: 17px;
-  }
-
-
   .solutions-page-grid {
+    width:
+      calc(
+        100% - 22px
+      );
+
     padding:
-      90px 6% 110px;
+      40px
+      0
+      55px;
+
+    gap:
+      11px;
   }
 
 
   .solutions-page-card {
-    min-height: 390px;
+    min-height:
+      270px;
 
-    padding: 30px;
+    padding:
+      20px
+      19px;
+
+    border-radius:
+      15px;
+  }
+
+
+  .solutions-page-card-top {
+    top:
+      19px;
+
+    left:
+      19px;
+
+    right:
+      19px;
+  }
+
+
+  .solutions-page-icon {
+    width:
+      38px;
+
+    height:
+      38px;
   }
 
 
   .solutions-page-card h2 {
-    font-size: 26px;
+    max-width:
+      380px;
+
+    font-size:
+      21px;
+
+    line-height:
+      1.08;
   }
 
 
-  .solutions-page-card
-  .solution-link {
-    margin-top: auto;
+  .solutions-page-card > p {
+    max-width:
+      380px;
 
-    padding-top: 35px;
+    font-size:
+      13px;
+
+    line-height:
+      1.55;
   }
 
+
+  .solutions-page-services {
+    gap:
+      4px;
+
+    margin-top:
+      10px;
+  }
+
+
+  .solutions-page-services span {
+    padding:
+      4px
+      7px;
+
+    font-size:
+      9.5px;
+  }
+
+
+  .solutions-page-card .solution-link {
+    margin-top:
+      11px;
+
+    padding:
+      7px
+      11px;
+
+    border-radius:
+      8px;
+
+    font-size:
+      10.5px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+  .solutions-page-hero {
+    padding-left:
+      20px;
+
+    padding-right:
+      20px;
+  }
+
+
+  .solutions-page-grid {
+    width:
+      calc(
+        100% - 20px
+      );
+  }
+
+
+  .solutions-page-card {
+    min-height:
+      275px;
+
+    padding:
+      19px
+      18px;
+  }
+
+
+  .solutions-page-card-top {
+    top:
+      18px;
+
+    left:
+      18px;
+
+    right:
+      18px;
+  }
+
+
+  .solutions-page-services span {
+    font-size:
+      8px;
+  }
+
+
+  .solutions-page-card .solution-link {
+    padding:
+      7px
+      10px;
+
+    font-size:
+      10px;
+  }
+}
+
+
+/* =========================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================= */
+
+html,
+body {
+  max-width:
+    100%;
+
+  overflow-x:
+    clip;
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+
+  .solutions-page *,
+  .solutions-page *::before,
+  .solutions-page *::after {
+    scroll-behavior:
+      auto !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+  }
 }

@@ -71,7 +71,7 @@ function SolutionCategory() {
             </p>
 
             <a
-              href="#contact"
+              href="/contact"
               className="category-cta"
             >
               Talk to our team

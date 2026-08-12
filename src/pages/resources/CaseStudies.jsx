@@ -30,25 +30,52 @@ import "../../styles/pages/caseStudies.css";
 
 
 /* =================================
-   FILTER CATEGORIES
+   CASE STUDIES PAGE
 ================================== */
 
-const categories = [
-
-  "All",
-
-  "Customer Experience",
-
-  "Business Operations",
-
-  "Technology & AI",
-
-  "Growth & Strategy",
-
-];
-
-
 function CaseStudies() {
+
+
+  /* =================================
+     FILTER CATEGORIES
+
+     Automatically creates filters
+     from the categories inside
+     caseStudiesData.
+  ================================== */
+
+  const categories = useMemo(() => {
+
+    const uniqueCategories = [
+
+      ...new Set(
+
+        caseStudies
+
+          .map(
+
+            (caseStudy) =>
+
+              caseStudy.category
+
+          )
+
+          .filter(Boolean)
+
+      ),
+
+    ];
+
+
+    return [
+
+      "All",
+
+      ...uniqueCategories,
+
+    ];
+
+  }, []);
 
 
   /* =================================
@@ -82,114 +109,119 @@ function CaseStudies() {
 
 
   /* =================================
+     NORMALIZED SEARCH QUERY
+  ================================== */
+
+  const normalizedQuery =
+
+    searchQuery
+
+      .trim()
+
+      .toLowerCase();
+
+
+  /* =================================
      FILTER CASE STUDIES
   ================================== */
 
-  const filteredCaseStudies =
+  const filteredCaseStudies = useMemo(
 
-    useMemo(
+    () => {
 
-      () => {
+      return caseStudies.filter(
 
-        const normalizedQuery =
-
-          searchQuery
-            .trim()
-            .toLowerCase();
+        (caseStudy) => {
 
 
-        return caseStudies.filter(
+          /* =============================
+             CATEGORY MATCH
+          ============================== */
 
-          (caseStudy) => {
+          const matchesCategory =
 
+            activeCategory === "All"
 
-            const matchesCategory =
+            ||
 
-              activeCategory ===
-              "All"
+            caseStudy.category ===
 
-              ||
-
-              caseStudy.category ===
               activeCategory;
 
 
-            const searchableContent =
+          /* =============================
+             SEARCHABLE CONTENT
+          ============================== */
 
-              [
+          const searchableContent = [
 
-                caseStudy.title,
+            caseStudy.title,
 
-                caseStudy.excerpt,
+            caseStudy.excerpt,
 
-                caseStudy.category,
+            caseStudy.category,
 
-                caseStudy.industry,
+            caseStudy.industry,
 
-                caseStudy.client,
+            caseStudy.client,
 
-                caseStudy.challenge,
+            caseStudy.challenge,
 
-                caseStudy.solution,
+            caseStudy.solution,
 
-                caseStudy.result,
+            caseStudy.result,
 
-              ]
+          ]
 
-                .filter(
+            .filter(Boolean)
 
-                  Boolean
+            .join(" ")
 
-                )
-
-                .join(
-
-                  " "
-
-                )
-
-                .toLowerCase();
+            .toLowerCase();
 
 
-            const matchesSearch =
+          /* =============================
+             SEARCH MATCH
+          ============================== */
 
-              normalizedQuery ===
-              ""
+          const matchesSearch =
 
-              ||
+            normalizedQuery === ""
 
-              searchableContent.includes(
+            ||
 
-                normalizedQuery
+            searchableContent.includes(
 
-              );
-
-
-            return (
-
-              matchesCategory
-
-              &&
-
-              matchesSearch
+              normalizedQuery
 
             );
 
-          }
 
-        );
+          return (
 
-      },
+            matchesCategory
 
-      [
+            &&
 
-        activeCategory,
+            matchesSearch
 
-        searchQuery,
+          );
 
-      ]
+        }
 
-    );
+      );
+
+    },
+
+    [
+
+      activeCategory,
+
+      normalizedQuery,
+
+    ]
+
+  );
 
 
   /* =================================
@@ -205,6 +237,81 @@ function CaseStudies() {
         caseStudy.featured
 
     );
+
+
+  /* =================================
+     SHOW FEATURED SECTION ONLY WHEN
+     "ALL" IS SELECTED AND THERE IS
+     NO SEARCH QUERY.
+
+     When a category is selected,
+     the featured case study appears
+     inside the filtered results.
+  ================================== */
+
+  const showFeaturedSection =
+
+    activeCategory === "All"
+
+    &&
+
+    normalizedQuery === "";
+
+
+  /* =================================
+     GRID CASE STUDIES
+  ================================== */
+
+  const gridCaseStudies = useMemo(
+
+  () => {
+
+    return filteredCaseStudies;
+
+  },
+
+  [
+    filteredCaseStudies,
+  ]
+
+);
+
+
+  /* =================================
+     CATEGORY COUNTS
+  ================================== */
+
+  const getCategoryCount = (category) => {
+
+    if (category === "All") {
+
+      return caseStudies.length;
+
+    }
+
+
+    return caseStudies.filter(
+
+      (caseStudy) =>
+
+        caseStudy.category === category
+
+    ).length;
+
+  };
+
+
+  /* =================================
+     CLEAR FILTERS
+  ================================== */
+
+  const clearFilters = () => {
+
+    setSearchQuery("");
+
+    setActiveCategory("All");
+
+  };
 
 
   return (
@@ -402,7 +509,9 @@ function CaseStudies() {
           </div>
 
 
-          {/* HERO VISUAL */}
+          {/* =================================
+              HERO VISUAL
+          ================================== */}
 
           <motion.div
 
@@ -526,9 +635,16 @@ function CaseStudies() {
 
         {/* =================================
             FEATURED CASE STUDY
+
+            Only visible in the default
+            "All" state.
         ================================== */}
 
         {
+
+          showFeaturedSection
+
+          &&
 
           featuredCaseStudy
 
@@ -568,7 +684,6 @@ function CaseStudies() {
                     </span>
 
                   </h2>
-
 
                 </div>
 
@@ -628,7 +743,6 @@ function CaseStudies() {
                   className="featured-case-study-visual"
                 >
 
-
                   <div
                     className="featured-case-study-grid"
                   />
@@ -648,14 +762,6 @@ function CaseStudies() {
                     />
 
                   </div>
-
-
-                  {/* <span>
-
-                    NODEUS CASE STUDY
-
-                  </span> */}
-
 
                 </div>
 
@@ -760,7 +866,6 @@ function CaseStudies() {
                     className="featured-case-study-result"
                   >
 
-
                     <Target
                       size={18}
                     />
@@ -788,7 +893,6 @@ function CaseStudies() {
                         }
 
                       </strong>
-
 
                     </div>
 
@@ -871,7 +975,6 @@ function CaseStudies() {
 
               </h2>
 
-
             </div>
 
 
@@ -896,6 +999,8 @@ function CaseStudies() {
             className="case-study-controls"
           >
 
+
+            {/* SEARCH */}
 
             <div
               className="case-study-search"
@@ -928,23 +1033,16 @@ function CaseStudies() {
 
                 }
 
-                placeholder={
+                placeholder="Search case studies..."
 
-                  "Search case studies..."
-
-                }
-
-                aria-label={
-
-                  "Search case studies"
-
-                }
+                aria-label="Search case studies"
 
               />
 
-
             </div>
 
+
+            {/* FILTER BUTTONS */}
 
             <div
               className="case-study-category-list"
@@ -955,51 +1053,75 @@ function CaseStudies() {
 
                 categories.map(
 
-                  (category) => (
+                  (category) => {
 
-                    <button
+                    const count =
 
-                      type="button"
-
-                      key={
+                      getCategoryCount(
 
                         category
 
-                      }
+                      );
 
-                      className={`case-study-category-button ${
 
-                        activeCategory ===
+                    return (
 
-                        category
+                      <button
 
-                          ? "active"
+                        type="button"
 
-                          : ""
+                        key={category}
 
-                      }`}
+                        className={`case-study-category-button ${
 
-                      onClick={() =>
-
-                        setActiveCategory(
+                          activeCategory ===
 
                           category
 
-                        )
+                            ? "active"
 
-                      }
+                            : ""
 
-                    >
+                        }`}
 
-                      {
+                        onClick={() => {
 
-                        category
+                          setActiveCategory(
 
-                      }
+                            category
 
-                    </button>
+                          );
 
-                  )
+                        }}
+
+                        aria-pressed={
+
+                          activeCategory ===
+
+                          category
+
+                        }
+
+                      >
+
+                        <span>
+
+                          {category}
+
+                        </span>
+
+
+                        <small>
+
+                          {count}
+
+                        </small>
+
+                      </button>
+
+                    );
+
+                  }
 
                 )
 
@@ -1013,14 +1135,134 @@ function CaseStudies() {
 
 
           {/* =================================
+              ACTIVE FILTER INFORMATION
+          ================================== */}
+
+          {
+
+            (
+
+              activeCategory !== "All"
+
+              ||
+
+              normalizedQuery !== ""
+
+            )
+
+            &&
+
+            (
+
+              <div
+                className="case-study-filter-summary"
+              >
+
+                <span>
+
+                  Showing
+
+                  {" "}
+
+                  <strong>
+
+                    {filteredCaseStudies.length}
+
+                  </strong>
+
+                  {" "}
+
+                  {filteredCaseStudies.length === 1
+
+                    ? "case study"
+
+                    : "case studies"}
+
+                  {
+
+                    activeCategory !== "All"
+
+                    &&
+
+                    (
+
+                      <>
+
+                        {" "}
+
+                        in
+
+                        {" "}
+
+                        <strong>
+
+                          {activeCategory}
+
+                        </strong>
+
+                      </>
+
+                    )
+
+                  }
+
+                  {
+
+                    normalizedQuery !== ""
+
+                    &&
+
+                    (
+
+                      <>
+
+                        {" "}
+
+                        matching
+
+                        {" "}
+
+                        <strong>
+
+                          "{searchQuery}"
+
+                        </strong>
+
+                      </>
+
+                    )
+
+                  }
+
+                </span>
+
+
+                <button
+
+                  type="button"
+
+                  onClick={clearFilters}
+
+                >
+
+                  Clear filters
+
+                </button>
+
+              </div>
+
+            )
+
+          }
+
+
+          {/* =================================
               CASE STUDY GRID
           ================================== */}
 
           {
 
-            filteredCaseStudies.length >
-
-            0
+            gridCaseStudies.length > 0
 
               ? (
 
@@ -1031,269 +1273,275 @@ function CaseStudies() {
 
                   {
 
-                    filteredCaseStudies
+                    gridCaseStudies.map(
 
-                      .filter(
+                      (
 
-                        (caseStudy) =>
+                        caseStudy,
 
-                          !caseStudy.featured
+                        index
 
-                      )
-
-                      .map(
-
-                        (
-
-                          caseStudy,
-
-                          index
-
-                        ) => {
+                      ) => {
 
 
-                          const Icon =
+                        const Icon =
 
-                            caseStudy.icon
+                          caseStudy.icon
 
-                            ||
+                          ||
 
-                            BriefcaseBusiness;
+                          BriefcaseBusiness;
 
 
-                          return (
+                        return (
 
-                            <motion.article
+                          <motion.article
 
-                              key={
+                            key={
 
-                                caseStudy.id
+                              caseStudy.id
 
-                              }
+                            }
 
-                              className="case-study-card"
+                            className={`case-study-card ${
 
-                              initial={{
+                              caseStudy.featured
 
-                                opacity: 0,
+                                ? "is-featured-filter-result"
 
-                                y: 28,
+                                : ""
 
-                              }}
+                            }`}
 
-                              whileInView={{
+                            initial={{
 
-                                opacity: 1,
+                              opacity: 0,
 
-                                y: 0,
+                              y: 28,
 
-                              }}
+                            }}
 
-                              viewport={{
+                            whileInView={{
 
-                                once: true,
+                              opacity: 1,
 
-                                amount: 0.12,
+                              y: 0,
 
-                              }}
+                            }}
 
-                              transition={{
+                            viewport={{
 
-                                duration: 0.55,
+                              once: true,
 
-                                delay:
+                              amount: 0.12,
 
-                                  index *
+                            }}
 
-                                  0.06,
+                            transition={{
 
-                              }}
+                              duration: 0.55,
 
+                              delay:
+
+                                index *
+
+                                0.06,
+
+                            }}
+
+                          >
+
+
+                            {/* =============================
+                                CARD VISUAL
+                            ============================== */}
+
+                            <div
+                              className="case-study-card-visual"
                             >
 
 
                               <div
-                                className="case-study-card-visual"
+                                className="case-study-card-icon"
+                              >
+
+                                <Icon
+                                  size={25}
+                                />
+
+                              </div>
+
+
+                              <span>
+
+                                {
+
+                                  caseStudy.category
+
+                                }
+
+                              </span>
+
+
+                              <ArrowUpRight
+                                size={18}
+                              />
+
+
+                            </div>
+
+
+                            {/* =============================
+                                CARD CONTENT
+                            ============================== */}
+
+                            <div
+                              className="case-study-card-content"
+                            >
+
+
+                              <div
+                                className="case-study-card-meta"
                               >
 
 
-                                <div
-                                  className="case-study-card-icon"
-                                >
+                                {
 
-                                  <Icon
-                                    size={25}
-                                  />
+                                  caseStudy.industry
 
-                                </div>
+                                  &&
+
+                                  (
+
+                                    <span>
+
+                                      {
+
+                                        caseStudy.industry
+
+                                      }
+
+                                    </span>
+
+                                  )
+
+                                }
+
+
+                                {
+
+                                  caseStudy.readTime
+
+                                  &&
+
+                                  (
+
+                                    <span>
+
+                                      <Clock3
+                                        size={13}
+                                      />
+
+                                      {
+
+                                        caseStudy.readTime
+
+                                      }
+
+                                    </span>
+
+                                  )
+
+                                }
+
+
+                              </div>
+
+
+                              <h3>
+
+                                {
+
+                                  caseStudy.title
+
+                                }
+
+                              </h3>
+
+
+                              <p>
+
+                                {
+
+                                  caseStudy.excerpt
+
+                                }
+
+                              </p>
+
+
+                              <div
+                                className="case-study-card-result"
+                              >
+
+                                <Target
+                                  size={16}
+                                />
 
 
                                 <span>
 
                                   {
 
-                                    caseStudy.category
+                                    caseStudy.result
+
+                                    ||
+
+                                    "Designed around measurable business outcomes."
 
                                   }
 
                                 </span>
 
 
-                                <ArrowUpRight
-                                  size={18}
-                                />
-
-
                               </div>
 
 
-                              <div
-                                className="case-study-card-content"
+                              <Link
+
+                                to={
+
+                                  `/resources/case-studies/${
+
+                                    caseStudy.slug
+
+                                  }`
+
+                                }
+
+                                className="case-study-card-link"
+
                               >
 
+                                View case study
 
-                                <div
-                                  className="case-study-card-meta"
-                                >
+                                <ArrowRight
+                                  size={16}
+                                />
 
+                              </Link>
 
-                                  {
 
-                                    caseStudy.industry
+                            </div>
 
-                                    &&
 
-                                    (
+                          </motion.article>
 
-                                      <span>
+                        );
 
-                                        {
+                      }
 
-                                          caseStudy.industry
-
-                                        }
-
-                                      </span>
-
-                                    )
-
-                                  }
-
-
-                                  {
-
-                                    caseStudy.readTime
-
-                                    &&
-
-                                    (
-
-                                      <span>
-
-                                        <Clock3
-                                          size={13}
-                                        />
-
-                                        {
-
-                                          caseStudy.readTime
-
-                                        }
-
-                                      </span>
-
-                                    )
-
-                                  }
-
-
-                                </div>
-
-
-                                <h3>
-
-                                  {
-
-                                    caseStudy.title
-
-                                  }
-
-                                </h3>
-
-
-                                <p>
-
-                                  {
-
-                                    caseStudy.excerpt
-
-                                  }
-
-                                </p>
-
-
-                                <div
-                                  className="case-study-card-result"
-                                >
-
-                                  <Target
-                                    size={16}
-                                  />
-
-
-                                  <span>
-
-                                    {
-
-                                      caseStudy.result
-
-                                      ||
-
-                                      "Designed around measurable business outcomes."
-
-                                    }
-
-                                  </span>
-
-
-                                </div>
-
-
-                                <Link
-
-                                  to={
-
-                                    `/resources/case-studies/${
-
-                                      caseStudy.slug
-
-                                    }`
-
-                                  }
-
-                                  className="case-study-card-link"
-
-                                >
-
-                                  View case study
-
-                                  <ArrowRight
-                                    size={16}
-                                  />
-
-                                </Link>
-
-
-                              </div>
-
-
-                            </motion.article>
-
-                          );
-
-                        }
-
-                      )
+                    )
 
                   }
 
@@ -1303,6 +1551,10 @@ function CaseStudies() {
               )
 
               : (
+
+                /* =================================
+                   EMPTY STATE
+                ================================== */
 
                 <div
                   className="case-studies-empty-state"
@@ -1323,8 +1575,22 @@ function CaseStudies() {
 
                   <p>
 
-                    Try another topic
-                    or search term.
+                    There are currently no
+                    case studies matching
+
+                    {" "}
+
+                    {
+
+                      activeCategory !== "All"
+
+                        ? activeCategory
+
+                        : `"${searchQuery}"`
+
+                    }
+
+                    .
 
                   </p>
 
@@ -1333,25 +1599,11 @@ function CaseStudies() {
 
                     type="button"
 
-                    onClick={() => {
-
-                      setSearchQuery(
-
-                        ""
-
-                      );
-
-                      setActiveCategory(
-
-                        "All"
-
-                      );
-
-                    }}
+                    onClick={clearFilters}
 
                   >
 
-                    Clear filters
+                    View all case studies
 
                   </button>
 
@@ -1370,7 +1622,7 @@ function CaseStudies() {
             VALUE SECTION
         ================================== */}
 
-        <section
+        {/* <section
           className="case-studies-value-section"
         >
 
@@ -1546,7 +1798,7 @@ function CaseStudies() {
           </div>
 
 
-        </section>
+        </section> */}
 
 
         {/* =================================
@@ -1559,7 +1811,6 @@ function CaseStudies() {
 
 
           <div>
-
 
             <span
               className="section-eyebrow"
@@ -1594,7 +1845,6 @@ function CaseStudies() {
               help you move forward.
 
             </p>
-
 
           </div>
 

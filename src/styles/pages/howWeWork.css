@@ -855,39 +855,102 @@
   line-height: 1.75;
 }
 
+/* =========================================
+   COLLABORATION POINTS
+========================================= */
+
 .hww-collaboration-points {
   display: grid;
 
-  gap: 12px;
+  grid-template-rows: none;
+
+  gap: 5px;
+
+  align-content: start;
+  align-items: start;
+
+  height: auto;
+  min-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
 }
+
+
+/* =========================================
+   COLLABORATION CARD
+========================================= */
 
 .hww-collaboration-points > div {
-  padding: 18px;
+  display: block;
 
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  width: 100%;
 
-  border-radius: 14px;
+  height: auto;
+  min-height: 0;
 
-  background: rgba(5, 13, 25, 0.25);
+  align-self: start;
+
+  margin: 0;
+  padding: 13px 18px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 13px;
+
+  background:
+    rgba(5, 13, 25, 0.25);
 }
 
+
+/* =========================================
+   LABEL
+========================================= */
+
 .hww-collaboration-points span {
+  display: block;
+
+  margin: 0;
+
   color: #397bff;
 
   font-size: 0.6rem;
+
   font-weight: 750;
+
+  line-height: 1.2;
 
   letter-spacing: 0.14em;
 }
 
+
+/* =========================================
+   TITLE
+========================================= */
+
 .hww-collaboration-points h3 {
-  margin: 10px 0 6px;
+  margin:
+    7px 0 3px;
 
   color: #ffffff;
 
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+
   font-weight: 650;
+
+  line-height: 1.2;
 }
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .hww-collaboration-points p {
   margin: 0;
@@ -895,8 +958,12 @@
   color: #8796ab;
 
   font-size: 0.7rem;
-  line-height: 1.6;
+
+  line-height: 1.35;
 }
+
+
+
 
 
 /* =========================================
@@ -904,7 +971,7 @@
 ========================================= */
 
 .hww-cta {
-  padding: 0 0 100px;
+  padding: 100px 0 100px;
 }
 
 .hww-cta-card {
@@ -1254,4 +1321,21 @@
   .hww-principle-card {
     padding: 21px;
   }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .hww-collaboration-points {
+    gap: 5px;
+  }
+
+  .hww-collaboration-points > div {
+    padding: 13px 16px;
+  }
+
 }

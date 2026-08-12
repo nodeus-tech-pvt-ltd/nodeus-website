@@ -1303,7 +1303,7 @@
 .company-cta {
   position: relative;
 
-  padding: 0 0 var(--section-space);
+  padding: 92px 0 var(--section-space);
 
   background: var(--bg-dark);
 }
@@ -1912,6 +1912,7 @@
   /* CTA */
 
   .company-cta {
+    padding-top: var(--section-space);
     padding-bottom: var(--section-space);
   }
 

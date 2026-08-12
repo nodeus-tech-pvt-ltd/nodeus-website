@@ -43,7 +43,7 @@ const steps = [
     icon: TrendingUp,
     title: "Scale",
     description:
-      "As your business grows, your dedicated operation can grow with you — without the complexity of building everything in-house.",
+      "As your business grows, your dedicated operation can grow with you without the complexity of building everything in-house.",
   },
 ];
 
@@ -128,9 +128,9 @@ function HowWeWork() {
 
                 <div className="process-content">
 
-                  <div className="process-step-label">
+                  {/* <div className="process-step-label">
                     STEP {step.number}
-                  </div>
+                  </div> */}
 
                   <h3>
                     {step.title}

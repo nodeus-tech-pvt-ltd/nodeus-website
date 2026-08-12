@@ -204,7 +204,7 @@ function Team() {
           TEAM INTRODUCTION
       ================================== */}
 
-      <section
+      {/* <section
         className="team-introduction"
       >
 
@@ -215,7 +215,7 @@ function Team() {
 
           <div
             className="team-introduction-grid"
-          >
+          > */}
 
 
             {/* <div
@@ -281,12 +281,12 @@ function Team() {
             </div>
  */}
 
-          </div>
+          {/* </div>
 
 
         </div>
 
-      </section>
+      </section> */}
 
 
       {/* =================================

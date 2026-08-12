@@ -1,73 +1,98 @@
-/* =========================================
-   TRUST STRIP
-========================================= */
+/* =========================================================
+   TRUST / CAPABILITIES SECTION
+   FULL REDESIGN — DARK PREMIUM
+========================================================= */
 
 .trust-strip {
+  --trust-blue: #397bff;
+  --trust-blue-bright: #5c96ff;
+  --trust-bg: #070b12;
+  --trust-surface: #0c121c;
+  --trust-surface-2: #101823;
+  --trust-border: rgba(255, 255, 255, 0.08);
+  --trust-text: #f5f7fb;
+  --trust-muted: #8995a8;
+
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding:
+    clamp(80px, 9vw, 140px)
+    max(24px, 6vw);
 
   overflow: hidden;
 
-  padding: 140px 6vw;
-
   background:
     radial-gradient(
-      circle at 85% 15%,
-      rgba(52, 124, 255, 0.10),
-      transparent 30%
+      700px 450px at 85% 0%,
+      rgba(57, 123, 255, 0.12),
+      transparent 70%
     ),
-    #080d17;
+    radial-gradient(
+      600px 500px at 0% 100%,
+      rgba(57, 123, 255, 0.055),
+      transparent 70%
+    ),
+    var(--trust-bg);
+
+  color: var(--trust-text);
 }
 
 
-/* =========================================
-   BACKGROUND GRID
-========================================= */
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
 .trust-strip::before {
   content: "";
 
   position: absolute;
-
   inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.45;
 
   background-image:
     linear-gradient(
-      rgba(255, 255, 255, 0.03) 1px,
+      rgba(255, 255, 255, 0.025) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.03) 1px,
+      rgba(255, 255, 255, 0.025) 1px,
       transparent 1px
     );
 
-  background-size: 70px 70px;
+  background-size: 72px 72px;
 
-  opacity: 0.35;
-
-  pointer-events: none;
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      transparent 85%
+    );
 }
 
 
-/* =========================================
-   BRAND GLOW
-========================================= */
+/* Blue atmospheric glow */
 
 .trust-strip::after {
   content: "";
 
   position: absolute;
 
-  width: 420px;
-  height: 420px;
+  width: 500px;
+  height: 500px;
 
-  right: -150px;
-  top: -120px;
+  top: -260px;
+  right: -180px;
 
   border-radius: 50%;
 
   background:
-    rgba(52, 124, 255, 0.12);
+    rgba(57, 123, 255, 0.11);
 
   filter: blur(120px);
 
@@ -75,312 +100,547 @@
 }
 
 
-/* =========================================
-   GRID
-========================================= */
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
 
 .trust-grid {
   position: relative;
-
   z-index: 2;
+
+  width: min(1280px, 100%);
+
+  margin: 0 auto;
 
   display: grid;
 
   grid-template-columns:
-    430px
-    1fr;
+    minmax(280px, 0.72fr)
+    minmax(0, 1.28fr);
 
-  gap: 70px;
+  gap: clamp(45px, 7vw, 110px);
 
-  max-width: 1300px;
-
-  margin: 0 auto;
+  align-items: start;
 }
 
 
-/* =========================================
+/* =========================================================
    INTRO
-========================================= */
+========================================================= */
 
 .trust-intro {
-  position: sticky;
-
-  top: 120px;
+  position: relative;
 
   align-self: start;
+
+  padding-top: 8px;
 }
 
-.trust-intro h2 {
-  margin: 18px 0 24px;
 
-  color: white;
+/* Small blue marker */
+
+.trust-intro::before {
+  content: "";
+
+  display: block;
+
+  width: 42px;
+  height: 3px;
+
+  margin-bottom: 24px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--trust-blue),
+      rgba(57, 123, 255, 0.2)
+    );
+
+  box-shadow:
+    0 0 20px
+    rgba(57, 123, 255, 0.35);
+}
+
+
+/* =========================================================
+   INTRO HEADING
+========================================================= */
+
+.trust-intro h2 {
+  max-width: 520px;
+
+  margin:
+    0
+    0
+    25px;
+
+  color: var(--trust-text);
 
   font-size:
     clamp(
       3rem,
-      5vw,
+      5.2vw,
       5.7rem
     );
 
-  line-height: 0.92;
+  font-weight: 700;
 
-  letter-spacing: -0.06em;
+  line-height: 0.91;
+
+  letter-spacing: -0.065em;
 }
+
 
 .trust-intro h2 span {
-  color: #347cff;
+  display: inline;
+
+  color: var(--trust-blue);
+
+  text-shadow:
+    0 0 35px
+    rgba(57, 123, 255, 0.16);
 }
 
+
+/* =========================================================
+   INTRO DESCRIPTION
+========================================================= */
+
 .trust-intro p {
-  max-width: 360px;
+  max-width: 430px;
 
   margin: 0;
 
-  color: #94a3b8;
+  color: var(--trust-muted);
+
+  font-size:
+    clamp(
+      0.9rem,
+      1.1vw,
+      1rem
+    );
 
   line-height: 1.8;
 }
 
 
-/* =========================================
-   CARDS GRID
-========================================= */
+/* =========================================================
+   CAPABILITIES AREA
+========================================================= */
 
 .capabilities-grid {
+  position: relative;
+
   display: grid;
 
-  grid-template-columns:
-    repeat(2, 1fr);
+  grid-template-columns: 1fr;
 
-  gap: 24px;
+  gap: 0;
+
+  border-top:
+    1px solid
+    var(--trust-border);
 }
 
 
-/* =========================================
-   CARD
-========================================= */
+/* =========================================================
+   CAPABILITY CARD
+   Redesigned as horizontal editorial rows
+========================================================= */
 
 .capability-card {
   position: relative;
 
+  min-width: 0;
+
+  min-height: 0;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns:
+    52px
+    68px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  column-gap: 20px;
+
+  padding:
+    27px
+    4px;
+
   overflow: hidden;
 
-  padding: 28px 34px;
+  border: 0;
 
-  min-height: 205px;
-
-  border:
+  border-bottom:
     1px solid
-    rgba(255, 255, 255, 0.08);
+    var(--trust-border);
 
-  border-radius: 26px;
+  border-radius: 0;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.02)
-    );
+  background: transparent;
 
-  backdrop-filter: blur(18px);
+  backdrop-filter: none;
 
   transition:
-    transform 0.45s ease,
-    border-color 0.45s ease,
-    box-shadow 0.45s ease;
+    padding 0.35s ease,
+    background 0.35s ease;
 }
 
 
-/* =========================================
-   ANIMATED SHINE
-========================================= */
+/* =========================================================
+   CARD HOVER BACKGROUND
+========================================================= */
 
-.capability-card::before {
+.capability-card::after {
   content: "";
 
   position: absolute;
 
-  inset: -200%;
+  inset:
+    6px
+    0;
+
+  z-index: -1;
+
+  border-radius: 14px;
 
   background:
     linear-gradient(
-      120deg,
-      transparent 35%,
-      rgba(255, 255, 255, 0.10),
-      transparent 65%
+      90deg,
+      rgba(57, 123, 255, 0.08),
+      rgba(57, 123, 255, 0.025),
+      transparent
     );
 
-  transform: rotate(18deg);
+  opacity: 0;
 
-  transition: 0.8s;
-
-  pointer-events: none;
-}
-
-.capability-card:hover::before {
   transform:
-    translateX(60%)
-    rotate(18deg);
+    translateX(-12px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
 }
 
 
-/* =========================================
+.capability-card:hover::after {
+  opacity: 1;
+
+  transform:
+    translateX(0);
+}
+
+
+/* =========================================================
+   REMOVE OLD SHINE
+========================================================= */
+
+.capability-card::before {
+  display: none;
+}
+
+
+/* =========================================================
    CARD HOVER
-========================================= */
+========================================================= */
 
 .capability-card:hover {
-  transform: translateY(-8px);
+  transform: none;
+
+  padding-left: 14px;
 
   border-color:
-    rgba(52, 124, 255, 0.45);
+    var(--trust-border);
 
-  box-shadow:
-    0 30px 80px
-    rgba(0, 0, 0, 0.35),
+  box-shadow: none;
 
-    0 0 40px
-    rgba(52, 124, 255, 0.10);
+  background: transparent;
 }
 
 
-/* =========================================
-   TOP
-========================================= */
+/* =========================================================
+   CARD TOP
+========================================================= */
 
 .capability-top {
-  position: relative;
+  position: static;
 
-  z-index: 1;
+  z-index: 2;
 
-  display: flex;
+  display: contents;
 
-  justify-content: space-between;
-
-  align-items: flex-start;
-
-  margin-bottom: 22px;
+  margin: 0;
 }
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
 
 .capability-top span {
-  color: #64748b;
+  grid-column: 1;
 
-  font-size: 0.75rem;
+  color:
+    rgba(
+      137,
+      149,
+      168,
+      0.58
+    );
 
-  letter-spacing: 0.2em;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
 
-  font-weight: 700;
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
 }
 
 
-/* =========================================
+/* =========================================================
    ICON
-========================================= */
+========================================================= */
 
 .capability-top svg {
-  width: 58px;
-  height: 58px;
+  grid-column: 2;
 
-  padding: 16px;
+  width: 48px;
+  height: 48px;
 
-  border-radius: 18px;
+  box-sizing: border-box;
 
-  color: #347cff;
+  padding: 13px;
 
-  background:
-    rgba(52, 124, 255, 0.10);
+  color: var(--trust-blue-bright);
 
   border:
     1px solid
-    rgba(52, 124, 255, 0.25);
+    rgba(
+      57,
+      123,
+      255,
+      0.16
+    );
 
-  transition:
-    transform 0.4s ease,
-    background 0.4s ease;
-}
-
-.capability-card:hover .capability-top svg {
-  transform:
-    rotate(-10deg)
-    scale(1.08);
+  border-radius: 13px;
 
   background:
-    rgba(52, 124, 255, 0.22);
+    linear-gradient(
+      145deg,
+      rgba(57, 123, 255, 0.13),
+      rgba(57, 123, 255, 0.045)
+    );
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 
-/* =========================================
-   CONTENT
-========================================= */
+.capability-card:hover
+.capability-top svg {
+  transform:
+    scale(1.07);
+
+  border-color:
+    rgba(
+      57,
+      123,
+      255,
+      0.42
+    );
+
+  background:
+    rgba(
+      57,
+      123,
+      255,
+      0.16
+    );
+
+  box-shadow:
+    0 0 25px
+    rgba(
+      57,
+      123,
+      255,
+      0.13
+    );
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
 
 .capability-card h3 {
+  grid-column: 3;
+
   position: relative;
 
-  z-index: 1;
+  z-index: 2;
 
-  margin: 0 0 12px;
+  margin: 0 0 6px;
 
-  color: white;
+  color: var(--trust-text);
 
-  font-size: 1.7rem;
+  font-size:
+    clamp(
+      1.15rem,
+      1.65vw,
+      1.55rem
+    );
 
-  line-height: 1.1;
+  font-weight: 650;
 
-  letter-spacing: -0.04em;
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
 }
 
+
 .capability-card p {
+  grid-column: 3;
+
   position: relative;
 
-  z-index: 1;
+  z-index: 2;
+
+  max-width: 540px;
 
   margin: 0;
 
-  color: #94a3b8;
+  color:
+    #7f8b9d;
 
-  line-height: 1.65;
+  font-size:
+    clamp(
+      0.82rem,
+      1vw,
+      0.91rem
+    );
+
+  line-height: 1.6;
 }
 
 
-/* =========================================
-   TABLET
-========================================= */
+/* =========================================================
+   SUBTLE ARROW INDICATOR
+   Added through CSS without JSX
+========================================================= */
 
-@media (max-width: 1100px) {
+.capability-card {
+  --arrow-opacity: 0;
+}
+
+
+.capability-card:hover {
+  --arrow-opacity: 1;
+}
+
+
+.capability-card > h3::after {
+  /* content: "↗"; */
+
+  display: inline-block;
+
+  margin-left: 9px;
+
+  color: var(--trust-blue);
+
+  font-size: 0.85em;
+
+  opacity: var(--arrow-opacity);
+
+  transform:
+    translate(
+      -4px,
+      4px
+    );
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.capability-card:hover > h3::after {
+  transform:
+    translate(
+      0,
+      0
+    );
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
 
   .trust-grid {
     grid-template-columns:
-      360px
-      1fr;
+      minmax(240px, 0.65fr)
+      minmax(0, 1.35fr);
 
-    gap: 50px;
+    gap: 55px;
   }
 
-  .capabilities-grid {
-    gap: 18px;
-  }
 
   .capability-card {
-    padding: 26px 28px;
+    grid-template-columns:
+      42px
+      58px
+      minmax(0, 1fr);
 
-    min-height: 200px;
+    column-gap: 16px;
+
+    padding:
+      24px
+      2px;
   }
 
-  .capability-card h3 {
-    font-size: 1.55rem;
+
+  .capability-top svg {
+    width: 44px;
+    height: 44px;
+
+    padding: 12px;
   }
 
 }
 
 
-/* =========================================
-   TABLET / SMALL LAPTOP
-========================================= */
+/* =========================================================
+   TABLET
+========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 850px) {
 
   .trust-strip {
-    padding: 110px 6vw;
+    padding:
+      95px
+      max(24px, 5vw);
   }
+
 
   .trust-grid {
     grid-template-columns: 1fr;
@@ -388,131 +648,273 @@
     gap: 55px;
   }
 
+
   .trust-intro {
-    position: static;
+    max-width: 720px;
   }
+
 
   .trust-intro h2 {
-    max-width: 700px;
+    max-width: 650px;
+
+    font-size:
+      clamp(
+        3.1rem,
+        8vw,
+        5rem
+      );
   }
 
+
   .trust-intro p {
-    max-width: 600px;
+    max-width: 620px;
+  }
+
+
+  .capabilities-grid {
+    width: 100%;
   }
 
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
   .trust-strip {
-    padding: 90px 20px;
+    padding:
+      75px
+      20px;
   }
+
+
+  .trust-strip::before {
+    background-size:
+      55px 55px;
+  }
+
 
   .trust-grid {
-    gap: 45px;
+    gap: 42px;
   }
 
+
+  .trust-intro::before {
+    width: 34px;
+
+    margin-bottom: 20px;
+  }
+
+
   .trust-intro h2 {
-    margin-top: 14px;
+    margin-bottom: 19px;
 
     font-size:
       clamp(
-        2.8rem,
+        2.75rem,
         13vw,
-        4.5rem
+        4rem
       );
 
     line-height: 0.94;
   }
 
+
   .trust-intro p {
-    font-size: 0.95rem;
+    font-size: 0.91rem;
 
     line-height: 1.7;
   }
 
-  .capabilities-grid {
-    grid-template-columns: 1fr;
 
-    gap: 16px;
-  }
+  /* Mobile cards */
 
   .capability-card {
-    min-height: 0;
+    grid-template-columns:
+      38px
+      48px
+      minmax(0, 1fr);
 
-    padding: 24px;
+    column-gap: 13px;
 
-    border-radius: 22px;
+    padding:
+      22px
+      0;
   }
 
-  .capability-top {
-    margin-bottom: 20px;
+
+  .capability-card:hover {
+    padding-left: 7px;
   }
+
+
+  .capability-top span {
+    font-size: 0.65rem;
+  }
+
 
   .capability-top svg {
-    width: 52px;
-    height: 52px;
+    width: 40px;
+    height: 40px;
 
-    padding: 14px;
+    padding: 10px;
 
-    border-radius: 16px;
+    border-radius: 11px;
   }
+
 
   .capability-card h3 {
-    margin-bottom: 10px;
+    font-size: 1.08rem;
 
-    font-size: 1.5rem;
+    line-height: 1.2;
   }
 
-  .capability-card p {
-    font-size: 0.95rem;
 
-    line-height: 1.6;
+  .capability-card p {
+    font-size: 0.8rem;
+
+    line-height: 1.55;
+  }
+
+
+  .capability-card > h3::after {
+    display: none;
   }
 
 }
 
 
-/* =========================================
+/* =========================================================
    SMALL MOBILE
-========================================= */
+========================================================= */
 
-@media (max-width: 420px) {
+@media (max-width: 400px) {
 
   .trust-strip {
-    padding: 75px 18px;
+    padding:
+      65px
+      17px;
   }
+
+
+  .trust-grid {
+    gap: 36px;
+  }
+
 
   .trust-intro h2 {
-    font-size: 2.8rem;
+    font-size: 2.7rem;
   }
+
 
   .capability-card {
-    padding: 22px;
+    grid-template-columns:
+      31px
+      42px
+      minmax(0, 1fr);
 
-    border-radius: 20px;
+    column-gap: 10px;
+
+    padding:
+      20px
+      0;
   }
+
 
   .capability-top svg {
-    width: 48px;
-    height: 48px;
+    width: 37px;
+    height: 37px;
 
-    padding: 13px;
+    padding: 9px;
 
-    border-radius: 15px;
+    border-radius: 10px;
   }
+
 
   .capability-card h3 {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
+
   .capability-card p {
-    font-size: 0.9rem;
+    font-size: 0.76rem;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 340px) {
+
+  .trust-strip {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+
+  .capability-card {
+    grid-template-columns:
+      27px
+      38px
+      minmax(0, 1fr);
+
+    column-gap: 8px;
+  }
+
+
+  .capability-top span {
+    font-size: 0.58rem;
+  }
+
+
+  .capability-top svg {
+    width: 34px;
+    height: 34px;
+
+    padding: 8px;
+  }
+
+
+  .capability-card h3 {
+    font-size: 0.94rem;
+  }
+
+
+  .capability-card p {
+    font-size: 0.72rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+
+  .trust-strip *,
+  .trust-strip *::before,
+  .trust-strip *::after {
+    transition-duration:
+      0.01ms !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    scroll-behavior:
+      auto !important;
   }
 
 }

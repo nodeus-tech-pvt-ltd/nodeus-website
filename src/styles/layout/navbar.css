@@ -1,114 +1,110 @@
-/* =========================================
+/* =========================================================
+   NODEUS NAVBAR — COMPLETE SYSTEM
+   ========================================================= */
+
+
+/* =========================================================
+   BRAND VARIABLES
+   ========================================================= */
+
+:root {
+  --nodeus-blue: #397bff;
+  --nodeus-blue-light: #72a4ff;
+  --nodeus-blue-lighter: #dce9ff;
+  --nodeus-blue-dark: #2368ed;
+
+  --nav-bg: rgba(7, 11, 20, 0.88);
+  --nav-panel: #0d1424;
+
+  --nav-text: #b8c2d1;
+  --nav-text-light: #dbe4f0;
+  --nav-text-muted: #7f8da1;
+
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --nav-blue-border: rgba(57, 123, 255, 0.32);
+
+  --nav-radius: 18px;
+  --nav-panel-radius: 22px;
+
+  --nav-shadow:
+    0 22px 65px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  --nav-panel-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  --nav-transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
    NAVBAR
-========================================= */
+   ========================================================= */
 
 .navbar {
   position: fixed;
-
   top: 20px;
-
   left: 50%;
 
-  z-index: 1000;
+  z-index: 5000;
 
   display: flex;
-
   align-items: center;
 
-  justify-content: space-between;
-
-  width:
-    min(
-      1240px,
-      calc(100% - 48px)
-    );
-
+  width: min(1240px, calc(100% - 48px));
   min-height: 68px;
 
-  padding:
-    11px
-    14px
-    11px
-    20px;
+  padding: 10px 12px 10px 20px;
 
-  transform:
-    translateX(-50%);
+  box-sizing: border-box;
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.11
-    );
+  transform: translateX(-50%);
 
-  border-radius:
-    18px;
+  border: 1px solid var(--nav-border);
+  border-radius: var(--nav-radius);
 
-  background:
-    rgba(
-      7,
-      11,
-      20,
-      0.82
-    );
+  background: var(--nav-bg);
 
-  backdrop-filter:
-    blur(24px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 
-  -webkit-backdrop-filter:
-    blur(24px);
-
-  box-shadow:
-    0 18px 55px
-    rgba(
-      0,
-      0,
-      0,
-      0.24
-    ),
-    inset
-    0 1px 0
-    rgba(
-      255,
-      255,
-      255,
-      0.05
-    );
+  box-shadow: var(--nav-shadow);
 
   transition:
-    border-color
-    0.3s ease,
-    box-shadow
-    0.3s ease;
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 
-.navbar-menu-active {
-  border-color:
-    rgba(
-      96,
-      165,
-      250,
-      0.35
-    );
+.navbar-menu-active,
+.navbar-mobile-open {
+  border-color: var(--nav-blue-border);
+
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(57, 123, 255, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 
-/* =========================================
+/* =========================================================
    LOGO
-========================================= */
+   ========================================================= */
 
 .logo {
   display: flex;
+  align-items: center;
 
   flex-shrink: 0;
 
-  align-items: center;
-
-  text-decoration:
-    none;
+  text-decoration: none;
 }
 
 
@@ -116,1531 +112,2435 @@
   display: block;
 
   width: 140px;
-
   height: auto;
+  max-height: 38px;
 
-  max-height:
-    38px;
+  object-fit: contain;
 
-  object-fit:
-    contain;
+  flex-shrink: 0;
 }
 
 
-/* =========================================
+/* =========================================================
    DESKTOP NAVIGATION
-========================================= */
+   ========================================================= */
 
 .nav-links {
   display: flex;
-
   align-items: center;
+  justify-content: flex-end;
 
-  justify-content:
-    flex-end;
+  gap: 2px;
 
-  gap: 3px;
+  margin-left: auto;
 }
 
 
+/* =========================================================
+   NORMAL NAV LINKS
+   ========================================================= */
+
 .nav-links > a,
-.nav-main-link {
-  display:
-    inline-flex;
+.nav-main-link,
+.nav-main-button,
+.nav-about-trigger {
+  display: inline-flex;
+  align-items: center;
 
-  align-items:
-    center;
+  min-height: 42px;
 
-  padding:
-    10px 12px;
+  padding: 10px 12px;
 
-  border-radius:
-    10px;
+  box-sizing: border-box;
 
-  color:
-    #b8c2d1;
+  border: 0;
+  border-radius: 10px;
 
-  font-size:
-    0.84rem;
+  background: transparent;
 
-  font-weight:
-    500;
+  color: var(--nav-text);
 
-  line-height:
-    1;
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 500;
 
-  text-decoration:
-    none;
+  line-height: 1;
 
-  white-space:
-    nowrap;
+  text-decoration: none;
+  white-space: nowrap;
 
-  transition:
-    color
-    0.25s ease,
-    background
-    0.25s ease;
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition: var(--nav-transition);
 }
 
 
 .nav-links > a:hover,
-.nav-main-link:hover {
-  color:
-    white;
+.nav-main-link:hover,
+.nav-main-button:hover,
+.nav-about-trigger:hover,
+.nav-about-trigger.active {
+  color: #ffffff;
 
-  background:
-    rgba(
-      96,
-      165,
-      250,
-      0.1
-    );
+  background: rgba(57, 123, 255, 0.1);
 }
 
 
-/* =========================================
-   DROPDOWN WRAPPER
-========================================= */
+/* =========================================================
+   DROPDOWN WRAPPERS
+   ========================================================= */
 
-.nav-dropdown-wrapper {
-  position:
-    static;
+.nav-dropdown-wrapper,
+.about-dropdown-wrapper {
+  position: static;
+
+  flex-shrink: 0;
 }
 
+
+/* =========================================================
+   DROPDOWN HEADING
+   ========================================================= */
 
 .nav-dropdown-heading {
-    display: grid;
-    grid-template-columns: 1fr 48px;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-    border-radius: 12px;
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 38px;
+
+  align-items: center;
+
+  min-height: 42px;
+
+  border-radius: 10px;
+
+  transition: background 0.25s ease;
 }
 
 
 .nav-dropdown-heading:hover {
-  background:
-    rgba(
-      96,
-      165,
-      250,
-      0.08
-    );
+  background: rgba(57, 123, 255, 0.08);
 }
 
 
-.nav-main-link {
-    display: flex;
-    align-items: center;
+/* =========================================================
+   DROPDOWN MAIN LINK
+   ========================================================= */
 
-    width: 100%;
-    min-height: 48px;
+.nav-dropdown-heading .nav-main-link {
+  width: 100%;
+  min-width: 0;
 
-    padding: 14px;
+  justify-content: flex-start;
 
-    min-width: 0;
+  padding: 10px 8px 10px 12px;
 }
 
+
+/* =========================================================
+   DROPDOWN ARROW BUTTON
+   ========================================================= */
 
 .nav-dropdown-trigger {
-  display: flex;
+  display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
-  width: 48px;
-  min-width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
 
   padding: 0;
 
-  border: none;
-  border-radius: 12px;
+  border: 0;
+  border-radius: 9px;
 
   background: transparent;
-  color: #b8c2d1; /* Default arrow color */
+
+  color: var(--nav-text);
+
+  cursor: pointer;
+
+  transition: var(--nav-transition);
 }
+
 
 .nav-dropdown-trigger:hover,
 .nav-dropdown-trigger.active {
-  color: #ffffff; /* Arrow becomes white */
-  background: rgba(96, 165, 250, 0.12);
+  color: #ffffff;
+
+  background: rgba(57, 123, 255, 0.12);
 }
+
 
 .nav-dropdown-trigger svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 
-  stroke: currentColor; /* Force SVG to use the button color */
-  color: inherit;
+  flex-shrink: 0;
+
+  stroke: currentColor;
 
   transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    color 0.25s ease;
 }
+
 
 .nav-dropdown-trigger.active svg {
   transform: rotate(180deg);
 }
 
 
-/* =========================================
-   CONTACT BUTTON
-========================================= */
+/* =========================================================
+   ABOUT TRIGGER
+   ========================================================= */
 
-.nav-contact {
-  display:
-    inline-flex !important;
+.nav-about-trigger {
+  gap: 7px;
+}
 
-  align-items:
-    center;
 
-  justify-content:
-    center;
+.nav-about-trigger svg {
+  width: 16px;
+  height: 16px;
 
-  gap:
-    7px;
+  flex-shrink: 0;
 
-  margin-left:
-    7px;
-
-  padding:
-    11px 17px !important;
-
-  border:
-    1px solid
-    rgba(
-      96,
-      165,
-      250,
-      0.4
-    );
-
-  border-radius:
-    999px !important;
-
-  background:
-    rgba(
-      37,
-      99,
-      235,
-      0.18
-    );
-
-  color:
-    #dbeafe !important;
-
-  font-weight:
-    650 !important;
-
-  box-shadow:
-    0 8px 25px
-    rgba(
-      37,
-      99,
-      235,
-      0.15
-    );
+  color: #8290a5;
 
   transition:
-    transform
-    0.25s ease,
-    background
-    0.25s ease,
-    box-shadow
-    0.25s ease !important;
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.nav-about-trigger:hover svg,
+.nav-about-trigger.active svg {
+  color: #ffffff;
+}
+
+
+.nav-about-trigger.active svg {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   CONTACT BUTTON
+   ========================================================= */
+
+.nav-contact {
+  display: inline-flex !important;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  min-height: 42px;
+
+  margin-left: 7px;
+
+  padding: 10px 17px !important;
+
+  border: 1px solid rgba(57, 123, 255, 0.48) !important;
+  border-radius: 999px !important;
+
+  background: rgba(57, 123, 255, 0.16) !important;
+
+  color: var(--nodeus-blue-lighter) !important;
+
+  font-weight: 650 !important;
+
+  box-shadow:
+    0 8px 25px rgba(57, 123, 255, 0.14);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease !important;
 }
 
 
 .nav-contact:hover {
-  background:
-    #2563eb !important;
+  background: var(--nodeus-blue) !important;
 
-  color:
-    white !important;
+  border-color: var(--nodeus-blue) !important;
 
-  transform:
-    translateY(
-      -2px
-    );
+  color: #ffffff !important;
+
+  transform: translateY(-2px);
 
   box-shadow:
-    0 13px 30px
-    rgba(
-      37,
-      99,
-      235,
-      0.3
-    );
+    0 13px 32px rgba(57, 123, 255, 0.32);
 }
 
 
-/* =========================================
-   DESKTOP MEGA MENU
-========================================= */
+/* =========================================================
+   DESKTOP DROPDOWN BASE
+   ========================================================= */
+
+.mega-menu,
+.resources-menu,
+.about-menu {
+  position: absolute;
+
+  top: calc(100% + 14px);
+
+  box-sizing: border-box;
+
+  max-height: calc(100vh - 115px);
+
+  padding: 32px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  border: 1px solid rgba(57, 123, 255, 0.22);
+  border-radius: var(--nav-panel-radius);
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(57, 123, 255, 0.17),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(37, 99, 235, 0.07),
+      transparent 34%
+    ),
+    var(--nav-panel);
+
+  box-shadow: var(--nav-panel-shadow);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform:
+    translateY(-10px)
+    scale(0.985);
+
+  transform-origin: top center;
+
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease,
+    transform 0.22s ease;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(96, 165, 250, 0.3) transparent;
+}
+
+
+/* =========================================================
+   DROPDOWN SCROLLBAR
+   ========================================================= */
+
+.mega-menu::-webkit-scrollbar,
+.resources-menu::-webkit-scrollbar,
+.about-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+.mega-menu::-webkit-scrollbar-track,
+.resources-menu::-webkit-scrollbar-track,
+.about-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.mega-menu::-webkit-scrollbar-thumb,
+.resources-menu::-webkit-scrollbar-thumb,
+.about-menu::-webkit-scrollbar-thumb {
+  background: rgba(96, 165, 250, 0.3);
+
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   SOLUTIONS MEGA MENU
+   ========================================================= */
 
 .mega-menu {
-  position:
-    absolute;
+  left: 0;
+  right: 0;
 
-  top:
-    calc(
-      100% + 14px
-    );
-
-  left:
-    0;
-
-  right:
-    0;
-
-  max-height:
-    calc(
-      100vh - 115px
-    );
-
-  padding:
-    34px;
-
-  overflow-y:
-    auto;
-
-  box-sizing:
-    border-box;
-
-  border:
-    1px solid
-    rgba(
-      96,
-      165,
-      250,
-      0.2
-    );
-
-  border-radius:
-    22px;
-
-  background:
-    radial-gradient(
-      circle
-      at
-      top right,
-      rgba(
-        37,
-        99,
-        235,
-        0.16
-      ),
-      transparent
-      38%
-    ),
-    #0d1424;
-
-  box-shadow:
-    0 35px 85px
-    rgba(
-      0,
-      0,
-      0,
-      0.48
-    ),
-    inset
-    0 1px 0
-    rgba(
-      255,
-      255,
-      255,
-      0.06
-    );
-
-  opacity:
-    0;
-
-  visibility:
-    hidden;
-
-  pointer-events:
-    none;
-
-  transform:
-    translateY(
-      -10px
-    )
-    scale(
-      0.985
-    );
-
-  transform-origin:
-    top center;
-
-  transition:
-    opacity
-    0.22s ease,
-    visibility
-    0.22s ease,
-    transform
-    0.22s ease;
+  width: 100%;
 }
 
 
-.mega-menu.show {
-  opacity:
-    1;
+.mega-menu.show,
+.resources-menu.show,
+.about-menu.show {
+  opacity: 1;
 
-  visibility:
-    visible;
+  visibility: visible;
 
-  pointer-events:
-    auto;
+  pointer-events: auto;
 
   transform:
-    translateY(
-      0
-    )
-    scale(
-      1
-    );
+    translateY(0)
+    scale(1);
 }
 
 
-/* =========================================
-   RESOURCES DESKTOP MENU
-========================================= */
+/* =========================================================
+   RESOURCES MENU
+   ========================================================= */
 
 .resources-menu {
-  position:
-    absolute;
+  left: 50%;
 
-  top:
-    calc(
-      100% + 14px
-    );
+  width: min(1080px, calc(100vw - 40px));
 
-  left:
-    50%;
-
-  right:
-    auto;
-
-  width:
-    min(
-      1100px,
-      calc(
-        100vw - 40px
-      )
-    );
-
-  max-width:
-    calc(
-      100vw - 40px
-    );
-
-  max-height:
-    calc(
-      100vh - 115px
-    );
-
-  padding:
-    34px;
-
-  overflow-y:
-    auto;
-
-  box-sizing:
-    border-box;
-
-  border:
-    1px solid
-    rgba(
-      96,
-      165,
-      250,
-      0.2
-    );
-
-  border-radius:
-    22px;
-
-  background:
-    radial-gradient(
-      circle
-      at
-      top right,
-      rgba(
-        37,
-        99,
-        235,
-        0.16
-      ),
-      transparent
-      38%
-    ),
-    #0d1424;
-
-  box-shadow:
-    0 35px 85px
-    rgba(
-      0,
-      0,
-      0,
-      0.48
-    ),
-    inset
-    0 1px 0
-    rgba(
-      255,
-      255,
-      255,
-      0.06
-    );
-
-  opacity:
-    0;
-
-  visibility:
-    hidden;
-
-  pointer-events:
-    none;
+  max-width: calc(100vw - 40px);
 
   transform:
-    translateX(
-      -50%
-    )
-    translateY(
-      -10px
-    )
-    scale(
-      0.985
-    );
-
-  transform-origin:
-    top center;
-
-  transition:
-    opacity
-    0.22s ease,
-    visibility
-    0.22s ease,
-    transform
-    0.22s ease;
-
-  z-index:
-    1100;
+    translateX(-50%)
+    translateY(-10px)
+    scale(0.985);
 }
 
 
 .resources-menu.show {
-  opacity:
-    1;
-
-  visibility:
-    visible;
-
-  pointer-events:
-    auto;
-
   transform:
-    translateX(
-      -50%
-    )
-    translateY(
-      0
-    )
-    scale(
-      1
-    );
+    translateX(-50%)
+    translateY(0)
+    scale(1);
 }
 
 
-/* =========================================
-   MEGA MENU HEADER
-========================================= */
+/* =========================================================
+   ABOUT MENU
+   ========================================================= */
 
-.mega-menu-header {
-  display:
-    grid;
+.about-menu {
+  left: 0;
+  right: 0;
+
+  width: 100%;
+}
+
+
+.about-menu.show {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =========================================================
+   MEGA MENU HEADER
+   ========================================================= */
+
+.mega-menu-header,
+.about-menu .mega-menu-header {
+  display: grid;
 
   grid-template-columns:
-    minmax(
-      0,
-      1fr
-    )
-    minmax(
-      260px,
-      0.55fr
-    );
+    minmax(0, 1fr)
+    minmax(280px, 0.55fr);
 
-  gap:
-    70px;
+  align-items: end;
 
-  align-items:
-    end;
+  gap: 60px;
 
-  margin-bottom:
-    30px;
+  margin: 0 0 28px;
 
-  padding-bottom:
-    28px;
+  padding: 0 0 26px;
 
-  border-bottom:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 
-.mega-eyebrow {
-  display:
-    block;
-
-  margin-bottom:
-    13px;
-
-  color:
-    #60a5fa;
-
-  font-size:
-    0.68rem;
-
-  font-weight:
-    750;
-
-  letter-spacing:
-    0.17em;
+.mega-menu-header > div,
+.about-menu .mega-menu-header > div {
+  min-width: 0;
 }
 
 
-.mega-menu-header h2 {
-  margin:
-    0;
+.mega-eyebrow,
+.about-menu .mega-eyebrow {
+  display: block;
 
-  color:
-    white;
+  margin: 0 0 12px;
 
-  font-size:
-    clamp(
-      2rem,
-      3.3vw,
-      3.3rem
-    );
+  color: var(--nodeus-blue);
 
-  font-weight:
-    600;
+  font-size: 0.66rem;
+  font-weight: 750;
 
-  line-height:
-    0.96;
+  letter-spacing: 0.17em;
 
-  letter-spacing:
-    -0.06em;
+  text-transform: uppercase;
 }
 
 
-.mega-menu-header h2 span {
-  color:
-    #60a5fa;
+.mega-menu-header h2,
+.about-menu .mega-menu-header h2 {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(2rem, 3.2vw, 3.25rem);
+
+  font-weight: 600;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
 }
 
 
-.mega-menu-header > p {
-  max-width:
-    390px;
-
-  margin:
-    0;
-
-  color:
-    #94a3b8;
-
-  font-size:
-    0.92rem;
-
-  line-height:
-    1.75;
+.mega-menu-header h2 span,
+.about-menu .mega-menu-header h2 span {
+  color: var(--nodeus-blue);
 }
 
 
-/* =========================================
-   SOLUTION CARDS
-========================================= */
+.mega-menu-header > p,
+.about-menu .mega-menu-header > p {
+  max-width: 410px;
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SOLUTIONS GRID
+   ========================================================= */
 
 .service-categories-grid {
-  display:
-    grid;
+  display: grid;
 
   grid-template-columns:
-    repeat(
-      4,
-      minmax(
-        0,
-        1fr
-      )
-    );
+    repeat(4, minmax(0, 1fr));
 
-  gap:
-    12px;
+  gap: 12px;
 }
 
 
+/* =========================================================
+   SERVICE CARD
+   ========================================================= */
+
 .service-category-card {
-  display:
-    flex;
+  position: relative;
 
-  flex-direction:
-    column;
+  display: flex;
 
-  min-height:
-    300px;
+  flex-direction: column;
 
-  padding:
-    20px;
+  min-width: 0;
+  min-height: 286px;
 
-  overflow:
-    hidden;
+  padding: 20px;
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
+  overflow: hidden;
 
-  border-radius:
-    16px;
+  box-sizing: border-box;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.025
-    );
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 16px;
 
-  text-decoration:
-    none;
+  background: rgba(255, 255, 255, 0.025);
+
+  text-decoration: none;
 
   transition:
-    border-color
-    0.28s ease,
-    background
-    0.28s ease,
-    transform
-    0.28s ease;
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 
 .service-category-card:hover {
-  border-color:
-    rgba(
-      96,
-      165,
-      250,
-      0.45
-    );
+  transform: translateY(-4px);
 
-  background:
-    rgba(
-      37,
-      99,
-      235,
-      0.1
-    );
+  border-color: rgba(57, 123, 255, 0.45);
 
-  transform:
-    translateY(
-      -4px
-    );
+  background: rgba(57, 123, 255, 0.09);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.18);
 }
 
 
 .service-category-top {
-  display:
-    flex;
+  display: flex;
 
-  align-items:
-    center;
+  align-items: center;
+  justify-content: space-between;
 
-  justify-content:
-    space-between;
+  margin-bottom: 20px;
 
-  margin-bottom:
-    20px;
-
-  color:
-    #64748b;
+  color: #64748b;
 }
 
 
 .service-category-icon {
-  display:
-    grid;
+  display: grid;
 
-  width:
-    42px;
+  width: 42px;
+  height: 42px;
 
-  height:
-    42px;
+  place-items: center;
 
-  place-items:
-    center;
+  flex-shrink: 0;
 
-  border-radius:
-    11px;
+  border: 1px solid rgba(57, 123, 255, 0.2);
+  border-radius: 11px;
 
-  background:
-    rgba(
-      59,
-      130,
-      246,
-      0.13
-    );
+  background: rgba(57, 123, 255, 0.12);
 
-  color:
-    #60a5fa;
+  color: var(--nodeus-blue);
 }
 
 
 .service-category-card h3 {
-  margin:
-    0 0 9px;
+  margin: 0 0 8px;
 
-  color:
-    white;
+  color: #ffffff;
 
-  font-size:
-    0.98rem;
+  font-size: 0.97rem;
+  font-weight: 650;
 
-  font-weight:
-    650;
-
-  line-height:
-    1.3;
+  line-height: 1.3;
 }
 
 
 .service-category-card > p {
-  min-height:
-    43px;
+  min-height: 42px;
 
-  margin:
-    0 0 15px;
+  margin: 0 0 14px;
 
-  color:
-    #7f8da3;
+  color: var(--nav-text-muted);
 
-  font-size:
-    0.76rem;
+  font-size: 0.75rem;
 
-  line-height:
-    1.55;
+  line-height: 1.55;
 }
 
 
 .service-list {
-  display:
-    flex;
+  display: flex;
 
-  flex-direction:
-    column;
+  flex-direction: column;
 
-  gap:
-    6px;
+  gap: 6px;
 
-  margin-bottom:
-    15px;
+  margin: 0 0 15px;
+
+  padding: 0;
 }
 
 
 .service-list span {
-  display:
-    block;
+  display: block;
 
-  overflow:
-    hidden;
+  min-width: 0;
 
-  color:
-    #aab4c5;
+  overflow: hidden;
 
-  font-size:
-    0.72rem;
+  color: #aab4c5;
 
-  line-height:
-    1.3;
+  font-size: 0.71rem;
 
-  text-overflow:
-    ellipsis;
+  line-height: 1.3;
 
-  white-space:
-    nowrap;
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
 }
 
 
 .view-all-services {
-  display:
-    inline-flex;
+  display: inline-flex;
 
-  align-items:
-    center;
+  align-items: center;
 
-  gap:
-    5px;
+  gap: 5px;
 
-  margin-top:
-    auto;
+  margin-top: auto;
 
-  color:
-    #60a5fa;
+  color: var(--nodeus-blue);
 
-  font-size:
-    0.74rem;
+  font-size: 0.74rem;
 
-  font-weight:
-    700;
+  font-weight: 700;
+
+  text-decoration: none;
 }
 
 
-/* =========================================
-   INDUSTRY CARDS
-========================================= */
+/* =========================================================
+   INDUSTRIES
+   ========================================================= */
 
 .industries-grid {
-  display:
-    grid;
+  display: grid;
 
   grid-template-columns:
-    repeat(
-      5,
-      minmax(
-        0,
-        1fr
-      )
-    );
+    repeat(5, minmax(0, 1fr));
 
-  gap:
-    12px;
+  gap: 12px;
 }
 
 
 .industry-card {
-  display:
-    flex;
+  display: flex;
 
-  align-items:
-    center;
+  align-items: center;
 
-  gap:
-    11px;
+  min-width: 0;
 
-  min-height:
-    98px;
+  gap: 11px;
 
-  padding:
-    16px;
+  min-height: 94px;
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
+  padding: 15px;
 
-  border-radius:
-    15px;
+  box-sizing: border-box;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.025
-    );
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 15px;
 
-  text-decoration:
-    none;
+  background: rgba(255, 255, 255, 0.025);
+
+  text-decoration: none;
 
   transition:
-    border-color
-    0.28s ease,
-    background
-    0.28s ease,
-    transform
-    0.28s ease;
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
 }
 
 
 .industry-card:hover {
-  border-color:
-    rgba(
-      96,
-      165,
-      250,
-      0.45
-    );
+  transform: translateY(-3px);
 
-  background:
-    rgba(
-      37,
-      99,
-      235,
-      0.1
-    );
+  border-color: rgba(57, 123, 255, 0.45);
 
-  transform:
-    translateY(
-      -3px
-    );
+  background: rgba(57, 123, 255, 0.09);
 }
 
 
 .industry-icon {
-  display:
-    grid;
+  display: grid;
 
-  flex-shrink:
-    0;
+  width: 40px;
+  height: 40px;
 
-  width:
-    40px;
+  place-items: center;
 
-  height:
-    40px;
+  flex-shrink: 0;
 
-  place-items:
-    center;
+  border: 1px solid rgba(57, 123, 255, 0.18);
+  border-radius: 11px;
 
-  border-radius:
-    11px;
+  background: rgba(57, 123, 255, 0.12);
 
-  background:
-    rgba(
-      59,
-      130,
-      246,
-      0.13
-    );
-
-  color:
-    #60a5fa;
+  color: var(--nodeus-blue);
 }
 
 
 .industry-card span {
-  flex:
-    1;
+  flex: 1;
 
-  color:
-    #dbe4f0;
+  min-width: 0;
 
-  font-size:
-    0.79rem;
+  color: #dbe4f0;
 
-  font-weight:
-    600;
+  font-size: 0.78rem;
 
-  line-height:
-    1.35;
+  font-weight: 600;
+
+  line-height: 1.35;
 }
 
 
 .industry-card > svg {
-  flex-shrink:
-    0;
+  flex-shrink: 0;
 
-  color:
-    #64748b;
+  color: #64748b;
 }
 
 
-/* =========================================
+/* =========================================================
    RESOURCES GRID
-========================================= */
+   ========================================================= */
 
 .resources-grid {
-  display:
-    grid;
+  display: grid;
 
   grid-template-columns:
-    repeat(
-      2,
-      minmax(
-        0,
-        1fr
-      )
-    );
+    repeat(2, minmax(0, 1fr));
 
-  gap:
-    14px;
+  gap: 13px;
 
-  margin-top:
-    31px;
+  margin-top: 28px;
 
-  padding-bottom:
-    30px;
+  padding-bottom: 4px;
 }
 
 
-/* =========================================
+/* =========================================================
    RESOURCE CARD
-========================================= */
+   ========================================================= */
 
 .resource-card {
-  position:
-    relative;
+  position: relative;
 
-  display:
-    grid;
+  display: grid;
 
   grid-template-columns:
     50px
-    minmax(
-      0,
-      1fr
-    )
+    minmax(0, 1fr)
     20px;
 
-  align-items:
-    start;
+  align-items: center;
 
-  gap:
-    17px;
+  gap: 15px;
 
-  min-height:
-    142px;
+  min-width: 0;
 
-  padding:
-    22px;
+  padding: 18px 19px;
 
-  overflow:
-    hidden;
+  overflow: hidden;
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.075
-    );
+  box-sizing: border-box;
 
-  border-radius:
-    17px;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 17px;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.025
-    );
+  background: rgba(255, 255, 255, 0.025);
 
-  color:
-    inherit;
+  color: inherit;
 
-  text-decoration:
-    none;
+  text-decoration: none;
 
   transition:
-    transform
-    0.28s ease,
-    border-color
-    0.28s ease,
-    background
-    0.28s ease,
-    box-shadow
-    0.28s ease;
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 
 .resource-card::before {
-  content:
-    "";
+  content: "";
 
-  position:
-    absolute;
+  position: absolute;
 
-  top:
-    -55px;
+  top: -55px;
+  left: -45px;
 
-  left:
-    -45px;
+  width: 150px;
+  height: 150px;
 
-  width:
-    150px;
+  border-radius: 50%;
 
-  height:
-    150px;
+  background: rgba(57, 123, 255, 0.13);
 
-  border-radius:
-    50%;
+  filter: blur(38px);
 
-  background:
-    rgba(
-      37,
-      99,
-      235,
-      0.12
-    );
+  opacity: 0;
 
-  filter:
-    blur(
-      38px
-    );
+  pointer-events: none;
 
-  opacity:
-    0;
-
-  pointer-events:
-    none;
-
-  transition:
-    opacity
-    0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 
 .resource-card:hover {
-  transform:
-    translateY(
-      -4px
-    );
+  transform: translateY(-4px);
 
-  border-color:
-    rgba(
-      96,
-      165,
-      250,
-      0.27
-    );
+  border-color: rgba(57, 123, 255, 0.3);
 
-  background:
-    rgba(
-      37,
-      99,
-      235,
-      0.075
-    );
+  background: rgba(57, 123, 255, 0.075);
 
   box-shadow:
-    0 18px 40px
-    rgba(
-      0,
-      0,
-      0,
-      0.22
-    );
+    0 18px 40px rgba(0, 0, 0, 0.22);
 }
 
 
 .resource-card:hover::before {
-  opacity:
-    1;
+  opacity: 1;
 }
 
+
+/* =========================================================
+   RESOURCE ICON
+   ========================================================= */
 
 .resource-card-icon {
-  position:
-    relative;
+  position: relative;
 
-  z-index:
-    1;
+  z-index: 1;
 
-  display:
-    grid;
+  display: grid;
 
-  width:
-    50px;
+  width: 50px;
+  height: 50px;
 
-  height:
-    50px;
+  place-items: center;
 
-  place-items:
-    center;
+  flex-shrink: 0;
 
-  border:
-    1px solid
-    rgba(
-      96,
-      165,
-      250,
-      0.2
-    );
+  box-sizing: border-box;
 
-  border-radius:
-    14px;
+  border: 1px solid rgba(57, 123, 255, 0.22);
+  border-radius: 14px;
 
-  background:
-    rgba(
-      37,
-      99,
-      235,
-      0.11
-    );
+  background: rgba(57, 123, 255, 0.11);
 
-  color:
-    #60a5fa;
+  color: var(--nodeus-blue);
 }
 
 
-.resource-card
-> div:nth-child(2) {
-  position:
-    relative;
+/* =========================================================
+   RESOURCE CONTENT
+   ========================================================= */
 
-  z-index:
-    1;
+.resource-card > div:nth-child(2) {
+  position: relative;
 
-  min-width:
-    0;
+  z-index: 1;
+
+  min-width: 0;
 }
 
 
 .resource-card h3 {
-  margin:
-    2px
-    0
-    8px;
+  margin: 0 0 6px;
 
-  color:
-    #eef5ff;
+  color: #eef5ff;
 
-  font-size:
-    0.96rem;
+  font-size: 0.95rem;
 
-  font-weight:
-    650;
+  font-weight: 650;
 
-  line-height:
-    1.25;
+  line-height: 1.25;
 }
 
 
 .resource-card p {
-  margin:
-    0;
+  margin: 0;
 
-  color:
-    #7f8da1;
+  color: #7f8da1;
 
-  font-size:
-    0.78rem;
+  font-size: 0.77rem;
 
-  line-height:
-    1.65;
+  line-height: 1.55;
 }
 
 
-.resource-card
-> svg {
-  position:
-    relative;
+/* =========================================================
+   RESOURCE ARROW
+   ========================================================= */
 
-  z-index:
-    1;
+.resource-card > svg {
+  position: relative;
 
-  margin-top:
-    4px;
+  z-index: 1;
 
-  color:
-    #58677c;
+  flex-shrink: 0;
+
+  color: #58677c;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 
-.resource-card:hover
-> svg {
-  transform:
-    translate(
-      2px,
-      -2px
-    );
+.resource-card:hover > svg {
+  color: var(--nodeus-blue);
 
-  color:
-    #60a5fa;
+  transform: translate(2px, -2px);
 }
 
 
-/* =========================================
-   MEGA MENU BOTTOM
-========================================= */
+/* =========================================================
+   ABOUT GRID
+   ========================================================= */
 
-.mega-menu-bottom {
-  display:
-    flex;
+.about-menu-grid {
+  display: grid;
 
-  align-items:
-    center;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
-  justify-content:
-    space-between;
+  gap: 13px;
+}
 
-  gap:
+
+/* =========================================================
+   ABOUT CARD
+   ========================================================= */
+
+.about-menu-card {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    50px
+    minmax(0, 1fr)
     20px;
 
-  margin-top:
-    27px;
+  align-items: center;
 
-  padding-top:
-    23px;
+  gap: 17px;
 
-  border-top:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
+  min-width: 0;
+  min-height: 126px;
 
-  color:
-    #64748b;
+  padding: 21px;
 
-  font-size:
-    0.8rem;
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 
-.mega-menu-bottom a {
-  display:
-    inline-flex;
+.about-menu-card::before {
+  content: "";
 
-  align-items:
-    center;
+  position: absolute;
 
-  gap:
-    7px;
+  top: -55px;
+  left: -45px;
 
-  color:
-    #60a5fa;
+  width: 150px;
+  height: 150px;
 
-  font-weight:
-    700;
+  border-radius: 50%;
 
-  text-decoration:
-    none;
+  background: rgba(57, 123, 255, 0.13);
+
+  filter: blur(38px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
 }
 
 
-/* =========================================
+.about-menu-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(57, 123, 255, 0.36);
+
+  background: rgba(57, 123, 255, 0.075);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+
+.about-menu-card:hover::before {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   ABOUT ICON
+   ========================================================= */
+
+.about-menu-icon {
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+
+  width: 50px;
+  height: 50px;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(57, 123, 255, 0.22);
+  border-radius: 14px;
+
+  background: rgba(57, 123, 255, 0.11);
+
+  color: var(--nodeus-blue);
+
+  transition:
+    transform 0.28s ease,
+    background 0.28s ease,
+    color 0.28s ease;
+}
+
+
+.about-menu-card:hover .about-menu-icon {
+  transform: scale(1.05);
+
+  background: rgba(57, 123, 255, 0.35);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+   ========================================================= */
+
+.about-menu-card > div:nth-child(2) {
+  position: relative;
+
+  z-index: 1;
+
+  min-width: 0;
+}
+
+
+.about-menu-card h3 {
+  margin: 0 0 7px;
+
+  color: #eef5ff;
+
+  font-size: 0.96rem;
+
+  font-weight: 650;
+
+  line-height: 1.25;
+
+  transition: color 0.25s ease;
+}
+
+
+.about-menu-card p {
+  max-width: 390px;
+
+  margin: 0;
+
+  color: #7f8da1;
+
+  font-size: 0.77rem;
+
+  line-height: 1.6;
+}
+
+
+.about-menu-card:hover h3 {
+  color: var(--nodeus-blue-light);
+}
+
+
+.about-menu-card > svg {
+  position: relative;
+
+  z-index: 1;
+
+  flex-shrink: 0;
+
+  color: #58677c;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.about-menu-card:hover > svg {
+  color: var(--nodeus-blue);
+
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   MENU BOTTOM
+   ========================================================= */
+
+.mega-menu-bottom,
+.about-menu .mega-menu-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 25px;
+
+  padding-top: 21px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #64748b;
+
+  font-size: 0.79rem;
+}
+
+
+.mega-menu-bottom a,
+.about-menu .mega-menu-bottom a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--nodeus-blue);
+
+  font-size: 0.79rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+
+.mega-menu-bottom a:hover,
+.about-menu .mega-menu-bottom a:hover {
+  color: #ffffff;
+}
+
+
+.mega-menu-bottom a svg,
+.about-menu .mega-menu-bottom a svg {
+  transition: transform 0.25s ease;
+}
+
+
+.mega-menu-bottom a:hover svg,
+.about-menu .mega-menu-bottom a:hover svg {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
    MOBILE HOME LINK
-========================================= */
+   ========================================================= */
 
 .mobile-home-link {
-  display:
-    none !important;
+  display: none !important;
 }
 
 
-/* =========================================
-   MOBILE BUTTON
-========================================= */
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
 
 .mobile-menu-button {
-  display:
-    none;
+  display: none;
 
-  align-items:
-    center;
+  align-items: center;
+  justify-content: center;
 
-  justify-content:
-    center;
+  width: 42px;
+  height: 42px;
 
-  width:
-    42px;
+  padding: 0;
 
-  height:
-    42px;
+  flex-shrink: 0;
 
-  padding:
-    0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.1
-    );
+  background: rgba(255, 255, 255, 0.04);
 
-  border-radius:
-    12px;
+  color: #ffffff;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.04
-    );
+  cursor: pointer;
 
-  color:
-    white;
-
-  cursor:
-    pointer;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 
-/* =========================================
-   LAPTOP
-========================================= */
+.mobile-menu-button:hover {
+  border-color: rgba(57, 123, 255, 0.3);
 
-@media (
-  max-width:
-  1120px
-) {
+  background: rgba(57, 123, 255, 0.1);
+}
+
+
+/* =========================================================
+   LAPTOP — 1120px
+   ========================================================= */
+
+@media (max-width: 1120px) {
 
   .navbar {
-    width:
-      calc(
-        100% - 32px
-      );
+    width: calc(100% - 32px);
   }
 
 
   .nodeus-logo {
-    width:
-      125px;
+    width: 125px;
+  }
+
+
+  .nav-links {
+    gap: 1px;
   }
 
 
   .nav-links > a,
-  .nav-main-link {
-    padding:
-      10px 8px;
+  .nav-main-link,
+  .nav-main-button,
+  .nav-about-trigger {
+    padding-left: 8px;
+    padding-right: 8px;
 
-    font-size:
-      0.78rem;
+    font-size: 0.78rem;
+  }
+
+
+  .nav-dropdown-heading .nav-main-link {
+    padding-left: 8px;
+    padding-right: 5px;
+  }
+
+
+  .nav-dropdown-trigger {
+    width: 34px;
   }
 
 
   .nav-contact {
-    padding:
-      10px 13px !important;
+    margin-left: 4px;
+
+    padding-left: 13px !important;
+    padding-right: 13px !important;
   }
 
 
   .service-categories-grid {
     grid-template-columns:
-      repeat(
-        3,
-        1fr
-      );
+      repeat(3, minmax(0, 1fr));
   }
 
 
   .industries-grid {
     grid-template-columns:
-      repeat(
-        4,
-        1fr
+      repeat(4, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   TABLET — 950px
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .navbar {
+    top: 15px;
+  }
+
+
+  .mega-menu,
+  .about-menu {
+    padding: 27px;
+  }
+
+
+  .resources-menu {
+    width: calc(100vw - 32px);
+
+    max-width: calc(100vw - 32px);
+
+    padding: 27px;
+  }
+
+
+  .mega-menu-header,
+  .about-menu .mega-menu-header {
+    grid-template-columns: 1fr;
+
+    align-items: start;
+
+    gap: 18px;
+  }
+
+
+  .mega-menu-header > p,
+  .about-menu .mega-menu-header > p {
+    max-width: 650px;
+  }
+
+
+  .service-categories-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .industries-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE — 760px
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  /* -----------------------------------------
+     NAVBAR
+  ----------------------------------------- */
+
+  .navbar {
+    top: 11px;
+
+    width: calc(100% - 24px);
+
+    min-height: 62px;
+
+    padding:
+      9px
+      10px
+      9px
+      15px;
+
+    border-radius: 16px;
+  }
+
+
+  .nodeus-logo {
+    width: 118px;
+
+    max-height: 34px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE BUTTON
+  ----------------------------------------- */
+
+  .mobile-menu-button {
+    display: inline-flex;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE NAV PANEL
+  ----------------------------------------- */
+
+  .nav-links {
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    left: 0;
+    right: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 3px;
+
+    width: 100%;
+
+    max-height: calc(100dvh - 95px);
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    border: 1px solid transparent;
+
+    border-radius: 18px;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(13, 20, 36, 0.99),
+        rgba(8, 14, 25, 0.99)
       );
+
+    box-shadow:
+      0 25px 70px rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease,
+      transform 0.25s ease;
+
+    overscroll-behavior: contain;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  .nav-links.open {
+    padding: 10px;
+
+    border-color:
+      rgba(57, 123, 255, 0.2);
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+
+  /* -----------------------------------------
+     HOME
+  ----------------------------------------- */
+
+  .mobile-home-link {
+    display: flex !important;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE LINKS
+  ----------------------------------------- */
+
+  .nav-links > a,
+  .nav-main-link,
+  .nav-main-button,
+  .nav-about-trigger {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    color: var(--nav-text-light);
+
+    font-size: 0.9rem;
+  }
+
+
+  .nav-links > a:hover,
+  .nav-main-link:hover,
+  .nav-main-button:hover,
+  .nav-about-trigger:hover,
+  .nav-about-trigger.active {
+    background: rgba(57, 123, 255, 0.09);
+  }
+
+
+  /* -----------------------------------------
+     DROPDOWN WRAPPERS
+  ----------------------------------------- */
+
+  .nav-dropdown-wrapper,
+  .about-dropdown-wrapper {
+    position: static;
+
+    width: 100%;
+
+    flex-shrink: 0;
+  }
+
+
+  /* -----------------------------------------
+     DROPDOWN HEADING
+  ----------------------------------------- */
+
+  .nav-dropdown-heading {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      48px;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    border-radius: 12px;
+  }
+
+
+  .nav-dropdown-heading .nav-main-link {
+    min-width: 0;
+
+    justify-content: flex-start;
+
+    padding:
+      14px
+      8px
+      14px
+      14px;
+  }
+
+
+  .nav-dropdown-trigger {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    touch-action: manipulation;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE ABOUT
+  ----------------------------------------- */
+
+  .nav-about-trigger {
+    justify-content: space-between;
+
+    min-height: 48px;
+  }
+
+
+  .nav-about-trigger svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  /* -----------------------------------------
+     ALL MOBILE DROPDOWN PANELS
+  ----------------------------------------- */
+
+  .mega-menu,
+  .resources-menu,
+  .about-menu {
+    position: static;
+
+    display: none;
+
+    width: 100%;
+    max-width: none;
+    max-height: none;
+
+    margin:
+      3px
+      0
+      7px;
+
+    padding: 14px;
+
+    overflow: visible;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 14px;
+
+    background:
+      rgba(255, 255, 255, 0.025);
+
+    box-shadow: none;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: none;
+
+    transition: none;
+  }
+
+
+  .mega-menu.show,
+  .resources-menu.show,
+  .about-menu.show {
+    display: block;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: none;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE HEADER
+  ----------------------------------------- */
+
+  .mega-menu-header,
+  .about-menu .mega-menu-header {
+    display: block;
+
+    margin:
+      0
+      0
+      17px;
+
+    padding:
+      5px
+      5px
+      17px;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.08);
+  }
+
+
+  .mega-eyebrow,
+  .about-menu .mega-eyebrow {
+    margin-bottom: 9px;
+
+    font-size: 0.62rem;
+  }
+
+
+  .mega-menu-header h2,
+  .about-menu .mega-menu-header h2 {
+    font-size: 1.65rem;
+
+    line-height: 1;
+  }
+
+
+  .mega-menu-header > p,
+  .about-menu .mega-menu-header > p {
+    margin-top: 14px;
+
+    font-size: 0.81rem;
+
+    line-height: 1.65;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE SOLUTIONS
+  ----------------------------------------- */
+
+  .service-categories-grid {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+
+  .service-category-card {
+    min-height: auto;
+
+    padding: 16px;
+  }
+
+
+  .service-category-top {
+    margin-bottom: 14px;
+  }
+
+
+  .service-category-card > p {
+    min-height: auto;
+
+    margin-bottom: 10px;
+  }
+
+
+  .service-list {
+    display: none;
+  }
+
+
+  .view-all-services {
+    margin-top: 12px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE INDUSTRIES
+  ----------------------------------------- */
+
+  .industries-grid {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+
+  .industry-card {
+    min-height: 70px;
+
+    padding: 12px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE RESOURCES
+  ----------------------------------------- */
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+    padding-bottom: 7px;
+  }
+
+
+  .resource-card {
+    grid-template-columns:
+      46px
+      minmax(0, 1fr)
+      18px;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+  }
+
+
+  .resource-card-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 12px;
+  }
+
+
+  .resource-card h3 {
+    margin-bottom: 5px;
+
+    font-size: 0.89rem;
+  }
+
+
+  .resource-card p {
+    font-size: 0.74rem;
+
+    line-height: 1.5;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE ABOUT
+  ----------------------------------------- */
+
+  .about-menu-grid {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+
+  .about-menu-card {
+    grid-template-columns:
+      46px
+      minmax(0, 1fr)
+      18px;
+
+    min-height: auto;
+
+    gap: 14px;
+
+    padding: 16px;
+
+    border-radius: 14px;
+  }
+
+
+  .about-menu-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 12px;
+  }
+
+
+  .about-menu-card h3 {
+    margin-bottom: 5px;
+
+    font-size: 0.89rem;
+  }
+
+
+  .about-menu-card p {
+    font-size: 0.74rem;
+
+    line-height: 1.55;
+  }
+
+
+  /* -----------------------------------------
+     MENU BOTTOM
+  ----------------------------------------- */
+
+  .mega-menu-bottom,
+  .about-menu .mega-menu-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    margin-top: 17px;
+
+    padding:
+      17px
+      5px
+      3px;
+  }
+
+
+  /* -----------------------------------------
+     CONTACT
+  ----------------------------------------- */
+
+  .nav-contact {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin:
+      6px
+      0
+      2px;
+
+    padding: 14px !important;
+
+    border-radius: 12px !important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 430px
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .navbar {
+    width: calc(100% - 18px);
+
+    min-height: 60px;
+
+    padding-left: 13px;
+  }
+
+
+  .nodeus-logo {
+    width: 108px;
+  }
+
+
+  .mobile-menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .mega-menu,
+  .resources-menu,
+  .about-menu {
+    padding: 11px;
+  }
+
+
+  .mega-menu-header,
+  .about-menu .mega-menu-header {
+    padding:
+      4px
+      4px
+      15px;
+  }
+
+
+  .mega-menu-header h2,
+  .about-menu .mega-menu-header h2 {
+    font-size: 1.5rem;
+  }
+
+
+  .service-category-card {
+    padding: 14px;
+  }
+
+
+  .industry-card {
+    min-height: 66px;
+
+    padding: 11px;
+  }
+
+
+  .resource-card {
+    grid-template-columns:
+      42px
+      minmax(0, 1fr)
+      16px;
+
+    gap: 11px;
+
+    padding: 13px;
+  }
+
+
+  .resource-card-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .resource-card h3 {
+    font-size: 0.85rem;
+  }
+
+
+  .resource-card p {
+    font-size: 0.71rem;
+  }
+
+
+  .about-menu-card {
+    grid-template-columns:
+      42px
+      minmax(0, 1fr)
+      16px;
+
+    gap: 12px;
+
+    padding: 14px;
+  }
+
+
+  .about-menu-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .about-menu-card h3 {
+    font-size: 0.85rem;
+  }
+
+
+  .about-menu-card p {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .navbar {
+    width: calc(100% - 14px);
+
+    padding-left: 11px;
+    padding-right: 8px;
+  }
+
+
+  .nodeus-logo {
+    width: 100px;
+  }
+
+
+  .mobile-menu-button {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  .nav-links.open {
+    padding: 8px;
+  }
+
+
+  .nav-links > a,
+  .nav-main-link,
+  .nav-main-button,
+  .nav-about-trigger {
+    font-size: 0.86rem;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.nav-links a:focus-visible,
+.nav-links button:focus-visible,
+.mobile-menu-button:focus-visible {
+  outline: 2px solid var(--nodeus-blue-light);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar,
+  .nav-links,
+  .mega-menu,
+  .resources-menu,
+  .about-menu,
+  .service-category-card,
+  .industry-card,
+  .resource-card,
+  .about-menu-card,
+  .nav-contact,
+  .mobile-menu-button {
+    transition: none !important;
+  }
+
+}
+
+
+
+/* =========================================
+   COMPACT DROPDOWN MENUS
+   Removes unnecessary vertical spacing
+========================================= */
+
+/* -----------------------------------------
+   DESKTOP MENU CONTAINER
+----------------------------------------- */
+
+.mega-menu,
+.resources-menu,
+.about-menu {
+  padding: 26px;
+}
+
+
+/* -----------------------------------------
+   MENU HEADER
+----------------------------------------- */
+
+.mega-menu-header,
+.about-menu .mega-menu-header {
+  gap: 40px;
+
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+
+.mega-eyebrow,
+.about-menu .mega-eyebrow {
+  margin-bottom: 9px;
+}
+
+
+.mega-menu-header h2,
+.about-menu .mega-menu-header h2 {
+  line-height: 1;
+}
+
+
+.mega-menu-header > p,
+.about-menu .mega-menu-header > p {
+  line-height: 1.55;
+}
+
+
+/* =========================================
+   SERVICES / SOLUTIONS
+========================================= */
+
+.service-categories-grid {
+  gap: 10px;
+}
+
+
+.service-category-card {
+  min-height: 0;
+
+  padding: 17px;
+}
+
+
+.service-category-top {
+  margin-bottom: 14px;
+}
+
+
+.service-category-icon {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 10px;
+}
+
+
+.service-category-card h3 {
+  margin-bottom: 6px;
+}
+
+
+.service-category-card > p {
+  min-height: 0;
+
+  margin-bottom: 10px;
+
+  line-height: 1.45;
+}
+
+
+.service-list {
+  gap: 4px;
+
+  margin-bottom: 10px;
+}
+
+
+.service-list span {
+  line-height: 1.25;
+}
+
+
+.view-all-services {
+  margin-top: auto;
+}
+
+
+/* =========================================
+   INDUSTRIES
+========================================= */
+
+.industries-grid {
+  gap: 10px;
+}
+
+
+.industry-card {
+  min-height: 78px;
+
+  padding: 13px;
+
+  gap: 9px;
+}
+
+
+.industry-icon {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 10px;
+}
+
+
+.industry-card span {
+  font-size: 0.76rem;
+}
+
+
+/* =========================================
+   RESOURCES
+========================================= */
+
+.resources-grid {
+  gap: 10px;
+
+  margin-top: 20px;
+
+  padding-bottom: 0;
+}
+
+
+.resource-card {
+  grid-template-columns:
+    44px
+    minmax(0, 1fr)
+    18px;
+
+  gap: 12px;
+
+  padding: 14px 16px;
+}
+
+
+.resource-card-icon {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 11px;
+}
+
+
+.resource-card h3 {
+  margin-bottom: 4px;
+}
+
+
+.resource-card p {
+  line-height: 1.45;
+}
+
+
+/* =========================================
+   ABOUT CARDS
+========================================= */
+
+.about-menu-grid {
+  gap: 10px;
+}
+
+
+.about-menu-card {
+  grid-template-columns:
+    44px
+    minmax(0, 1fr)
+    18px;
+
+  gap: 13px;
+
+  min-height: 0;
+
+  padding: 16px;
+}
+
+
+.about-menu-icon {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 11px;
+}
+
+
+.about-menu-card h3 {
+  margin:
+    0 0 5px;
+}
+
+
+.about-menu-card p {
+  line-height: 1.45;
+}
+
+
+/* =========================================
+   MENU BOTTOM
+========================================= */
+
+.mega-menu-bottom,
+.about-menu .mega-menu-bottom {
+  gap: 15px;
+
+  margin-top: 18px;
+  padding-top: 16px;
+}
+
+
+/* =========================================
+   LAPTOP COMPACT
+========================================= */
+
+@media (max-width: 1120px) {
+
+  .mega-menu,
+  .resources-menu,
+  .about-menu {
+    padding: 22px;
+  }
+
+
+  .mega-menu-header,
+  .about-menu .mega-menu-header {
+    gap: 28px;
+
+    margin-bottom: 17px;
+    padding-bottom: 17px;
+  }
+
+
+  .service-category-card {
+    padding: 15px;
+  }
+
+
+  .industry-card {
+    min-height: 72px;
+
+    padding: 12px;
+  }
+
+
+  .resource-card,
+  .about-menu-card {
+    padding: 14px;
   }
 
 }
@@ -1650,635 +2550,227 @@
    TABLET
 ========================================= */
 
-@media (
-  max-width:
-  900px
-) {
+@media (max-width: 900px) {
 
-  .navbar {
-    top:
-      14px;
+  .mega-menu,
+  .resources-menu,
+  .about-menu {
+    padding: 20px;
   }
 
 
-  .nav-links {
-    gap:
-      0;
+  .mega-menu-header,
+  .about-menu .mega-menu-header {
+    gap: 22px;
+
+    margin-bottom: 16px;
+    padding-bottom: 16px;
   }
 
 
-  .nav-links > a,
-  .nav-main-link {
-    padding:
-      9px 6px;
-
-    font-size:
-      0.72rem;
+  .service-categories-grid,
+  .industries-grid,
+  .resources-grid,
+  .about-menu-grid {
+    gap: 8px;
   }
 
 
-  .nav-dropdown-trigger {
-    width:
-      27px;
+  .service-category-card {
+    padding: 14px;
   }
 
 
-  .nav-contact {
-    margin-left:
-      4px;
-
-    padding:
-      9px 11px !important;
-  }
-
-
-  .mega-menu {
-    padding:
-      28px;
-  }
-
-
-  .resources-menu {
-    width:
-      calc(
-        100vw - 32px
-      );
-
-    max-width:
-      calc(
-        100vw - 32px
-      );
-
-    padding:
-      28px;
-  }
-
-
-  .mega-menu-header {
-    gap:
-      35px;
+  .resource-card,
+  .about-menu-card {
+    padding: 13px;
   }
 
 }
 
 
 /* =========================================
-   MOBILE
+   MOBILE DROPDOWNS
 ========================================= */
 
-@media (
-  max-width:
-  760px
-) {
-
-  .navbar {
-    top:
-      11px;
-
-    width:
-      calc(
-        100% - 24px
-      );
-
-    min-height:
-      62px;
-
-    padding:
-      10px
-      11px
-      10px
-      16px;
-
-    border-radius:
-      16px;
-  }
-
-
-  .navbar-mobile-open {
-    border-color:
-      rgba(
-        96,
-        165,
-        250,
-        0.35
-      );
-  }
-
-
-  .nodeus-logo {
-    width:
-      118px;
-
-    max-height:
-      34px;
-  }
-
-
-  .mobile-menu-button {
-    display:
-      inline-flex;
-  }
-
-
-  .nav-links {
-    position:
-      absolute;
-
-    top:
-      calc(
-        100% + 10px
-      );
-
-    left:
-      0;
-
-    right:
-      0;
-
-    display:
-      flex;
-
-    flex-direction:
-      column;
-
-    align-items:
-      stretch;
-
-    justify-content:
-      flex-start;
-
-    gap:
-      4px;
-
-    max-height:
-      calc(
-        100dvh - 105px
-      );
-
-    padding:
-      0;
-
-    overflow-x:
-      hidden;
-
-    overflow-y:
-      auto;
-
-    overscroll-behavior:
-      contain;
-
-    -webkit-overflow-scrolling:
-      touch;
-
-    border:
-      1px solid
-      transparent;
-
-    border-radius:
-      18px;
-
-    background:
-      rgba(
-        10,
-        16,
-        29,
-        0.98
-      );
-
-    box-shadow:
-      0 25px 70px
-      rgba(
-        0,
-        0,
-        0,
-        0.48
-      );
-
-    opacity:
-      0;
-
-    visibility:
-      hidden;
-
-    pointer-events:
-      none;
-
-    transform:
-      translateY(
-        -8px
-      );
-
-    transition:
-      opacity
-      0.25s ease,
-      visibility
-      0.25s ease,
-      transform
-      0.25s ease;
-  }
-
-
-  .nav-links.open {
-    padding:
-      10px;
-
-    border-color:
-      rgba(
-        255,
-        255,
-        255,
-        0.08
-      );
-
-    opacity:
-      1;
-
-    visibility:
-      visible;
-
-    pointer-events:
-      auto;
-
-    transform:
-      translateY(
-        0
-      );
-  }
-
-
-  .mobile-home-link {
-    display:
-      flex !important;
-  }
-
-
-  .nav-links > a,
-  .nav-main-link {
-    display:
-      flex;
-
-    align-items:
-      center;
-
-    justify-content:
-      space-between;
-
-    width:
-      100%;
-
-    min-height:
-      48px;
-
-    padding:
-      14px;
-
-    border-radius:
-      12px;
-
-    color:
-      #dbe4f0;
-
-    font-size:
-      0.9rem;
-  }
-
-
-  .nav-dropdown-wrapper {
-    position:
-      static;
-
-    width:
-      100%;
-
-    flex-shrink:
-      0;
-  }
-
-
-  .nav-dropdown-heading {
-    display:
-      grid;
-
-    grid-template-columns:
-      minmax(
-        0,
-        1fr
-      )
-      48px;
-
-    width:
-      100%;
-
-    padding:
-      0;
-
-    border-radius:
-      12px;
-  }
-
-
-  .nav-dropdown-heading:hover {
-    background:
-      transparent;
-  }
-
-
-  .nav-main-link {
-    min-width:
-      0;
-
-    padding-right:
-      10px;
-  }
-
-
-  .nav-dropdown-trigger {
-    width:
-      48px;
-
-    height:
-      48px;
-
-    border-radius:
-      12px;
-
-    touch-action:
-      manipulation;
-  }
-
-
-  /* =====================================
-     MOBILE DROPDOWNS
-  ====================================== */
+@media (max-width: 760px) {
 
   .mega-menu,
-  .resources-menu {
-    position:
-      static;
+  .resources-menu,
+  .about-menu {
+    margin: 2px 0 5px;
 
-    display:
-      none;
+    padding: 10px;
+  }
 
-    width:
-      100%;
 
-    max-width:
-      none;
+  .mega-menu-header,
+  .about-menu .mega-menu-header {
+    margin-bottom: 12px;
 
-    max-height:
-      none;
-
-    margin:
+    padding:
       3px
-      0
-      8px;
-
-    padding:
-      14px;
-
-    overflow:
-      visible;
-
-    box-sizing:
-      border-box;
-
-    border:
-      1px solid
-      rgba(
-        255,
-        255,
-        255,
-        0.07
-      );
-
-    border-radius:
-      14px;
-
-    background:
-      rgba(
-        255,
-        255,
-        255,
-        0.025
-      );
-
-    box-shadow:
-      none;
-
-    opacity:
-      1;
-
-    visibility:
-      visible;
-
-    pointer-events:
-      auto;
-
-    transform:
-      none;
-
-    transition:
-      none;
-
-    z-index:
-      auto;
+      3px
+      13px;
   }
 
 
-  .mega-menu.show,
-  .resources-menu.show {
-    display:
-      block;
-
-    transform:
-      none;
+  .mega-menu-header h2,
+  .about-menu .mega-menu-header h2 {
+    font-size: 1.5rem;
   }
 
 
-  .mega-menu-header {
-    display:
-      block;
+  .mega-menu-header > p,
+  .about-menu .mega-menu-header > p {
+    margin-top: 9px;
 
-    margin-bottom:
-      18px;
-
-    padding:
-      5px
-      5px
-      18px;
+    line-height: 1.45;
   }
 
 
-  .mega-menu-header h2 {
-    font-size:
-      1.65rem;
-  }
-
-
-  .mega-menu-header > p {
-    margin-top:
-      15px;
-
-    font-size:
-      0.82rem;
-  }
-
-
-  .service-categories-grid,
-  .industries-grid,
-  .resources-grid {
-    grid-template-columns:
-      1fr;
-
-    gap:
-      8px;
-  }
-
-
-  .resources-grid {
-    margin-top:
-      20px;
-
-    padding-bottom:
-      20px;
-  }
-
+  /* Services */
 
   .service-category-card {
-    min-height:
-      auto;
-
-    padding:
-      16px;
+    padding: 13px;
   }
 
 
   .service-category-top {
-    margin-bottom:
-      15px;
+    margin-bottom: 10px;
+  }
+
+
+  .service-category-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .service-category-card h3 {
+    margin-bottom: 5px;
   }
 
 
   .service-category-card > p {
-    min-height:
-      auto;
-
-    margin-bottom:
-      12px;
-  }
-
-
-  .service-list {
-    display:
-      none;
+    margin-bottom: 8px;
   }
 
 
   .view-all-services {
-    margin-top:
-      13px;
+    margin-top: 8px;
   }
 
 
-  .industry-card {
-    min-height:
-      74px;
+  /* Industries */
 
-    padding:
-      13px;
+  .industry-card {
+    min-height: 64px;
+
+    padding: 11px;
+  }
+
+
+  .industry-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  /* Resources */
+
+  .resources-grid {
+    gap: 7px;
+
+    margin-top: 13px;
   }
 
 
   .resource-card {
     grid-template-columns:
-      46px
-      minmax(
-        0,
-        1fr
-      )
-      18px;
+      40px
+      minmax(0, 1fr)
+      16px;
 
-    gap:
-      14px;
+    gap: 10px;
 
-    min-height:
-      auto;
-
-    padding:
-      17px;
-
-    border-radius:
-      14px;
+    padding: 11px;
   }
 
 
   .resource-card-icon {
-    width:
-      46px;
-
-    height:
-      46px;
-
-    border-radius:
-      12px;
+    width: 40px;
+    height: 40px;
   }
 
 
   .resource-card h3 {
-    margin-top:
-      1px;
+    margin-bottom: 3px;
 
-    font-size:
-      0.9rem;
+    font-size: 0.87rem;
   }
 
 
   .resource-card p {
-    font-size:
-      0.75rem;
+    font-size: 0.73rem;
 
-    line-height:
-      1.6;
+    line-height: 1.4;
   }
 
 
-  .mega-menu-bottom {
-    flex-direction:
-      column;
+  /* About */
 
-    align-items:
-      flex-start;
+  .about-menu-grid {
+    gap: 7px;
+  }
 
-    gap:
-      12px;
 
-    margin-top:
-      18px;
+  .about-menu-card {
+    grid-template-columns:
+      40px
+      minmax(0, 1fr)
+      16px;
+
+    gap: 10px;
+
+    min-height: 0;
+
+    padding: 12px;
+  }
+
+
+  .about-menu-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .about-menu-card h3 {
+    margin-bottom: 3px;
+
+    font-size: 0.87rem;
+  }
+
+
+  .about-menu-card p {
+    font-size: 0.73rem;
+
+    line-height: 1.4;
+  }
+
+
+  /* Bottom */
+
+  .mega-menu-bottom,
+  .about-menu .mega-menu-bottom {
+    gap: 8px;
+
+    margin-top: 13px;
 
     padding:
-      18px
-      5px
-      4px;
-  }
-
-
-  .nav-contact {
-    width:
-      100%;
-
-    min-height:
-      50px;
-
-    margin:
-      7px
-      0
+      13px
+      3px
       2px;
-
-    padding:
-      14px !important;
-
-    border-radius:
-      12px !important;
   }
 
 }
@@ -2288,1740 +2780,74 @@
    SMALL MOBILE
 ========================================= */
 
-@media (
-  max-width:
-  420px
-) {
-
-  .navbar {
-    width:
-      calc(
-        100% - 18px
-      );
-  }
-
-
-  .nodeus-logo {
-    width:
-      108px;
-  }
-
+@media (max-width: 430px) {
 
   .mega-menu,
-  .resources-menu {
-    padding:
-      11px;
+  .resources-menu,
+  .about-menu {
+    padding: 8px;
+  }
+
+
+  .mega-menu-header,
+  .about-menu .mega-menu-header {
+    margin-bottom: 10px;
+
+    padding-bottom: 11px;
+  }
+
+
+  .mega-menu-header h2,
+  .about-menu .mega-menu-header h2 {
+    font-size: 1.4rem;
   }
 
 
   .service-category-card {
-    padding:
-      14px;
+    padding: 11px;
   }
 
-}
 
+  .industry-card {
+    min-height: 58px;
 
-/* =========================================
-   ABOUT DROPDOWN
-========================================= */
+    padding: 9px;
+  }
 
-.about-dropdown-wrapper {
-  position: static;
-}
 
-
-/* =========================================
-   ABOUT NAVIGATION TRIGGER
-========================================= */
-
-.nav-about-trigger {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-
-  padding: 10px 12px;
-
-  border: none;
-  border-radius: 10px;
-
-  background: transparent;
-
-  color: #b8c2d1;
-
-  /* font-family: inherit; */
-  font-size: 0.44rem;      /* Same as other nav items */
-  font-weight: 500;         /* Same as other nav items */
-  line-height: 1;
-
-  cursor: pointer;
-  white-space: nowrap;
-
-  appearance: none;
-  -webkit-appearance: none;
-
-  transition:
-    color .25s ease,
-    background .25s ease;
-}
-
-
-.nav-about-trigger:hover,
-.nav-about-trigger.active {
-  color: white;
-  background: rgba(57, 123, 255, 0.10);
-}
-
-
-.nav-about-trigger svg {
-  width: 16px;
-  height: 16px;
-
-  color: #94a3b8;
-
-  transition:
-    color .25s ease,
-    transform .25s ease;
-}
-
-.nav-about-trigger:hover svg,
-.nav-about-trigger.active svg {
-  color: white;
-}
-
-.nav-about-trigger.active svg {
-  transform: rotate(180deg);
-}
-
-
-/* =========================================
-   ABOUT MEGA MENU
-========================================= */
-
-.about-menu {
-  position:
-    absolute;
-
-  top:
-    calc(
-      100% + 14px
-    );
-
-  left:
-    0;
-
-  right:
-    0;
-
-  width:
-    auto;
-
-  max-height:
-    calc(
-      100vh - 115px
-    );
-
-  margin:
-    0;
-
-  padding:
-    34px;
-
-  overflow-y:
-    auto;
-
-  box-sizing:
-    border-box;
-
-  border:
-    1px solid
-    rgba(
-      96,
-      165,
-      250,
-      0.2
-    );
-
-  border-radius:
-    22px;
-
-  background:
-    radial-gradient(
-      circle
-      at
-      top right,
-      rgba(
-        37,
-        99,
-        235,
-        0.16
-      ),
-      transparent
-      38%
-    ),
-    #0d1424;
-
-  box-shadow:
-    0 35px 85px
-    rgba(
-      0,
-      0,
-      0,
-      0.48
-    ),
-    inset
-    0 1px 0
-    rgba(
-      255,
-      255,
-      255,
-      0.06
-    );
-
-  opacity:
-    0;
-
-  visibility:
-    hidden;
-
-  pointer-events:
-    none;
-
-  transform:
-    translateY(
-      -10px
-    )
-    scale(
-      0.985
-    );
-
-  transform-origin:
-    top center;
-
-  transition:
-    opacity
-    0.22s ease,
-    visibility
-    0.22s ease,
-    transform
-    0.22s ease;
-
-  z-index:
-    1100;
-}
-
-
-.about-menu.show {
-  opacity:
-    1;
-
-  visibility:
-    visible;
-
-  pointer-events:
-    auto;
-
-  transform:
-    translateY(
-      0
-    )
-    scale(
-      1
-    );
-}
-
-
-/* =========================================
-   ABOUT HEADER
-========================================= */
-
-.about-menu
-.mega-menu-header {
-  display:
-    grid;
-
-  grid-template-columns:
-    minmax(
-      0,
-      1fr
-    )
-    minmax(
-      280px,
-      0.55fr
-    );
-
-  align-items:
-    end;
-
-  gap:
-    70px;
-
-  margin-bottom:
-    30px;
-
-  padding-bottom:
-    28px;
-
-  border-bottom:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
-}
-
-
-.about-menu
-.mega-menu-header > div {
-  min-width:
-    0;
-}
-
-
-.about-menu
-.mega-eyebrow {
-  display:
-    block;
-
-  margin-bottom:
-    13px;
-
-  color:
-    #60a5fa;
-
-  font-size:
-    0.68rem;
-
-  font-weight:
-    750;
-
-  letter-spacing:
-    0.17em;
-}
-
-
-.about-menu
-.mega-menu-header h2 {
-  max-width:
-    680px;
-
-  margin:
-    0;
-
-  color:
-    white;
-
-  font-size:
-    clamp(
-      2rem,
-      3.3vw,
-      3.3rem
-    );
-
-  font-weight:
-    600;
-
-  line-height:
-    0.96;
-
-  letter-spacing:
-    -0.06em;
-}
-
-
-.about-menu
-.mega-menu-header h2 span {
-  color:
-    #60a5fa;
-}
-
-
-.about-menu
-.mega-menu-header > p {
-  max-width:
-    400px;
-
-  margin:
-    0;
-
-  color:
-    #94a3b8;
-
-  font-size:
-    0.92rem;
-
-  line-height:
-    1.75;
-}
-
-
-/* =========================================
-   ABOUT CARDS GRID
-========================================= */
-
-.about-menu-grid {
-  display:
-    grid;
-
-  grid-template-columns:
-    repeat(
-      2,
-      minmax(
-        0,
-        1fr
-      )
-    );
-
-  gap:
-    14px;
-
-  margin:
-    0;
-
-  padding:
-    0;
-}
-
-
-/* =========================================
-   ABOUT CARD
-========================================= */
-
-.about-menu-card {
-  position:
-    relative;
-
-  display:
-    grid;
-
-  grid-template-columns:
-    50px
-    minmax(
-      0,
-      1fr
-    )
-    20px;
-
-  align-items:
-    center;
-
-  gap:
-    17px;
-
-  min-height:
-    132px;
-
-  padding:
-    22px;
-
-  overflow:
-    hidden;
-
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.075
-    );
-
-  border-radius:
-    17px;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.025
-    );
-
-  color:
-    inherit;
-
-  text-decoration:
-    none;
-
-  transition:
-    transform
-    0.28s ease,
-    border-color
-    0.28s ease,
-    background
-    0.28s ease,
-    box-shadow
-    0.28s ease;
-}
-
-
-/* Blue hover glow */
-
-.about-menu-card::before {
-  content:
-    "";
-
-  position:
-    absolute;
-
-  top:
-    -55px;
-
-  left:
-    -45px;
-
-  width:
-    150px;
-
-  height:
-    150px;
-
-  border-radius:
-    50%;
-
-  background:
-    rgba(
-      37,
-      99,
-      235,
-      0.12
-    );
-
-  filter:
-    blur(
+  .resource-card {
+    grid-template-columns:
       38px
-    );
-
-  opacity:
-    0;
-
-  pointer-events:
-    none;
-
-  transition:
-    opacity
-    0.3s ease;
-}
-
-
-.about-menu-card:hover {
-  transform:
-    translateY(
-      -4px
-    );
-
-  border-color:
-    rgba(
-      96,
-      165,
-      250,
-      0.35
-    );
-
-  background:
-    rgba(
-      37,
-      99,
-      235,
-      0.075
-    );
-
-  box-shadow:
-    0 18px 40px
-    rgba(
-      0,
-      0,
-      0,
-      0.22
-    );
-}
-
-
-.about-menu-card:hover::before {
-  opacity:
-    1;
-}
-
-
-/* =========================================
-   ABOUT CARD ICON
-========================================= */
-
-.about-menu-icon {
-  position:
-    relative;
-
-  z-index:
-    1;
-
-  display:
-    grid;
-
-  width:
-    50px;
-
-  height:
-    50px;
-
-  place-items:
-    center;
-
-  border:
-    1px solid
-    rgba(
-      96,
-      165,
-      250,
-      0.2
-    );
-
-  border-radius:
-    14px;
-
-  background:
-    rgba(
-      37,
-      99,
-      235,
-      0.11
-    );
-
-  color:
-    #60a5fa;
-
-  transition:
-    color
-    0.28s ease,
-    background
-    0.28s ease,
-    transform
-    0.28s ease;
-}
-
-
-.about-menu-card:hover
-.about-menu-icon {
-  color:
-    white;
-
-  background:
-    rgba(
-      37,
-      99,
-      235,
-      0.35
-    );
-
-  transform:
-    scale(
-      1.05
-    );
-}
-
-
-/* =========================================
-   ABOUT CARD CONTENT
-========================================= */
-
-.about-menu-card
-> div:nth-child(2) {
-  position:
-    relative;
-
-  z-index:
-    1;
-
-  min-width:
-    0;
-}
-
-
-.about-menu-card h3 {
-  margin:
-    2px
-    0
-    8px;
-
-  color:
-    #eef5ff;
-
-  font-size:
-    0.98rem;
-
-  font-weight:
-    650;
-
-  line-height:
-    1.25;
-
-  transition:
-    color
-    0.25s ease;
-}
-
-
-.about-menu-card p {
-  max-width:
-    390px;
-
-  margin:
-    0;
-
-  color:
-    #7f8da1;
-
-  font-size:
-    0.78rem;
-
-  line-height:
-    1.65;
-}
-
-
-.about-menu-card:hover h3 {
-  color:
-    #8ec0ff;
-}
-
-
-/* =========================================
-   ABOUT CARD ARROW
-========================================= */
-
-.about-menu-card
-> svg {
-  position:
-    relative;
-
-  z-index:
-    1;
-
-  margin-top:
-    4px;
-
-  color:
-    #58677c;
-
-  transition:
-    color
-    0.25s ease,
-    transform
-    0.25s ease;
-}
-
-
-.about-menu-card:hover
-> svg {
-  color:
-    #60a5fa;
-
-  transform:
-    translate(
-      3px,
-      -3px
-    );
-}
-
-
-/* =========================================
-   ABOUT BOTTOM
-========================================= */
-
-.about-menu
-.mega-menu-bottom {
-  display:
-    flex;
-
-  align-items:
-    center;
-
-  justify-content:
-    space-between;
-
-  gap:
-    20px;
-
-  margin-top:
-    27px;
-
-  padding-top:
-    23px;
-
-  border-top:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
-}
-
-
-.about-menu
-.mega-menu-bottom span {
-  color:
-    #64748b;
-
-  font-size:
-    0.8rem;
-}
-
-
-.about-menu
-.mega-menu-bottom a {
-  display:
-    inline-flex;
-
-  align-items:
-    center;
-
-  gap:
-    7px;
-
-  color:
-    #60a5fa;
-
-  font-size:
-    0.8rem;
-
-  font-weight:
-    700;
-
-  text-decoration:
-    none;
-}
-
-
-.about-menu
-.mega-menu-bottom a:hover {
-  color:
-    white;
-}
-
-
-.about-menu
-.mega-menu-bottom a svg {
-  transition:
-    transform
-    0.25s ease;
-}
-
-
-.about-menu
-.mega-menu-bottom a:hover svg {
-  transform:
-    translate(
-      3px,
-      -3px
-    );
-}
-
-
-/* =========================================
-   ABOUT TABLET
-========================================= */
-
-@media (
-  max-width:
-  1000px
-) {
-
-  .about-menu {
-    padding:
-      28px;
-  }
-
-
-  .about-menu
-  .mega-menu-header {
-    grid-template-columns:
-      1fr;
-
-    align-items:
-      start;
-
-    gap:
-      20px;
-  }
-
-
-  .about-menu
-  .mega-menu-header > p {
-    max-width:
-      650px;
-  }
-
-
-  .about-menu
-  .mega-menu-header h2 {
-    font-size:
-      clamp(
-        2.2rem,
-        5vw,
-        3.3rem
-      );
-  }
-
-}
-
-
-/* =========================================
-   ABOUT MOBILE
-========================================= */
-
-@media (
-  max-width:
-  760px
-) {
-
-  .nav-about-trigger {
-    display:
-      flex;
-
-    align-items:
-      center;
-
-    justify-content:
-      space-between;
-
-    width:
-      100%;
-
-    min-height:
-      48px;
-
-    padding:
-      14px;
-
-    border-radius:
-      12px;
-
-    font-size:
-      0.9rem;
-  }
-
-
-  .nav-about-trigger svg {
-    width:
-      18px;
-
-    height:
-      18px;
-  }
-
-
-  .about-menu {
-    position:
-      static;
-
-    display:
-      none;
-
-    width:
-      100%;
-
-    max-width:
-      none;
-
-    max-height:
-      none;
-
-    margin:
-      3px
-      0
-      8px;
-
-    padding:
-      14px;
-
-    overflow:
-      visible;
-
-    box-sizing:
-      border-box;
-
-    border:
-      1px solid
-      rgba(
-        255,
-        255,
-        255,
-        0.07
-      );
-
-    border-radius:
-      14px;
-
-    background:
-      rgba(
-        255,
-        255,
-        255,
-        0.025
-      );
-
-    box-shadow:
-      none;
-
-    opacity:
-      1;
-
-    visibility:
-      visible;
-
-    pointer-events:
-      auto;
-
-    transform:
-      none;
-
-    transition:
-      none;
-
-    z-index:
-      auto;
-  }
-
-
-  .about-menu.show {
-    display:
-      block;
-
-    transform:
-      none;
-  }
-
-
-  .about-menu
-  .mega-menu-header {
-    display:
-      block;
-
-    margin-bottom:
-      18px;
-
-    padding:
-      5px
-      5px
-      18px;
-
-    border-bottom:
-      1px solid
-      rgba(
-        255,
-        255,
-        255,
-        0.08
-      );
-  }
-
-
-  .about-menu
-  .mega-eyebrow {
-    margin-bottom:
-      10px;
-
-    font-size:
-      0.64rem;
-  }
-
-
-  .about-menu
-  .mega-menu-header h2 {
-    font-size:
-      1.65rem;
-
-    line-height:
-      1;
-  }
-
-
-  .about-menu
-  .mega-menu-header > p {
-    margin-top:
+      minmax(0, 1fr)
       15px;
 
-    font-size:
-      0.82rem;
+    gap: 9px;
+
+    padding: 10px;
   }
 
 
-  .about-menu-grid {
-    grid-template-columns:
-      1fr;
-
-    gap:
-      8px;
+  .resource-card-icon {
+    width: 38px;
+    height: 38px;
   }
 
 
   .about-menu-card {
     grid-template-columns:
-      46px
-      minmax(
-        0,
-        1fr
-      )
-      18px;
-
-    min-height:
-      auto;
-
-    gap:
-      14px;
-
-    padding:
-      17px;
-
-    border-radius:
-      14px;
-  }
-
-
-  .about-menu-icon {
-    width:
-      46px;
-
-    height:
-      46px;
-
-    border-radius:
-      12px;
-  }
-
-
-  .about-menu-card h3 {
-    margin-top:
-      1px;
-
-    font-size:
-      0.9rem;
-  }
-
-
-  .about-menu-card p {
-    font-size:
-      0.75rem;
-
-    line-height:
-      1.6;
-  }
-
-
-  .about-menu
-  .mega-menu-bottom {
-    flex-direction:
-      column;
-
-    align-items:
-      flex-start;
-
-    gap:
-      12px;
-
-    margin-top:
-      18px;
-
-    padding:
-      18px
-      5px
-      4px;
-  }
-
-}
-
-
-/* =========================================
-   ABOUT SMALL MOBILE
-========================================= */
-
-@media (
-  max-width:
-  430px
-) {
-
-  .about-menu {
-    padding:
-      11px;
-  }
-
-
-  .about-menu-card {
-    grid-template-columns:
-      42px
-      minmax(
-        0,
-        1fr
-      )
-      16px;
-
-    gap:
-      12px;
-
-    padding:
+      38px
+      minmax(0, 1fr)
       15px;
+
+    gap: 9px;
+
+    padding: 10px;
   }
 
 
   .about-menu-icon {
-    width:
-      42px;
-
-    height:
-      42px;
-  }
-
-
-  .about-menu-card p {
-    display:
-      none;
+    width: 38px;
+    height: 38px;
   }
 
 }
-
-/* =========================================
-   NODEUS BRAND COLOR OVERRIDES
-   Primary Color: #397BFF
-========================================= */
-
-:root {
-  --nodeus-blue: #397bff;
-
-  --nodeus-blue-light: #72a4ff;
-
-  --nodeus-blue-lighter: #dce9ff;
-
-  --nodeus-blue-dark: #2368ed;
-
-  --nodeus-blue-deep: #1658d6;
-
-  --nodeus-blue-glow:
-    rgba(
-      57,
-      123,
-      255,
-      0.16
-    );
-
-  --nodeus-blue-soft:
-    rgba(
-      57,
-      123,
-      255,
-      0.1
-    );
-
-  --nodeus-blue-border:
-    rgba(
-      57,
-      123,
-      255,
-      0.35
-    );
-}
-
-
-/* =========================================
-   NAVBAR
-========================================= */
-
-.navbar-menu-active,
-.navbar-mobile-open {
-  border-color:
-    var(
-      --nodeus-blue-border
-    );
-}
-
-
-/* =========================================
-   NAV LINKS
-========================================= */
-
-.nav-links > a:hover,
-.nav-main-link:hover,
-.nav-about-trigger:hover,
-.nav-about-trigger.active {
-  color:
-    white;
-
-  background:
-    var(
-      --nodeus-blue-soft
-    );
-}
-
-
-.nav-dropdown-heading:hover {
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.08
-    );
-}
-
-
-.nav-dropdown-trigger:hover,
-.nav-dropdown-trigger.active {
-  color:
-    white;
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.12
-    );
-}
-
-
-.nav-about-trigger:hover svg,
-.nav-about-trigger.active svg {
-  color:
-    var(
-      --nodeus-blue-lighter
-    );
-}
-
-
-/* =========================================
-   CONTACT BUTTON
-========================================= */
-
-.nav-contact {
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.48
-    );
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.18
-    );
-
-  color:
-    var(
-      --nodeus-blue-lighter
-    ) !important;
-
-  box-shadow:
-    0 8px 25px
-    rgba(
-      57,
-      123,
-      255,
-      0.18
-    );
-}
-
-
-.nav-contact:hover {
-  background:
-    var(
-      --nodeus-blue
-    ) !important;
-
-  color:
-    white !important;
-
-  box-shadow:
-    0 13px 30px
-    rgba(
-      57,
-      123,
-      255,
-      0.34
-    );
-}
-
-
-/* =========================================
-   MEGA MENUS
-========================================= */
-
-.mega-menu,
-.resources-menu,
-.about-menu {
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.22
-    );
-
-  background:
-    radial-gradient(
-      circle
-      at
-      top right,
-      rgba(
-        57,
-        123,
-        255,
-        0.17
-      ),
-      transparent
-      38%
-    ),
-    #0d1424;
-}
-
-
-/* =========================================
-   MENU HEADINGS
-========================================= */
-
-.mega-eyebrow,
-.about-menu
-.mega-eyebrow {
-  color:
-    var(
-      --nodeus-blue
-    );
-}
-
-
-.mega-menu-header h2 span,
-.about-menu
-.mega-menu-header h2 span {
-  color:
-    var(
-      --nodeus-blue
-    );
-}
-
-
-/* =========================================
-   SERVICE CARDS
-========================================= */
-
-.service-category-card:hover {
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.48
-    );
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.1
-    );
-}
-
-
-.service-category-icon {
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.14
-    );
-
-  color:
-    var(
-      --nodeus-blue
-    );
-}
-
-
-.view-all-services {
-  color:
-    var(
-      --nodeus-blue
-    );
-}
-
-
-/* =========================================
-   INDUSTRY CARDS
-========================================= */
-
-.industry-card:hover {
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.48
-    );
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.1
-    );
-}
-
-
-.industry-icon {
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.14
-    );
-
-  color:
-    var(
-      --nodeus-blue
-    );
-}
-
-
-/* =========================================
-   RESOURCE CARDS
-========================================= */
-
-.resource-card::before {
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.14
-    );
-}
-
-
-.resource-card:hover {
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.32
-    );
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.075
-    );
-}
-
-
-.resource-card-icon {
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.25
-    );
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.12
-    );
-
-  color:
-    var(
-      --nodeus-blue
-    );
-}
-
-
-.resource-card:hover
-> svg {
-  color:
-    var(
-      --nodeus-blue
-    );
-}
-
-
-/* =========================================
-   MEGA MENU LINKS
-========================================= */
-
-.mega-menu-bottom a,
-.about-menu
-.mega-menu-bottom a {
-  color:
-    var(
-      --nodeus-blue
-    );
-}
-
-
-/* =========================================
-   ABOUT CARDS
-========================================= */
-
-.about-menu-card::before {
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.14
-    );
-}
-
-
-.about-menu-card:hover {
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.4
-    );
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.075
-    );
-}
-
-
-.about-menu-icon {
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.25
-    );
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.12
-    );
-
-  color:
-    var(
-      --nodeus-blue
-    );
-}
-
-
-.about-menu-card:hover
-.about-menu-icon {
-  color:
-    white;
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.38
-    );
-}
-
-
-.about-menu-card:hover h3 {
-  color:
-    var(
-      --nodeus-blue-light
-    );
-}
-
-
-.about-menu-card:hover
-> svg {
-  color:
-    var(
-      --nodeus-blue
-    );
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (
-  max-width:
-  760px
-) {
-
-  .nav-links.open {
-    border-color:
-      rgba(
-        57,
-        123,
-        255,
-        0.2
-      );
-  }
-
-}
-
-
-
-/* =====================================
-   FORCE ABOUT TO MATCH OTHER MOBILE ROWS
-===================================== */
-
-
-
-.nav-main-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  padding: 10px 12px;
-
-  border: none;
-  border-radius: 10px;
-
-  background: transparent;
-
-  color: #b8c2d1;
-  font: inherit;
-  font-size: 0.84rem;
-  font-weight: 500;
-  line-height: 1;
-
-  cursor: pointer;
-
-  text-decoration: none;
-  white-space: nowrap;
-
-  transition:
-    color .25s ease,
-    background .25s ease;
-}
-
-.nav-main-button:hover {
-  color: #fff;
-  background: rgba(57,123,255,.10);
-}
-
