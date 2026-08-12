@@ -234,7 +234,6 @@
   text-decoration: none;
 
   transition:
-
     transform
     0.25s ease,
 
@@ -422,7 +421,6 @@
   border-radius: 27px;
 
   background:
-
     linear-gradient(
       145deg,
       rgba(
@@ -440,7 +438,6 @@
     );
 
   box-shadow:
-
     0 38px 90px
     rgba(
       0,
@@ -972,7 +969,6 @@
     );
 
   transition:
-
     transform
     0.25s ease,
 
@@ -1043,7 +1039,6 @@
     );
 
   background:
-
     linear-gradient(
       180deg,
       rgba(
@@ -1126,7 +1121,6 @@
     );
 
   transition:
-
     transform
     0.28s ease,
 
@@ -1483,6 +1477,14 @@
 .about-cta {
   position: relative;
 
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
   width: min(
     1240px,
     calc(
@@ -1490,16 +1492,20 @@
     )
   );
 
+  min-height: 520px;
+
   margin:
     0
     auto
     125px;
 
   padding:
-    95px
-    55px;
+    90px
+    80px;
 
   overflow: hidden;
+
+  text-align: center;
 
   border:
     1px solid
@@ -1510,23 +1516,34 @@
       0.2
     );
 
-  border-radius: 28px;
+  border-radius: 30px;
 
   background:
 
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(
+        57,
+        123,
+        255,
+        0.16
+      ),
+      transparent 45%
+    ),
+
     linear-gradient(
-      135deg,
+      145deg,
       rgba(
         18,
         49,
         108,
-        0.55
+        0.58
       ),
       rgba(
         8,
         18,
         35,
-        0.95
+        0.97
       )
     );
 
@@ -1546,21 +1563,25 @@
       255,
       255,
       255,
-      0.06
+      0.07
     );
 }
 
 
+/* =========================================
+   CTA GLOW
+========================================= */
+
 .about-cta-glow {
   position: absolute;
 
-  top: -220px;
+  top: -260px;
 
-  right: -130px;
+  left: 50%;
 
-  width: 560px;
+  width: 650px;
 
-  height: 560px;
+  height: 650px;
 
   border-radius: 50%;
 
@@ -1569,48 +1590,110 @@
       57,
       123,
       255,
-      0.22
+      0.2
     );
 
   filter:
     blur(
-      90px
+      100px
+    );
+
+  transform:
+    translateX(
+      -50%
     );
 
   pointer-events: none;
 }
 
 
+/* =========================================
+   CTA CONTENT WRAPPER
+========================================= */
+
 .about-cta > div:last-child {
   position: relative;
 
-  z-index: 1;
+  z-index: 2;
 
-  max-width: 760px;
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 100%;
+
+  max-width: 850px;
+
+  margin: 0 auto;
 }
 
 
-.about-cta h2 {
+/* =========================================
+   CTA LABEL
+========================================= */
+
+.about-cta > div:last-child > span {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   margin:
-    18px
     0
-    20px;
+    0
+    22px;
 
-  color: white;
+  color: #397bff;
 
-  font-size:
-    clamp(
-      2.8rem,
-      5vw,
-      5.2rem
-    );
+  font-size: 0.68rem;
 
-  font-weight: 620;
+  font-weight: 750;
 
   line-height: 1;
 
   letter-spacing:
+    0.16em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   CTA HEADING
+========================================= */
+
+.about-cta h2 {
+  width: 100%;
+
+  max-width: 850px;
+
+  margin:
+    0
+    auto
+    25px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      3rem,
+      6vw,
+      5.6rem
+    );
+
+  font-weight: 620;
+
+  line-height: 0.98;
+
+  letter-spacing:
     -0.065em;
+
+  text-align: center;
 }
 
 
@@ -1619,19 +1702,189 @@
 }
 
 
+/* =========================================
+   CTA DESCRIPTION
+========================================= */
+
 .about-cta p {
-  max-width: 620px;
+  width: 100%;
+
+  max-width: 650px;
 
   margin:
     0
-    0
-    32px;
+    auto
+    34px;
 
   color: #9ba9bc;
 
-  font-size: 0.97rem;
+  font-size: 0.98rem;
 
   line-height: 1.85;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.about-cta .about-primary-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  width: fit-content;
+
+  min-height: 54px;
+
+  padding:
+    0
+    27px;
+
+  border:
+    1px solid
+    rgba(
+      57,
+      123,
+      255,
+      0.55
+    );
+
+  border-radius: 999px;
+
+  background:
+    #397bff;
+
+  color: #ffffff;
+
+  font-size: 0.87rem;
+
+  font-weight: 650;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 16px 40px
+    rgba(
+      57,
+      123,
+      255,
+      0.25
+    );
+
+  transition:
+    transform
+    0.25s ease,
+
+    background
+    0.25s ease,
+
+    box-shadow
+    0.25s ease;
+}
+
+
+.about-cta .about-primary-button:hover {
+  transform:
+    translateY(
+      -3px
+    );
+
+  background:
+    #2869e8;
+
+  box-shadow:
+    0 22px 48px
+    rgba(
+      57,
+      123,
+      255,
+      0.38
+    );
+}
+
+
+/* =========================================
+   CTA DECORATIVE CORNERS
+========================================= */
+
+.about-cta::before {
+  content: "";
+
+  position: absolute;
+
+  top: 28px;
+
+  left: 28px;
+
+  width: 85px;
+
+  height: 85px;
+
+  border-top:
+    1px solid
+    rgba(
+      57,
+      123,
+      255,
+      0.25
+    );
+
+  border-left:
+    1px solid
+    rgba(
+      57,
+      123,
+      255,
+      0.25
+    );
+
+  border-top-left-radius: 18px;
+
+  pointer-events: none;
+}
+
+
+.about-cta::after {
+  content: "";
+
+  position: absolute;
+
+  right: 28px;
+
+  bottom: 28px;
+
+  width: 85px;
+
+  height: 85px;
+
+  border-right:
+    1px solid
+    rgba(
+      57,
+      123,
+      255,
+      0.2
+    );
+
+  border-bottom:
+    1px solid
+    rgba(
+      57,
+      123,
+      255,
+      0.2
+    );
+
+  border-bottom-right-radius: 18px;
+
+  pointer-events: none;
 }
 
 
@@ -1800,12 +2053,31 @@
   }
 
 
+  /* CTA */
+
   .about-cta {
+    min-height: 470px;
+
     padding:
       75px
-      42px;
+      50px;
 
     margin-bottom: 95px;
+  }
+
+
+  .about-cta h2 {
+    font-size:
+      clamp(
+        2.8rem,
+        7vw,
+        4.5rem
+      );
+  }
+
+
+  .about-cta p {
+    max-width: 590px;
   }
 
 }
@@ -1893,9 +2165,10 @@
 
 
   .about-visual-card {
-    width: calc(
-      100% - 12px
-    );
+    width:
+      calc(
+        100% - 12px
+      );
 
     padding: 27px;
 
@@ -2116,29 +2389,108 @@
   }
 
 
+  /* =====================================
+     MOBILE CTA
+  ===================================== */
+
   .about-cta {
+    min-height: 440px;
+
     margin-bottom: 85px;
 
     padding:
-      60px
+      65px
       24px;
 
     border-radius: 23px;
   }
 
 
+  .about-cta-glow {
+    top: -180px;
+
+    width: 430px;
+
+    height: 430px;
+
+    filter:
+      blur(
+        75px
+      );
+  }
+
+
+  .about-cta > div:last-child {
+    max-width: 100%;
+  }
+
+
+  .about-cta > div:last-child > span {
+    margin-bottom: 19px;
+
+    font-size: 0.62rem;
+  }
+
+
   .about-cta h2 {
+    margin-bottom: 22px;
+
     font-size:
       clamp(
         2.45rem,
         11.5vw,
         4rem
       );
+
+    line-height: 1;
   }
 
 
   .about-cta p {
+    max-width: 100%;
+
+    margin-bottom: 29px;
+
     font-size: 0.9rem;
+
+    line-height: 1.8;
+  }
+
+
+  .about-cta .about-primary-button {
+    width: fit-content;
+
+    min-height: 52px;
+
+    padding:
+      0
+      24px;
+  }
+
+
+  .about-cta::before {
+    top: 18px;
+
+    left: 18px;
+
+    width: 55px;
+
+    height: 55px;
+
+    border-top-left-radius: 12px;
+  }
+
+
+  .about-cta::after {
+    right: 18px;
+
+    bottom: 18px;
+
+    width: 55px;
+
+    height: 55px;
+
+    border-bottom-right-radius: 12px;
   }
 
 }
@@ -2234,15 +2586,40 @@
   }
 
 
+  /* =====================================
+     SMALL MOBILE CTA
+  ===================================== */
+
   .about-cta {
+    min-height: 410px;
+
     padding:
-      50px
+      55px
       19px;
   }
 
 
   .about-cta h2 {
     font-size: 2.35rem;
+
+    letter-spacing:
+      -0.055em;
+  }
+
+
+  .about-cta p {
+    font-size: 0.86rem;
+  }
+
+
+  .about-cta .about-primary-button {
+    width: fit-content;
+
+    min-height: 50px;
+
+    padding:
+      0
+      21px;
   }
 
 }
