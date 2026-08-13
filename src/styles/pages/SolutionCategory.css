@@ -4,7 +4,6 @@
 
 .solution-category-page {
   width: 100%;
-
   min-height: 100vh;
 
   display: flex;
@@ -125,6 +124,7 @@
 
 .back-to-solutions {
   position: relative;
+
   z-index: 1;
 
   display: inline-flex;
@@ -140,6 +140,7 @@
   text-decoration: none;
 
   font-size: 15px;
+
   font-weight: 600;
 
   transition:
@@ -150,7 +151,8 @@
 .back-to-solutions:hover {
   color: #ffffff;
 
-  transform: translateX(-4px);
+  transform:
+    translateX(-4px);
 }
 
 
@@ -160,9 +162,11 @@
 
 .solution-category-hero-content {
   position: relative;
+
   z-index: 1;
 
   width: 100%;
+
   max-width: 1320px;
 
   margin: 0 auto;
@@ -244,20 +248,34 @@
   position: relative;
 
   width: 280px;
+
   height: 280px;
 
-  margin-left: auto;
+  /*
+    Center the icon inside the right
+    hero column instead of pushing it
+    toward the edge.
+  */
+  margin:
+    0
+    auto;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   flex: 0 0 auto;
 
   border:
     1px solid
-    rgba(57, 123, 255, 0.18);
+    rgba(
+      57,
+      123,
+      255,
+      0.18
+    );
 
   border-radius: 50%;
 
@@ -274,8 +292,10 @@
   box-shadow:
     0 0 0 1px
     rgba(255, 255, 255, 0.025),
+
     0 0 0 25px
     rgba(57, 123, 255, 0.025),
+
     0 0 0 55px
     rgba(57, 123, 255, 0.012);
 }
@@ -290,7 +310,12 @@
 
   border:
     1px solid
-    rgba(57, 123, 255, 0.12);
+    rgba(
+      57,
+      123,
+      255,
+      0.12
+    );
 
   border-radius: 50%;
 }
@@ -302,9 +327,11 @@
   position: absolute;
 
   width: 8px;
+
   height: 8px;
 
   top: 20%;
+
   right: 15%;
 
   border-radius: 50%;
@@ -313,7 +340,12 @@
 
   box-shadow:
     0 0 20px
-    rgba(57, 123, 255, 0.8);
+    rgba(
+      57,
+      123,
+      255,
+      0.8
+    );
 }
 
 
@@ -325,6 +357,7 @@
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 10px;
@@ -335,7 +368,12 @@
 
   border:
     1px solid
-    rgba(57, 123, 255, 0.42);
+    rgba(
+      57,
+      123,
+      255,
+      0.42
+    );
 
   border-radius: 9px;
 
@@ -356,7 +394,12 @@
 
   box-shadow:
     0 10px 30px
-    rgba(57, 123, 255, 0.16);
+    rgba(
+      57,
+      123,
+      255,
+      0.16
+    );
 
   transition:
     transform 0.3s ease,
@@ -378,7 +421,12 @@
 
   box-shadow:
     0 15px 35px
-    rgba(57, 123, 255, 0.28);
+    rgba(
+      57,
+      123,
+      255,
+      0.28
+    );
 }
 
 
@@ -388,6 +436,7 @@
 
 .category-services-section {
   width: 100%;
+
   max-width: 1320px;
 
   margin: 0 auto;
@@ -463,17 +512,36 @@
 
   min-width: 0;
 
+  /*
+    IMPORTANT:
+    Keep icon and title horizontally
+    aligned in one row.
+  */
   display: flex;
 
-  flex-direction: column;
+  flex-direction: row;
 
-  padding: 25px;
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 15px;
+
+  min-height: 90px;
+
+  padding:
+    25px;
 
   overflow: hidden;
 
   border:
     1px solid
-    rgba(255, 255, 255, 0.08);
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
 
   border-radius: 17px;
 
@@ -508,15 +576,22 @@
   position: absolute;
 
   top: -90px;
+
   right: -90px;
 
   width: 210px;
+
   height: 210px;
 
   border-radius: 50%;
 
   background:
-    rgba(57, 123, 255, 0.11);
+    rgba(
+      57,
+      123,
+      255,
+      0.11
+    );
 
   filter: blur(55px);
 
@@ -563,7 +638,12 @@
     translateY(-5px);
 
   border-color:
-    rgba(57, 123, 255, 0.4);
+    rgba(
+      57,
+      123,
+      255,
+      0.4
+    );
 
   background:
     linear-gradient(
@@ -574,7 +654,12 @@
 
   box-shadow:
     0 20px 50px
-    rgba(0, 0, 0, 0.28);
+    rgba(
+      0,
+      0,
+      0,
+      0.28
+    );
 }
 
 
@@ -590,16 +675,26 @@
 
 .category-service-card svg:first-child {
   position: relative;
+
   z-index: 2;
 
   width: 24px;
+
   height: 24px;
 
-  margin-bottom: 20px;
+  /*
+    Remove the old bottom spacing
+    because icon is now horizontal
+    with the title.
+  */
+  margin:
+    0;
 
-  flex: 0 0 auto;
+  flex:
+    0 0 24px;
 
-  color: #397bff;
+  color:
+    #397bff;
 
   transition:
     color 0.3s ease,
@@ -607,8 +702,10 @@
 }
 
 
-.category-service-card:hover svg:first-child {
-  color: #72a4ff;
+.category-service-card:hover
+svg:first-child {
+  color:
+    #72a4ff;
 
   transform:
     translateY(-2px);
@@ -621,21 +718,37 @@
 
 .category-service-card h3 {
   position: relative;
+
   z-index: 2;
 
-  margin: 0;
+  flex:
+    1 1 auto;
 
-  color: #f8fafc;
+  min-width: 0;
 
-  font-size: 19px;
+  margin:
+    0;
 
-  font-weight: 650;
+  padding-right:
+    25px;
 
-  line-height: 1.3;
+  color:
+    #f8fafc;
 
-  letter-spacing: -0.015em;
+  font-size:
+    19px;
 
-  overflow-wrap: break-word;
+  font-weight:
+    650;
+
+  line-height:
+    1.3;
+
+  letter-spacing:
+    -0.015em;
+
+  overflow-wrap:
+    break-word;
 
   transition:
     color 0.3s ease;
@@ -643,7 +756,8 @@
 
 
 .category-service-card:hover h3 {
-  color: #ffffff;
+  color:
+    #ffffff;
 }
 
 
@@ -652,19 +766,29 @@
 ========================================= */
 
 .category-service-arrow {
-  position: absolute;
+  position:
+    absolute;
 
-  z-index: 2;
+  z-index:
+    2;
 
-  top: 24px;
-  right: 24px;
+  top:
+    24px;
 
-  width: 18px;
-  height: 18px;
+  right:
+    24px;
 
-  opacity: 0;
+  width:
+    18px;
 
-  color: #72a4ff;
+  height:
+    18px;
+
+  opacity:
+    0;
+
+  color:
+    #72a4ff;
 
   transition:
     opacity 0.3s ease,
@@ -674,7 +798,8 @@
 
 .category-service-card:hover
 .category-service-arrow {
-  opacity: 1;
+  opacity:
+    1;
 
   transform:
     translate(
@@ -695,7 +820,8 @@
     130px
     max(6vw, 2rem);
 
-  text-align: center;
+  text-align:
+    center;
 
   background:
     radial-gradient(
@@ -705,23 +831,31 @@
     ),
     #060b14;
 
-  color: #ffffff;
+  color:
+    #ffffff;
 
   border-top:
     1px solid
-    rgba(255, 255, 255, 0.06);
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
 }
 
 
 .category-bottom-cta h2 {
-  max-width: 1100px;
+  max-width:
+    1100px;
 
   margin:
     20px
     auto
     35px;
 
-  color: #f8fafc;
+  color:
+    #f8fafc;
 
   font-size:
     clamp(
@@ -730,16 +864,20 @@
       80px
     );
 
-  font-weight: 600;
+  font-weight:
+    600;
 
-  line-height: 1;
+  line-height:
+    1;
 
-  letter-spacing: -0.05em;
+  letter-spacing:
+    -0.05em;
 }
 
 
 .category-bottom-cta h2 span {
-  color: #397bff;
+  color:
+    #397bff;
 }
 
 
@@ -765,7 +903,8 @@
 
 
   .solution-category-hero-content {
-    max-width: 1320px;
+    max-width:
+      1320px;
 
     gap:
       clamp(
@@ -777,10 +916,14 @@
 
 
   .category-services-section {
-    max-width: 1320px;
+    max-width:
+      1320px;
 
-    padding-left: 0;
-    padding-right: 0;
+    padding-left:
+      0;
+
+    padding-right:
+      0;
   }
 
 
@@ -812,12 +955,19 @@
       minmax(0, 1.3fr)
       minmax(300px, 0.7fr);
 
-    gap: 5rem;
+    gap:
+      5rem;
   }
 
 
   .category-hero-icon {
-    margin-left: auto;
+    /*
+      Keep the hero icon centered
+      inside its column.
+    */
+    margin:
+      0
+      auto;
   }
 
 }
@@ -842,13 +992,21 @@
       minmax(0, 1.15fr)
       minmax(280px, 0.85fr);
 
-    gap: 3rem;
+    gap:
+      3rem;
   }
 
 
   .category-hero-icon {
-    width: 240px;
-    height: 240px;
+    width:
+      240px;
+
+    height:
+      240px;
+
+    margin:
+      0
+      auto;
   }
 
 
@@ -868,15 +1026,22 @@
 @media (max-width: 900px) {
 
   .solution-category-hero-content {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
+
+    gap:
+      3rem;
   }
 
 
+  /*
+    Center hero icon when the layout
+    becomes a single column.
+  */
   .category-hero-icon {
     margin:
-      25px
       0
-      0;
+      auto;
   }
 
 
@@ -886,6 +1051,33 @@
         2,
         minmax(0, 1fr)
       );
+  }
+
+
+  /*
+    Keep cards horizontal.
+  */
+  .category-service-card {
+    flex-direction:
+      row;
+
+    align-items:
+      center;
+
+    min-height:
+      85px;
+
+    padding:
+      22px;
+  }
+
+
+  .category-service-card svg:first-child {
+    margin:
+      0;
+
+    flex:
+      0 0 24px;
   }
 
 }
@@ -906,12 +1098,14 @@
 
 
   .back-to-solutions {
-    margin-bottom: 45px;
+    margin-bottom:
+      45px;
   }
 
 
   .solution-category-hero-content {
-    gap: 2.5rem;
+    gap:
+      2.5rem;
   }
 
 
@@ -926,18 +1120,25 @@
 
 
   .solution-category-hero p {
-    font-size: 17px;
+    font-size:
+      17px;
   }
 
 
+  /* =====================================
+     CENTER HERO ICON
+  ===================================== */
+
   .category-hero-icon {
-    width: 200px;
-    height: 200px;
+    width:
+      200px;
+
+    height:
+      200px;
 
     margin:
-      25px
       0
-      0;
+      auto;
   }
 
 
@@ -949,7 +1150,8 @@
 
 
   .category-section-heading {
-    margin-bottom: 38px;
+    margin-bottom:
+      38px;
   }
 
 
@@ -964,25 +1166,92 @@
 
 
   .category-services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
-    gap: 12px;
+    gap:
+      12px;
   }
 
+
+  /* =====================================
+     HORIZONTAL MOBILE CARDS
+  ===================================== */
 
   .category-service-card {
-    padding: 22px;
+    min-height:
+      76px;
+
+    padding:
+      20px;
+
+    border-radius:
+      15px;
+
+    flex-direction:
+      row;
+
+    align-items:
+      center;
+
+    justify-content:
+      flex-start;
+
+    gap:
+      14px;
   }
 
 
+  /* =====================================
+     MOBILE CARD ICON
+  ===================================== */
+
   .category-service-card svg:first-child {
-    margin-bottom: 17px;
+    width:
+      23px;
+
+    height:
+      23px;
+
+    flex:
+      0 0 23px;
+
+    margin:
+      0;
+  }
+
+
+  /* =====================================
+     MOBILE CARD TITLE
+  ===================================== */
+
+  .category-service-card h3 {
+    flex:
+      1 1 auto;
+
+    min-width:
+      0;
+
+    margin:
+      0;
+
+    padding-right:
+      22px;
+
+    font-size:
+      18px;
+
+    line-height:
+      1.25;
   }
 
 
   .category-service-arrow {
-    top: 21px;
-    right: 21px;
+    top:
+      21px;
+
+    right:
+      21px;
   }
 
 
@@ -1019,28 +1288,60 @@
 @media (max-width: 420px) {
 
   .solution-category-hero {
-    padding-top: 120px;
+    padding-top:
+      120px;
   }
 
 
   .solution-category-hero h1 {
-    font-size: 40px;
+    font-size:
+      40px;
   }
 
 
   .category-hero-icon {
-    width: 180px;
-    height: 180px;
+    width:
+      180px;
+
+    height:
+      180px;
+
+    margin:
+      0
+      auto;
   }
 
 
   .category-service-card {
-    padding: 20px;
+    min-height:
+      70px;
+
+    padding:
+      18px;
+
+    gap:
+      12px;
+  }
+
+
+  .category-service-card svg:first-child {
+    width:
+      22px;
+
+    height:
+      22px;
+
+    flex:
+      0 0 22px;
   }
 
 
   .category-service-card h3 {
-    font-size: 18px;
+    font-size:
+      17px;
+
+    padding-right:
+      20px;
   }
 
 
@@ -1062,11 +1363,14 @@
   .solution-category-page *,
   .solution-category-page *::before,
   .solution-category-page *::after {
-    scroll-behavior: auto !important;
+    scroll-behavior:
+      auto !important;
 
-    transition: none !important;
+    transition:
+      none !important;
 
-    animation: none !important;
+    animation:
+      none !important;
   }
 
 }

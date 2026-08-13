@@ -8,7 +8,7 @@ import syedZulqarnainHyder from "../../assets/team/Syed Zulqarnain Hyder.jpg";
 
 import arslanAslam from "../../assets/team/Arslan Aslam.webp";
 
-import muhammadZeeshan from "../../assets/team/Muhammad Zeeshan.jpeg";
+import muhammadZeeshan from "../../assets/team/Muhammad Zeeshan.png";
 
 import fahadMajid from "../../assets/team/Fahad majid.png";
 
