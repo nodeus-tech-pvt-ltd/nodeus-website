@@ -24,7 +24,7 @@ function About() {
     {
       icon: UsersRound,
 
-      number: "01",
+      // number: "01",
 
       title: "People-first partnerships",
 
@@ -36,7 +36,7 @@ function About() {
     {
       icon: Layers3,
 
-      number: "02",
+      // number: "02",
 
       title: "Process with purpose",
 
@@ -48,7 +48,7 @@ function About() {
     {
       icon: Lightbulb,
 
-      number: "03",
+      // number: "03",
 
       title: "Flexible by design",
 
@@ -60,7 +60,7 @@ function About() {
     {
       icon: ShieldCheck,
 
-      number: "04",
+      // number: "04",
 
       title: "Accountability that scales",
 

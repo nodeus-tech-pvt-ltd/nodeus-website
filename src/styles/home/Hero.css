@@ -5,8 +5,20 @@
 .hero {
   position: relative;
 
-  min-height: 100vh;
-  min-height: 100svh;
+  /*
+    IMPORTANT:
+    Do not let browser zoom create an enormous hero.
+    The hero remains responsive but has a controlled maximum
+    visual height.
+  */
+  height: clamp(
+    680px,
+    100svh,
+    900px
+  );
+
+  min-height: 680px;
+  max-height: 900px;
 
   overflow: hidden;
 
@@ -14,24 +26,32 @@
   align-items: center;
 
   /*
-    IMPORTANT:
-    The horizontal padding follows a centered 1300px
-    content area, just like the other sections.
+    Keep the content inside a consistent centered system.
   */
   padding:
-    140px
-    max(24px, calc((100% - 1300px) / 2))
+    110px
+    max(
+      24px,
+      calc(
+        (100% - 1300px) / 2
+      )
+    )
     80px;
 
   background:
     radial-gradient(
-      circle at 75% 45%,
-      rgba(52, 124, 255, 0.22),
-      transparent 30%
+      circle at 78% 45%,
+      rgba(
+        52,
+        124,
+        255,
+        0.22
+      ),
+      transparent 31%
     ),
     #070b14;
 
-  color: white;
+  color: #ffffff;
 }
 
 
@@ -45,10 +65,14 @@
   z-index: 3;
 
   /*
-    Keep content tied to the same 1300px centered
-    layout as the rest of the website.
+    Never allow content width to grow with zoom.
   */
-  width: min(760px, 100%);
+  width: min(
+    760px,
+    100%
+  );
+
+  max-width: 760px;
 
   flex-shrink: 0;
 }
@@ -61,20 +85,28 @@
 .hero h1 {
   max-width: 850px;
 
-  margin: 0 0 30px;
+  margin:
+    0
+    0
+    30px;
 
-  color: white;
+  color: #ffffff;
 
+  /*
+    Use viewport width only within a controlled range.
+  */
   font-size:
     clamp(
       3.5rem,
-      6vw,
+      5.5vw,
       7rem
     );
 
   line-height: 0.98;
 
   letter-spacing: -0.07em;
+
+  font-weight: 700;
 }
 
 .hero h1 span {
@@ -89,7 +121,10 @@
 .hero p {
   max-width: 620px;
 
-  margin: 0 0 38px;
+  margin:
+    0
+    0
+    38px;
 
   color:
     rgba(
@@ -99,7 +134,7 @@
       0.65
     );
 
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 
   line-height: 1.7;
 }
@@ -123,36 +158,74 @@
 
   align-items: center;
 
+  justify-content: center;
+
   gap: 8px;
 
+  min-height: 50px;
+
   padding:
-    15px
+    14px
     22px;
 
   border-radius: 999px;
 
   text-decoration: none;
 
+  font-size: 0.88rem;
+
   font-weight: 600;
+
+  white-space: nowrap;
 
   transition:
     transform 0.3s ease,
     background 0.3s ease,
     border-color 0.3s ease,
-    color 0.3s ease;
+    color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
 
 .primary-button {
   background: #347cff;
 
-  color: white;
+  color: #ffffff;
+
+  box-shadow:
+    0 12px 30px
+    rgba(
+      52,
+      124,
+      255,
+      0.2
+    );
 }
 
 .primary-button:hover {
-  transform: translateY(-3px);
+  transform:
+    translateY(-3px);
 
   background: #246be0;
+
+  box-shadow:
+    0 16px 36px
+    rgba(
+      52,
+      124,
+      255,
+      0.3
+    );
 }
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
 
 .secondary-button {
   border:
@@ -164,13 +237,32 @@
       0.2
     );
 
-  color: white;
+  color: #ffffff;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.01
+    );
 }
 
 .secondary-button:hover {
   border-color: #347cff;
 
   color: #347cff;
+
+  background:
+    rgba(
+      52,
+      124,
+      255,
+      0.06
+    );
+
+  transform:
+    translateY(-3px);
 }
 
 
@@ -182,15 +274,17 @@
   position: absolute;
 
   /*
-    Same left boundary as hero content.
+    Same centered content boundary as hero.
   */
   left:
     max(
       24px,
-      calc((100% - 1300px) / 2)
+      calc(
+        (100% - 1300px) / 2
+      )
     );
 
-  bottom: 35px;
+  bottom: 28px;
 
   z-index: 5;
 
@@ -212,7 +306,7 @@
 
   font-family: inherit;
 
-  font-size: 0.82rem;
+  font-size: 0.78rem;
 
   font-weight: 500;
 
@@ -233,7 +327,8 @@
 }
 
 .hero-scroll:hover svg {
-  transform: translateY(3px);
+  transform:
+    translateY(3px);
 }
 
 
@@ -253,32 +348,38 @@
   z-index: 0;
 }
 
+
+/* =========================================================
+   PRIMARY GLOW
+========================================================= */
+
 .hero-glow-one {
   width:
     clamp(
       250px,
-      25vw,
-      350px
+      24vw,
+      360px
     );
 
   height:
     clamp(
       250px,
-      25vw,
-      350px
+      24vw,
+      360px
     );
 
   /*
-    Keep glow associated with the centered
-    content region instead of viewport edge.
+    Position relative to the centered 1300px system.
   */
   right:
     max(
-      80px,
-      calc((100% - 1300px) / 2 + 80px)
+      50px,
+      calc(
+        (100% - 1300px) / 2 + 40px
+      )
     );
 
-  top: 20%;
+  top: 18%;
 
   background:
     rgba(
@@ -289,28 +390,35 @@
     );
 }
 
+
+/* =========================================================
+   SECONDARY GLOW
+========================================================= */
+
 .hero-glow-two {
   width:
     clamp(
       180px,
-      20vw,
-      250px
+      18vw,
+      260px
     );
 
   height:
     clamp(
       180px,
-      20vw,
-      250px
+      18vw,
+      260px
     );
 
   right:
     max(
-      160px,
-      calc((100% - 1300px) / 2 + 300px)
+      100px,
+      calc(
+        (100% - 1300px) / 2 + 280px
+      )
     );
 
-  bottom: 10%;
+  bottom: 8%;
 
   background:
     rgba(
@@ -326,58 +434,41 @@
    ORBIT SYSTEM
 ========================================================= */
 
-/*
-   IMPORTANT FIX
-
-   The orbit is NOT positioned using:
-
-      right: -120px
-      right: -250px
-      right: -80px
-
-   Those values are what caused the orbit to drift sideways
-   when zooming.
-
-   Instead, the orbit follows the same centered 1300px
-   layout boundary as the rest of the website.
-*/
-
 .hero-orbit {
   position: absolute;
 
   z-index: 1;
 
+  /*
+    Controlled orbit size.
+
+    The important part here is that the orbit is NOT
+    allowed to grow indefinitely when the viewport becomes
+    very large because of browser zoom-out.
+  */
   width:
     clamp(
       360px,
-      42vw,
+      38vw,
       600px
     );
 
   height:
     clamp(
       360px,
-      42vw,
+      38vw,
       600px
     );
 
   /*
-    Attach orbit to the RIGHT side of the same
-    1300px centered layout.
-
-    Example:
-    1920px viewport:
-    (1920 - 1300) / 2 = 310px
-
-    So orbit remains 310px from the right.
-
-    At larger zoom-out widths, the orbit moves together
-    with the centered content rather than drifting away.
+    Keep orbit attached to the centered content system.
   */
   right:
     max(
       24px,
-      calc((100% - 1300px) / 2)
+      calc(
+        (100% - 1300px) / 2
+      )
     );
 
   top: 50%;
@@ -454,7 +545,7 @@
 
 
 /* =========================================================
-   ORBIT CENTER / LOGO
+   ORBIT CENTER
 ========================================================= */
 
 .orbit-center {
@@ -466,14 +557,14 @@
   width:
     clamp(
       80px,
-      8vw,
+      7vw,
       120px
     );
 
   height:
     clamp(
       80px,
-      8vw,
+      7vw,
       120px
     );
 
@@ -515,13 +606,13 @@
       0.4
     );
 
-  /*
-    Prevent the center from ever becoming
-    detached from the orbit.
-  */
   z-index: 2;
 }
 
+
+/* =========================================================
+   ORBIT LOGO
+========================================================= */
 
 .orbit-logo {
   width: 58%;
@@ -554,6 +645,7 @@
   }
 }
 
+
 @keyframes orbitRotateReverse {
   from {
     transform:
@@ -577,31 +669,54 @@
 
   .hero {
     padding-left: 6vw;
+
     padding-right: 6vw;
   }
 
+
   .hero-content {
-    width: min(680px, 55vw);
+    width:
+      min(
+        700px,
+        55vw
+      );
+
+    max-width: 700px;
   }
+
+
+  .hero h1 {
+    font-size:
+      clamp(
+        3.5rem,
+        5.8vw,
+        6.2rem
+      );
+  }
+
 
   .hero-orbit {
     width:
       clamp(
         380px,
-        42vw,
+        40vw,
         520px
       );
 
     height:
       clamp(
         380px,
-        42vw,
+        40vw,
         520px
       );
 
-    right: 3vw;
+    right: 5vw;
   }
 
+
+  .hero-scroll {
+    left: 6vw;
+  }
 }
 
 
@@ -612,42 +727,67 @@
 @media (max-width: 1000px) {
 
   .hero {
-    min-height: 100svh;
+    /*
+      Important:
+      Do NOT use 100svh directly here.
+      Tablet browsers can produce very tall CSS viewports.
+    */
+    height:
+      clamp(
+        650px,
+        88svh,
+        780px
+      );
+
+    min-height: 650px;
+
+    max-height: 780px;
 
     padding:
-      130px
+      105px
       6vw
-      100px;
+      80px;
+
+    align-items: center;
   }
 
+
   .hero-content {
-    width: min(620px, 58vw);
+    width:
+      min(
+        600px,
+        62vw
+      );
+
+    max-width: 600px;
   }
+
 
   .hero h1 {
     font-size:
       clamp(
-        3.2rem,
-        6.5vw,
-        5.5rem
+        3.1rem,
+        6vw,
+        5.2rem
       );
+
+    line-height: 0.97;
   }
+
 
   .hero p {
-    max-width: 560px;
+    max-width: 540px;
+
+    font-size: 1rem;
+
+    line-height: 1.65;
   }
 
-  /*
-    Orbit remains INSIDE the viewport.
 
-    No negative right value.
-    This prevents the orbit from being pushed
-    sideways when the browser is resized/zoomed.
-  */
   .hero-orbit {
-    width: 400px;
+    width: 420px;
 
-    height: 400px;
+    height: 420px;
 
     right: 2vw;
 
@@ -656,10 +796,26 @@
     opacity: 0.38;
   }
 
-  .hero-scroll {
-    left: 6vw;
+
+  .hero-glow-one {
+    right: 0;
+
+    top: 18%;
   }
 
+
+  .hero-glow-two {
+    right: 8%;
+
+    bottom: 8%;
+  }
+
+
+  .hero-scroll {
+    left: 6vw;
+
+    bottom: 22px;
+  }
 }
 
 
@@ -670,36 +826,78 @@
 @media (max-width: 800px) {
 
   .hero {
+    /*
+      Smaller and controlled height.
+      This is the main fix for the huge empty space.
+    */
+    height:
+      clamp(
+        620px,
+        82svh,
+        720px
+      );
+
+    min-height: 620px;
+
+    max-height: 720px;
+
     padding:
-      120px
+      100px
       5vw
-      100px;
+      75px;
+
+    align-items: center;
   }
 
-  /*
-    Text gets priority.
 
-    Orbit moves behind the content instead of
-    getting squeezed against the right edge.
-  */
   .hero-content {
     width: 100%;
 
-    max-width: 620px;
+    max-width: 600px;
   }
 
+
+  .hero h1 {
+    max-width: 600px;
+
+    font-size:
+      clamp(
+        3rem,
+        7.5vw,
+        4.8rem
+      );
+  }
+
+
+  .hero p {
+    max-width: 520px;
+
+    font-size: 0.96rem;
+  }
+
+
+  /*
+    Orbit moves behind the content instead of consuming
+    layout space.
+  */
   .hero-orbit {
     width: 390px;
 
     height: 390px;
 
-    right: -70px;
+    right: -40px;
 
-    top: 55%;
+    top: 56%;
 
     opacity: 0.22;
   }
 
+
+  .hero-scroll {
+    left: 5vw;
+
+    bottom: 20px;
+  }
 }
 
 
@@ -710,16 +908,29 @@
 @media (max-width: 600px) {
 
   .hero {
-    min-height: 100svh;
+    /*
+      Mobile hero should fit the actual content instead of
+      becoming an enormous full-screen section when zoomed.
+    */
+    height:
+      clamp(
+        620px,
+        88svh,
+        700px
+      );
+
+    min-height: 620px;
+
+    max-height: 700px;
 
     display: flex;
 
     align-items: center;
 
     padding:
-      120px
+      92px
       20px
-      100px;
+      76px;
   }
 
 
@@ -743,16 +954,19 @@
   .hero h1 {
     max-width: 100%;
 
-    margin-bottom: 24px;
+    margin:
+      0
+      0
+      22px;
 
     font-size:
       clamp(
-        3rem,
-        13vw,
+        2.85rem,
+        12.5vw,
         4rem
       );
 
-    line-height: 0.98;
+    line-height: 0.97;
 
     letter-spacing: -0.065em;
   }
@@ -765,9 +979,12 @@
   .hero p {
     max-width: 100%;
 
-    margin-bottom: 30px;
+    margin:
+      0
+      0
+      27px;
 
-    font-size: 1rem;
+    font-size: 0.92rem;
 
     line-height: 1.65;
   }
@@ -778,43 +995,44 @@
   ----------------------------------------- */
 
   .hero-actions {
-    flex-direction: column;
+    flex-direction: row;
 
-    align-items: flex-start;
+    align-items: center;
 
-    gap: 12px;
+    flex-wrap: wrap;
+
+    gap: 10px;
   }
+
 
   .primary-button,
   .secondary-button {
+    min-height: 44px;
+
     padding:
-      13px
-      19px;
+      11px
+      16px;
+
+    font-size: 0.78rem;
   }
 
 
   /* -----------------------------------------
      ORBIT
-
-     IMPORTANT:
-     Orbit is centered behind the content.
-
-     The logo is therefore ALWAYS inside
-     the orbit on mobile.
   ----------------------------------------- */
 
   .hero-orbit {
     position: absolute;
 
-    width: 360px;
+    width: 330px;
 
-    height: 360px;
+    height: 330px;
 
     left: 50%;
 
     right: auto;
 
-    top: 58%;
+    top: 60%;
 
     transform:
       translate(
@@ -822,7 +1040,7 @@
         -50%
       );
 
-    opacity: 0.16;
+    opacity: 0.15;
 
     z-index: 1;
 
@@ -835,21 +1053,19 @@
   ----------------------------------------- */
 
   .orbit-center {
+    width: 74px;
+
+    height: 74px;
+
     top: 50%;
 
     left: 50%;
-
-    width: 78px;
-
-    height: 78px;
 
     transform:
       translate(
         -50%,
         -50%
       );
-
-    z-index: 2;
 
     background:
       rgba(
@@ -882,27 +1098,28 @@
   ----------------------------------------- */
 
   .hero-glow-one {
-    width: 260px;
+    width: 230px;
 
-    height: 260px;
+    height: 230px;
 
-    right: -80px;
+    right: -90px;
 
-    top: 20%;
+    top: 16%;
 
-    opacity: 0.6;
+    opacity: 0.55;
   }
 
+
   .hero-glow-two {
-    width: 200px;
+    width: 180px;
 
-    height: 200px;
+    height: 180px;
 
-    right: -60px;
+    right: -70px;
 
-    bottom: 15%;
+    bottom: 12%;
 
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
 
@@ -913,11 +1130,10 @@
   .hero-scroll {
     left: 20px;
 
-    bottom: 24px;
+    bottom: 17px;
 
-    font-size: 0.78rem;
+    font-size: 0.72rem;
   }
-
 }
 
 
@@ -928,31 +1144,69 @@
 @media (max-width: 380px) {
 
   .hero {
+    height:
+      clamp(
+        590px,
+        86svh,
+        660px
+      );
+
+    min-height: 590px;
+
+    max-height: 660px;
+
     padding:
-      110px
+      88px
       18px
-      90px;
+      70px;
   }
+
 
   .hero h1 {
-    font-size: 2.75rem;
+    font-size: 2.7rem;
+
+    line-height: 0.97;
+
+    margin-bottom: 20px;
   }
 
+
   .hero p {
-    font-size: 0.95rem;
+    font-size: 0.86rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 24px;
+  }
+
+
+  .hero-actions {
+    gap: 8px;
+  }
+
+
+  .primary-button,
+  .secondary-button {
+    min-height: 42px;
+
+    padding:
+      10px
+      14px;
+
+    font-size: 0.74rem;
   }
 
 
   .hero-orbit {
-    width: 310px;
+    width: 290px;
 
-    height: 310px;
+    height: 290px;
 
     left: 50%;
 
     right: auto;
 
-    top: 57%;
+    top: 59%;
 
     transform:
       translate(
@@ -960,15 +1214,16 @@
         -50%
       );
 
-    opacity: 0.14;
+    opacity: 0.13;
   }
 
 
   .orbit-center {
-    width: 68px;
+    width: 66px;
 
-    height: 68px;
+    height: 66px;
   }
+
 
   .orbit-logo {
     width: 54%;
@@ -978,9 +1233,77 @@
   .hero-scroll {
     left: 18px;
 
-    bottom: 18px;
+    bottom: 14px;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (
+  max-width: 900px
+) and (
+  orientation: landscape
+) {
+
+  .hero {
+    height: 620px;
+
+    min-height: 620px;
+
+    max-height: 620px;
+
+    padding:
+      80px
+      6vw
+      65px;
   }
 
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+
+  .hero h1 {
+    font-size:
+      clamp(
+        2.8rem,
+        7vw,
+        4.5rem
+      );
+
+    margin-bottom: 18px;
+  }
+
+
+  .hero p {
+    max-width: 550px;
+
+    margin-bottom: 20px;
+
+    font-size: 0.88rem;
+  }
+
+
+  .hero-orbit {
+    width: 330px;
+
+    height: 330px;
+
+    right: 4vw;
+
+    top: 52%;
+
+    opacity: 0.16;
+  }
+
+
+  .hero-scroll {
+    bottom: 10px;
+  }
 }
 
 
@@ -998,5 +1321,4 @@
   .hero-scroll {
     animation: none;
   }
-
 }

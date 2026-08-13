@@ -1660,7 +1660,7 @@
     70px;
 
   padding:
-    70px;
+    50px;
 
   overflow:
     hidden;
@@ -1785,6 +1785,9 @@
 
   gap:
     14px;
+
+  text-align:
+    center;
 }
 
 
@@ -1871,6 +1874,9 @@
 
   font-size:
     0.68rem;
+
+  text-align:
+    center;
 }
 
 
@@ -2017,6 +2023,9 @@
   .careers-application-action {
     align-items:
       flex-start;
+
+    text-align:
+      left;
   }
 
 }
@@ -2270,6 +2279,10 @@
   }
 
 
+  /* =========================================
+     MOBILE APPLICATION CTA ACTION
+  ========================================= */
+
   .careers-application {
     padding-bottom:
       85px;
@@ -2285,6 +2298,24 @@
 
     border-radius:
       21px;
+
+    align-items:
+      center;
+  }
+
+
+  .careers-application-content {
+    width:
+      100%;
+
+    text-align:
+      center;
+  }
+
+
+  .careers-application-content > span {
+    justify-content:
+      center;
   }
 
 
@@ -2295,6 +2326,12 @@
 
 
   .careers-application-content p {
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+
     font-size:
       0.84rem;
   }
@@ -2303,12 +2340,33 @@
   .careers-application-action {
     width:
       100%;
+
+    align-items:
+      center;
+
+    justify-content:
+      center;
+
+    text-align:
+      center;
   }
 
 
   .careers-application-button {
     width:
       100%;
+
+    max-width:
+      320px;
+  }
+
+
+  .careers-application-action small {
+    width:
+      100%;
+
+    text-align:
+      center;
   }
 
 }
@@ -2365,6 +2423,27 @@
   .careers-opening-main h3 {
     font-size:
       1.05rem;
+  }
+
+
+  .careers-application-action {
+    align-items:
+      center;
+
+    justify-content:
+      center;
+
+    text-align:
+      center;
+  }
+
+
+  .careers-application-button {
+    width:
+      100%;
+
+    max-width:
+      300px;
   }
 
 }

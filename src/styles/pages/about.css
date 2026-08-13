@@ -1097,7 +1097,7 @@
 
 
 .about-value-card {
-  min-height: 315px;
+  /* min-height: 315px; */
 
   padding: 27px;
 
@@ -1943,9 +1943,9 @@
   }
 
 
-  .about-value-card {
+  /* .about-value-card {
     min-height: 270px;
-  }
+  } */
 
 
   .about-process {
@@ -2323,7 +2323,7 @@
 
 
   .about-value-card {
-    min-height: auto;
+    /* min-height: auto; */
 
     padding: 24px;
   }

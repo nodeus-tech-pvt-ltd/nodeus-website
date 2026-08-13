@@ -162,32 +162,52 @@ function ProofSection() {
         <Swiper
           modules={[Autoplay, Pagination]}
           className="testimonials-slider"
+
           spaceBetween={24}
+
           slidesPerView={1}
+
+          slidesPerGroup={1}
+
           loop={true}
+
           grabCursor={true}
+
           speed={700}
+
           autoplay={{
             delay: 4000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+
           pagination={{
             clickable: true,
+            dynamicBullets: false,
           }}
+
           breakpoints={{
+            /* ================================
+              TABLET
+            ================================= */
+
             768: {
               slidesPerView: 2,
+              slidesPerGroup: 2,
             },
+
+
+            /* ================================
+              DESKTOP
+            ================================= */
 
             1200: {
               slidesPerView: 3,
+              slidesPerGroup: 3,
             },
           }}
         >
-
           {testimonials.map((testimonial) => (
-
             <SwiperSlide key={testimonial.name}>
 
               <motion.article
@@ -213,28 +233,17 @@ function ProofSection() {
                 }}
               >
 
-                {/* Rating */}
-
                 <div className="testimonial-stars">
                   ★★★★★
                 </div>
-
-
-                {/* Quote Icon */}
 
                 <div className="testimonial-quote-icon">
                   <Quote size={19} />
                 </div>
 
-
-                {/* Quote */}
-
                 <p className="testimonial-quote">
                   “{testimonial.quote}”
                 </p>
-
-
-                {/* Author */}
 
                 <div className="testimonial-author">
 
@@ -263,9 +272,7 @@ function ProofSection() {
               </motion.article>
 
             </SwiperSlide>
-
           ))}
-
         </Swiper>
 
       </section>

@@ -1812,13 +1812,13 @@ function CaseStudies() {
 
           <div>
 
-            <span
+            {/* <span
               className="section-eyebrow"
             >
 
               READY TO BUILD?
 
-            </span>
+            </span> */}
 
 
             <h2>
