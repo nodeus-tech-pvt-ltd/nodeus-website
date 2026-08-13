@@ -110,8 +110,7 @@
 
   border-radius: 50%;
 
-  transform:
-    translateY(-50%);
+  transform: translateY(-50%);
 
   box-shadow:
     0 0 0 85px
@@ -128,8 +127,7 @@
    HERO CONTENT
 ========================================= */
 
-.service-detail-hero
-.service-detail-container {
+.service-detail-hero .service-detail-container {
   position: relative;
 
   z-index: 1;
@@ -152,7 +150,7 @@
 
   gap: 9px;
 
-  margin-bottom: 42px;
+  margin-bottom: 34px;
 
   color: #94a3b8;
 
@@ -171,8 +169,7 @@
 .service-back-link:hover {
   color: #397bff;
 
-  transform:
-    translateX(-4px);
+  transform: translateX(-4px);
 }
 
 
@@ -183,11 +180,13 @@
 .service-detail-eyebrow {
   display: inline-flex;
 
+  width: fit-content;
+
   align-items: center;
 
   padding: 9px 15px;
 
-  margin-bottom: 22px;
+  margin-bottom: 25px;
 
   border:
     1px solid
@@ -200,11 +199,13 @@
 
   color: #397bff;
 
-  font-size: 0.68rem;
+  font-size: 0.7rem;
 
   font-weight: 700;
 
-  letter-spacing: 0.16em;
+  letter-spacing: 0.17em;
+
+  line-height: 1;
 
   text-transform: uppercase;
 }
@@ -232,8 +233,7 @@
 
   line-height: 0.92;
 
-  letter-spacing:
-    -0.07em;
+  letter-spacing: -0.07em;
 }
 
 
@@ -296,8 +296,7 @@
 .service-primary-button:hover {
   background: #2467e8;
 
-  transform:
-    translateY(-4px);
+  transform: translateY(-4px);
 
   box-shadow:
     0 20px 42px
@@ -331,11 +330,12 @@
     minmax(0, 1fr)
     minmax(360px, 0.78fr);
 
-  gap: clamp(
-    55px,
-    8vw,
-    110px
-  );
+  gap:
+    clamp(
+      55px,
+      8vw,
+      110px
+    );
 
   align-items: start;
 }
@@ -359,8 +359,7 @@
 
   line-height: 0.95;
 
-  letter-spacing:
-    -0.065em;
+  letter-spacing: -0.065em;
 }
 
 
@@ -369,14 +368,12 @@
 }
 
 
-.service-overview-grid
-> div:last-child {
+.service-overview-grid > div:last-child {
   padding-top: 8px;
 }
 
 
-.service-overview-grid
-> div:last-child p {
+.service-overview-grid > div:last-child p {
   max-width: 540px;
 
   margin: 0;
@@ -483,17 +480,13 @@
    CAPABILITY ROW
 ========================================= */
 
-/* =========================================
-   CAPABILITY ROW
-========================================= */
-
 .service-capability-card {
   position: relative;
 
   display: grid;
 
   grid-template-columns:
-    100px
+    92px
     minmax(220px, 0.9fr)
     minmax(300px, 1.1fr);
 
@@ -509,8 +502,7 @@
     1px solid
     rgba(255, 255, 255, 0.1);
 
-  background:
-    transparent;
+  background: transparent;
 
   overflow: hidden;
 
@@ -521,7 +513,9 @@
 }
 
 
-/* BLUE HOVER BACKGROUND */
+/* =========================================
+   BLUE HOVER BACKGROUND
+========================================= */
 
 .service-capability-card::before {
   content: "";
@@ -541,11 +535,9 @@
 
   opacity: 0;
 
-  transform:
-    scaleX(0.96);
+  transform: scaleX(0.96);
 
-  transform-origin:
-    left center;
+  transform-origin: left center;
 
   transition:
     opacity 0.4s ease,
@@ -555,7 +547,9 @@
 }
 
 
-/* LEFT BLUE LINE */
+/* =========================================
+   LEFT BLUE LINE
+========================================= */
 
 .service-capability-card::after {
   content: "";
@@ -563,11 +557,9 @@
   position: absolute;
 
   top: 25%;
-
   left: 0;
 
   width: 3px;
-
   height: 50%;
 
   border-radius: 99px;
@@ -576,8 +568,7 @@
 
   opacity: 0;
 
-  transform:
-    scaleY(0);
+  transform: scaleY(0);
 
   transition:
     opacity 0.35s ease,
@@ -585,7 +576,9 @@
 }
 
 
-/* HOVER */
+/* =========================================
+   HOVER
+========================================= */
 
 .service-capability-card:hover {
   padding-left: 42px;
@@ -598,21 +591,19 @@
 .service-capability-card:hover::before {
   opacity: 1;
 
-  transform:
-    scaleX(1);
+  transform: scaleX(1);
 }
 
 
 .service-capability-card:hover::after {
   opacity: 1;
 
-  transform:
-    scaleY(1);
+  transform: scaleY(1);
 }
 
 
 /* =========================================
-   NUMBER
+   NUMBER CIRCLE
 ========================================= */
 
 .service-capability-number {
@@ -620,30 +611,67 @@
 
   z-index: 1;
 
-  display: block;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
 
   margin: 0;
 
-  color: #475569;
+  border:
+    1px solid
+    rgba(57, 123, 255, 0.28);
+
+  border-radius: 50%;
+
+  background:
+    rgba(8, 13, 23, 0.35);
+
+  color: #397bff;
 
   font-size: 0.78rem;
 
   font-weight: 700;
 
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
+
+  line-height: 1;
+
+  box-sizing: border-box;
 
   transition:
     color 0.35s ease,
-    transform 0.35s ease;
+    border-color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 
+/* =========================================
+   NUMBER HOVER
+========================================= */
+
 .service-capability-card:hover
 .service-capability-number {
-  color: #397bff;
+  color: #ffffff;
 
-  transform:
-    translateX(5px);
+  border-color: #397bff;
+
+  background:
+    rgba(57, 123, 255, 0.14);
+
+  transform: translateX(5px);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(57, 123, 255, 0.045),
+
+    0 0 25px
+    rgba(57, 123, 255, 0.12);
 }
 
 
@@ -684,8 +712,7 @@
 .service-capability-card:hover h3 {
   color: #397bff;
 
-  transform:
-    translateX(5px);
+  transform: translateX(5px);
 }
 
 
@@ -717,14 +744,9 @@
 .service-capability-card:hover p {
   color: #cbd5e1;
 
-  transform:
-    translateX(5px);
+  transform: translateX(5px);
 }
 
-
-/* =========================================
-   ARROW
-========================================= */
 
 /* =========================================
    REMOVE CAPABILITY ARROWS
@@ -732,159 +754,6 @@
 
 .service-capability-arrow {
   display: none !important;
-}
-
-
-.service-capability-card:hover
-.service-capability-arrow {
-  color: #397bff;
-
-  transform:
-    translate(7px, -7px);
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 950px) {
-
-  .service-capabilities {
-    padding:
-      120px 0;
-  }
-
-
-  .service-capabilities-header {
-    grid-template-columns:
-      1fr;
-
-    gap: 30px;
-
-    margin-bottom:
-      65px;
-  }
-
-
-  .service-capabilities-header > p {
-    max-width:
-      620px;
-  }
-
-
-  .service-capability-card {
-    grid-template-columns:
-      70px
-      minmax(190px, 0.8fr)
-      minmax(250px, 1.2fr);
-
-    gap: 25px;
-
-    min-height:
-      155px;
-  }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 650px) {
-
-  .service-capabilities {
-    padding:
-      100px 0;
-  }
-
-
-  .service-capabilities-header {
-    margin-bottom:
-      50px;
-  }
-
-
-  .service-capabilities-header h2 {
-    font-size:
-      clamp(
-        2.8rem,
-        13vw,
-        4.3rem
-      );
-  }
-
-
-  .service-capabilities-header > p {
-    font-size:
-      0.95rem;
-
-    line-height:
-      1.8;
-  }
-
-
-  .service-capability-card {
-    grid-template-columns:
-      55px
-      1fr;
-
-    gap:
-      18px;
-
-    align-items:
-      start;
-
-    min-height:
-      auto;
-
-    padding:
-      30px 8px;
-  }
-
-
-  .service-capability-card:hover {
-    padding-left:
-      18px;
-  }
-
-
-  .service-capability-card h3 {
-    grid-column:
-      2;
-
-    font-size:
-      1.45rem;
-  }
-
-
-  .service-capability-card p {
-    grid-column:
-      2;
-
-    margin-top:
-      -5px;
-
-    font-size:
-      0.87rem;
-  }
-
-
-  .service-capability-arrow {
-    display:
-      none;
-  }
-
-
-  .service-capability-number {
-    grid-row:
-      1 / span 2;
-
-    padding-top:
-      4px;
-  }
-
 }
 
 
@@ -920,8 +789,7 @@
 
   line-height: 0.95;
 
-  letter-spacing:
-    -0.065em;
+  letter-spacing: -0.065em;
 }
 
 
@@ -938,7 +806,10 @@
   display: grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
 
   gap: 20px;
 }
@@ -1001,8 +872,7 @@
   background:
     rgba(57, 123, 255, 0.12);
 
-  filter:
-    blur(70px);
+  filter: blur(70px);
 
   opacity: 0;
 
@@ -1015,8 +885,7 @@
   border-color:
     rgba(57, 123, 255, 0.38);
 
-  transform:
-    translateY(-7px);
+  transform: translateY(-7px);
 
   box-shadow:
     0 25px 60px
@@ -1041,7 +910,6 @@
   box-sizing: content-box;
 
   width: 22px;
-
   height: 22px;
 
   padding: 12px;
@@ -1081,8 +949,7 @@
 
   line-height: 1.2;
 
-  letter-spacing:
-    -0.035em;
+  letter-spacing: -0.035em;
 }
 
 
@@ -1155,8 +1022,7 @@
 }
 
 
-.service-detail-cta
-.service-detail-container {
+.service-detail-cta .service-detail-container {
   position: relative;
 
   z-index: 1;
@@ -1184,8 +1050,7 @@
 
   line-height: 0.94;
 
-  letter-spacing:
-    -0.07em;
+  letter-spacing: -0.07em;
 }
 
 
@@ -1224,10 +1089,11 @@
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
-  padding: 140px 24px 80px;
+  padding:
+    140px 24px
+    80px;
 
   text-align: center;
 
@@ -1288,22 +1154,51 @@
 
 
   .service-overview-grid {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     gap: 40px;
   }
 
 
-  .service-overview-grid
-  > div:last-child {
+  .service-overview-grid > div:last-child {
     padding-top: 0;
   }
 
 
-  .service-benefits-grid {
+  .service-capabilities {
+    padding:
+      120px 0;
+  }
+
+
+  .service-capabilities-header {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    margin-bottom: 65px;
+  }
+
+
+  .service-capabilities-header > p {
+    max-width: 620px;
+  }
+
+
+  .service-capability-card {
     grid-template-columns:
-      1fr;
+      78px
+      minmax(190px, 0.8fr)
+      minmax(250px, 1.2fr);
+
+    gap: 25px;
+
+    min-height: 155px;
+  }
+
+
+  .service-benefits-grid {
+    grid-template-columns: 1fr;
   }
 
 
@@ -1318,7 +1213,7 @@
    MOBILE
 ========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
   .service-detail-container {
     width:
@@ -1417,11 +1312,114 @@
   }
 
 
-  .service-overview-grid
-  > div:last-child p {
+  .service-overview-grid > div:last-child p {
     font-size: 0.94rem;
 
     line-height: 1.8;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE CAPABILITY ROW
+  ----------------------------------------- */
+
+  .service-capabilities {
+    padding:
+      100px 0;
+  }
+
+
+  .service-capabilities-header {
+    margin-bottom: 50px;
+  }
+
+
+  .service-capabilities-header h2 {
+    font-size:
+      clamp(
+        2.8rem,
+        13vw,
+        4.3rem
+      );
+  }
+
+
+  .service-capabilities-header > p {
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+  }
+
+
+  .service-capability-card {
+    grid-template-columns:
+      62px
+      1fr;
+
+    gap: 18px;
+
+    align-items: start;
+
+    min-height: auto;
+
+    padding:
+      30px 8px;
+  }
+
+
+  .service-capability-card:hover {
+    padding-left: 18px;
+  }
+
+
+  /* Mobile number circle */
+
+  .service-capability-number {
+    grid-row:
+      1 / span 2;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.06em;
+  }
+
+
+  .service-capability-card:hover
+  .service-capability-number {
+    transform: translateX(3px);
+
+    box-shadow:
+      0 0 0 4px
+      rgba(57, 123, 255, 0.045),
+
+      0 0 20px
+      rgba(57, 123, 255, 0.1);
+  }
+
+
+  .service-capability-card h3 {
+    grid-column: 2;
+
+    font-size: 1.45rem;
+  }
+
+
+  .service-capability-card p {
+    grid-column: 2;
+
+    margin-top: -5px;
+
+    font-size: 0.87rem;
+  }
+
+
+  .service-capability-arrow {
+    display: none !important;
   }
 
 
@@ -1465,59 +1463,51 @@
 
 
 /* =========================================
-   HERO TOP AREA
+   SMALL MOBILE
 ========================================= */
 
-.service-back-link {
-  display: inline-flex;
+@media (max-width: 400px) {
 
-  align-items: center;
-
-  gap: 9px;
-
-  margin-bottom: 34px;
-
-  color: #94a3b8;
-
-  font-size: 0.88rem;
-
-  font-weight: 600;
-
-  text-decoration: none;
-
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
+  .service-detail-container {
+    width:
+      calc(
+        100% - 32px
+      );
+  }
 
 
-.service-detail-eyebrow {
-  display: flex;
+  .service-capability-card {
+    grid-template-columns:
+      56px
+      1fr;
 
-  width: fit-content;
+    gap: 14px;
 
-  align-items: center;
+    padding:
+      27px 4px;
+  }
 
-  padding: 9px 15px;
 
-  margin-bottom: 25px;
+  .service-capability-card:hover {
+    padding-left: 12px;
+  }
 
-  border:
-    1px solid
-    rgba(57, 123, 255, 0.28);
 
-  border-radius: 999px;
+  .service-capability-number {
+    width: 44px;
+    height: 44px;
 
-  background:
-    rgba(57, 123, 255, 0.1);
+    font-size: 0.67rem;
+  }
 
-  color: #397bff;
 
-  font-size: 0.7rem;
+  .service-capability-card h3 {
+    font-size: 1.3rem;
+  }
 
-  font-weight: 700;
 
-  letter-spacing: 0.17em;
+  .service-capability-card p {
+    font-size: 0.84rem;
+  }
 
-  line-height: 1;
 }
