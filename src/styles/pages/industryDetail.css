@@ -1416,29 +1416,12 @@
 }
 
 
+/* =========================================
+   CAPABILITY ARROW — REMOVED
+========================================= */
+
 .industry-capability-item > svg {
-  color:
-    #4c5a70;
-
-  transition:
-
-    color
-    0.25s ease,
-
-    transform
-    0.25s ease;
-}
-
-
-.industry-capability-item:hover > svg {
-  color:
-    #397bff;
-
-  transform:
-    translate(
-      3px,
-      -3px
-    );
+  display: none;
 }
 
 
@@ -1638,7 +1621,7 @@
 ========================================= */
 
 .industry-outcomes-section {
-  padding: 0 0 105px;
+  padding: 105px 0 105px;
 
   background: #070b14;
 }

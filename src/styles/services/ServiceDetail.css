@@ -483,6 +483,10 @@
    CAPABILITY ROW
 ========================================= */
 
+/* =========================================
+   CAPABILITY ROW
+========================================= */
+
 .service-capability-card {
   position: relative;
 
@@ -491,8 +495,7 @@
   grid-template-columns:
     100px
     minmax(220px, 0.9fr)
-    minmax(300px, 1.1fr)
-    60px;
+    minmax(300px, 1.1fr);
 
   gap: 35px;
 
@@ -723,18 +726,12 @@
    ARROW
 ========================================= */
 
+/* =========================================
+   REMOVE CAPABILITY ARROWS
+========================================= */
+
 .service-capability-arrow {
-  position: relative;
-
-  z-index: 1;
-
-  justify-self: end;
-
-  color: #475569;
-
-  transition:
-    color 0.35s ease,
-    transform 0.35s ease;
+  display: none !important;
 }
 
 
@@ -780,8 +777,7 @@
     grid-template-columns:
       70px
       minmax(190px, 0.8fr)
-      minmax(250px, 1.2fr)
-      45px;
+      minmax(250px, 1.2fr);
 
     gap: 25px;
 

@@ -710,7 +710,7 @@ function IndustryDetail() {
             OPERATING MODEL
         ============================== */}
 
-        <section
+        {/* <section
           className="industry-workflow-section"
         >
 
@@ -852,7 +852,7 @@ function IndustryDetail() {
 
           </div>
 
-        </section>
+        </section> */}
 
 
         {/* =============================
