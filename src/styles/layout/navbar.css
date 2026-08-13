@@ -1,5 +1,5 @@
 /* =========================================================
-   NODEUS NAVBAR — COMPLETE SYSTEM
+   NODEUS NAVBAR — COMPLETE RESPONSIVE SYSTEM
    ========================================================= */
 
 
@@ -49,6 +49,7 @@
 
 .navbar {
   position: fixed;
+
   top: 20px;
   left: 50%;
 
@@ -103,6 +104,8 @@
   align-items: center;
 
   flex-shrink: 0;
+
+  min-width: 0;
 
   text-decoration: none;
 }
@@ -208,7 +211,9 @@
 .nav-dropdown-heading {
   display: grid;
 
-  grid-template-columns: minmax(0, 1fr) 38px;
+  grid-template-columns:
+    minmax(0, 1fr)
+    38px;
 
   align-items: center;
 
@@ -216,7 +221,8 @@
 
   border-radius: 10px;
 
-  transition: background 0.25s ease;
+  transition:
+    background 0.25s ease;
 }
 
 
@@ -235,7 +241,11 @@
 
   justify-content: flex-start;
 
-  padding: 10px 8px 10px 12px;
+  padding:
+    10px
+    8px
+    10px
+    12px;
 }
 
 
@@ -344,14 +354,21 @@
 
   margin-left: 7px;
 
-  padding: 10px 17px !important;
+  padding:
+    10px
+    17px !important;
 
-  border: 1px solid rgba(57, 123, 255, 0.48) !important;
+  border:
+    1px solid
+    rgba(57, 123, 255, 0.48) !important;
+
   border-radius: 999px !important;
 
-  background: rgba(57, 123, 255, 0.16) !important;
+  background:
+    rgba(57, 123, 255, 0.16) !important;
 
-  color: var(--nodeus-blue-lighter) !important;
+  color:
+    var(--nodeus-blue-lighter) !important;
 
   font-weight: 650 !important;
 
@@ -367,13 +384,17 @@
 
 
 .nav-contact:hover {
-  background: var(--nodeus-blue) !important;
+  background:
+    var(--nodeus-blue) !important;
 
-  border-color: var(--nodeus-blue) !important;
+  border-color:
+    var(--nodeus-blue) !important;
 
-  color: #ffffff !important;
+  color:
+    #ffffff !important;
 
-  transform: translateY(-2px);
+  transform:
+    translateY(-2px);
 
   box-shadow:
     0 13px 32px rgba(57, 123, 255, 0.32);
@@ -393,15 +414,20 @@
 
   box-sizing: border-box;
 
-  max-height: calc(100vh - 115px);
+  max-height:
+    calc(100vh - 115px);
 
-  padding: 32px;
+  padding: 26px;
 
   overflow-x: hidden;
   overflow-y: auto;
 
-  border: 1px solid rgba(57, 123, 255, 0.22);
-  border-radius: var(--nav-panel-radius);
+  border:
+    1px solid
+    rgba(57, 123, 255, 0.22);
+
+  border-radius:
+    var(--nav-panel-radius);
 
   background:
     radial-gradient(
@@ -416,17 +442,21 @@
     ),
     var(--nav-panel);
 
-  box-shadow: var(--nav-panel-shadow);
+  box-shadow:
+    var(--nav-panel-shadow);
 
   opacity: 0;
+
   visibility: hidden;
+
   pointer-events: none;
 
   transform:
     translateY(-10px)
     scale(0.985);
 
-  transform-origin: top center;
+  transform-origin:
+    top center;
 
   transition:
     opacity 0.22s ease,
@@ -434,7 +464,10 @@
     transform 0.22s ease;
 
   scrollbar-width: thin;
-  scrollbar-color: rgba(96, 165, 250, 0.3) transparent;
+
+  scrollbar-color:
+    rgba(96, 165, 250, 0.3)
+    transparent;
 }
 
 
@@ -459,7 +492,8 @@
 .mega-menu::-webkit-scrollbar-thumb,
 .resources-menu::-webkit-scrollbar-thumb,
 .about-menu::-webkit-scrollbar-thumb {
-  background: rgba(96, 165, 250, 0.3);
+  background:
+    rgba(96, 165, 250, 0.3);
 
   border-radius: 999px;
 }
@@ -499,9 +533,14 @@
 .resources-menu {
   left: 50%;
 
-  width: min(1080px, calc(100vw - 40px));
+  width:
+    min(
+      1080px,
+      calc(100vw - 40px)
+    );
 
-  max-width: calc(100vw - 40px);
+  max-width:
+    calc(100vw - 40px);
 
   transform:
     translateX(-50%)
@@ -551,13 +590,17 @@
 
   align-items: end;
 
-  gap: 60px;
+  gap: 40px;
 
-  margin: 0 0 28px;
+  margin:
+    0 0 20px;
 
-  padding: 0 0 26px;
+  padding:
+    0 0 20px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
 }
 
 
@@ -571,11 +614,14 @@
 .about-menu .mega-eyebrow {
   display: block;
 
-  margin: 0 0 12px;
+  margin:
+    0 0 9px;
 
-  color: var(--nodeus-blue);
+  color:
+    var(--nodeus-blue);
 
   font-size: 0.66rem;
+
   font-weight: 750;
 
   letter-spacing: 0.17em;
@@ -592,11 +638,16 @@
 
   color: #ffffff;
 
-  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  font-size:
+    clamp(
+      2rem,
+      3.2vw,
+      3.25rem
+    );
 
   font-weight: 600;
 
-  line-height: 0.98;
+  line-height: 1;
 
   letter-spacing: -0.055em;
 }
@@ -604,7 +655,8 @@
 
 .mega-menu-header h2 span,
 .about-menu .mega-menu-header h2 span {
-  color: var(--nodeus-blue);
+  color:
+    var(--nodeus-blue);
 }
 
 
@@ -618,21 +670,24 @@
 
   font-size: 0.9rem;
 
-  line-height: 1.7;
+  line-height: 1.55;
 }
 
 
 /* =========================================================
-   SOLUTIONS GRID
+   SERVICES GRID
    ========================================================= */
 
 .service-categories-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(4, minmax(0, 1fr));
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
 
-  gap: 12px;
+  gap: 10px;
 }
 
 
@@ -648,18 +703,23 @@
   flex-direction: column;
 
   min-width: 0;
-  min-height: 286px;
 
-  padding: 20px;
+  min-height: 0;
+
+  padding: 17px;
 
   overflow: hidden;
 
   box-sizing: border-box;
 
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.075);
+
   border-radius: 16px;
 
-  background: rgba(255, 255, 255, 0.025);
+  background:
+    rgba(255, 255, 255, 0.025);
 
   text-decoration: none;
 
@@ -672,11 +732,14 @@
 
 
 .service-category-card:hover {
-  transform: translateY(-4px);
+  transform:
+    translateY(-4px);
 
-  border-color: rgba(57, 123, 255, 0.45);
+  border-color:
+    rgba(57, 123, 255, 0.45);
 
-  background: rgba(57, 123, 255, 0.09);
+  background:
+    rgba(57, 123, 255, 0.09);
 
   box-shadow:
     0 18px 40px rgba(0, 0, 0, 0.18);
@@ -687,9 +750,10 @@
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 
   color: #64748b;
 }
@@ -698,28 +762,35 @@
 .service-category-icon {
   display: grid;
 
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
 
   place-items: center;
 
   flex-shrink: 0;
 
-  border: 1px solid rgba(57, 123, 255, 0.2);
-  border-radius: 11px;
+  border:
+    1px solid
+    rgba(57, 123, 255, 0.2);
 
-  background: rgba(57, 123, 255, 0.12);
+  border-radius: 10px;
 
-  color: var(--nodeus-blue);
+  background:
+    rgba(57, 123, 255, 0.12);
+
+  color:
+    var(--nodeus-blue);
 }
 
 
 .service-category-card h3 {
-  margin: 0 0 8px;
+  margin:
+    0 0 6px;
 
   color: #ffffff;
 
   font-size: 0.97rem;
+
   font-weight: 650;
 
   line-height: 1.3;
@@ -727,15 +798,17 @@
 
 
 .service-category-card > p {
-  min-height: 42px;
+  min-height: 0;
 
-  margin: 0 0 14px;
+  margin:
+    0 0 10px;
 
-  color: var(--nav-text-muted);
+  color:
+    var(--nav-text-muted);
 
   font-size: 0.75rem;
 
-  line-height: 1.55;
+  line-height: 1.45;
 }
 
 
@@ -744,9 +817,10 @@
 
   flex-direction: column;
 
-  gap: 6px;
+  gap: 4px;
 
-  margin: 0 0 15px;
+  margin:
+    0 0 10px;
 
   padding: 0;
 }
@@ -763,7 +837,7 @@
 
   font-size: 0.71rem;
 
-  line-height: 1.3;
+  line-height: 1.25;
 
   text-overflow: ellipsis;
 
@@ -780,7 +854,8 @@
 
   margin-top: auto;
 
-  color: var(--nodeus-blue);
+  color:
+    var(--nodeus-blue);
 
   font-size: 0.74rem;
 
@@ -798,9 +873,12 @@
   display: grid;
 
   grid-template-columns:
-    repeat(5, minmax(0, 1fr));
+    repeat(
+      5,
+      minmax(0, 1fr)
+    );
 
-  gap: 12px;
+  gap: 10px;
 }
 
 
@@ -811,18 +889,22 @@
 
   min-width: 0;
 
-  gap: 11px;
+  gap: 9px;
 
-  min-height: 94px;
+  min-height: 78px;
 
-  padding: 15px;
+  padding: 13px;
 
   box-sizing: border-box;
 
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.075);
+
   border-radius: 15px;
 
-  background: rgba(255, 255, 255, 0.025);
+  background:
+    rgba(255, 255, 255, 0.025);
 
   text-decoration: none;
 
@@ -834,30 +916,38 @@
 
 
 .industry-card:hover {
-  transform: translateY(-3px);
+  transform:
+    translateY(-3px);
 
-  border-color: rgba(57, 123, 255, 0.45);
+  border-color:
+    rgba(57, 123, 255, 0.45);
 
-  background: rgba(57, 123, 255, 0.09);
+  background:
+    rgba(57, 123, 255, 0.09);
 }
 
 
 .industry-icon {
   display: grid;
 
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 
   place-items: center;
 
   flex-shrink: 0;
 
-  border: 1px solid rgba(57, 123, 255, 0.18);
-  border-radius: 11px;
+  border:
+    1px solid
+    rgba(57, 123, 255, 0.18);
 
-  background: rgba(57, 123, 255, 0.12);
+  border-radius: 10px;
 
-  color: var(--nodeus-blue);
+  background:
+    rgba(57, 123, 255, 0.12);
+
+  color:
+    var(--nodeus-blue);
 }
 
 
@@ -868,7 +958,7 @@
 
   color: #dbe4f0;
 
-  font-size: 0.78rem;
+  font-size: 0.76rem;
 
   font-weight: 600;
 
@@ -891,13 +981,16 @@
   display: grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
 
-  gap: 13px;
+  gap: 10px;
 
-  margin-top: 28px;
+  margin-top: 20px;
 
-  padding-bottom: 4px;
+  padding-bottom: 0;
 }
 
 
@@ -911,26 +1004,31 @@
   display: grid;
 
   grid-template-columns:
-    50px
+    44px
     minmax(0, 1fr)
-    20px;
+    18px;
 
   align-items: center;
 
-  gap: 15px;
+  gap: 12px;
 
   min-width: 0;
 
-  padding: 18px 19px;
+  padding:
+    14px 16px;
 
   overflow: hidden;
 
   box-sizing: border-box;
 
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.075);
+
   border-radius: 17px;
 
-  background: rgba(255, 255, 255, 0.025);
+  background:
+    rgba(255, 255, 255, 0.025);
 
   color: inherit;
 
@@ -957,7 +1055,8 @@
 
   border-radius: 50%;
 
-  background: rgba(57, 123, 255, 0.13);
+  background:
+    rgba(57, 123, 255, 0.13);
 
   filter: blur(38px);
 
@@ -965,16 +1064,20 @@
 
   pointer-events: none;
 
-  transition: opacity 0.3s ease;
+  transition:
+    opacity 0.3s ease;
 }
 
 
 .resource-card:hover {
-  transform: translateY(-4px);
+  transform:
+    translateY(-4px);
 
-  border-color: rgba(57, 123, 255, 0.3);
+  border-color:
+    rgba(57, 123, 255, 0.3);
 
-  background: rgba(57, 123, 255, 0.075);
+  background:
+    rgba(57, 123, 255, 0.075);
 
   box-shadow:
     0 18px 40px rgba(0, 0, 0, 0.22);
@@ -997,8 +1100,8 @@
 
   display: grid;
 
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
 
   place-items: center;
 
@@ -1006,12 +1109,17 @@
 
   box-sizing: border-box;
 
-  border: 1px solid rgba(57, 123, 255, 0.22);
-  border-radius: 14px;
+  border:
+    1px solid
+    rgba(57, 123, 255, 0.22);
 
-  background: rgba(57, 123, 255, 0.11);
+  border-radius: 11px;
 
-  color: var(--nodeus-blue);
+  background:
+    rgba(57, 123, 255, 0.11);
+
+  color:
+    var(--nodeus-blue);
 }
 
 
@@ -1029,7 +1137,8 @@
 
 
 .resource-card h3 {
-  margin: 0 0 6px;
+  margin:
+    0 0 4px;
 
   color: #eef5ff;
 
@@ -1048,7 +1157,7 @@
 
   font-size: 0.77rem;
 
-  line-height: 1.55;
+  line-height: 1.45;
 }
 
 
@@ -1072,9 +1181,11 @@
 
 
 .resource-card:hover > svg {
-  color: var(--nodeus-blue);
+  color:
+    var(--nodeus-blue);
 
-  transform: translate(2px, -2px);
+  transform:
+    translate(2px, -2px);
 }
 
 
@@ -1086,9 +1197,12 @@
   display: grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
 
-  gap: 13px;
+  gap: 10px;
 }
 
 
@@ -1102,27 +1216,32 @@
   display: grid;
 
   grid-template-columns:
-    50px
+    44px
     minmax(0, 1fr)
-    20px;
+    18px;
 
   align-items: center;
 
-  gap: 17px;
+  gap: 13px;
 
   min-width: 0;
-  min-height: 126px;
 
-  padding: 21px;
+  min-height: 0;
+
+  padding: 16px;
 
   overflow: hidden;
 
   box-sizing: border-box;
 
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.075);
+
   border-radius: 17px;
 
-  background: rgba(255, 255, 255, 0.025);
+  background:
+    rgba(255, 255, 255, 0.025);
 
   text-decoration: none;
 
@@ -1147,7 +1266,8 @@
 
   border-radius: 50%;
 
-  background: rgba(57, 123, 255, 0.13);
+  background:
+    rgba(57, 123, 255, 0.13);
 
   filter: blur(38px);
 
@@ -1155,16 +1275,20 @@
 
   pointer-events: none;
 
-  transition: opacity 0.3s ease;
+  transition:
+    opacity 0.3s ease;
 }
 
 
 .about-menu-card:hover {
-  transform: translateY(-4px);
+  transform:
+    translateY(-4px);
 
-  border-color: rgba(57, 123, 255, 0.36);
+  border-color:
+    rgba(57, 123, 255, 0.36);
 
-  background: rgba(57, 123, 255, 0.075);
+  background:
+    rgba(57, 123, 255, 0.075);
 
   box-shadow:
     0 18px 40px rgba(0, 0, 0, 0.22);
@@ -1187,19 +1311,24 @@
 
   display: grid;
 
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
 
   place-items: center;
 
   flex-shrink: 0;
 
-  border: 1px solid rgba(57, 123, 255, 0.22);
-  border-radius: 14px;
+  border:
+    1px solid
+    rgba(57, 123, 255, 0.22);
 
-  background: rgba(57, 123, 255, 0.11);
+  border-radius: 11px;
 
-  color: var(--nodeus-blue);
+  background:
+    rgba(57, 123, 255, 0.11);
+
+  color:
+    var(--nodeus-blue);
 
   transition:
     transform 0.28s ease,
@@ -1209,11 +1338,14 @@
 
 
 .about-menu-card:hover .about-menu-icon {
-  transform: scale(1.05);
+  transform:
+    scale(1.05);
 
-  background: rgba(57, 123, 255, 0.35);
+  background:
+    rgba(57, 123, 255, 0.35);
 
-  color: #ffffff;
+  color:
+    #ffffff;
 }
 
 
@@ -1231,7 +1363,8 @@
 
 
 .about-menu-card h3 {
-  margin: 0 0 7px;
+  margin:
+    0 0 5px;
 
   color: #eef5ff;
 
@@ -1241,7 +1374,8 @@
 
   line-height: 1.25;
 
-  transition: color 0.25s ease;
+  transition:
+    color 0.25s ease;
 }
 
 
@@ -1254,12 +1388,13 @@
 
   font-size: 0.77rem;
 
-  line-height: 1.6;
+  line-height: 1.45;
 }
 
 
 .about-menu-card:hover h3 {
-  color: var(--nodeus-blue-light);
+  color:
+    var(--nodeus-blue-light);
 }
 
 
@@ -1279,9 +1414,11 @@
 
 
 .about-menu-card:hover > svg {
-  color: var(--nodeus-blue);
+  color:
+    var(--nodeus-blue);
 
-  transform: translate(3px, -3px);
+  transform:
+    translate(3px, -3px);
 }
 
 
@@ -1294,15 +1431,18 @@
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
-  gap: 20px;
+  gap: 15px;
 
-  margin-top: 25px;
+  margin-top: 18px;
 
-  padding-top: 21px;
+  padding-top: 16px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
 
   color: #64748b;
 
@@ -1318,7 +1458,8 @@
 
   gap: 7px;
 
-  color: var(--nodeus-blue);
+  color:
+    var(--nodeus-blue);
 
   font-size: 0.79rem;
 
@@ -1326,7 +1467,8 @@
 
   text-decoration: none;
 
-  transition: color 0.25s ease;
+  transition:
+    color 0.25s ease;
 }
 
 
@@ -1338,13 +1480,15 @@
 
 .mega-menu-bottom a svg,
 .about-menu .mega-menu-bottom a svg {
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.25s ease;
 }
 
 
 .mega-menu-bottom a:hover svg,
 .about-menu .mega-menu-bottom a:hover svg {
-  transform: translate(3px, -3px);
+  transform:
+    translate(3px, -3px);
 }
 
 
@@ -1367,6 +1511,13 @@
   align-items: center;
   justify-content: center;
 
+  /*
+   * IMPORTANT:
+   * This pushes the hamburger completely
+   * to the right side of the navbar.
+   */
+  margin-left: auto;
+
   width: 42px;
   height: 42px;
 
@@ -1374,10 +1525,14 @@
 
   flex-shrink: 0;
 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
   border-radius: 12px;
 
-  background: rgba(255, 255, 255, 0.04);
+  background:
+    rgba(255, 255, 255, 0.04);
 
   color: #ffffff;
 
@@ -1391,9 +1546,14 @@
 
 
 .mobile-menu-button:hover {
-  border-color: rgba(57, 123, 255, 0.3);
+  border-color:
+    rgba(57, 123, 255, 0.3);
 
-  background: rgba(57, 123, 255, 0.1);
+  background:
+    rgba(57, 123, 255, 0.1);
+
+  transform:
+    translateY(-1px);
 }
 
 
@@ -1404,7 +1564,8 @@
 @media (max-width: 1120px) {
 
   .navbar {
-    width: calc(100% - 32px);
+    width:
+      calc(100% - 32px);
   }
 
 
@@ -1450,13 +1611,54 @@
 
   .service-categories-grid {
     grid-template-columns:
-      repeat(3, minmax(0, 1fr));
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
   }
 
 
   .industries-grid {
     grid-template-columns:
-      repeat(4, minmax(0, 1fr));
+      repeat(
+        4,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .mega-menu,
+  .resources-menu,
+  .about-menu {
+    padding: 22px;
+  }
+
+
+  .mega-menu-header,
+  .about-menu .mega-menu-header {
+    gap: 28px;
+
+    margin-bottom: 17px;
+
+    padding-bottom: 17px;
+  }
+
+
+  .service-category-card {
+    padding: 15px;
+  }
+
+
+  .industry-card {
+    min-height: 72px;
+
+    padding: 12px;
+  }
+
+
+  .resource-card,
+  .about-menu-card {
+    padding: 14px;
   }
 
 }
@@ -1480,9 +1682,11 @@
 
 
   .resources-menu {
-    width: calc(100vw - 32px);
+    width:
+      calc(100vw - 32px);
 
-    max-width: calc(100vw - 32px);
+    max-width:
+      calc(100vw - 32px);
 
     padding: 27px;
   }
@@ -1506,13 +1710,38 @@
 
   .service-categories-grid {
     grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
   }
 
 
   .industries-grid {
     grid-template-columns:
-      repeat(3, minmax(0, 1fr));
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .service-categories-grid,
+  .industries-grid,
+  .resources-grid,
+  .about-menu-grid {
+    gap: 8px;
+  }
+
+
+  .service-category-card {
+    padding: 14px;
+  }
+
+
+  .resource-card,
+  .about-menu-card {
+    padding: 13px;
   }
 
 }
@@ -1524,14 +1753,15 @@
 
 @media (max-width: 760px) {
 
-  /* -----------------------------------------
+  /* =======================================================
      NAVBAR
-  ----------------------------------------- */
+     ======================================================= */
 
   .navbar {
     top: 11px;
 
-    width: calc(100% - 24px);
+    width:
+      calc(100% - 24px);
 
     min-height: 62px;
 
@@ -1545,6 +1775,17 @@
   }
 
 
+  /*
+   * Keep the logo on the LEFT.
+   */
+
+  .logo {
+    margin-right: 0;
+
+    flex-shrink: 0;
+  }
+
+
   .nodeus-logo {
     width: 118px;
 
@@ -1552,23 +1793,30 @@
   }
 
 
-  /* -----------------------------------------
-     MOBILE BUTTON
-  ----------------------------------------- */
+  /*
+   * Hamburger is now ALWAYS pushed
+   * to the extreme RIGHT.
+   */
 
   .mobile-menu-button {
     display: inline-flex;
+
+    margin-left: auto;
+
+    width: 42px;
+    height: 42px;
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      MOBILE NAV PANEL
-  ----------------------------------------- */
+     ======================================================= */
 
   .nav-links {
     position: absolute;
 
-    top: calc(100% + 10px);
+    top:
+      calc(100% + 10px);
 
     left: 0;
     right: 0;
@@ -1578,13 +1826,15 @@
     flex-direction: column;
 
     align-items: stretch;
+
     justify-content: flex-start;
 
     gap: 3px;
 
     width: 100%;
 
-    max-height: calc(100dvh - 95px);
+    max-height:
+      calc(100dvh - 95px);
 
     margin: 0;
 
@@ -1595,7 +1845,9 @@
 
     box-sizing: border-box;
 
-    border: 1px solid transparent;
+    border:
+      1px solid
+      transparent;
 
     border-radius: 18px;
 
@@ -1615,7 +1867,8 @@
 
     pointer-events: none;
 
-    transform: translateY(-8px);
+    transform:
+      translateY(-8px);
 
     transition:
       opacity 0.25s ease,
@@ -1640,22 +1893,23 @@
 
     pointer-events: auto;
 
-    transform: translateY(0);
+    transform:
+      translateY(0);
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      HOME
-  ----------------------------------------- */
+     ======================================================= */
 
   .mobile-home-link {
     display: flex !important;
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      MOBILE LINKS
-  ----------------------------------------- */
+     ======================================================= */
 
   .nav-links > a,
   .nav-main-link,
@@ -1664,6 +1918,7 @@
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     width: 100%;
@@ -1674,7 +1929,8 @@
 
     border-radius: 12px;
 
-    color: var(--nav-text-light);
+    color:
+      var(--nav-text-light);
 
     font-size: 0.9rem;
   }
@@ -1685,13 +1941,14 @@
   .nav-main-button:hover,
   .nav-about-trigger:hover,
   .nav-about-trigger.active {
-    background: rgba(57, 123, 255, 0.09);
+    background:
+      rgba(57, 123, 255, 0.09);
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      DROPDOWN WRAPPERS
-  ----------------------------------------- */
+     ======================================================= */
 
   .nav-dropdown-wrapper,
   .about-dropdown-wrapper {
@@ -1703,9 +1960,9 @@
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      DROPDOWN HEADING
-  ----------------------------------------- */
+     ======================================================= */
 
   .nav-dropdown-heading {
     display: grid;
@@ -1745,9 +2002,9 @@
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      MOBILE ABOUT
-  ----------------------------------------- */
+     ======================================================= */
 
   .nav-about-trigger {
     justify-content: space-between;
@@ -1762,9 +2019,9 @@
   }
 
 
-  /* -----------------------------------------
-     ALL MOBILE DROPDOWN PANELS
-  ----------------------------------------- */
+  /* =======================================================
+     MOBILE DROPDOWN PANELS
+     ======================================================= */
 
   .mega-menu,
   .resources-menu,
@@ -1774,21 +2031,25 @@
     display: none;
 
     width: 100%;
+
     max-width: none;
+
     max-height: none;
 
     margin:
-      3px
+      2px
       0
-      7px;
+      5px;
 
-    padding: 14px;
+    padding: 10px;
 
     overflow: visible;
 
     box-sizing: border-box;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.07);
 
     border-radius: 14px;
 
@@ -1822,23 +2083,21 @@
   }
 
 
-  /* -----------------------------------------
-     MOBILE HEADER
-  ----------------------------------------- */
+  /* =======================================================
+     MOBILE MENU HEADER
+     ======================================================= */
 
   .mega-menu-header,
   .about-menu .mega-menu-header {
     display: block;
 
     margin:
-      0
-      0
-      17px;
+      0 0 12px;
 
     padding:
-      5px
-      5px
-      17px;
+      3px
+      3px
+      13px;
 
     border-bottom:
       1px solid
@@ -1856,7 +2115,7 @@
 
   .mega-menu-header h2,
   .about-menu .mega-menu-header h2 {
-    font-size: 1.65rem;
+    font-size: 1.5rem;
 
     line-height: 1;
   }
@@ -1864,17 +2123,17 @@
 
   .mega-menu-header > p,
   .about-menu .mega-menu-header > p {
-    margin-top: 14px;
+    margin-top: 9px;
 
     font-size: 0.81rem;
 
-    line-height: 1.65;
+    line-height: 1.45;
   }
 
 
-  /* -----------------------------------------
-     MOBILE SOLUTIONS
-  ----------------------------------------- */
+  /* =======================================================
+     MOBILE SERVICES
+     ======================================================= */
 
   .service-categories-grid {
     grid-template-columns: 1fr;
@@ -1886,21 +2145,37 @@
   .service-category-card {
     min-height: auto;
 
-    padding: 16px;
+    padding: 13px;
   }
 
 
   .service-category-top {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
+  }
+
+
+  .service-category-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .service-category-card h3 {
+    margin-bottom: 5px;
   }
 
 
   .service-category-card > p {
     min-height: auto;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
+
+  /*
+   * Hide the detailed service list on mobile
+   * to keep the dropdown compact.
+   */
 
   .service-list {
     display: none;
@@ -1908,13 +2183,13 @@
 
 
   .view-all-services {
-    margin-top: 12px;
+    margin-top: 8px;
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      MOBILE INDUSTRIES
-  ----------------------------------------- */
+     ======================================================= */
 
   .industries-grid {
     grid-template-columns: 1fr;
@@ -1924,115 +2199,121 @@
 
 
   .industry-card {
-    min-height: 70px;
+    min-height: 64px;
 
-    padding: 12px;
+    padding: 11px;
   }
 
 
-  /* -----------------------------------------
+  .industry-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  /* =======================================================
      MOBILE RESOURCES
-  ----------------------------------------- */
+     ======================================================= */
 
   .resources-grid {
     grid-template-columns: 1fr;
 
-    gap: 8px;
+    gap: 7px;
 
-    margin-top: 18px;
+    margin-top: 13px;
 
-    padding-bottom: 7px;
+    padding-bottom: 0;
   }
 
 
   .resource-card {
     grid-template-columns:
-      46px
+      40px
       minmax(0, 1fr)
-      18px;
+      16px;
 
-    gap: 12px;
+    gap: 10px;
 
-    padding: 14px;
+    padding: 11px;
 
     border-radius: 14px;
   }
 
 
   .resource-card-icon {
-    width: 46px;
-    height: 46px;
+    width: 40px;
+    height: 40px;
 
-    border-radius: 12px;
+    border-radius: 11px;
   }
 
 
   .resource-card h3 {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 
-    font-size: 0.89rem;
+    font-size: 0.87rem;
   }
 
 
   .resource-card p {
-    font-size: 0.74rem;
+    font-size: 0.73rem;
 
-    line-height: 1.5;
+    line-height: 1.4;
   }
 
 
-  /* -----------------------------------------
+  /* =======================================================
      MOBILE ABOUT
-  ----------------------------------------- */
+     ======================================================= */
 
   .about-menu-grid {
     grid-template-columns: 1fr;
 
-    gap: 8px;
+    gap: 7px;
   }
 
 
   .about-menu-card {
     grid-template-columns:
-      46px
+      40px
       minmax(0, 1fr)
-      18px;
+      16px;
 
-    min-height: auto;
+    gap: 10px;
 
-    gap: 14px;
+    min-height: 0;
 
-    padding: 16px;
+    padding: 12px;
 
     border-radius: 14px;
   }
 
 
   .about-menu-icon {
-    width: 46px;
-    height: 46px;
+    width: 40px;
+    height: 40px;
 
-    border-radius: 12px;
+    border-radius: 11px;
   }
 
 
   .about-menu-card h3 {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 
-    font-size: 0.89rem;
+    font-size: 0.87rem;
   }
 
 
   .about-menu-card p {
-    font-size: 0.74rem;
+    font-size: 0.73rem;
 
-    line-height: 1.55;
+    line-height: 1.4;
   }
 
 
-  /* -----------------------------------------
-     MENU BOTTOM
-  ----------------------------------------- */
+  /* =======================================================
+     MOBILE MENU BOTTOM
+     ======================================================= */
 
   .mega-menu-bottom,
   .about-menu .mega-menu-bottom {
@@ -2040,20 +2321,20 @@
 
     align-items: flex-start;
 
-    gap: 11px;
+    gap: 8px;
 
-    margin-top: 17px;
+    margin-top: 13px;
 
     padding:
-      17px
-      5px
-      3px;
+      13px
+      3px
+      2px;
   }
 
 
-  /* -----------------------------------------
-     CONTACT
-  ----------------------------------------- */
+  /* =======================================================
+     MOBILE CONTACT
+     ======================================================= */
 
   .nav-contact {
     width: 100%;
@@ -2080,11 +2361,14 @@
 @media (max-width: 430px) {
 
   .navbar {
-    width: calc(100% - 18px);
+    width:
+      calc(100% - 18px);
 
     min-height: 60px;
 
     padding-left: 13px;
+
+    padding-right: 10px;
   }
 
 
@@ -2093,694 +2377,18 @@
   }
 
 
+  /*
+   * Keep hamburger on the RIGHT even
+   * on very narrow screens.
+   */
+
   .mobile-menu-button {
     width: 40px;
     height: 40px;
+
+    margin-left: auto;
   }
 
-
-  .mega-menu,
-  .resources-menu,
-  .about-menu {
-    padding: 11px;
-  }
-
-
-  .mega-menu-header,
-  .about-menu .mega-menu-header {
-    padding:
-      4px
-      4px
-      15px;
-  }
-
-
-  .mega-menu-header h2,
-  .about-menu .mega-menu-header h2 {
-    font-size: 1.5rem;
-  }
-
-
-  .service-category-card {
-    padding: 14px;
-  }
-
-
-  .industry-card {
-    min-height: 66px;
-
-    padding: 11px;
-  }
-
-
-  .resource-card {
-    grid-template-columns:
-      42px
-      minmax(0, 1fr)
-      16px;
-
-    gap: 11px;
-
-    padding: 13px;
-  }
-
-
-  .resource-card-icon {
-    width: 42px;
-    height: 42px;
-  }
-
-
-  .resource-card h3 {
-    font-size: 0.85rem;
-  }
-
-
-  .resource-card p {
-    font-size: 0.71rem;
-  }
-
-
-  .about-menu-card {
-    grid-template-columns:
-      42px
-      minmax(0, 1fr)
-      16px;
-
-    gap: 12px;
-
-    padding: 14px;
-  }
-
-
-  .about-menu-icon {
-    width: 42px;
-    height: 42px;
-  }
-
-
-  .about-menu-card h3 {
-    font-size: 0.85rem;
-  }
-
-
-  .about-menu-card p {
-    display: none;
-  }
-
-}
-
-
-/* =========================================================
-   VERY SMALL DEVICES — 360px
-   ========================================================= */
-
-@media (max-width: 360px) {
-
-  .navbar {
-    width: calc(100% - 14px);
-
-    padding-left: 11px;
-    padding-right: 8px;
-  }
-
-
-  .nodeus-logo {
-    width: 100px;
-  }
-
-
-  .mobile-menu-button {
-    width: 38px;
-    height: 38px;
-  }
-
-
-  .nav-links.open {
-    padding: 8px;
-  }
-
-
-  .nav-links > a,
-  .nav-main-link,
-  .nav-main-button,
-  .nav-about-trigger {
-    font-size: 0.86rem;
-  }
-
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
-.nav-links a:focus-visible,
-.nav-links button:focus-visible,
-.mobile-menu-button:focus-visible {
-  outline: 2px solid var(--nodeus-blue-light);
-
-  outline-offset: 2px;
-}
-
-
-/* =========================================================
-   REDUCE MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .navbar,
-  .nav-links,
-  .mega-menu,
-  .resources-menu,
-  .about-menu,
-  .service-category-card,
-  .industry-card,
-  .resource-card,
-  .about-menu-card,
-  .nav-contact,
-  .mobile-menu-button {
-    transition: none !important;
-  }
-
-}
-
-
-
-/* =========================================
-   COMPACT DROPDOWN MENUS
-   Removes unnecessary vertical spacing
-========================================= */
-
-/* -----------------------------------------
-   DESKTOP MENU CONTAINER
------------------------------------------ */
-
-.mega-menu,
-.resources-menu,
-.about-menu {
-  padding: 26px;
-}
-
-
-/* -----------------------------------------
-   MENU HEADER
------------------------------------------ */
-
-.mega-menu-header,
-.about-menu .mega-menu-header {
-  gap: 40px;
-
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-}
-
-
-.mega-eyebrow,
-.about-menu .mega-eyebrow {
-  margin-bottom: 9px;
-}
-
-
-.mega-menu-header h2,
-.about-menu .mega-menu-header h2 {
-  line-height: 1;
-}
-
-
-.mega-menu-header > p,
-.about-menu .mega-menu-header > p {
-  line-height: 1.55;
-}
-
-
-/* =========================================
-   SERVICES / SOLUTIONS
-========================================= */
-
-.service-categories-grid {
-  gap: 10px;
-}
-
-
-.service-category-card {
-  min-height: 0;
-
-  padding: 17px;
-}
-
-
-.service-category-top {
-  margin-bottom: 14px;
-}
-
-
-.service-category-icon {
-  width: 38px;
-  height: 38px;
-
-  border-radius: 10px;
-}
-
-
-.service-category-card h3 {
-  margin-bottom: 6px;
-}
-
-
-.service-category-card > p {
-  min-height: 0;
-
-  margin-bottom: 10px;
-
-  line-height: 1.45;
-}
-
-
-.service-list {
-  gap: 4px;
-
-  margin-bottom: 10px;
-}
-
-
-.service-list span {
-  line-height: 1.25;
-}
-
-
-.view-all-services {
-  margin-top: auto;
-}
-
-
-/* =========================================
-   INDUSTRIES
-========================================= */
-
-.industries-grid {
-  gap: 10px;
-}
-
-
-.industry-card {
-  min-height: 78px;
-
-  padding: 13px;
-
-  gap: 9px;
-}
-
-
-.industry-icon {
-  width: 36px;
-  height: 36px;
-
-  border-radius: 10px;
-}
-
-
-.industry-card span {
-  font-size: 0.76rem;
-}
-
-
-/* =========================================
-   RESOURCES
-========================================= */
-
-.resources-grid {
-  gap: 10px;
-
-  margin-top: 20px;
-
-  padding-bottom: 0;
-}
-
-
-.resource-card {
-  grid-template-columns:
-    44px
-    minmax(0, 1fr)
-    18px;
-
-  gap: 12px;
-
-  padding: 14px 16px;
-}
-
-
-.resource-card-icon {
-  width: 44px;
-  height: 44px;
-
-  border-radius: 11px;
-}
-
-
-.resource-card h3 {
-  margin-bottom: 4px;
-}
-
-
-.resource-card p {
-  line-height: 1.45;
-}
-
-
-/* =========================================
-   ABOUT CARDS
-========================================= */
-
-.about-menu-grid {
-  gap: 10px;
-}
-
-
-.about-menu-card {
-  grid-template-columns:
-    44px
-    minmax(0, 1fr)
-    18px;
-
-  gap: 13px;
-
-  min-height: 0;
-
-  padding: 16px;
-}
-
-
-.about-menu-icon {
-  width: 44px;
-  height: 44px;
-
-  border-radius: 11px;
-}
-
-
-.about-menu-card h3 {
-  margin:
-    0 0 5px;
-}
-
-
-.about-menu-card p {
-  line-height: 1.45;
-}
-
-
-/* =========================================
-   MENU BOTTOM
-========================================= */
-
-.mega-menu-bottom,
-.about-menu .mega-menu-bottom {
-  gap: 15px;
-
-  margin-top: 18px;
-  padding-top: 16px;
-}
-
-
-/* =========================================
-   LAPTOP COMPACT
-========================================= */
-
-@media (max-width: 1120px) {
-
-  .mega-menu,
-  .resources-menu,
-  .about-menu {
-    padding: 22px;
-  }
-
-
-  .mega-menu-header,
-  .about-menu .mega-menu-header {
-    gap: 28px;
-
-    margin-bottom: 17px;
-    padding-bottom: 17px;
-  }
-
-
-  .service-category-card {
-    padding: 15px;
-  }
-
-
-  .industry-card {
-    min-height: 72px;
-
-    padding: 12px;
-  }
-
-
-  .resource-card,
-  .about-menu-card {
-    padding: 14px;
-  }
-
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-  .mega-menu,
-  .resources-menu,
-  .about-menu {
-    padding: 20px;
-  }
-
-
-  .mega-menu-header,
-  .about-menu .mega-menu-header {
-    gap: 22px;
-
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-  }
-
-
-  .service-categories-grid,
-  .industries-grid,
-  .resources-grid,
-  .about-menu-grid {
-    gap: 8px;
-  }
-
-
-  .service-category-card {
-    padding: 14px;
-  }
-
-
-  .resource-card,
-  .about-menu-card {
-    padding: 13px;
-  }
-
-}
-
-
-/* =========================================
-   MOBILE DROPDOWNS
-========================================= */
-
-@media (max-width: 760px) {
-
-  .mega-menu,
-  .resources-menu,
-  .about-menu {
-    margin: 2px 0 5px;
-
-    padding: 10px;
-  }
-
-
-  .mega-menu-header,
-  .about-menu .mega-menu-header {
-    margin-bottom: 12px;
-
-    padding:
-      3px
-      3px
-      13px;
-  }
-
-
-  .mega-menu-header h2,
-  .about-menu .mega-menu-header h2 {
-    font-size: 1.5rem;
-  }
-
-
-  .mega-menu-header > p,
-  .about-menu .mega-menu-header > p {
-    margin-top: 9px;
-
-    line-height: 1.45;
-  }
-
-
-  /* Services */
-
-  .service-category-card {
-    padding: 13px;
-  }
-
-
-  .service-category-top {
-    margin-bottom: 10px;
-  }
-
-
-  .service-category-icon {
-    width: 36px;
-    height: 36px;
-  }
-
-
-  .service-category-card h3 {
-    margin-bottom: 5px;
-  }
-
-
-  .service-category-card > p {
-    margin-bottom: 8px;
-  }
-
-
-  .view-all-services {
-    margin-top: 8px;
-  }
-
-
-  /* Industries */
-
-  .industry-card {
-    min-height: 64px;
-
-    padding: 11px;
-  }
-
-
-  .industry-icon {
-    width: 34px;
-    height: 34px;
-  }
-
-
-  /* Resources */
-
-  .resources-grid {
-    gap: 7px;
-
-    margin-top: 13px;
-  }
-
-
-  .resource-card {
-    grid-template-columns:
-      40px
-      minmax(0, 1fr)
-      16px;
-
-    gap: 10px;
-
-    padding: 11px;
-  }
-
-
-  .resource-card-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-
-  .resource-card h3 {
-    margin-bottom: 3px;
-
-    font-size: 0.87rem;
-  }
-
-
-  .resource-card p {
-    font-size: 0.73rem;
-
-    line-height: 1.4;
-  }
-
-
-  /* About */
-
-  .about-menu-grid {
-    gap: 7px;
-  }
-
-
-  .about-menu-card {
-    grid-template-columns:
-      40px
-      minmax(0, 1fr)
-      16px;
-
-    gap: 10px;
-
-    min-height: 0;
-
-    padding: 12px;
-  }
-
-
-  .about-menu-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-
-  .about-menu-card h3 {
-    margin-bottom: 3px;
-
-    font-size: 0.87rem;
-  }
-
-
-  .about-menu-card p {
-    font-size: 0.73rem;
-
-    line-height: 1.4;
-  }
-
-
-  /* Bottom */
-
-  .mega-menu-bottom,
-  .about-menu .mega-menu-bottom {
-    gap: 8px;
-
-    margin-top: 13px;
-
-    padding:
-      13px
-      3px
-      2px;
-  }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 430px) {
 
   .mega-menu,
   .resources-menu,
@@ -2833,6 +2441,16 @@
   }
 
 
+  .resource-card h3 {
+    font-size: 0.85rem;
+  }
+
+
+  .resource-card p {
+    font-size: 0.71rem;
+  }
+
+
   .about-menu-card {
     grid-template-columns:
       38px
@@ -2848,6 +2466,98 @@
   .about-menu-icon {
     width: 38px;
     height: 38px;
+  }
+
+
+  .about-menu-card h3 {
+    font-size: 0.85rem;
+  }
+
+
+  .about-menu-card p {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .navbar {
+    width:
+      calc(100% - 14px);
+
+    padding-left: 11px;
+
+    padding-right: 8px;
+  }
+
+
+  .nodeus-logo {
+    width: 100px;
+  }
+
+
+  .mobile-menu-button {
+    width: 38px;
+    height: 38px;
+
+    margin-left: auto;
+  }
+
+
+  .nav-links.open {
+    padding: 8px;
+  }
+
+
+  .nav-links > a,
+  .nav-main-link,
+  .nav-main-button,
+  .nav-about-trigger {
+    font-size: 0.86rem;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.nav-links a:focus-visible,
+.nav-links button:focus-visible,
+.mobile-menu-button:focus-visible {
+  outline:
+    2px solid
+    var(--nodeus-blue-light);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar,
+  .nav-links,
+  .mega-menu,
+  .resources-menu,
+  .about-menu,
+  .service-category-card,
+  .industry-card,
+  .resource-card,
+  .about-menu-card,
+  .nav-contact,
+  .mobile-menu-button {
+    transition: none !important;
   }
 
 }
