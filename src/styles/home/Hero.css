@@ -7,10 +7,6 @@
 
   width: 100%;
 
-  /*
-    The hero is allowed to fill the viewport,
-    but it will never become excessively tall.
-  */
   min-height: 720px;
 
   height: min(
@@ -25,18 +21,20 @@
   align-items: center;
 
   /*
-    Keep the content inside the same centered
-    1300px layout system used across the website.
+    Horizontal layout padding only.
+    Vertical positioning is controlled by
+    hero-content transform so we can create
+    more visual space above without adding
+    unnecessary space below.
   */
   padding:
-    110px
+    0
     max(
       24px,
       calc(
         (100% - 1300px) / 2
       )
-    )
-    0px;
+    );
 
   background:
     radial-gradient(
@@ -66,24 +64,31 @@
 
   z-index: 3;
 
-  width: min(
-    760px,
-    100%
-  );
+  width:
+    min(
+      760px,
+      100%
+    );
 
   max-width: 760px;
 
   flex-shrink: 0;
 
-  /*
-    The content itself controls its height.
-    This is important for consistent browser zoom behavior.
-  */
   display: flex;
 
   flex-direction: column;
 
   align-items: flex-start;
+
+  /*
+    Creates more breathing room above the content
+    without increasing the total hero height.
+
+    This is intentionally a transform instead of
+    padding so the bottom spacing remains controlled.
+  */
+  transform:
+    translateY(48px);
 }
 
 
@@ -116,6 +121,7 @@
 
   font-weight: 700;
 }
+
 
 .hero h1 span {
   color: #347cff;
@@ -221,6 +227,7 @@
     );
 }
 
+
 .primary-button:hover {
   transform:
     translateY(-3px);
@@ -263,6 +270,7 @@
     );
 }
 
+
 .secondary-button:hover {
   border-color: #347cff;
 
@@ -284,21 +292,6 @@
 /* =========================================================
    SCROLL TO EXPLORE
 ========================================================= */
-
-/*
-   IMPORTANT FIX
-
-   This is NO LONGER position:absolute.
-
-   It now belongs to the normal hero-content flow,
-   so it always stays directly underneath the buttons
-   regardless of:
-   - browser zoom
-   - viewport width
-   - viewport height
-   - text wrapping
-   - mobile/tablet layout
-*/
 
 .hero-scroll {
   position: relative;
@@ -342,9 +335,11 @@
     transform 0.3s ease;
 }
 
+
 .hero-scroll:hover {
   color: #ffffff;
 }
+
 
 .hero-scroll svg {
   flex-shrink: 0;
@@ -352,6 +347,7 @@
   transition:
     transform 0.3s ease;
 }
+
 
 .hero-scroll:hover svg {
   transform:
@@ -477,9 +473,6 @@
       600px
     );
 
-  /*
-    Orbit follows the same 1300px content boundary.
-  */
   right:
     max(
       24px,
@@ -569,6 +562,7 @@
   position: absolute;
 
   top: 50%;
+
   left: 50%;
 
   width:
@@ -649,6 +643,7 @@
 ========================================================= */
 
 @keyframes orbitRotate {
+
   from {
     transform:
       rotate(25deg)
@@ -660,9 +655,12 @@
       rotate(385deg)
       scaleY(0.45);
   }
+
 }
 
+
 @keyframes orbitRotateReverse {
+
   from {
     transform:
       rotate(-25deg)
@@ -674,6 +672,7 @@
       rotate(-385deg)
       scaleY(0.45);
   }
+
 }
 
 
@@ -689,6 +688,7 @@
     padding-right: 6vw;
   }
 
+
   .hero-content {
     width:
       min(
@@ -697,7 +697,11 @@
       );
 
     max-width: 700px;
+
+    transform:
+      translateY(45px);
   }
+
 
   .hero h1 {
     font-size:
@@ -707,6 +711,7 @@
         6.2rem
       );
   }
+
 
   .hero-orbit {
     width:
@@ -725,6 +730,7 @@
 
     right: 5vw;
   }
+
 }
 
 
@@ -744,12 +750,12 @@
       );
 
     padding:
-      100px
-      6vw
-      70px;
+      0
+      6vw;
 
     align-items: center;
   }
+
 
   .hero-content {
     width:
@@ -759,7 +765,11 @@
       );
 
     max-width: 600px;
+
+    transform:
+      translateY(38px);
   }
+
 
   .hero h1 {
     font-size:
@@ -772,6 +782,7 @@
     line-height: 0.97;
   }
 
+
   .hero p {
     max-width: 540px;
 
@@ -779,6 +790,7 @@
 
     line-height: 1.65;
   }
+
 
   .hero-orbit {
     width: 420px;
@@ -792,11 +804,13 @@
     opacity: 0.32;
   }
 
+
   .hero-glow-one {
     right: 0;
 
     top: 18%;
   }
+
 
   .hero-glow-two {
     right: 8%;
@@ -804,9 +818,11 @@
     bottom: 8%;
   }
 
+
   .hero-scroll {
     margin-top: 28px;
   }
+
 }
 
 
@@ -826,18 +842,22 @@
       );
 
     padding:
-      90px
-      5vw
-      60px;
+      0
+      5vw;
 
     align-items: center;
   }
+
 
   .hero-content {
     width: 100%;
 
     max-width: 600px;
+
+    transform:
+      translateY(30px);
   }
+
 
   .hero h1 {
     max-width: 600px;
@@ -850,11 +870,13 @@
       );
   }
 
+
   .hero p {
     max-width: 520px;
 
     font-size: 0.96rem;
   }
+
 
   .hero-orbit {
     width: 390px;
@@ -868,9 +890,11 @@
     opacity: 0.2;
   }
 
+
   .hero-scroll {
     margin-top: 26px;
   }
+
 }
 
 
@@ -881,16 +905,12 @@
 @media (max-width: 600px) {
 
   .hero {
-    /*
-      Content-driven minimum height.
-      No more artificial 700px mobile hero.
-    */
     min-height: 0;
 
     height: auto;
 
     padding:
-      110px
+      125px
       20px
       45px;
 
@@ -910,6 +930,13 @@
     max-width: 100%;
 
     z-index: 3;
+
+    /*
+      Mobile gets a smaller downward shift
+      because the hero is content-driven.
+    */
+    transform:
+      translateY(15px);
   }
 
 
@@ -970,6 +997,7 @@
     gap: 10px;
   }
 
+
   .primary-button,
   .secondary-button {
     min-height: 44px;
@@ -993,6 +1021,7 @@
 
     gap: 8px;
   }
+
 
   .hero-scroll svg {
     width: 16px;
@@ -1069,6 +1098,7 @@
       );
   }
 
+
   .orbit-logo {
     width: 55%;
 
@@ -1092,6 +1122,7 @@
     opacity: 0.55;
   }
 
+
   .hero-glow-two {
     width: 180px;
 
@@ -1103,6 +1134,7 @@
 
     opacity: 0.4;
   }
+
 }
 
 
@@ -1114,10 +1146,17 @@
 
   .hero {
     padding:
-      100px
+      115px
       18px
       38px;
   }
+
+
+  .hero-content {
+    transform:
+      translateY(10px);
+  }
+
 
   .hero h1 {
     font-size: 2.7rem;
@@ -1127,6 +1166,7 @@
     margin-bottom: 20px;
   }
 
+
   .hero p {
     font-size: 0.86rem;
 
@@ -1135,9 +1175,11 @@
     margin-bottom: 24px;
   }
 
+
   .hero-actions {
     gap: 8px;
   }
+
 
   .primary-button,
   .secondary-button {
@@ -1150,11 +1192,13 @@
     font-size: 0.74rem;
   }
 
+
   .hero-scroll {
     margin-top: 24px;
 
     font-size: 0.7rem;
   }
+
 
   .hero-orbit {
     width: 290px;
@@ -1176,15 +1220,18 @@
     opacity: 0.13;
   }
 
+
   .orbit-center {
     width: 66px;
 
     height: 66px;
   }
 
+
   .orbit-logo {
     width: 54%;
   }
+
 }
 
 
@@ -1211,9 +1258,14 @@
     align-items: center;
   }
 
+
   .hero-content {
     max-width: 600px;
+
+    transform:
+      translateY(25px);
   }
+
 
   .hero h1 {
     font-size:
@@ -1226,6 +1278,7 @@
     margin-bottom: 18px;
   }
 
+
   .hero p {
     max-width: 550px;
 
@@ -1234,9 +1287,11 @@
     font-size: 0.88rem;
   }
 
+
   .hero-scroll {
     margin-top: 22px;
   }
+
 
   .hero-orbit {
     width: 330px;
@@ -1249,6 +1304,7 @@
 
     opacity: 0.16;
   }
+
 }
 
 
@@ -1263,7 +1319,9 @@
     animation: none;
   }
 
+
   .hero-scroll {
     animation: none;
   }
+
 }
