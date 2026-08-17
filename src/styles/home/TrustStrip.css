@@ -14,11 +14,13 @@
   --trust-muted: #8995a8;
 
   position: relative;
+
   width: 100%;
+
   box-sizing: border-box;
 
   padding:
-    clamp(80px, 9vw, 140px)
+    clamp(90px, 10vw, 150px)
     max(24px, 6vw);
 
   overflow: hidden;
@@ -41,13 +43,14 @@
 
 
 /* =========================================================
-   BACKGROUND
+   BACKGROUND GRID
 ========================================================= */
 
 .trust-strip::before {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   pointer-events: none;
@@ -76,7 +79,9 @@
 }
 
 
-/* Blue atmospheric glow */
+/* =========================================================
+   BLUE ATMOSPHERIC GLOW
+========================================================= */
 
 .trust-strip::after {
   content: "";
@@ -84,9 +89,11 @@
   position: absolute;
 
   width: 500px;
+
   height: 500px;
 
   top: -260px;
+
   right: -180px;
 
   border-radius: 50%;
@@ -106,6 +113,7 @@
 
 .trust-grid {
   position: relative;
+
   z-index: 2;
 
   width: min(1280px, 100%);
@@ -115,10 +123,11 @@
   display: grid;
 
   grid-template-columns:
-    minmax(280px, 0.72fr)
-    minmax(0, 1.28fr);
+    minmax(360px, 0.78fr)
+    minmax(0, 1.22fr);
 
-  gap: clamp(45px, 7vw, 110px);
+  gap:
+    clamp(55px, 7vw, 110px);
 
   align-items: start;
 }
@@ -134,10 +143,14 @@
   align-self: start;
 
   padding-top: 8px;
+
+  min-width: 0;
 }
 
 
-/* Small blue marker */
+/* =========================================================
+   SMALL BLUE MARKER
+========================================================= */
 
 .trust-intro::before {
   content: "";
@@ -145,9 +158,10 @@
   display: block;
 
   width: 42px;
+
   height: 3px;
 
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 
   border-radius: 999px;
 
@@ -165,36 +179,78 @@
 
 
 /* =========================================================
+   INTRO LABEL
+========================================================= */
+
+.trust-intro-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #ffffff;
+
+  font-size: 0.95rem;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
    INTRO HEADING
 ========================================================= */
 
 .trust-intro h2 {
-  max-width: 520px;
+  width: 100%;
+
+  max-width: 600px;
 
   margin:
     0
     0
-    25px;
+    28px;
 
   color: var(--trust-text);
 
   font-size:
     clamp(
-      3rem,
-      5.2vw,
+      3.4rem,
+      5.4vw,
       5.7rem
     );
 
   font-weight: 700;
 
-  line-height: 0.91;
+  /*
+    Increased from 0.91.
+    This is the main fix for the squeezed appearance.
+  */
+  line-height: 0.99;
 
   letter-spacing: -0.065em;
+
+  text-wrap: balance;
 }
 
 
+/*
+   Make the blue phrase its own clean line.
+
+   This prevents:
+   "Our"
+   "people."
+
+   and gives the heading a much more intentional
+   editorial layout.
+*/
+
 .trust-intro h2 span {
-  display: inline;
+  display: block;
+
+  width: max-content;
+
+  max-width: 100%;
 
   color: var(--trust-blue);
 
@@ -209,7 +265,9 @@
 ========================================================= */
 
 .trust-intro p {
-  max-width: 430px;
+  width: 100%;
+
+  max-width: 470px;
 
   margin: 0;
 
@@ -217,9 +275,9 @@
 
   font-size:
     clamp(
-      0.9rem,
+      0.95rem,
       1.1vw,
-      1rem
+      1.05rem
     );
 
   line-height: 1.8;
@@ -247,7 +305,6 @@
 
 /* =========================================================
    CAPABILITY CARD
-   Redesigned as horizontal editorial rows
 ========================================================= */
 
 .capability-card {
@@ -272,7 +329,7 @@
   column-gap: 20px;
 
   padding:
-    27px
+    29px
     4px;
 
   overflow: hidden;
@@ -287,7 +344,7 @@
 
   background: transparent;
 
-  backdrop-filter: none;
+  --arrow-opacity: 0;
 
   transition:
     padding 0.35s ease,
@@ -363,6 +420,8 @@
   box-shadow: none;
 
   background: transparent;
+
+  --arrow-opacity: 1;
 }
 
 
@@ -420,6 +479,7 @@
   grid-column: 2;
 
   width: 48px;
+
   height: 48px;
 
   box-sizing: border-box;
@@ -497,7 +557,10 @@
 
   z-index: 2;
 
-  margin: 0 0 6px;
+  margin:
+    0
+    0
+    7px;
 
   color: var(--trust-text);
 
@@ -510,7 +573,7 @@
 
   font-weight: 650;
 
-  line-height: 1.15;
+  line-height: 1.2;
 
   letter-spacing: -0.035em;
 }
@@ -527,8 +590,7 @@
 
   margin: 0;
 
-  color:
-    #7f8b9d;
+  color: #7f8b9d;
 
   font-size:
     clamp(
@@ -537,27 +599,16 @@
       0.91rem
     );
 
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 
 /* =========================================================
-   SUBTLE ARROW INDICATOR
-   Added through CSS without JSX
+   ARROW INDICATOR
 ========================================================= */
 
-.capability-card {
-  --arrow-opacity: 0;
-}
-
-
-.capability-card:hover {
-  --arrow-opacity: 1;
-}
-
-
 .capability-card > h3::after {
-  /* content: "↗"; */
+  content: "↗";
 
   display: inline-block;
 
@@ -598,10 +649,20 @@
 
   .trust-grid {
     grid-template-columns:
-      minmax(240px, 0.65fr)
-      minmax(0, 1.35fr);
+      minmax(310px, 0.7fr)
+      minmax(0, 1.3fr);
 
     gap: 55px;
+  }
+
+
+  .trust-intro h2 {
+    font-size:
+      clamp(
+        3.2rem,
+        5.5vw,
+        5rem
+      );
   }
 
 
@@ -621,6 +682,7 @@
 
   .capability-top svg {
     width: 44px;
+
     height: 44px;
 
     padding: 12px;
@@ -637,7 +699,7 @@
 
   .trust-strip {
     padding:
-      95px
+      100px
       max(24px, 5vw);
   }
 
@@ -645,7 +707,7 @@
   .trust-grid {
     grid-template-columns: 1fr;
 
-    gap: 55px;
+    gap: 60px;
   }
 
 
@@ -655,14 +717,21 @@
 
 
   .trust-intro h2 {
-    max-width: 650px;
+    max-width: 700px;
 
     font-size:
       clamp(
-        3.1rem,
-        8vw,
-        5rem
+        3.5rem,
+        9vw,
+        5.5rem
       );
+
+    line-height: 1;
+  }
+
+
+  .trust-intro h2 span {
+    width: auto;
   }
 
 
@@ -686,7 +755,7 @@
 
   .trust-strip {
     padding:
-      75px
+      80px
       20px;
   }
 
@@ -698,39 +767,77 @@
 
 
   .trust-grid {
-    gap: 42px;
+    gap: 48px;
+  }
+
+
+  .trust-intro {
+    width: 100%;
+
+    max-width: 100%;
   }
 
 
   .trust-intro::before {
     width: 34px;
 
-    margin-bottom: 20px;
+    height: 3px;
+
+    margin-bottom: 21px;
   }
 
 
   .trust-intro h2 {
-    margin-bottom: 19px;
+    width: 100%;
+
+    max-width: 100%;
+
+    margin:
+      0
+      0
+      25px;
 
     font-size:
       clamp(
-        2.75rem,
-        13vw,
-        4rem
+        2.65rem,
+        12vw,
+        3.55rem
       );
 
-    line-height: 0.94;
+    /*
+      Much more breathing room between lines.
+    */
+    line-height: 1.01;
+
+    letter-spacing: -0.055em;
+
+    text-wrap: balance;
+  }
+
+
+  .trust-intro h2 span {
+    display: block;
+
+    width: max-content;
+
+    max-width: 100%;
   }
 
 
   .trust-intro p {
-    font-size: 0.91rem;
+    width: 100%;
 
-    line-height: 1.7;
+    max-width: 470px;
+
+    font-size: 0.93rem;
+
+    line-height: 1.75;
   }
 
 
-  /* Mobile cards */
+  /* -----------------------------------------
+     MOBILE CARDS
+  ----------------------------------------- */
 
   .capability-card {
     grid-template-columns:
@@ -741,7 +848,7 @@
     column-gap: 13px;
 
     padding:
-      22px
+      24px
       0;
   }
 
@@ -758,6 +865,7 @@
 
   .capability-top svg {
     width: 40px;
+
     height: 40px;
 
     padding: 10px;
@@ -769,14 +877,14 @@
   .capability-card h3 {
     font-size: 1.08rem;
 
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
 
   .capability-card p {
     font-size: 0.8rem;
 
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
 
@@ -795,18 +903,34 @@
 
   .trust-strip {
     padding:
-      65px
+      70px
       17px;
   }
 
 
   .trust-grid {
-    gap: 36px;
+    gap: 40px;
   }
 
 
   .trust-intro h2 {
-    font-size: 2.7rem;
+    font-size:
+      clamp(
+        2.5rem,
+        12vw,
+        3.2rem
+      );
+
+    line-height: 1.02;
+
+    letter-spacing: -0.05em;
+  }
+
+
+  .trust-intro p {
+    font-size: 0.88rem;
+
+    line-height: 1.7;
   }
 
 
@@ -819,13 +943,14 @@
     column-gap: 10px;
 
     padding:
-      20px
+      21px
       0;
   }
 
 
   .capability-top svg {
     width: 37px;
+
     height: 37px;
 
     padding: 9px;
@@ -836,11 +961,15 @@
 
   .capability-card h3 {
     font-size: 1rem;
+
+    line-height: 1.25;
   }
 
 
   .capability-card p {
     font-size: 0.76rem;
+
+    line-height: 1.6;
   }
 
 }
@@ -854,7 +983,15 @@
 
   .trust-strip {
     padding-left: 14px;
+
     padding-right: 14px;
+  }
+
+
+  .trust-intro h2 {
+    font-size: 2.35rem;
+
+    line-height: 1.03;
   }
 
 
@@ -875,6 +1012,7 @@
 
   .capability-top svg {
     width: 34px;
+
     height: 34px;
 
     padding: 8px;
@@ -888,6 +1026,8 @@
 
   .capability-card p {
     font-size: 0.72rem;
+
+    line-height: 1.6;
   }
 
 }
