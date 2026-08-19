@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 
 import contactRoutes from "./routes/contactRoutes.js";
 
@@ -10,6 +12,17 @@ import contactRoutes from "./routes/contactRoutes.js";
 ========================================= */
 
 dotenv.config();
+
+
+/* =========================================
+   PATH CONFIGURATION
+========================================= */
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const rootDir = path.resolve(__dirname, "..");
+const distPath = path.join(rootDir, "dist");
 
 
 /* =========================================
@@ -31,9 +44,7 @@ app.use(
   })
 );
 
-app.use(
-  express.json()
-);
+app.use(express.json());
 
 
 /* =========================================
@@ -68,6 +79,49 @@ app.use(
 
 
 /* =========================================
+   SERVE REACT BUILD
+========================================= */
+
+app.use(
+  express.static(distPath)
+);
+
+
+/* =========================================
+   REACT ROUTER FALLBACK
+========================================= */
+
+app.use(
+  (req, res) => {
+
+    if (
+      req.path.startsWith("/api/")
+    ) {
+
+      return res.status(404).json({
+
+        success: false,
+
+        message:
+          "API endpoint not found",
+
+      });
+
+    }
+
+
+    return res.sendFile(
+      path.join(
+        distPath,
+        "index.html"
+      )
+    );
+
+  }
+);
+
+
+/* =========================================
    START SERVER
 ========================================= */
 
@@ -76,7 +130,7 @@ app.listen(
   () => {
 
     console.log(
-      `Nodeus backend running on port ${PORT}`
+      `Nodeus application running on port ${PORT}`
     );
 
   }
