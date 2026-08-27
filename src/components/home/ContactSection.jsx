@@ -76,50 +76,110 @@ function ContactSection() {
   }
 
 
-  function handleSubmit(
+  async function handleSubmit(
     event
   ) {
 
     event.preventDefault();
 
 
-    const subject =
-
-      `New Nodeus inquiry — ${formData.name}`;
-
-
-    const body =
-
-`Name: ${formData.name}
-
-Work email: ${formData.email}
-
-Company: ${formData.company || "Not provided"}
-
-Service needed: ${formData.service}
-
-Message:
-
-${formData.message}`;
-
-
-    const mailtoLink =
-
-      `mailto:hello@nodeus.tech?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(
-        body
-      )}`;
-
-
-    window.location.href =
-
-      mailtoLink;
-
-
     setSubmitted(
-      true
+      false
     );
+
+
+    try {
+
+      const response =
+        await fetch(
+          "https://api.nodeus.tech/api/contact",
+          {
+
+            method:
+              "POST",
+
+            headers: {
+
+              "Content-Type":
+                "application/json",
+
+            },
+
+            body:
+              JSON.stringify({
+
+                fullName:
+                  formData.name,
+
+                email:
+                  formData.email,
+
+                company:
+                  formData.company,
+
+                service:
+                  formData.service,
+
+                message:
+                  formData.message,
+
+              }),
+
+          }
+        );
+
+
+      const data =
+        await response.json();
+
+
+      if (
+        !response.ok
+      ) {
+
+        throw new Error(
+          data.message ||
+          "Unable to send your inquiry."
+        );
+
+      }
+
+
+      setSubmitted(
+        true
+      );
+
+
+      setFormData({
+
+        name: "",
+
+        email: "",
+
+        company: "",
+
+        service: "",
+
+        message: "",
+
+      });
+
+
+    } catch (
+      error
+    ) {
+
+      console.error(
+        "Contact form error:",
+        error
+      );
+
+
+      alert(
+        "Unable to send your inquiry. Please try again later."
+      );
+
+    }
 
   }
 
@@ -304,7 +364,7 @@ ${formData.message}`;
 
             <a
 
-              href="mailto:hello@nodeus.tech"
+              href="mailto:info@nodeus.tech"
 
               className="contact-email-card"
 
@@ -336,7 +396,7 @@ ${formData.message}`;
 
                 <strong>
 
-                  hello@nodeus.tech
+                  info@nodeus.tech
 
                 </strong>
 
@@ -804,7 +864,7 @@ ${formData.message}`;
               >
 
 
-                Start a conversation
+                Send Inquiry
 
 
                 <Send
@@ -831,9 +891,8 @@ ${formData.message}`;
 
                     <span>
 
-                      Your email application
-                      should open with your
-                      inquiry ready to send.
+                      Your inquiry has been sent successfully.
+                      Our team will get back to you shortly.
 
                     </span>
 

@@ -178,7 +178,7 @@ function App() {
 
       <ScrollProgress />
 
-      <BackToTop />
+      {/* <BackToTop /> */}
 
 
       {/* GLOBAL NAVIGATION */}

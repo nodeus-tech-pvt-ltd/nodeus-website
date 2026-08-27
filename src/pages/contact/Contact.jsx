@@ -149,7 +149,7 @@ function Contact() {
 
       const response = await fetch(
 
-        "/api/contact",
+        "https://api.nodeus.tech/api/contact",
 
         {
 
