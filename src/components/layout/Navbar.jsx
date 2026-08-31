@@ -24,7 +24,8 @@ import {
 
 import nodeusLogo from "../../assets/nodeus-logo.webp";
 
-import solutionsData from "../../data/solutions/solutionsData";
+// import solutionsData from "../../data/solutions/solutionsData";
+import { solutionsData } from "../../data/solutions/solutionsData";
 import industries from "../../data/industries/industriesData";
 
 import "../../styles/layout/navbar.css";
@@ -454,30 +455,17 @@ function Navbar() {
                       >
 
                         {
-                          category.services
-                            .slice(
-                              0,
-                              4
-                            )
-                            .map(
-                              (
-                                service
-                              ) => (
+                          (category.services || [])
+                            .slice(0, 4)
+                            .map((service) => (
 
-                                <span
-                                  key={
-                                    service
-                                  }
-                                >
+                              <span
+                                key={service}
+                              >
+                                {service}
+                              </span>
 
-                                  {
-                                    service
-                                  }
-
-                                </span>
-
-                              )
-                            )
+                            ))
                         }
 
                       </div>

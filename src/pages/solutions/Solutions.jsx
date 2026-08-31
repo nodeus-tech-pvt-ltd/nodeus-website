@@ -154,32 +154,35 @@
 
 // export default Solutions;
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
 import {
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
-  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Globe2,
   ShieldCheck,
-  Sparkles,
   Zap,
 } from "lucide-react";
 
-import { solutionsData } from "../../data/solutionsData";
-import "./Solutions.css";
+import { solutionsData } from "../../data/solutions/solutionsData";
+import "../../styles/pages/solutions.css";
+
+import nodeusWhiteLogo from "../../assets/white.png";
 
 
 // ============================================================
-// ANIMATION SETTINGS
+// ANIMATIONS
 // ============================================================
 
 const fadeUp = {
   hidden: {
     opacity: 0,
-    y: 35,
+    y: 25,
   },
 
   visible: {
@@ -208,6 +211,70 @@ const staggerContainer = {
 // ============================================================
 
 const Solutions = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const totalSolutions = solutionsData.length;
+
+
+  // ----------------------------------------------------------
+  // SLIDER NAVIGATION
+  // ----------------------------------------------------------
+
+  const nextSlide = () => {
+    setActiveIndex((current) =>
+      current === totalSolutions - 1 ? 0 : current + 1
+    );
+  };
+
+  const previousSlide = () => {
+    setActiveIndex((current) =>
+      current === 0 ? totalSolutions - 1 : current - 1
+    );
+  };
+
+
+  // ----------------------------------------------------------
+  // KEYBOARD NAVIGATION
+  // ----------------------------------------------------------
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowRight") {
+        nextSlide();
+      }
+
+      if (event.key === "ArrowLeft") {
+        previousSlide();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [totalSolutions]);
+
+
+  // ----------------------------------------------------------
+  // GET CARD POSITION
+  // ----------------------------------------------------------
+
+  const getRelativePosition = (index) => {
+    let difference = index - activeIndex;
+
+    if (difference > totalSolutions / 2) {
+      difference -= totalSolutions;
+    }
+
+    if (difference < -totalSolutions / 2) {
+      difference += totalSolutions;
+    }
+
+    return difference;
+  };
+
+
   return (
     <main className="solutions-page">
 
@@ -239,10 +306,12 @@ const Solutions = () => {
               SOLUTIONS BUILT FOR BUSINESS
             </motion.div>
 
+
             <motion.h1 variants={fadeUp}>
               The right people,
               <span> powered by the right solutions.</span>
             </motion.h1>
+
 
             <motion.p
               className="solutions-hero-description"
@@ -254,10 +323,12 @@ const Solutions = () => {
               your business works.
             </motion.p>
 
+
             <motion.div
               className="solutions-hero-actions"
               variants={fadeUp}
             >
+
               <Link
                 to="/contact"
                 className="solutions-btn solutions-btn-primary"
@@ -266,19 +337,26 @@ const Solutions = () => {
                 <ArrowUpRight size={18} />
               </Link>
 
+
               <a
                 href="#solutions-list"
                 className="solutions-btn solutions-btn-secondary"
               >
                 Explore Solutions
-                <ArrowDownIcon />
+
+                <span className="solutions-arrow-down">
+                  <ArrowRight size={16} />
+                </span>
               </a>
+
             </motion.div>
 
           </motion.div>
 
 
-          {/* Hero visual */}
+          {/* =================================================
+              HERO VISUAL
+          ================================================= */}
 
           <motion.div
             className="solutions-hero-visual"
@@ -305,19 +383,22 @@ const Solutions = () => {
 
             <div className="solutions-hero-center">
 
-              <div className="solutions-center-icon">
-                <Sparkles size={30} />
+              <div className="solutions-center-logo">
+                <img
+                  src={nodeusWhiteLogo}
+                  alt="Nodeus"
+                />
               </div>
 
-              <strong>NODEUS</strong>
-
-              <span>
+              {/* <span>
                 People + Process + Technology
-              </span>
+              </span> */}
 
             </div>
 
+
             <div className="solutions-floating-card floating-card-one">
+
               <span className="floating-card-icon">
                 <Zap size={16} />
               </span>
@@ -326,9 +407,12 @@ const Solutions = () => {
                 <strong>Built to Scale</strong>
                 <small>Flexible support models</small>
               </div>
+
             </div>
 
+
             <div className="solutions-floating-card floating-card-two">
+
               <span className="floating-card-icon">
                 <Globe2 size={16} />
               </span>
@@ -337,78 +421,18 @@ const Solutions = () => {
                 <strong>Global Support</strong>
                 <small>Teams that work with you</small>
               </div>
+
             </div>
 
           </motion.div>
 
         </div>
 
-        <div className="solutions-hero-bottom">
-          <span>Explore our capabilities</span>
-
-          <a href="#solutions-list">
-            <ChevronDown size={18} />
-          </a>
-        </div>
-
       </section>
 
 
       {/* =====================================================
-          INTRO / POSITIONING
-      ===================================================== */}
-
-      <section className="solutions-intro">
-
-        <div className="solutions-container">
-
-          <motion.div
-            className="solutions-intro-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-          >
-
-            <motion.div
-              className="solutions-section-label"
-              variants={fadeUp}
-            >
-              <span>01</span>
-              WHAT WE DO
-            </motion.div>
-
-            <motion.div
-              className="solutions-intro-content"
-              variants={fadeUp}
-            >
-              <h2>
-                Specialized support for the work
-                <span> that moves your business forward.</span>
-              </h2>
-
-              <p>
-                Every business has different priorities, customers, systems,
-                and challenges. That's why we don't believe in one-size-fits-all
-                outsourcing.
-              </p>
-
-              <p>
-                Nodeus combines skilled professionals, structured processes,
-                and modern technology to create solutions that fit your
-                operation — not the other way around.
-              </p>
-            </motion.div>
-
-          </motion.div>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          SERVICES
+          SOLUTIONS SLIDER
       ===================================================== */}
 
       <section
@@ -418,26 +442,30 @@ const Solutions = () => {
 
         <div className="solutions-container">
 
+          {/* -----------------------------------------------
+              SECTION HEADER
+          ------------------------------------------------ */}
+
           <motion.div
             className="solutions-heading-row"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
             variants={staggerContainer}
           >
-
-            <motion.div
-              className="solutions-section-label"
-              variants={fadeUp}
-            >
-              <span>02</span>
-              OUR SOLUTIONS
-            </motion.div>
 
             <motion.div
               className="solutions-heading-content"
               variants={fadeUp}
             >
+
+              <div className="solutions-section-label">
+                OUR SOLUTIONS
+              </div>
+
               <h2>
                 One partner.
                 <span> Multiple ways to grow.</span>
@@ -448,123 +476,263 @@ const Solutions = () => {
                 businesses improve customer experiences, increase
                 productivity, and build more scalable operations.
               </p>
+
             </motion.div>
 
           </motion.div>
 
 
-          <motion.div
-            className="solutions-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-          >
+          {/* =================================================
+              UNIQUE SOLUTION CAROUSEL
+          ================================================= */}
 
-            {solutionsData.map((solution, index) => {
+          <div className="solutions-carousel">
 
-              const Icon = solution.icon;
+            <div className="solutions-carousel-stage">
 
-              return (
-                <motion.article
-                  className={`solution-card solution-card-${index + 1}`}
-                  key={solution.slug}
-                  variants={fadeUp}
-                >
+              {solutionsData.map((solution, index) => {
 
-                  <Link
-                    to={solution.route}
-                    className="solution-card-link"
+                const relativePosition = getRelativePosition(index);
+
+                const isActive = relativePosition === 0;
+
+                /*
+                 * Only render cards that are close to the active
+                 * card. This prevents the carousel from becoming
+                 * visually cluttered.
+                 */
+
+                if (Math.abs(relativePosition) > 2) {
+                  return null;
+                }
+
+
+                return (
+                  <motion.article
+                    key={solution.slug}
+                    className={`solution-slide ${
+                      isActive
+                        ? "solution-slide-active"
+                        : "solution-slide-side"
+                    }`}
+                    animate={{
+                      x: relativePosition * 58 + "%",
+                      scale:
+                        relativePosition === 0
+                          ? 1
+                          : Math.abs(relativePosition) === 1
+                            ? 0.84
+                            : 0.72,
+                      rotateY:
+                        relativePosition === 0
+                          ? 0
+                          : relativePosition > 0
+                            ? -10
+                            : 10,
+                      rotateZ:
+                        relativePosition === 0
+                          ? 0
+                          : relativePosition > 0
+                            ? 1
+                            : -1,
+                      opacity:
+                        relativePosition === 0
+                          ? 1
+                          : Math.abs(relativePosition) === 1
+                            ? 0.42
+                            : 0.16,
+                      zIndex:
+                        20 - Math.abs(relativePosition),
+                    }}
+                    transition={{
+                      duration: 0.65,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
                   >
 
-                    {/* Image */}
+                    <Link
+                      to={solution.route}
+                      className="solution-slide-link"
+                    >
 
-                    <div className="solution-card-image">
+                      {/* -----------------------------------
+                          IMAGE
 
-                      {solution.image ? (
-                        <img
-                          src={solution.image}
-                          alt={solution.title}
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="solution-card-image-placeholder" />
+                          IMPORTANT:
+                          No placeholder is rendered.
+                          If there is no image, the image
+                          section simply doesn't exist.
+                      ----------------------------------- */}
+
+                      {solution.image && (
+                        <div className="solution-slide-image">
+
+                          <img
+                            src={solution.image}
+                            alt={solution.title}
+                            loading="lazy"
+                            onError={(event) => {
+                              event.currentTarget.parentElement.style.display =
+                                "none";
+                            }}
+                          />
+
+                          <div className="solution-slide-image-overlay" />
+
+                          <span className="solution-slide-number">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+
+                          <span className="solution-slide-open">
+                            <ArrowUpRight size={19} />
+                          </span>
+
+                        </div>
                       )}
 
-                      <div className="solution-card-image-overlay" />
 
-                      <span className="solution-card-number">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+                      {/* -----------------------------------
+                          CONTENT
+                      ----------------------------------- */}
 
-                      <span className="solution-card-arrow">
-                        <ArrowUpRight size={20} />
-                      </span>
+                      <div className="solution-slide-content">
 
-                    </div>
+                        <div className="solution-slide-top">
+
+                          <div className="solution-slide-icon">
+
+                            {solution.icon &&
+                              React.createElement(
+                                solution.icon,
+                                {
+                                  size: 20,
+                                  strokeWidth: 1.7,
+                                }
+                              )}
+
+                          </div>
 
 
-                    {/* Content */}
+                          <span className="solution-slide-category">
+                            {solution.category}
+                          </span>
 
-                    <div className="solution-card-content">
-
-                      <div className="solution-card-top">
-
-                        <div className="solution-card-icon">
-                          <Icon size={22} strokeWidth={1.7} />
                         </div>
 
-                        <span className="solution-card-category">
-                          {solution.category}
-                        </span>
+
+                        <h3>
+                          {solution.title}
+                        </h3>
+
+
+                        <p>
+                          {solution.cardDescription ||
+                            solution.description}
+                        </p>
+
+
+                        {solution.highlights?.length > 0 && (
+
+                          <div className="solution-slide-highlights">
+
+                            {solution.highlights
+                              .slice(0, 4)
+                              .map((highlight) => (
+
+                                <span key={highlight}>
+
+                                  <CheckCircle2 size={14} />
+
+                                  {highlight}
+
+                                </span>
+
+                              ))}
+
+                          </div>
+
+                        )}
+
+
+                        <div className="solution-slide-footer">
+
+                          <span>
+                            Explore solution
+                          </span>
+
+                          <span className="solution-slide-footer-arrow">
+                            <ArrowRight size={17} />
+                          </span>
+
+                        </div>
 
                       </div>
 
+                    </Link>
 
-                      <h3>
-                        {solution.title}
-                      </h3>
+                  </motion.article>
+                );
+              })}
 
-
-                      <p>
-                        {solution.cardDescription ||
-                          solution.description}
-                      </p>
+            </div>
 
 
-                      <div className="solution-card-highlights">
+            {/* =================================================
+                SLIDER CONTROLS
+            ================================================= */}
 
-                        {solution.highlights
-                          ?.slice(0, 4)
-                          .map((highlight) => (
-                            <span key={highlight}>
-                              <CheckCircle2 size={14} />
-                              {highlight}
-                            </span>
-                          ))}
+            <div className="solutions-carousel-controls">
 
-                      </div>
+              <button
+                type="button"
+                className="solutions-carousel-arrow"
+                onClick={previousSlide}
+                aria-label="Previous solution"
+              >
+                <ChevronLeft size={20} />
+              </button>
 
 
-                      <div className="solution-card-footer">
+              <div className="solutions-carousel-dots">
 
-                        <span>
-                          Explore solution
-                        </span>
+                {solutionsData.map((solution, index) => (
 
-                        <ArrowRight size={17} />
+                  <button
+                    key={solution.slug}
+                    type="button"
+                    className={`solutions-carousel-dot ${
+                      index === activeIndex
+                        ? "active"
+                        : ""
+                    }`}
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`Go to ${solution.title}`}
+                  />
 
-                      </div>
+                ))}
 
-                    </div>
+              </div>
 
-                  </Link>
 
-                </motion.article>
-              );
-            })}
+              <button
+                type="button"
+                className="solutions-carousel-arrow"
+                onClick={nextSlide}
+                aria-label="Next solution"
+              >
+                <ChevronRight size={20} />
+              </button>
 
-          </motion.div>
+            </div>
+
+
+            {/* <div className="solutions-carousel-hint">
+              <span />
+              DRAG OR USE ARROWS TO EXPLORE
+              <span />
+            </div> */}
+
+          </div>
 
         </div>
 
@@ -583,7 +751,10 @@ const Solutions = () => {
             className="solutions-why-grid"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
             variants={staggerContainer}
           >
 
@@ -593,7 +764,6 @@ const Solutions = () => {
             >
 
               <div className="solutions-section-label light">
-                <span>03</span>
                 WHY NODEUS
               </div>
 
@@ -625,25 +795,21 @@ const Solutions = () => {
             >
 
               <WhyFeature
-                number="01"
                 title="Dedicated Teams"
                 text="Work with professionals aligned with your processes, customers, tools, and business requirements."
               />
 
               <WhyFeature
-                number="02"
                 title="Flexible Operations"
                 text="Scale support and operational capacity around changing business needs and customer demand."
               />
 
               <WhyFeature
-                number="03"
                 title="Technology Enabled"
                 text="Combine people and technology to create smarter, more efficient, and connected workflows."
               />
 
               <WhyFeature
-                number="04"
                 title="Built for Long-Term Growth"
                 text="Create operational foundations that can evolve as your business grows and priorities change."
               />
@@ -658,7 +824,7 @@ const Solutions = () => {
 
 
       {/* =====================================================
-          PLATFORMS + TOOLS
+          PLATFORMS
       ===================================================== */}
 
       <section className="solutions-platforms">
@@ -669,7 +835,10 @@ const Solutions = () => {
             className="solutions-platforms-heading"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
             variants={staggerContainer}
           >
 
@@ -677,14 +846,15 @@ const Solutions = () => {
               className="solutions-section-label"
               variants={fadeUp}
             >
-              <span>04</span>
               PLATFORMS & TOOLS
             </motion.div>
+
 
             <motion.h2 variants={fadeUp}>
               Work with the tools
               <span> your business already uses.</span>
             </motion.h2>
+
 
             <motion.p variants={fadeUp}>
               Our teams can work within the platforms and systems that power
@@ -699,7 +869,10 @@ const Solutions = () => {
             className="solutions-tools-cloud"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
             variants={staggerContainer}
           >
 
@@ -723,6 +896,7 @@ const Solutions = () => {
               "Anthropic Claude",
               "Zapier",
             ].map((tool) => (
+
               <motion.div
                 className="solutions-tool-pill"
                 key={tool}
@@ -731,6 +905,7 @@ const Solutions = () => {
                 <span className="tool-pill-dot" />
                 {tool}
               </motion.div>
+
             ))}
 
           </motion.div>
@@ -741,7 +916,7 @@ const Solutions = () => {
 
 
       {/* =====================================================
-          SECURITY / COMPLIANCE
+          TRUST
       ===================================================== */}
 
       <section className="solutions-trust">
@@ -752,7 +927,10 @@ const Solutions = () => {
             className="solutions-trust-header"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
             variants={staggerContainer}
           >
 
@@ -760,14 +938,15 @@ const Solutions = () => {
               className="solutions-section-label"
               variants={fadeUp}
             >
-              <span>05</span>
               TRUST & SECURITY
             </motion.div>
+
 
             <motion.div
               className="solutions-trust-title"
               variants={fadeUp}
             >
+
               <h2>
                 Security and privacy
                 <span> matter from day one.</span>
@@ -778,6 +957,7 @@ const Solutions = () => {
                 business information require responsible handling and
                 structured processes.
               </p>
+
             </motion.div>
 
           </motion.div>
@@ -787,7 +967,10 @@ const Solutions = () => {
             className="solutions-compliance-grid"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{
+              once: true,
+              amount: 0.1,
+            }}
             variants={staggerContainer}
           >
 
@@ -824,83 +1007,7 @@ const Solutions = () => {
 
 
       {/* =====================================================
-          HOW IT WORKS
-      ===================================================== */}
-
-      <section className="solutions-process">
-
-        <div className="solutions-container">
-
-          <motion.div
-            className="solutions-process-heading"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-          >
-
-            <motion.div
-              className="solutions-section-label"
-              variants={fadeUp}
-            >
-              <span>06</span>
-              HOW IT WORKS
-            </motion.div>
-
-            <motion.h2 variants={fadeUp}>
-              How to work
-              <span> with Nodeus.</span>
-            </motion.h2>
-
-            <motion.p variants={fadeUp}>
-              We make getting started simple. Tell us where you need support,
-              and we'll work with you to create an operating model that fits.
-            </motion.p>
-
-          </motion.div>
-
-
-          <motion.div
-            className="solutions-process-grid"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-          >
-
-            <ProcessStep
-              number="01"
-              title="Tell Us What You Need"
-              text="Share your goals, challenges, workflows, and the areas where you need additional capacity."
-            />
-
-            <ProcessStep
-              number="02"
-              title="Design Your Solution"
-              text="We understand your operation and recommend a support model aligned with your business."
-            />
-
-            <ProcessStep
-              number="03"
-              title="Build Your Team"
-              text="We identify the right people, processes, tools, and workflows for your requirements."
-            />
-
-            <ProcessStep
-              number="04"
-              title="Launch & Optimize"
-              text="Your team gets to work while we continue improving the operation around your goals."
-            />
-
-          </motion.div>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          SEO CONTENT
+          SEO
       ===================================================== */}
 
       <section className="solutions-seo">
@@ -911,17 +1018,12 @@ const Solutions = () => {
             className="solutions-seo-grid"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
             variants={staggerContainer}
           >
-
-            <motion.div
-              className="solutions-section-label"
-              variants={fadeUp}
-            >
-              <span>07</span>
-              BUSINESS SOLUTIONS
-            </motion.div>
 
             <motion.div
               className="solutions-seo-content"
@@ -990,14 +1092,6 @@ const Solutions = () => {
             }}
           >
 
-            <div className="solutions-final-icon">
-              <Sparkles size={24} />
-            </div>
-
-            <span className="solutions-final-eyebrow">
-              LET'S BUILD SOMETHING BETTER
-            </span>
-
             <h2>
               Your next stage of growth
               <span> starts with the right support.</span>
@@ -1029,24 +1123,10 @@ const Solutions = () => {
 
 
 // ============================================================
-// SMALL COMPONENTS
-// ============================================================
-
-const ArrowDownIcon = () => {
-  return (
-    <span className="solutions-arrow-down">
-      <ArrowRight size={16} />
-    </span>
-  );
-};
-
-
-// ============================================================
-// WHY NODEUS FEATURE
+// WHY FEATURE
 // ============================================================
 
 const WhyFeature = ({
-  number,
   title,
   text,
 }) => {
@@ -1056,9 +1136,9 @@ const WhyFeature = ({
       variants={fadeUp}
     >
 
-      <span className="why-feature-number">
-        {number}
-      </span>
+      <div className="why-feature-marker">
+        <CheckCircle2 size={17} />
+      </div>
 
       <div>
 
@@ -1095,40 +1175,6 @@ const ComplianceCard = ({
         <strong>{title}</strong>
         <span>{description}</span>
       </div>
-
-    </motion.div>
-  );
-};
-
-
-// ============================================================
-// PROCESS STEP
-// ============================================================
-
-const ProcessStep = ({
-  number,
-  title,
-  text,
-}) => {
-  return (
-    <motion.div
-      className="solutions-process-step"
-      variants={fadeUp}
-    >
-
-      <div className="process-step-top">
-
-        <span className="process-step-number">
-          {number}
-        </span>
-
-        <ArrowUpRight size={19} />
-
-      </div>
-
-      <h3>{title}</h3>
-
-      <p>{text}</p>
 
     </motion.div>
   );

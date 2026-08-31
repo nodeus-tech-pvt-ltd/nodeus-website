@@ -1,1314 +1,2424 @@
-/* =========================================
-   MAIN SOLUTIONS PAGE
-========================================= */
+/* ============================================================
+   NODEUS SOLUTIONS PAGE
+   ============================================================ */
+
+:root {
+  --nodeus-blue: #347CFF;
+  --nodeus-white: #FFFFFF;
+
+  --solutions-bg: #07111F;
+  --solutions-bg-soft: #0A1626;
+  --solutions-card: #0B1829;
+  --solutions-card-light: #102035;
+
+  --solutions-border: rgba(255, 255, 255, 0.09);
+  --solutions-border-blue: rgba(52, 124, 255, 0.38);
+
+  --solutions-muted: rgba(255, 255, 255, 0.62);
+  --solutions-muted-strong: rgba(255, 255, 255, 0.76);
+
+  --solutions-radius: 28px;
+  --solutions-container: 1240px;
+}
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
 
 .solutions-page {
   width: 100%;
-  min-height: 100vh;
+  overflow: hidden;
+  background: var(--solutions-bg);
+  color: var(--nodeus-white);
+}
 
-  padding-top: var(--navbar-height);
+.solutions-page *,
+.solutions-page *::before,
+.solutions-page *::after {
+  box-sizing: border-box;
+}
 
-  background: #080b12;
+.solutions-container {
+  width: min(
+    calc(100% - 48px),
+    var(--solutions-container)
+  );
 
-  color: #f8fafc;
-
-  overflow-x: clip;
+  margin: 0 auto;
 }
 
 
-/* =========================================
+/* ============================================================
    HERO
-========================================= */
+   ============================================================ */
 
-.solutions-page-hero {
+.solutions-hero {
   position: relative;
+  min-height: 760px;
 
-  width: 100%;
+  display: flex;
+  align-items: center;
 
-  box-sizing: border-box;
+  padding: 140px 0 100px;
 
   overflow: hidden;
 
-  padding:
-    85px
-    max(24px, calc((100vw - 1240px) / 2))
-    90px;
-
   background:
     radial-gradient(
-      circle at 82% 15%,
-      rgba(57, 123, 255, 0.16),
-      transparent 34%
-    ),
-    radial-gradient(
-      circle at 8% 90%,
-      rgba(57, 123, 255, 0.07),
-      transparent 30%
+      circle at 75% 35%,
+      rgba(52, 124, 255, 0.14),
+      transparent 32%
     ),
     linear-gradient(
-      135deg,
-      #0d121c 0%,
-      #0a0f18 55%,
-      #080b12 100%
+      180deg,
+      #06101D 0%,
+      #07111F 100%
     );
-
-  border-bottom:
-    1px solid
-    rgba(148, 163, 184, 0.07);
 }
 
 
-/* =========================================
-   HERO DECORATIVE CIRCLE
-========================================= */
+/* Grid */
 
-.solutions-page-hero::after {
-  content: "";
-
+.solutions-hero-grid {
   position: absolute;
+  inset: 0;
 
-  width: 460px;
-  height: 460px;
+  opacity: 0.32;
 
-  top: -250px;
-  right: -150px;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px
+    );
 
-  border:
-    1px solid
-    rgba(57, 123, 255, 0.13);
+  background-size: 72px 72px;
 
-  border-radius: 50%;
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 85%
+  );
 
   pointer-events: none;
 }
 
 
-/* =========================================
-   HERO CONTENT
-========================================= */
+/* Glows */
 
-.solutions-page-hero > * {
+.solutions-hero-glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  opacity: 0.18;
+
+  pointer-events: none;
+}
+
+.solutions-hero-glow-one {
+  top: 5%;
+  right: 10%;
+
+  background: var(--nodeus-blue);
+}
+
+.solutions-hero-glow-two {
+  bottom: -15%;
+  left: 20%;
+
+  background: #1E5EFF;
+}
+
+
+/* Hero content */
+
+.solutions-hero .solutions-container {
   position: relative;
-
-  z-index: 1;
-}
-
-
-/* =========================================
-   HERO TITLE
-========================================= */
-
-.solutions-page-hero h1 {
-  width: 100%;
-
-  max-width: 900px;
-
-  margin:
-    16px
-    0
-    22px;
-
-  color: #f8fafc;
-
-  font-size:
-    clamp(
-      52px,
-      7vw,
-      100px
-    );
-
-  font-weight: 700;
-
-  line-height: 0.95;
-
-  letter-spacing: -0.06em;
-}
-
-
-.solutions-page-hero h1 span {
-  color: #397bff;
-}
-
-
-/* =========================================
-   HERO DESCRIPTION
-========================================= */
-
-.solutions-page-hero p {
-  width: 100%;
-
-  max-width: 700px;
-
-  margin: 0;
-
-  color: #94a3b8;
-
-  font-size: 18px;
-
-  line-height: 1.65;
-}
-
-
-/* =========================================
-   SOLUTIONS GRID
-========================================= */
-
-.solutions-page-grid {
-  width:
-    min(
-      1240px,
-      calc(100% - 48px)
-    );
-
-  box-sizing: border-box;
-
-  margin: 0 auto;
-
-  padding:
-    55px
-    0
-    80px;
+  z-index: 2;
 
   display: grid;
 
   grid-template-columns:
-    repeat(
-      2,
-      minmax(0, 1fr)
-    );
+    1fr
+    0.85fr;
 
-  gap: 16px;
+  align-items: center;
 
-  align-items: stretch;
+  gap: 80px;
+}
+
+.solutions-hero-content {
+  max-width: 680px;
 }
 
 
-/* =========================================
-   SOLUTION CARD
-========================================= */
+/* Eyebrow */
 
-.solutions-page-card {
+.solutions-eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 28px;
+
+  color: var(--nodeus-blue);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.solutions-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--nodeus-blue);
+
+  box-shadow:
+    0 0 0 5px rgba(52, 124, 255, 0.1),
+    0 0 18px rgba(52, 124, 255, 0.7);
+}
+
+
+/* Hero heading */
+
+.solutions-hero h1 {
+  margin: 0;
+
+  max-width: 700px;
+
+  font-size: clamp(
+    52px,
+    6vw,
+    82px
+  );
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 700;
+
+  color: var(--nodeus-white);
+}
+
+.solutions-hero h1 span {
+  color: var(--nodeus-blue);
+}
+
+
+/* Hero description */
+
+.solutions-hero-description {
+  max-width: 610px;
+
+  margin: 32px 0 0;
+
+  color: var(--solutions-muted);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* Hero actions */
+
+.solutions-hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 38px;
+}
+
+
+/* ============================================================
+   HERO CENTER LOGO
+   ============================================================ */
+
+.solutions-center-logo {
+  width: 150px;
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+}
+
+.solutions-center-logo img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-height: 72px;
+
+  object-fit: contain;
+}
+
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.solutions-btn {
+  min-height: 54px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 0 22px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.solutions-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Primary */
+
+.solutions-btn-primary {
+  background: var(--nodeus-blue);
+
+  color: var(--nodeus-white);
+
+  box-shadow:
+    0 14px 34px rgba(52, 124, 255, 0.2);
+}
+
+.solutions-btn-primary:hover {
+  background: #4B8BFF;
+}
+
+
+/* Secondary */
+
+.solutions-btn-secondary {
+  border: 1px solid var(--solutions-border);
+
+  color: var(--nodeus-white);
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.solutions-btn-secondary:hover {
+  border-color: var(--solutions-border-blue);
+}
+
+
+/* ============================================================
+   HERO VISUAL
+   ============================================================ */
+
+.solutions-hero-visual {
   position: relative;
 
   width: 100%;
+  height: 480px;
 
-  min-width: 0;
+  display: flex;
 
-  min-height: 300px;
+  align-items: center;
+  justify-content: center;
 
-  box-sizing: border-box;
+  margin: 0 auto;
+}
 
-  /*
-    Extra top padding reserves space for the
-    centered icon while keeping the entire
-    content group visually centered.
-  */
-  padding:
-    78px
-    27px
-    27px;
+
+/* ============================================================
+   ORBITS
+   ============================================================ */
+
+.solutions-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border: 1px solid rgba(52, 124, 255, 0.18);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 280px;
+  height: 280px;
+}
+
+.orbit-two {
+  width: 380px;
+  height: 380px;
+}
+
+.orbit-three {
+  width: 470px;
+  height: 470px;
+
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+
+/* ============================================================
+   HERO CENTER
+   ============================================================ */
+
+.solutions-hero-center {
+  position: relative;
+
+  z-index: 3;
+
+  width: clamp(
+    150px,
+    17vw,
+    220px
+  );
+
+  aspect-ratio: 1 / 1;
 
   display: flex;
 
   flex-direction: column;
 
   align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: 1px solid rgba(52, 124, 255, 0.32);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(52, 124, 255, 0.16),
+      rgba(7, 17, 31, 0.95) 70%
+    );
+
+  box-shadow:
+    0 0 80px rgba(52, 124, 255, 0.13),
+    inset 0 0 50px rgba(52, 124, 255, 0.05);
+
+  flex-shrink: 0;
+}
+
+.solutions-center-icon {
+  color: var(--nodeus-blue);
+}
+
+.solutions-hero-center strong {
+  font-size: clamp(
+    14px,
+    1.4vw,
+    18px
+  );
+
+  letter-spacing: 0.2em;
+}
+
+.solutions-hero-center span {
+  color: var(--solutions-muted);
+
+  font-size: clamp(
+    9px,
+    0.9vw,
+    11px
+  );
+}
+
+
+/* ============================================================
+   FLOATING CARDS
+   ============================================================ */
+
+.solutions-floating-card {
+  position: absolute;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--solutions-border);
+
+  border-radius: 16px;
+
+  background: rgba(9, 22, 38, 0.82);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+
+  white-space: nowrap;
+}
+
+
+/* Desktop positioning */
+
+.floating-card-one {
+  top: 45px;
+  right: 0;
+}
+
+.floating-card-two {
+  bottom: 45px;
+  left: 0;
+}
+
+
+.floating-card-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  color: var(--nodeus-blue);
+
+  background: rgba(52, 124, 255, 0.1);
+}
+
+.solutions-floating-card strong {
+  display: block;
+
+  font-size: 13px;
+}
+
+.solutions-floating-card small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--solutions-muted);
+
+  font-size: 10px;
+}
+
+
+/* ============================================================
+   SOLUTIONS SECTION
+   ============================================================ */
+
+.solutions-services {
+  position: relative;
+
+  padding: 130px 0 150px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #07111F 0%,
+      #091522 100%
+    );
+}
+
+
+/* Heading */
+
+.solutions-heading-row {
+  display: flex;
 
   justify-content: center;
 
   text-align: center;
+}
+
+.solutions-heading-content {
+  max-width: 760px;
+}
+
+.solutions-section-label {
+  display: inline-flex;
+
+  margin-bottom: 20px;
+
+  color: var(--nodeus-blue);
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+}
+
+.solutions-heading-content h2,
+.solutions-platforms-heading h2,
+.solutions-trust-title h2,
+.solutions-seo-content h2,
+.solutions-why-heading h2 {
+  margin: 0;
+
+  font-size: clamp(
+    38px,
+    4.5vw,
+    62px
+  );
+
+  line-height: 1.03;
+
+  letter-spacing: -0.045em;
+
+  color: var(--nodeus-white);
+}
+
+.solutions-heading-content h2 span,
+.solutions-platforms-heading h2 span,
+.solutions-trust-title h2 span,
+.solutions-seo-content h2 span,
+.solutions-why-heading h2 span {
+  color: var(--nodeus-blue);
+}
+
+.solutions-heading-content p {
+  max-width: 650px;
+
+  margin: 25px auto 0;
+
+  color: var(--solutions-muted);
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+
+/* ============================================================
+   UNIQUE CAROUSEL
+   ============================================================ */
+
+.solutions-carousel {
+  position: relative;
+
+  margin-top: 80px;
+}
+
+
+/* Stage */
+
+.solutions-carousel-stage {
+  position: relative;
+
+  width: 100%;
+  height: 670px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  perspective: 1600px;
+
+  isolation: isolate;
+}
+
+
+/* Individual slide */
+
+.solution-slide {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: min(
+    610px,
+    80vw
+  );
+
+  min-height: 540px;
+
+  transform-style: preserve-3d;
+
+  transform-origin: center center;
+
+  border: 1px solid var(--solutions-border);
+
+  border-radius: var(--solutions-radius);
 
   overflow: hidden;
-
-  border:
-    1px solid
-    #202938;
-
-  border-radius: 16px;
 
   background:
     linear-gradient(
       145deg,
-      #111823 0%,
-      #0d131d 100%
+      #0D1C30,
+      #081321
     );
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.35);
+
+  margin-left: -305px;
+  margin-top: -270px;
+
+  will-change: transform, opacity;
+
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* Active card */
+
+.solution-slide-active {
+  border-color: rgba(
+    52,
+    124,
+    255,
+    0.6
+  );
+
+  box-shadow:
+    0 45px 100px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(52, 124, 255, 0.08);
+}
+
+
+/* Side cards */
+
+.solution-slide-side {
+  pointer-events: none;
+}
+
+
+/* Link */
+
+.solution-slide-link {
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 540px;
 
   color: inherit;
 
   text-decoration: none;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
 }
 
 
-/* =========================================
-   CARD DECORATIVE CIRCLE
-========================================= */
+/* ============================================================
+   CARD IMAGE
+   ============================================================ */
 
-.solutions-page-card::before {
-  content: "";
+.solution-slide-image {
+  position: relative;
 
-  position: absolute;
+  width: 100%;
 
-  width: 220px;
-  height: 220px;
+  aspect-ratio: 16 / 7;
 
-  top: -105px;
-  right: -105px;
+  flex-shrink: 0;
 
-  border-radius: 50%;
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.075
-    );
-
-  pointer-events: none;
-
-  transition:
-    transform 0.45s ease,
-    background 0.3s ease;
-}
-
-
-/* =========================================
-   SECONDARY DECORATIVE GLOW
-========================================= */
-
-.solutions-page-card::after {
-  content: "";
-
-  position: absolute;
-
-  width: 120px;
-  height: 120px;
-
-  left: -75px;
-  bottom: -75px;
-
-  border-radius: 50%;
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.045
-    );
-
-  pointer-events: none;
-}
-
-
-/* =========================================
-   CARD HOVER
-========================================= */
-
-.solutions-page-card:hover {
-  transform:
-    translateY(-4px);
-
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.42
-    );
+  overflow: hidden;
 
   background:
     linear-gradient(
-      145deg,
-      #131c2b 0%,
-      #0e1520 100%
-    );
-
-  box-shadow:
-    0 18px 40px
-    rgba(
-      0,
-      0,
-      0,
-      0.28
-    ),
-    0 0 25px
-    rgba(
-      57,
-      123,
-      255,
-      0.045
+      135deg,
+      #10243C,
+      #07111F
     );
 }
 
+.solution-slide-image img {
+  display: block;
 
-.solutions-page-card:hover::before {
-  transform:
-    scale(1.25);
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.solution-slide-active:hover
+.solution-slide-image img {
+  transform: scale(1.04);
+}
+
+
+/* Image overlay */
+
+.solution-slide-image-overlay {
+  position: absolute;
+
+  inset: 0;
 
   background:
-    rgba(
-      57,
-      123,
-      255,
-      0.105
+    linear-gradient(
+      180deg,
+      transparent 30%,
+      rgba(7, 17, 31, 0.82) 100%
     );
 }
 
 
-/* =========================================
-   CARD TOP
-========================================= */
+/* Number */
 
-.solutions-page-card-top {
+.solution-slide-number {
   position: absolute;
 
-  z-index: 3;
+  top: 20px;
+  left: 20px;
 
-  top: 24px;
-
-  left: 27px;
-
-  right: 27px;
-
-  height: 42px;
-
-  pointer-events: none;
-}
-
-
-/* =========================================
-   CARD NUMBER
-========================================= */
-
-.solutions-page-card-top > span {
-  position: absolute;
-
-  top: 0;
-
-  left: 0;
-
-  color: #526174;
+  color: var(--nodeus-white);
 
   font-size: 11px;
 
   font-weight: 700;
 
   letter-spacing: 0.14em;
+
+  opacity: 0.85;
 }
 
 
-/* =========================================
-   CARD ICON
-========================================= */
+/* Open icon */
 
-/*
-   IMPORTANT:
-   The icon is now centered inside the card
-   instead of sitting beside the card number.
-*/
-
-.solutions-page-icon {
+.solution-slide-open {
   position: absolute;
 
-  z-index: 4;
-
-  top: 0;
-
-  left: 50%;
+  top: 18px;
+  right: 18px;
 
   width: 42px;
-
   height: 42px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
-  box-sizing: border-box;
+  border-radius: 50%;
 
-  transform:
-    translateX(-50%);
+  color: var(--nodeus-white);
 
-  flex-shrink: 0;
+  background: var(--nodeus-blue);
 
-  border:
-    1px solid
-    rgba(
-      57,
-      123,
+  box-shadow:
+    0 10px 30px rgba(
+      52,
+      124,
       255,
-      0.22
-    );
-
-  border-radius: 11px;
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.09
-    );
-
-  color: #4d8cff;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease;
-}
-
-
-/* =========================================
-   ICON HOVER
-========================================= */
-
-.solutions-page-card:hover
-.solutions-page-icon {
-  transform:
-    translateX(-50%)
-    translateY(-2px);
-
-  background:
-    rgba(
-      57,
-      123,
-      255,
-      0.14
-    );
-
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.35
+      0.25
     );
 }
 
 
-/* =========================================
-   CARD MAIN CONTENT
-========================================= */
+/* ============================================================
+   CARD CONTENT
+   ============================================================ */
 
-.solutions-page-card h2,
-.solutions-page-card > p,
-.solutions-page-services,
-.solutions-page-card .solution-link {
-  position: relative;
+.solution-slide-content {
+  display: flex;
 
-  z-index: 2;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 30px 32px 26px;
 }
 
 
-/* =========================================
-   CARD TITLE
-========================================= */
+/* Top */
 
-.solutions-page-card h2 {
-  width: 100%;
+.solution-slide-top {
+  display: flex;
 
-  max-width: 520px;
+  align-items: center;
 
-  margin:
-    0
-    auto
-    10px;
+  gap: 12px;
 
-  color: #f1f5f9;
-
-  font-size: 26px;
-
-  font-weight: 700;
-
-  line-height: 1.08;
-
-  letter-spacing: -0.035em;
-
-  text-align: center;
+  margin-bottom: 22px;
 }
 
-
-/* =========================================
-   CARD DESCRIPTION
-========================================= */
-
-.solutions-page-card > p {
-  width: 100%;
-
-  max-width: 520px;
-
-  margin:
-    0
-    auto;
-
-  color: #8b99ab;
-
-  font-size: 14px;
-
-  line-height: 1.55;
-
-  text-align: center;
-}
-
-
-/* =========================================
-   SERVICE TAGS
-========================================= */
-
-.solutions-page-services {
-  width: 100%;
-
-  max-width: 560px;
+.solution-slide-icon {
+  width: 40px;
+  height: 40px;
 
   display: flex;
 
-  flex-wrap: wrap;
-
   align-items: center;
-
   justify-content: center;
 
-  gap:
-    5px
-    6px;
+  flex-shrink: 0;
 
-  margin:
-    13px
-    auto
-    0;
+  border: 1px solid rgba(
+    52,
+    124,
+    255,
+    0.3
+  );
 
-  min-width: 0;
+  border-radius: 12px;
+
+  color: var(--nodeus-blue);
+
+  background: rgba(
+    52,
+    124,
+    255,
+    0.08
+  );
 }
 
+.solution-slide-category {
+  color: var(--nodeus-blue);
 
-/* =========================================
-   SERVICE TAG
-========================================= */
-
-.solutions-page-services span {
-  max-width: 100%;
-
-  box-sizing: border-box;
-
-  padding:
-    5px
-    9px;
-
-  border:
-    1px solid
-    rgba(
-      148,
-      163,
-      184,
-      0.10
-    );
-
-  border-radius: 999px;
-
-  color: #94a3b8;
-
-  background: #151c27;
-
-  font-size: 11px;
-
-  font-weight: 500;
-
-  line-height: 1.25;
-
-  white-space: nowrap;
-
-  transition:
-    border-color 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease;
-}
-
-
-.solutions-page-card:hover
-.solutions-page-services span {
-  border-color:
-    rgba(
-      57,
-      123,
-      255,
-      0.16
-    );
-
-  background: #172131;
-
-  color: #a9b8ca;
-}
-
-
-/* =========================================
-   EXPLORE SOLUTION BUTTON
-========================================= */
-
-.solutions-page-card .solution-link {
-  position: relative;
-
-  z-index: 3;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 8px;
-
-  width: fit-content;
-
-  margin:
-    17px
-    auto
-    0;
-
-  padding:
-    9px
-    15px;
-
-  box-sizing: border-box;
-
-  border:
-    1px solid
-    rgba(
-      57,
-      123,
-      255,
-      0.30
-    );
-
-  border-radius: 8px;
-
-  color: #ffffff;
-
-  background: #397bff;
-
-  font-size: 11.5px;
+  font-size: 10px;
 
   font-weight: 700;
 
-  line-height: 1;
+  letter-spacing: 0.15em;
 
-  text-decoration: none;
-
-  box-shadow:
-    0 5px 16px
-    rgba(
-      57,
-      123,
-      255,
-      0.14
-    );
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+  text-transform: uppercase;
 }
 
 
-/* =========================================
-   CARD HOVER BUTTON
-========================================= */
+/* Title */
 
-.solutions-page-card:hover
-.solution-link {
-  transform:
-    translateY(-1px);
+.solution-slide-content h3 {
+  margin: 0;
+
+  max-width: 530px;
+
+  color: var(--nodeus-white);
+
+  font-size: clamp(
+    30px,
+    3vw,
+    44px
+  );
+
+  line-height: 1.04;
+
+  letter-spacing: -0.04em;
 }
 
 
-/* =========================================
-   BUTTON HOVER
-========================================= */
+/* Description */
 
-.solutions-page-card
-.solution-link:hover {
-  transform:
-    translateY(-2px);
+.solution-slide-content p {
+  margin: 18px 0 0;
 
-  color: #ffffff;
+  max-width: 520px;
 
-  background: #4b8cff;
+  color: var(--solutions-muted);
 
-  border-color: #4b8cff;
+  font-size: 14px;
 
-  box-shadow:
-    0 8px 22px
-    rgba(
-      57,
-      123,
-      255,
-      0.24
-    );
+  line-height: 1.7;
 }
 
 
-/* =========================================
-   BUTTON ICON
-========================================= */
+/* Highlights */
 
-.solutions-page-card
-.solution-link svg {
-  width: 14px;
+.solution-slide-highlights {
+  display: grid;
 
-  height: 14px;
+  grid-template-columns: 1fr 1fr;
 
+  gap: 10px 20px;
+
+  margin-top: 24px;
+}
+
+.solution-slide-highlights span {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  color: var(--solutions-muted-strong);
+
+  font-size: 11px;
+
+  line-height: 1.45;
+}
+
+.solution-slide-highlights svg {
   flex-shrink: 0;
+
+  margin-top: 1px;
+
+  color: var(--nodeus-blue);
+}
+
+
+/* Footer */
+
+.solution-slide-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: auto;
+
+  padding-top: 25px;
+
+  border-top: 1px solid var(--solutions-border);
+
+  color: var(--nodeus-white);
+
+  font-size: 12px;
+
+  font-weight: 650;
+}
+
+.solution-slide-footer-arrow {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--nodeus-white);
+
+  background: var(--nodeus-blue);
 
   transition:
     transform 0.25s ease;
 }
 
+.solution-slide:hover
+.solution-slide-footer-arrow {
+  transform: translateX(4px);
+}
 
-.solutions-page-card
-.solution-link:hover svg,
-.solutions-page-card:hover
-.solution-link svg {
-  transform:
-    translate(
-      2px,
-      -1px
+
+/* ============================================================
+   CAROUSEL CONTROLS
+   ============================================================ */
+
+.solutions-carousel-controls {
+  position: relative;
+
+  z-index: 30;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 28px;
+
+  margin-top: 10px;
+}
+
+
+/* Arrows */
+
+.solutions-carousel-arrow {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--solutions-border);
+
+  border-radius: 50%;
+
+  color: var(--nodeus-white);
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.025
+  );
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.solutions-carousel-arrow:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--nodeus-blue);
+
+  background: rgba(
+    52,
+    124,
+    255,
+    0.12
+  );
+}
+
+
+/* Dots */
+
+.solutions-carousel-dots {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.solutions-carousel-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.22
+  );
+
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.solutions-carousel-dot:hover {
+  transform: scale(1.25);
+}
+
+.solutions-carousel-dot.active {
+  width: 28px;
+
+  border-radius: 999px;
+
+  background: var(--nodeus-blue);
+
+  box-shadow:
+    0 0 18px rgba(
+      52,
+      124,
+      255,
+      0.45
     );
 }
 
 
-/* =========================================
-   LARGE TABLET
-========================================= */
+/* Hint */
+
+.solutions-carousel-hint {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.32
+  );
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+}
+
+.solutions-carousel-hint span {
+  width: 34px;
+  height: 1px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.16
+  );
+}
+
+
+/* ============================================================
+   WHY NODEUS
+   ============================================================ */
+
+.solutions-why {
+  position: relative;
+
+  padding: 140px 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(
+        52,
+        124,
+        255,
+        0.09
+      ),
+      transparent 30%
+    ),
+    #06101C;
+}
+
+.solutions-why-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.85fr)
+    minmax(0, 1fr);
+
+  gap: 100px;
+
+  align-items: start;
+}
+
+.solutions-section-label.light {
+  color: var(--nodeus-blue);
+}
+
+.solutions-why-heading h2 {
+  margin-top: 5px;
+}
+
+.solutions-why-heading > p {
+  max-width: 520px;
+
+  margin: 25px 0 0;
+
+  color: var(--solutions-muted);
+
+  line-height: 1.8;
+}
+
+.solutions-text-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 28px;
+
+  color: var(--nodeus-blue);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 650;
+}
+
+.solutions-text-link svg {
+  transition:
+    transform 0.25s ease;
+}
+
+.solutions-text-link:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* Features */
+
+.solutions-why-features {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0;
+
+  border-top: 1px solid var(--solutions-border);
+}
+
+.solutions-why-feature {
+  display: grid;
+
+  grid-template-columns: 34px 1fr;
+
+  gap: 15px;
+
+  padding: 28px 20px 28px 0;
+
+  border-bottom: 1px solid var(--solutions-border);
+}
+
+.solutions-why-feature:nth-child(even) {
+  padding-left: 25px;
+
+  border-left: 1px solid var(--solutions-border);
+}
+
+.why-feature-marker {
+  color: var(--nodeus-blue);
+}
+
+.solutions-why-feature h3 {
+  margin: 0;
+
+  color: var(--nodeus-white);
+
+  font-size: 16px;
+}
+
+.solutions-why-feature p {
+  margin: 9px 0 0;
+
+  color: var(--solutions-muted);
+
+  font-size: 12px;
+
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   PLATFORMS
+   ============================================================ */
+
+.solutions-platforms {
+  padding: 130px 0;
+
+  background: #091522;
+}
+
+.solutions-platforms-heading {
+  max-width: 760px;
+}
+
+.solutions-platforms-heading p {
+  max-width: 650px;
+
+  margin: 25px 0 0;
+
+  color: var(--solutions-muted);
+
+  line-height: 1.75;
+}
+
+.solutions-tools-cloud {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 55px;
+}
+
+.solutions-tool-pill {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 11px 15px;
+
+  border: 1px solid var(--solutions-border);
+
+  border-radius: 999px;
+
+  color: var(--solutions-muted-strong);
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.025
+  );
+
+  font-size: 12px;
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.solutions-tool-pill:hover {
+  transform: translateY(-2px);
+
+  color: var(--nodeus-white);
+
+  border-color: rgba(
+    52,
+    124,
+    255,
+    0.4
+  );
+
+  background: rgba(
+    52,
+    124,
+    255,
+    0.07
+  );
+}
+
+.tool-pill-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--nodeus-blue);
+
+  box-shadow:
+    0 0 10px rgba(
+      52,
+      124,
+      255,
+      0.6
+    );
+}
+
+
+/* ============================================================
+   TRUST
+   ============================================================ */
+
+.solutions-trust {
+  padding: 130px 0;
+
+  background: #07111F;
+}
+
+.solutions-trust-header {
+  display: grid;
+
+  grid-template-columns:
+    0.4fr
+    1fr;
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+.solutions-trust-title p {
+  max-width: 650px;
+
+  margin: 25px 0 0;
+
+  color: var(--solutions-muted);
+
+  line-height: 1.75;
+}
+
+
+/* Compliance */
+
+.solutions-compliance-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 10px;
+
+  margin-top: 60px;
+}
+
+.solutions-compliance-card {
+  min-height: 150px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  padding: 22px;
+
+  border: 1px solid var(--solutions-border);
+
+  border-radius: 18px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.02
+  );
+}
+
+.compliance-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  color: var(--nodeus-blue);
+
+  background: rgba(
+    52,
+    124,
+    255,
+    0.09
+  );
+}
+
+.solutions-compliance-card strong {
+  display: block;
+
+  color: var(--nodeus-white);
+
+  font-size: 13px;
+}
+
+.solutions-compliance-card span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--solutions-muted);
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   SEO
+   ============================================================ */
+
+.solutions-seo {
+  padding: 130px 0;
+
+  background: #091522;
+}
+
+.solutions-seo-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 100px;
+}
+
+.solutions-seo-content {
+  grid-column: 1 / -1;
+
+  max-width: 950px;
+}
+
+.solutions-seo-content p {
+  max-width: 850px;
+
+  margin: 26px 0 0;
+
+  color: var(--solutions-muted);
+
+  line-height: 1.85;
+}
+
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+
+.solutions-final-cta {
+  position: relative;
+
+  padding: 150px 0;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(
+        52,
+        124,
+        255,
+        0.13
+      ),
+      transparent 42%
+    ),
+    #06101C;
+}
+
+.solutions-final-glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 450px;
+  height: 450px;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border-radius: 50%;
+
+  background: rgba(
+    52,
+    124,
+    255,
+    0.08
+  );
+
+  filter: blur(90px);
+
+  pointer-events: none;
+}
+
+.solutions-final-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  margin: 0 auto;
+}
+
+.solutions-final-content h2 {
+  margin: 0;
+
+  color: var(--nodeus-white);
+
+  font-size: clamp(
+    42px,
+    5vw,
+    68px
+  );
+
+  line-height: 1.02;
+
+  letter-spacing: -0.05em;
+}
+
+.solutions-final-content h2 span {
+  color: var(--nodeus-blue);
+}
+
+.solutions-final-content p {
+  max-width: 620px;
+
+  margin: 25px auto 35px;
+
+  color: var(--solutions-muted);
+
+  line-height: 1.75;
+}
+
+
+/* ============================================================
+   RESPONSIVE — TABLET / SMALL LAPTOP
+   ============================================================ */
 
 @media (max-width: 1100px) {
 
-  .solutions-page-hero {
-    padding:
-      75px
-      6%
-      80px;
-  }
-
-
-  .solutions-page-grid {
-    width:
-      calc(
-        100% - 40px
-      );
-
-    padding:
-      55px
-      0
-      75px;
-
-    gap: 14px;
-  }
-
-
-  .solutions-page-card {
-    min-height: 300px;
-
-    padding:
-      76px
-      24px
-      24px;
-  }
-
-
-  .solutions-page-card-top {
-    top: 22px;
-
-    left: 24px;
-
-    right: 24px;
-  }
-
-
-  .solutions-page-card h2 {
-    font-size: 24px;
-  }
-
-
-  .solutions-page-card > p {
-    max-width: 480px;
-
-    font-size: 14px;
-  }
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-  .solutions-page-hero {
-    padding:
-      70px
-      6%
-      75px;
-  }
-
-
-  .solutions-page-grid {
-    width:
-      calc(
-        100% - 40px
-      );
-
+  .solutions-hero .solutions-container {
     grid-template-columns: 1fr;
 
-    gap: 14px;
-
-    padding:
-      50px
-      0
-      70px;
+    gap: 60px;
   }
 
-
-  .solutions-page-card {
-    min-height: 285px;
-
-    padding:
-      76px
-      27px
-      22px;
+  .solutions-hero-content {
+    max-width: 800px;
   }
 
+  .solutions-hero-visual {
+    width: min(
+      100%,
+      680px
+    );
 
-  .solutions-page-card-top {
-    top: 22px;
+    height: 460px;
 
-    left: 27px;
-
-    right: 27px;
+    margin: 0 auto;
   }
 
+  .solutions-why-grid {
+    grid-template-columns: 1fr;
 
-  .solutions-page-card h2 {
-    max-width: 560px;
-
-    font-size: 25px;
+    gap: 60px;
   }
 
-
-  .solutions-page-card > p {
-    max-width: 560px;
-
-    font-size: 14px;
+  .solutions-compliance-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
   }
 
+  .solutions-trust-header {
+    grid-template-columns: 1fr;
+  }
 
-  .solutions-page-services {
-    max-width: 600px;
+  .floating-card-one {
+    right: 10px;
+  }
+
+  .floating-card-two {
+    left: 10px;
   }
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* ============================================================
+   RESPONSIVE — TABLET
+   ============================================================ */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
-  .solutions-page {
-    padding-top:
-      var(--navbar-height);
+  .solutions-container {
+    width: min(
+      calc(100% - 32px),
+      var(--solutions-container)
+    );
   }
 
 
-  /* =====================================
+  /* ----------------------------------------------------------
      HERO
-  ===================================== */
+     ---------------------------------------------------------- */
 
-  .solutions-page-hero {
-    padding:
+  .solutions-hero {
+    min-height: auto;
+
+    padding: 110px 0 80px;
+  }
+
+  .solutions-hero h1 {
+    font-size: clamp(
+      45px,
+      12vw,
       65px
-      6%
-      70px;
+    );
   }
 
 
-  .solutions-page-hero h1 {
-    margin:
-      13px
-      0
-      18px;
+  /* ----------------------------------------------------------
+     HERO VISUAL
+     ---------------------------------------------------------- */
 
-    font-size:
-      clamp(
-        45px,
-        13vw,
-        70px
-      );
+  .solutions-hero-visual {
+    width: 100%;
 
-    line-height: 0.96;
+    height: 390px;
+
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    left: 0;
+    right: 0;
+
+    transform: translateX(0);
   }
 
 
-  .solutions-page-hero p {
-    font-size: 16px;
+  /* Orbit */
 
-    line-height: 1.6;
+  .orbit-three {
+    width: clamp(
+      300px,
+      58vw,
+      360px
+    );
+
+    height: clamp(
+      300px,
+      58vw,
+      360px
+    );
+  }
+
+  .orbit-two {
+    width: clamp(
+      250px,
+      48vw,
+      300px
+    );
+
+    height: clamp(
+      250px,
+      48vw,
+      300px
+    );
+  }
+
+  .orbit-one {
+    width: clamp(
+      190px,
+      37vw,
+      230px
+    );
+
+    height: clamp(
+      190px,
+      37vw,
+      230px
+    );
   }
 
 
-  /* =====================================
-     GRID
-  ===================================== */
+  /* Center */
 
-  .solutions-page-grid {
-    width:
-      calc(
-        100% - 28px
-      );
+  .solutions-hero-center {
+    width: clamp(
+      150px,
+      28vw,
+      190px
+    );
 
-    padding:
-      45px
-      0
-      65px;
-
-    gap: 12px;
-
-    grid-template-columns: 1fr;
+    margin: 0 auto;
   }
 
 
-  /* =====================================
-     CARD
-  ===================================== */
+  /* Floating cards */
 
-  .solutions-page-card {
-    min-height: 285px;
+  .solutions-floating-card {
+    transform: scale(0.82);
 
-    padding:
-      72px
-      21px
-      22px;
-
-    border-radius: 15px;
+    transform-origin: center center;
   }
 
-
-  /* =====================================
-     TOP
-  ===================================== */
-
-  .solutions-page-card-top {
-    top: 20px;
-
-    left: 21px;
-
-    right: 21px;
-
-    height: 40px;
-  }
-
-
-  /* =====================================
-     ICON
-  ===================================== */
-
-  .solutions-page-icon {
-    width: 40px;
-
-    height: 40px;
-
-    border-radius: 10px;
-  }
-
-
-  /* =====================================
-     TITLE
-  ===================================== */
-
-  .solutions-page-card h2 {
-    max-width: 460px;
-
-    margin-bottom: 9px;
-
-    font-size: 23px;
-
-    line-height: 1.08;
-  }
-
-
-  /* =====================================
-     DESCRIPTION
-  ===================================== */
-
-  .solutions-page-card > p {
-    max-width: 460px;
-
-    font-size: 13.5px;
-
-    line-height: 1.55;
-  }
-
-
-  /* =====================================
-     TAGS
-  ===================================== */
-
-  .solutions-page-services {
-    gap: 5px;
-
-    margin-top: 11px;
-  }
-
-
-  .solutions-page-services span {
-    padding:
-      5px
-      8px;
-
-    font-size: 10px;
-  }
-
-
-  /* =====================================
-     BUTTON
-  ===================================== */
-
-  .solutions-page-card .solution-link {
-    margin-top: 14px;
-
-    padding:
-      8px
-      13px;
-
-    border-radius: 8px;
-
-    font-size: 11px;
-  }
-
-
-  .solutions-page-card
-  .solution-link svg {
-    width: 13px;
-
-    height: 13px;
-  }
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 420px) {
-
-  .solutions-page-hero {
-    padding:
-      55px
-      6%
-      60px;
-  }
-
-
-  .solutions-page-hero h1 {
-    font-size:
-      clamp(
-        38px,
-        12vw,
-        56px
-      );
-  }
-
-
-  .solutions-page-grid {
-    width:
-      calc(
-        100% - 22px
-      );
-
-    padding:
-      40px
-      0
-      55px;
-
-    gap: 11px;
-  }
-
-
-  .solutions-page-card {
-    min-height: 270px;
-
-    padding:
-      70px
-      19px
-      20px;
-
-    border-radius: 15px;
-  }
-
-
-  .solutions-page-card-top {
-    top: 19px;
-
-    left: 19px;
-
-    right: 19px;
-  }
-
-
-  .solutions-page-icon {
-    width: 38px;
-
-    height: 38px;
-  }
-
-
-  .solutions-page-card h2 {
-    max-width: 380px;
-
-    font-size: 21px;
-
-    line-height: 1.08;
-  }
-
-
-  .solutions-page-card > p {
-    max-width: 380px;
-
-    font-size: 13px;
-
-    line-height: 1.55;
-  }
-
-
-  .solutions-page-services {
-    gap: 4px;
-
-    margin-top: 10px;
-  }
-
-
-  .solutions-page-services span {
-    padding:
-      4px
-      7px;
-
-    font-size: 9.5px;
-  }
-
-
-  .solutions-page-card .solution-link {
-    margin-top: 13px;
-
-    padding:
-      8px
-      12px;
-
-    border-radius: 8px;
-
-    font-size: 10.5px;
-  }
-}
-
-
-/* =========================================
-   VERY SMALL SCREENS
-========================================= */
-
-@media (max-width: 360px) {
-
-  .solutions-page-hero {
-    padding-left: 20px;
-
-    padding-right: 20px;
-  }
-
-
-  .solutions-page-grid {
-    width:
-      calc(
-        100% - 20px
-      );
-  }
-
-
-  .solutions-page-card {
-    min-height: 275px;
-
-    padding:
-      68px
-      18px
-      19px;
-  }
-
-
-  .solutions-page-card-top {
+  .floating-card-one {
     top: 18px;
 
-    left: 18px;
+    right: 0;
+  }
 
-    right: 18px;
+  .floating-card-two {
+    bottom: 18px;
+
+    left: 0;
   }
 
 
-  .solutions-page-services span {
+  /* ----------------------------------------------------------
+     CAROUSEL
+     ---------------------------------------------------------- */
+
+  .solutions-carousel-stage {
+    height: 610px;
+  }
+
+  .solution-slide {
+    width: min(
+      calc(100vw - 44px),
+      560px
+    );
+
+    margin-left:
+      min(
+        calc((-100vw + 44px) / 2),
+        -280px
+      );
+
+    min-height: 500px;
+
+    margin-top: -250px;
+  }
+
+  .solution-slide-link {
+    min-height: 500px;
+  }
+
+  .solution-slide-content {
+    padding: 24px;
+  }
+
+  .solution-slide-content h3 {
+    font-size: 32px;
+  }
+
+  .solution-slide-highlights {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ----------------------------------------------------------
+     WHY
+     ---------------------------------------------------------- */
+
+  .solutions-why-features {
+    grid-template-columns: 1fr;
+  }
+
+  .solutions-why-feature:nth-child(even) {
+    padding-left: 0;
+
+    border-left: 0;
+  }
+
+
+  /* ----------------------------------------------------------
+     COMPLIANCE
+     ---------------------------------------------------------- */
+
+  .solutions-compliance-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  /* ----------------------------------------------------------
+     SEO
+     ---------------------------------------------------------- */
+
+  .solutions-seo-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+}
+
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+
+@media (max-width: 560px) {
+
+  .solutions-container {
+    width: calc(100% - 28px);
+  }
+
+
+  /* ----------------------------------------------------------
+     HERO
+     ---------------------------------------------------------- */
+
+  .solutions-hero {
+    padding: 90px 0 65px;
+  }
+
+  .solutions-hero h1 {
+    font-size: clamp(
+      40px,
+      12vw,
+      58px
+    );
+  }
+
+  .solutions-hero-description {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+
+  /* ----------------------------------------------------------
+     HERO ACTIONS
+     ---------------------------------------------------------- */
+
+  .solutions-hero-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .solutions-btn {
+    width: 100%;
+  }
+
+
+  /* ----------------------------------------------------------
+     HERO VISUAL
+     ---------------------------------------------------------- */
+
+  .solutions-hero-visual {
+    width: 100%;
+
+    height: clamp(
+      300px,
+      80vw,
+      340px
+    );
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    left: 0;
+    right: 0;
+
+    transform: none;
+
+    overflow: visible;
+  }
+
+
+  /* ----------------------------------------------------------
+     MOBILE ORBITS
+     ---------------------------------------------------------- */
+
+  .orbit-three {
+    width: min(
+      78vw,
+      300px
+    );
+
+    height: min(
+      78vw,
+      300px
+    );
+
+    left: 50%;
+  }
+
+  .orbit-two {
+    width: min(
+      64vw,
+      245px
+    );
+
+    height: min(
+      64vw,
+      245px
+    );
+
+    left: 50%;
+  }
+
+  .orbit-one {
+    width: min(
+      50vw,
+      190px
+    );
+
+    height: min(
+      50vw,
+      190px
+    );
+
+    left: 50%;
+  }
+
+
+  /* ----------------------------------------------------------
+     CENTER CIRCLE
+     ---------------------------------------------------------- */
+
+  .solutions-hero-center {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: clamp(
+      135px,
+      38vw,
+      170px
+    );
+
+    min-width: 135px;
+    min-height: 135px;
+
+    margin: 0;
+
+    transform:
+      translate(
+        -50%,
+        -50%
+      );
+
+    gap: 7px;
+  }
+
+  .solutions-hero-center strong {
+    font-size: clamp(
+      12px,
+      3.5vw,
+      15px
+    );
+
+    letter-spacing: 0.16em;
+  }
+
+  .solutions-hero-center span {
     font-size: 8px;
   }
 
 
-  .solutions-page-card .solution-link {
-    padding:
-      7px
-      11px;
+  /* ----------------------------------------------------------
+     FLOATING CARDS — MOBILE
+     ---------------------------------------------------------- */
 
+  .solutions-floating-card {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 9px 10px;
+
+    border-radius: 12px;
+
+    transform: scale(0.68);
+
+    transform-origin: center center;
+
+    white-space: nowrap;
+  }
+
+
+  /*
+     IMPORTANT FIX:
+
+     Instead of pushing the cards outside the
+     visual using negative left/right values,
+     anchor both cards relative to the center.
+
+     This prevents the hero from appearing
+     shifted to one side on small screens.
+  */
+
+  .floating-card-one {
+    top: 8px;
+
+    right: auto;
+    left: 50%;
+
+    transform:
+      translateX(
+        clamp(
+          70px,
+          22vw,
+          105px
+        )
+      )
+      scale(0.68);
+  }
+
+  .floating-card-two {
+    bottom: 8px;
+
+    left: auto;
+    right: 50%;
+
+    transform:
+      translateX(
+        clamp(
+          -70px,
+          -22vw,
+          -105px
+        )
+      )
+      scale(0.68);
+  }
+
+
+  .floating-card-icon {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 8px;
+  }
+
+  .solutions-floating-card strong {
     font-size: 10px;
+  }
+
+  .solutions-floating-card small {
+    font-size: 8px;
+  }
+
+
+  /* ----------------------------------------------------------
+     SECTION SPACING
+     ---------------------------------------------------------- */
+
+  .solutions-services,
+  .solutions-why,
+  .solutions-platforms,
+  .solutions-trust,
+  .solutions-seo {
+    padding: 90px 0;
+  }
+
+
+  /* ----------------------------------------------------------
+     CAROUSEL
+     ---------------------------------------------------------- */
+
+  .solutions-carousel {
+    margin-top: 55px;
+  }
+
+  .solutions-carousel-stage {
+    width: 100%;
+
+    height: 560px;
+
+    overflow: visible;
+  }
+
+  .solution-slide {
+    width: calc(
+      100vw - 32px
+    );
+
+    margin-left:
+      calc(
+        (-100vw + 32px) / 2
+      );
+
+    min-height: 470px;
+
+    margin-top: -235px;
+
+    border-radius: 22px;
+  }
+
+  .solution-slide-link {
+    min-height: 470px;
+  }
+
+  .solution-slide-image {
+    aspect-ratio: 16 / 8;
+  }
+
+  .solution-slide-content {
+    padding: 21px;
+  }
+
+  .solution-slide-top {
+    margin-bottom: 17px;
+  }
+
+  .solution-slide-content h3 {
+    font-size: 29px;
+  }
+
+  .solution-slide-content p {
+    font-size: 13px;
+  }
+
+  .solution-slide-footer {
+    padding-top: 20px;
+  }
+
+
+  /* ----------------------------------------------------------
+     CAROUSEL CONTROLS
+     ---------------------------------------------------------- */
+
+  .solutions-carousel-controls {
+    gap: 15px;
+  }
+
+  .solutions-carousel-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+
+  /* ----------------------------------------------------------
+     COMPLIANCE
+     ---------------------------------------------------------- */
+
+  .solutions-compliance-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ----------------------------------------------------------
+     TOOLS
+     ---------------------------------------------------------- */
+
+  .solutions-tools-cloud {
+    margin-top: 40px;
+  }
+
+
+  /* ----------------------------------------------------------
+     FINAL CTA
+     ---------------------------------------------------------- */
+
+  .solutions-final-cta {
+    padding: 110px 0;
   }
 }
 
 
-/* =========================================
-   PREVENT HORIZONTAL OVERFLOW
-========================================= */
+/* ============================================================
+   VERY SMALL PHONES
+   ============================================================ */
 
-html,
-body {
-  max-width: 100%;
+@media (max-width: 380px) {
 
-  overflow-x: clip;
-}
+  .solutions-hero {
+    padding-top: 80px;
+  }
+
+  .solutions-hero-visual {
+    width: 100%;
+
+    height: 285px;
+
+    margin: 0 auto;
+  }
 
 
-/* =========================================
-   REDUCED MOTION
-========================================= */
+  /* Extra-small orbit scaling */
 
-@media (
-  prefers-reduced-motion: reduce
-) {
+  .orbit-three {
+    width: 76vw;
+    height: 76vw;
 
-  .solutions-page *,
-  .solutions-page *::before,
-  .solutions-page *::after {
-    scroll-behavior:
-      auto !important;
+    left: 50%;
+  }
 
-    transition-duration:
-      0.01ms !important;
+  .orbit-two {
+    width: 62vw;
+    height: 62vw;
 
-    animation-duration:
-      0.01ms !important;
+    left: 50%;
+  }
 
-    animation-iteration-count:
-      1 !important;
+  .orbit-one {
+    width: 49vw;
+    height: 49vw;
+
+    left: 50%;
+  }
+
+
+  /* Center */
+
+  .solutions-hero-center {
+    width: 128px;
+
+    min-width: 128px;
+    min-height: 128px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+      translate(
+        -50%,
+        -50%
+      );
+  }
+
+
+  /* Floating cards */
+
+  .solutions-floating-card {
+    transform-origin: center center;
+  }
+
+  .floating-card-one {
+    top: 5px;
+
+    right: auto;
+    left: 50%;
+
+    transform:
+      translateX(72px)
+      scale(0.58);
+  }
+
+  .floating-card-two {
+    bottom: 5px;
+
+    left: auto;
+    right: 50%;
+
+    transform:
+      translateX(-72px)
+      scale(0.58);
   }
 }

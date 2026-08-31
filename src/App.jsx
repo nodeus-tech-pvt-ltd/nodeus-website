@@ -14,9 +14,10 @@ import {
 
 import Home from "./pages/home/Home";
 import Solutions from "./pages/solutions/Solutions";
-import SolutionCategory from "./pages/solutions/SolutionCategory";
+// import SolutionCategory from "./pages/solutions/SolutionCategory";
 import Industries from "./pages/industries/Industries";
-import ServiceDetail from "./pages/Services/ServiceDetail";
+import ServiceDetail from "./pages/solutions/ServiceDetail";;
+// import ServiceDetail from "./pages/Services/ServiceDetail";
 import IndustryDetail from "./pages/industries/IndustryDetail";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
@@ -76,10 +77,22 @@ function AnimatedRoutes() {
           element={<Solutions />}
         />
 
-        <Route
+        {/* <Route
           path="/solutions/:category"
           element={<SolutionCategory />}
+        /> */}
+
+
+        <Route
+          path="/solutions/:slug"
+          element={<ServiceDetail />}
         />
+
+
+        {/* <Route
+          path="/services/:service"
+          element={<ServiceDetail />}
+        /> */}
 
         <Route
           path="/industries"
@@ -93,10 +106,7 @@ function AnimatedRoutes() {
 
         {/* INDIVIDUAL SERVICE PAGES */}
 
-        <Route
-          path="/services/:service"
-          element={<ServiceDetail />}
-        />
+        
 
         <Route
           path="/contact"
