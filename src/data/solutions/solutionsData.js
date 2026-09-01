@@ -180,6 +180,15 @@ import {
   Truck,
 } from "lucide-react";
 
+import customerServicesImage from "../../assets/solutions/customer-services.png";
+import customerSuccessImage from "../../assets/solutions/customer-success.png";
+import executiveAssistantImage from "../../assets/solutions/executive-assistant.png";
+import marketingAssistantImage from "../../assets/solutions/marketing-assistant.png";
+import socialMediaManagerImage from "../../assets/solutions/social-media-manger.png";
+import ecommerceSupportImage from "../../assets/solutions/e-commerce-support.png";
+import aiTransformationImage from "../../assets/solutions/ai-transformation.png";
+import truckDispatchingImage from "../../assets/solutions/truck-dispatching.png";
+
 export const solutionsData = [
   {
     slug: "customer-services",
@@ -201,7 +210,7 @@ export const solutionsData = [
     heroTag:
       "Customer Experience & Support",
 
-    image: "/images/solutions/customer-services.jpg",
+    image: customerServicesImage,
 
     accent: "customer-services",
 
@@ -235,7 +244,7 @@ export const solutionsData = [
     heroTag:
       "Customer Growth & Retention",
 
-    image: "/images/solutions/customer-success.jpg",
+    image: customerSuccessImage,
 
     accent: "customer-success",
 
@@ -269,7 +278,7 @@ export const solutionsData = [
     heroTag:
       "Executive & Business Support",
 
-    image: "/images/solutions/executive-assistant.jpg",
+    image: executiveAssistantImage,
 
     accent: "executive-assistant",
 
@@ -303,7 +312,7 @@ export const solutionsData = [
     heroTag:
       "Marketing Operations & Growth",
 
-    image: "/images/solutions/marketing-assistant.jpg",
+    image: marketingAssistantImage,
 
     accent: "marketing-assistant",
 
@@ -337,7 +346,7 @@ export const solutionsData = [
     heroTag:
       "Social Media & Digital Presence",
 
-    image: "/images/solutions/social-media-manager.jpg",
+    image: socialMediaManagerImage,
 
     accent: "social-media-manager",
 
@@ -371,7 +380,7 @@ export const solutionsData = [
     heroTag:
       "E-commerce Operations & Support",
 
-    image: "/images/solutions/ecommerce-support.jpg",
+    image: ecommerceSupportImage,
 
     accent: "ecommerce-support",
 
@@ -405,7 +414,7 @@ export const solutionsData = [
     heroTag:
       "AI Strategy, Automation & Transformation",
 
-    image: "/images/solutions/ai-transformation.jpg",
+    image: aiTransformationImage,
 
     accent: "ai-transformation",
 
@@ -439,7 +448,7 @@ export const solutionsData = [
     heroTag:
       "Transportation & Logistics",
 
-    image: "/images/solutions/truck-dispatching.jpg",
+    image: truckDispatchingImage,
 
     accent: "truck-dispatching",
 

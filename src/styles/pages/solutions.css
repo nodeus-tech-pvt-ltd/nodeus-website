@@ -5,18 +5,14 @@
 :root {
   --nodeus-blue: #347CFF;
   --nodeus-white: #FFFFFF;
-
   --solutions-bg: #07111F;
   --solutions-bg-soft: #0A1626;
   --solutions-card: #0B1829;
   --solutions-card-light: #102035;
-
   --solutions-border: rgba(255, 255, 255, 0.09);
   --solutions-border-blue: rgba(52, 124, 255, 0.38);
-
   --solutions-muted: rgba(255, 255, 255, 0.62);
   --solutions-muted-strong: rgba(255, 255, 255, 0.76);
-
   --solutions-radius: 28px;
   --solutions-container: 1240px;
 }
@@ -55,6 +51,7 @@
 
 .solutions-hero {
   position: relative;
+
   min-height: 760px;
 
   display: flex;
@@ -78,7 +75,9 @@
 }
 
 
-/* Grid */
+/* ============================================================
+   HERO GRID
+   ============================================================ */
 
 .solutions-hero-grid {
   position: absolute;
@@ -109,7 +108,9 @@
 }
 
 
-/* Glows */
+/* ============================================================
+   HERO GLOWS
+   ============================================================ */
 
 .solutions-hero-glow {
   position: absolute;
@@ -141,7 +142,9 @@
 }
 
 
-/* Hero content */
+/* ============================================================
+   HERO CONTENT
+   ============================================================ */
 
 .solutions-hero .solutions-container {
   position: relative;
@@ -163,7 +166,9 @@
 }
 
 
-/* Eyebrow */
+/* ============================================================
+   EYEBROW
+   ============================================================ */
 
 .solutions-eyebrow {
   display: inline-flex;
@@ -197,7 +202,9 @@
 }
 
 
-/* Hero heading */
+/* ============================================================
+   HERO HEADING
+   ============================================================ */
 
 .solutions-hero h1 {
   margin: 0;
@@ -216,7 +223,7 @@
 
   font-weight: 700;
 
-  color: var(--nodeus-white);
+  color: var(--solutions-white, var(--nodeus-white));
 }
 
 .solutions-hero h1 span {
@@ -224,7 +231,9 @@
 }
 
 
-/* Hero description */
+/* ============================================================
+   HERO DESCRIPTION
+   ============================================================ */
 
 .solutions-hero-description {
   max-width: 610px;
@@ -239,11 +248,12 @@
 }
 
 
-/* Hero actions */
+/* ============================================================
+   HERO ACTIONS
+   ============================================================ */
 
 .solutions-hero-actions {
   display: flex;
-
   flex-wrap: wrap;
 
   gap: 14px;
@@ -257,26 +267,41 @@
    ============================================================ */
 
 .solutions-center-logo {
-  width: 150px;
-  height: 72px;
+  width: clamp(
+    75px,
+    8vw,
+    150px
+  );
+
+  height: auto;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 18px;
+  margin: 0 0 clamp(
+    5px,
+    1vw,
+    18px
+  );
+
+  flex-shrink: 1;
+
+  min-width: 0;
 }
 
 .solutions-center-logo img {
   display: block;
 
   width: 100%;
-  height: auto;
+  max-width: 100%;
 
-  max-height: 72px;
+  height: auto;
+  max-height: 100%;
 
   object-fit: contain;
+
+  flex-shrink: 1;
 }
 
 
@@ -288,7 +313,6 @@
   min-height: 54px;
 
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
@@ -323,7 +347,12 @@
   color: var(--nodeus-white);
 
   box-shadow:
-    0 14px 34px rgba(52, 124, 255, 0.2);
+    0 14px 34px rgba(
+      52,
+      124,
+      255,
+      0.2
+    );
 }
 
 .solutions-btn-primary:hover {
@@ -338,7 +367,12 @@
 
   color: var(--nodeus-white);
 
-  background: rgba(255, 255, 255, 0.025);
+  background: rgba(
+    255,
+    255,
+    255,
+    0.025
+  );
 }
 
 .solutions-btn-secondary:hover {
@@ -357,7 +391,6 @@
   height: 480px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -375,11 +408,20 @@
   left: 50%;
   top: 50%;
 
-  border: 1px solid rgba(52, 124, 255, 0.18);
+  border: 1px solid rgba(
+    52,
+    124,
+    255,
+    0.18
+  );
 
   border-radius: 50%;
 
-  transform: translate(-50%, -50%);
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
 
   pointer-events: none;
 }
@@ -398,7 +440,12 @@
   width: 470px;
   height: 470px;
 
-  border-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(
+    255,
+    255,
+    255,
+    0.05
+  );
 }
 
 
@@ -407,12 +454,15 @@
    ============================================================ */
 
 .solutions-hero-center {
-  position: relative;
+  position: absolute;
 
   z-index: 3;
 
+  left: 50%;
+  top: 50%;
+
   width: clamp(
-    150px,
+    120px,
     17vw,
     220px
   );
@@ -420,54 +470,150 @@
   aspect-ratio: 1 / 1;
 
   display: flex;
-
   flex-direction: column;
 
   align-items: center;
   justify-content: center;
 
-  gap: 10px;
+  gap: clamp(
+    5px,
+    0.8vw,
+    10px
+  );
 
-  border: 1px solid rgba(52, 124, 255, 0.32);
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border: 1px solid rgba(
+    52,
+    124,
+    255,
+    0.32
+  );
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(52, 124, 255, 0.16),
-      rgba(7, 17, 31, 0.95) 70%
+      rgba(
+        52,
+        124,
+        255,
+        0.16
+      ),
+      rgba(
+        7,
+        17,
+        31,
+        0.95
+      ) 70%
     );
 
   box-shadow:
-    0 0 80px rgba(52, 124, 255, 0.13),
-    inset 0 0 50px rgba(52, 124, 255, 0.05);
+    0 0 80px rgba(
+      52,
+      124,
+      255,
+      0.13
+    ),
+    inset 0 0 50px rgba(
+      52,
+      124,
+      255,
+      0.05
+    );
+
+  flex-shrink: 0;
+
+  /*
+    Prevents oversized content from visually
+    escaping the center circle.
+  */
+  overflow: hidden;
+
+  padding: clamp(
+    8px,
+    1.2vw,
+    18px
+  );
+}
+
+
+/* ============================================================
+   CENTER ICON
+   ============================================================ */
+
+.solutions-center-icon {
+  width: clamp(
+    24px,
+    3vw,
+    42px
+  );
+
+  height: clamp(
+    24px,
+    3vw,
+    42px
+  );
+
+  color: var(--nodeus-blue);
 
   flex-shrink: 0;
 }
 
-.solutions-center-icon {
-  color: var(--nodeus-blue);
-}
+
+/* ============================================================
+   CENTER TEXT
+   ============================================================ */
 
 .solutions-hero-center strong {
+  display: block;
+
+  max-width: 90%;
+
+  color: var(--nodeus-white);
+
   font-size: clamp(
-    14px,
+    10px,
     1.4vw,
     18px
   );
 
-  letter-spacing: 0.2em;
+  line-height: 1.1;
+
+  text-align: center;
+
+  letter-spacing: clamp(
+    0.08em,
+    0.2em,
+    0.2em
+  );
+
+  white-space: nowrap;
 }
 
 .solutions-hero-center span {
+  display: block;
+
+  max-width: 90%;
+
   color: var(--solutions-muted);
 
   font-size: clamp(
-    9px,
+    7px,
     0.9vw,
     11px
   );
+
+  line-height: 1.2;
+
+  text-align: center;
+
+  white-space: nowrap;
 }
 
 
@@ -481,7 +627,6 @@
   z-index: 5;
 
   display: flex;
-
   align-items: center;
 
   gap: 12px;
@@ -492,18 +637,28 @@
 
   border-radius: 16px;
 
-  background: rgba(9, 22, 38, 0.82);
+  background: rgba(
+    9,
+    22,
+    38,
+    0.82
+  );
 
   backdrop-filter: blur(18px);
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.25);
+    0 20px 50px rgba(
+      0,
+      0,
+      0,
+      0.25
+    );
 
   white-space: nowrap;
 }
 
 
-/* Desktop positioning */
+/* Desktop */
 
 .floating-card-one {
   top: 45px;
@@ -521,7 +676,6 @@
   height: 34px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -531,7 +685,12 @@
 
   color: var(--nodeus-blue);
 
-  background: rgba(52, 124, 255, 0.1);
+  background: rgba(
+    52,
+    124,
+    255,
+    0.1
+  );
 }
 
 .solutions-floating-card strong {
@@ -569,7 +728,9 @@
 }
 
 
-/* Heading */
+/* ============================================================
+   HEADING
+   ============================================================ */
 
 .solutions-heading-row {
   display: flex;
@@ -648,10 +809,17 @@
   position: relative;
 
   margin-top: 80px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 40px;
 }
 
 
-/* Stage */
+/* ============================================================
+   CAROUSEL STAGE
+   ============================================================ */
 
 .solutions-carousel-stage {
   position: relative;
@@ -670,7 +838,9 @@
 }
 
 
-/* Individual slide */
+/* ============================================================
+   INDIVIDUAL SLIDE
+   ============================================================ */
 
 .solution-slide {
   position: absolute;
@@ -703,7 +873,12 @@
     );
 
   box-shadow:
-    0 35px 90px rgba(0, 0, 0, 0.35);
+    0 35px 90px rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
 
   margin-left: -305px;
   margin-top: -270px;
@@ -716,7 +891,7 @@
 }
 
 
-/* Active card */
+/* Active */
 
 .solution-slide-active {
   border-color: rgba(
@@ -727,8 +902,18 @@
   );
 
   box-shadow:
-    0 45px 100px rgba(0, 0, 0, 0.4),
-    0 0 80px rgba(52, 124, 255, 0.08);
+    0 45px 100px rgba(
+      0,
+      0,
+      0,
+      0.4
+    ),
+    0 0 80px rgba(
+      52,
+      124,
+      255,
+      0.08
+    );
 }
 
 
@@ -796,6 +981,8 @@
       0.36,
       1
     );
+
+  object-position: top;
 }
 
 .solution-slide-active:hover
@@ -804,7 +991,7 @@
 }
 
 
-/* Image overlay */
+/* Overlay */
 
 .solution-slide-image-overlay {
   position: absolute;
@@ -815,7 +1002,12 @@
     linear-gradient(
       180deg,
       transparent 30%,
-      rgba(7, 17, 31, 0.82) 100%
+      rgba(
+        7,
+        17,
+        31,
+        0.82
+      ) 100%
     );
 }
 
@@ -852,7 +1044,6 @@
   height: 42px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -904,7 +1095,6 @@
   height: 40px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -983,7 +1173,8 @@
 .solution-slide-highlights {
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    1fr 1fr;
 
   gap: 10px 20px;
 
@@ -1040,7 +1231,6 @@
   height: 38px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -1076,18 +1266,14 @@
 
   gap: 28px;
 
-  margin-top: 10px;
+  margin-top: 60px;
 }
-
-
-/* Arrows */
 
 .solutions-carousel-arrow {
   width: 50px;
   height: 50px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -1307,7 +1493,8 @@
 .solutions-why-features {
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    1fr 1fr;
 
   gap: 0;
 
@@ -1317,7 +1504,8 @@
 .solutions-why-feature {
   display: grid;
 
-  grid-template-columns: 34px 1fr;
+  grid-template-columns:
+    34px 1fr;
 
   gap: 15px;
 
@@ -1532,7 +1720,6 @@
   height: 38px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -1803,11 +1990,15 @@
     left: 0;
     right: 0;
 
-    transform: translateX(0);
+    transform: none;
+
+    overflow: visible;
   }
 
 
-  /* Orbit */
+  /* ----------------------------------------------------------
+     ORBITS
+     ---------------------------------------------------------- */
 
   .orbit-three {
     width: clamp(
@@ -1821,6 +2012,8 @@
       58vw,
       360px
     );
+
+    left: 50%;
   }
 
   .orbit-two {
@@ -1835,6 +2028,8 @@
       48vw,
       300px
     );
+
+    left: 50%;
   }
 
   .orbit-one {
@@ -1849,23 +2044,115 @@
       37vw,
       230px
     );
+
+    left: 50%;
   }
 
 
-  /* Center */
+  /* ----------------------------------------------------------
+     CENTER CIRCLE — TABLET
+     ---------------------------------------------------------- */
 
   .solutions-hero-center {
     width: clamp(
-      150px,
+      130px,
       28vw,
-      190px
+      180px
     );
 
-    margin: 0 auto;
+    min-width: 0;
+    min-height: 0;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+      translate(
+        -50%,
+        -50%
+      );
+
+    gap: 6px;
+
+    padding: clamp(
+      8px,
+      1.5vw,
+      13px
+    );
   }
 
 
-  /* Floating cards */
+  /* ----------------------------------------------------------
+     CENTER LOGO — TABLET
+     ---------------------------------------------------------- */
+
+  .solutions-center-logo {
+    width: clamp(
+      70px,
+      15vw,
+      115px
+    );
+
+    max-width: 62%;
+
+    height: auto;
+
+    margin-bottom: 6px;
+  }
+
+  .solutions-center-logo img {
+    width: 100%;
+
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 100%;
+
+    object-fit: contain;
+  }
+
+
+  .solutions-center-icon {
+    width: clamp(
+      22px,
+      5vw,
+      32px
+    );
+
+    height: clamp(
+      22px,
+      5vw,
+      32px
+    );
+  }
+
+  .solutions-hero-center strong {
+    max-width: 82%;
+
+    font-size: clamp(
+      10px,
+      2vw,
+      14px
+    );
+
+    letter-spacing: 0.1em;
+  }
+
+  .solutions-hero-center span {
+    max-width: 82%;
+
+    font-size: clamp(
+      7px,
+      1.4vw,
+      9px
+    );
+  }
+
+
+  /* ----------------------------------------------------------
+     FLOATING CARDS — TABLET
+     ---------------------------------------------------------- */
 
   .solutions-floating-card {
     transform: scale(0.82);
@@ -1902,7 +2189,9 @@
 
     margin-left:
       min(
-        calc((-100vw + 44px) / 2),
+        calc(
+          (-100vw + 44px) / 2
+        ),
         -280px
       );
 
@@ -2088,7 +2377,7 @@
 
 
   /* ----------------------------------------------------------
-     CENTER CIRCLE
+     CENTER CIRCLE — MOBILE
      ---------------------------------------------------------- */
 
   .solutions-hero-center {
@@ -2097,16 +2386,31 @@
     left: 50%;
     top: 50%;
 
+    /*
+      Circle automatically shrinks with viewport.
+    */
     width: clamp(
-      135px,
-      38vw,
-      170px
+      118px,
+      34vw,
+      165px
     );
 
-    min-width: 135px;
-    min-height: 135px;
+    min-width: 0;
+    min-height: 0;
 
     margin: 0;
+
+    padding: clamp(
+      7px,
+      2vw,
+      11px
+    );
+
+    gap: clamp(
+      3px,
+      1.2vw,
+      7px
+    );
 
     transform:
       translate(
@@ -2114,21 +2418,117 @@
         -50%
       );
 
-    gap: 7px;
+    overflow: hidden;
   }
 
-  .solutions-hero-center strong {
-    font-size: clamp(
-      12px,
-      3.5vw,
-      15px
+
+  /* ----------------------------------------------------------
+     CENTER LOGO — MOBILE
+     ---------------------------------------------------------- */
+
+  .solutions-center-logo {
+    /*
+      Logo shrinks with viewport.
+    */
+    width: clamp(
+      58px,
+      19vw,
+      105px
     );
 
-    letter-spacing: 0.16em;
+    /*
+      Never allow logo to exceed the circle's
+      usable width.
+    */
+    max-width: 68%;
+
+    height: auto;
+
+    margin: 0 0 clamp(
+      3px,
+      1vw,
+      7px
+    );
+
+    flex-shrink: 1;
+  }
+
+  .solutions-center-logo img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 100%;
+
+    object-fit: contain;
+  }
+
+
+  /* ----------------------------------------------------------
+     CENTER ICON — MOBILE
+     ---------------------------------------------------------- */
+
+  .solutions-center-icon {
+    width: clamp(
+      20px,
+      7vw,
+      32px
+    );
+
+    height: clamp(
+      20px,
+      7vw,
+      32px
+    );
+
+    flex-shrink: 0;
+  }
+
+
+  /* ----------------------------------------------------------
+     CENTER TEXT — MOBILE
+     ---------------------------------------------------------- */
+
+  .solutions-hero-center strong {
+    max-width: 90%;
+
+    font-size: clamp(
+      9px,
+      3vw,
+      13px
+    );
+
+    line-height: 1.05;
+
+    letter-spacing: clamp(
+      0.07em,
+      0.13em,
+      0.16em
+    );
+
+    text-align: center;
+
+    white-space: nowrap;
   }
 
   .solutions-hero-center span {
-    font-size: 8px;
+    max-width: 90%;
+
+    font-size: clamp(
+      6px,
+      2vw,
+      8px
+    );
+
+    line-height: 1.1;
+
+    text-align: center;
+
+    white-space: nowrap;
   }
 
 
@@ -2145,8 +2545,6 @@
 
     border-radius: 12px;
 
-    transform: scale(0.68);
-
     transform-origin: center center;
 
     white-space: nowrap;
@@ -2154,28 +2552,24 @@
 
 
   /*
-     IMPORTANT FIX:
-
-     Instead of pushing the cards outside the
-     visual using negative left/right values,
-     anchor both cards relative to the center.
-
-     This prevents the hero from appearing
-     shifted to one side on small screens.
+    The cards are positioned relative to the
+    center of the visual instead of being pushed
+    against the viewport edges.
   */
 
   .floating-card-one {
     top: 8px;
 
     right: auto;
+
     left: 50%;
 
     transform:
       translateX(
         clamp(
-          70px,
-          22vw,
-          105px
+          55px,
+          19vw,
+          90px
         )
       )
       scale(0.68);
@@ -2185,14 +2579,15 @@
     bottom: 8px;
 
     left: auto;
+
     right: 50%;
 
     transform:
       translateX(
         clamp(
-          -70px,
-          -22vw,
-          -105px
+          -55px,
+          -19vw,
+          -90px
         )
       )
       scale(0.68);
@@ -2342,6 +2737,11 @@
     padding-top: 80px;
   }
 
+
+  /* ----------------------------------------------------------
+     HERO VISUAL
+     ---------------------------------------------------------- */
+
   .solutions-hero-visual {
     width: 100%;
 
@@ -2351,7 +2751,9 @@
   }
 
 
-  /* Extra-small orbit scaling */
+  /* ----------------------------------------------------------
+     EXTRA-SMALL ORBITS
+     ---------------------------------------------------------- */
 
   .orbit-three {
     width: 76vw;
@@ -2375,39 +2777,138 @@
   }
 
 
-  /* Center */
+  /* ----------------------------------------------------------
+     CENTER CIRCLE — VERY SMALL
+     ---------------------------------------------------------- */
 
   .solutions-hero-center {
-    width: 128px;
+    width: clamp(
+      108px,
+      34vw,
+      128px
+    );
 
-    min-width: 128px;
-    min-height: 128px;
+    min-width: 108px;
+    min-height: 108px;
+
+    max-width: 128px;
+    max-height: 128px;
 
     left: 50%;
     top: 50%;
+
+    padding: 7px;
+
+    gap: 3px;
 
     transform:
       translate(
         -50%,
         -50%
       );
+
+    overflow: hidden;
   }
 
 
-  /* Floating cards */
+  /* ----------------------------------------------------------
+     LOGO — VERY SMALL
+     ---------------------------------------------------------- */
+
+  .solutions-center-logo {
+    width: clamp(
+      48px,
+      17vw,
+      70px
+    );
+
+    max-width: 65%;
+
+    height: auto;
+
+    margin-bottom: 3px;
+  }
+
+  .solutions-center-logo img {
+    width: 100%;
+
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 100%;
+
+    object-fit: contain;
+  }
+
+
+  /* ----------------------------------------------------------
+     ICON — VERY SMALL
+     ---------------------------------------------------------- */
+
+  .solutions-center-icon {
+    width: clamp(
+      18px,
+      6vw,
+      25px
+    );
+
+    height: clamp(
+      18px,
+      6vw,
+      25px
+    );
+  }
+
+
+  /* ----------------------------------------------------------
+     CENTER TEXT — VERY SMALL
+     ---------------------------------------------------------- */
+
+  .solutions-hero-center strong {
+    max-width: 92%;
+
+    font-size: clamp(
+      8px,
+      2.8vw,
+      11px
+    );
+
+    line-height: 1.05;
+
+    letter-spacing: 0.08em;
+  }
+
+  .solutions-hero-center span {
+    max-width: 92%;
+
+    font-size: 6px;
+
+    line-height: 1.1;
+  }
+
+
+  /* ----------------------------------------------------------
+     FLOATING CARDS — VERY SMALL
+     ---------------------------------------------------------- */
 
   .solutions-floating-card {
     transform-origin: center center;
+
+    padding: 8px 9px;
+
+    gap: 7px;
   }
 
   .floating-card-one {
     top: 5px;
 
     right: auto;
+
     left: 50%;
 
     transform:
-      translateX(72px)
+      translateX(65px)
       scale(0.58);
   }
 
@@ -2415,10 +2916,117 @@
     bottom: 5px;
 
     left: auto;
+
     right: 50%;
 
     transform:
-      translateX(-72px)
+      translateX(-65px)
       scale(0.58);
+  }
+
+  .floating-card-icon {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 7px;
+  }
+
+  .solutions-floating-card strong {
+    font-size: 9px;
+  }
+
+  .solutions-floating-card small {
+    font-size: 7px;
+  }
+}
+
+
+/* ============================================================
+   ULTRA SMALL PHONES
+   ============================================================ */
+
+@media (max-width: 340px) {
+
+  .solutions-container {
+    width: calc(100% - 22px);
+  }
+
+
+  /* ----------------------------------------------------------
+     CENTER
+     ---------------------------------------------------------- */
+
+  .solutions-hero-center {
+    width: 104px;
+    height: 104px;
+
+    min-width: 104px;
+    min-height: 104px;
+
+    padding: 6px;
+
+    gap: 2px;
+  }
+
+
+  /* ----------------------------------------------------------
+     LOGO
+     ---------------------------------------------------------- */
+
+  .solutions-center-logo {
+    width: 44px;
+
+    max-width: 64%;
+
+    margin-bottom: 2px;
+  }
+
+  .solutions-center-logo img {
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+  }
+
+
+  /* ----------------------------------------------------------
+     CENTER TEXT
+     ---------------------------------------------------------- */
+
+  .solutions-hero-center strong {
+    font-size: 7px;
+
+    letter-spacing: 0.06em;
+
+    max-width: 94%;
+  }
+
+  .solutions-hero-center span {
+    font-size: 5.5px;
+
+    max-width: 94%;
+  }
+
+
+  /* ----------------------------------------------------------
+     FLOATING CARDS
+     ---------------------------------------------------------- */
+
+  .floating-card-one {
+    left: 50%;
+
+    transform:
+      translateX(58px)
+      scale(0.52);
+  }
+
+  .floating-card-two {
+    right: 50%;
+
+    transform:
+      translateX(-58px)
+      scale(0.52);
   }
 }
