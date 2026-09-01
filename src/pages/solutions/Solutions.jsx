@@ -154,7 +154,8 @@
 
 // export default Solutions;
 
-import React, { useEffect, useState } from "react";
+
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -215,6 +216,15 @@ const Solutions = () => {
 
   const totalSolutions = solutionsData.length;
 
+  // ----------------------------------------------------------
+  // DRAG / SWIPE REFERENCES
+  // ----------------------------------------------------------
+
+  const pointerStartX = useRef(0);
+  const pointerCurrentX = useRef(0);
+  const isPointerDown = useRef(false);
+  const isDragging = useRef(false);
+
 
   // ----------------------------------------------------------
   // SLIDER NAVIGATION
@@ -230,6 +240,98 @@ const Solutions = () => {
     setActiveIndex((current) =>
       current === 0 ? totalSolutions - 1 : current - 1
     );
+  };
+
+
+  // ----------------------------------------------------------
+  // POINTER / MOUSE / TOUCH DRAG START
+  // ----------------------------------------------------------
+
+  const handlePointerDown = (event) => {
+    // Only react to the primary pointer
+    if (event.isPrimary === false) return;
+
+    isPointerDown.current = true;
+    isDragging.current = false;
+
+    pointerStartX.current = event.clientX;
+    pointerCurrentX.current = event.clientX;
+  };
+
+
+  // ----------------------------------------------------------
+  // POINTER / MOUSE / TOUCH DRAG MOVE
+  // ----------------------------------------------------------
+
+  const handlePointerMove = (event) => {
+    if (!isPointerDown.current) return;
+
+    if (event.isPrimary === false) return;
+
+    pointerCurrentX.current = event.clientX;
+
+    const distance =
+      pointerCurrentX.current - pointerStartX.current;
+
+    // Once the pointer has moved enough, consider it a drag.
+    if (Math.abs(distance) > 8) {
+      isDragging.current = true;
+    }
+  };
+
+
+  // ----------------------------------------------------------
+  // POINTER / MOUSE / TOUCH DRAG END
+  // ----------------------------------------------------------
+
+  const handlePointerUp = () => {
+    if (!isPointerDown.current) return;
+
+    const distance =
+      pointerCurrentX.current - pointerStartX.current;
+
+    isPointerDown.current = false;
+
+    const swipeThreshold = 60;
+
+    // Dragged right → previous slide
+    if (distance > swipeThreshold) {
+      previousSlide();
+    }
+
+    // Dragged left → next slide
+    else if (distance < -swipeThreshold) {
+      nextSlide();
+    }
+
+    // Reset after processing
+    setTimeout(() => {
+      isDragging.current = false;
+    }, 0);
+  };
+
+
+  // ----------------------------------------------------------
+  // POINTER CANCEL
+  // ----------------------------------------------------------
+
+  const handlePointerCancel = () => {
+    isPointerDown.current = false;
+    isDragging.current = false;
+  };
+
+
+  // ----------------------------------------------------------
+  // PREVENT CLICK AFTER DRAG
+  // ----------------------------------------------------------
+
+  const handleCarouselClick = (event) => {
+    if (isDragging.current) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      isDragging.current = false;
+    }
   };
 
 
@@ -390,10 +492,6 @@ const Solutions = () => {
                 />
               </div>
 
-              {/* <span>
-                People + Process + Technology
-              </span> */}
-
             </div>
 
 
@@ -488,13 +586,31 @@ const Solutions = () => {
 
           <div className="solutions-carousel">
 
-            <div className="solutions-carousel-stage">
+            <div
+              className="solutions-carousel-stage"
+              onPointerDown={handlePointerDown}
+              onPointerMove={handlePointerMove}
+              onPointerUp={handlePointerUp}
+              onPointerCancel={handlePointerCancel}
+              onPointerLeave={(event) => {
+                // Only release for mouse.
+                // Touch pointers should remain controlled by
+                // pointerup/pointercancel.
+                if (event.pointerType === "mouse") {
+                  handlePointerUp();
+                }
+              }}
+              onClick={handleCarouselClick}
+            >
 
               {solutionsData.map((solution, index) => {
 
-                const relativePosition = getRelativePosition(index);
+                const relativePosition =
+                  getRelativePosition(index);
 
-                const isActive = relativePosition === 0;
+                const isActive =
+                  relativePosition === 0;
+
 
                 /*
                  * Only render cards that are close to the active
@@ -553,15 +669,11 @@ const Solutions = () => {
                     <Link
                       to={solution.route}
                       className="solution-slide-link"
+                      draggable="false"
                     >
 
                       {/* -----------------------------------
                           IMAGE
-
-                          IMPORTANT:
-                          No placeholder is rendered.
-                          If there is no image, the image
-                          section simply doesn't exist.
                       ----------------------------------- */}
 
                       {solution.image && (
@@ -571,6 +683,7 @@ const Solutions = () => {
                             src={solution.image}
                             alt={solution.title}
                             loading="lazy"
+                            draggable="false"
                             onError={(event) => {
                               event.currentTarget.parentElement.style.display =
                                 "none";
@@ -724,13 +837,6 @@ const Solutions = () => {
               </button>
 
             </div>
-
-
-            {/* <div className="solutions-carousel-hint">
-              <span />
-              DRAG OR USE ARROWS TO EXPLORE
-              <span />
-            </div> */}
 
           </div>
 
@@ -1182,3 +1288,5 @@ const ComplianceCard = ({
 
 
 export default Solutions;
+
+

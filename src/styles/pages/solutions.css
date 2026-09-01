@@ -3030,3 +3030,27 @@
       scale(0.52);
   }
 }
+
+
+
+.solutions-carousel-stage {
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+
+.solutions-carousel-stage:active {
+  cursor: grabbing;
+}
+
+.solution-slide,
+.solution-slide-link,
+.solution-slide img {
+  -webkit-user-drag: none;
+}
+
+.solution-slide img {
+  user-select: none;
+  pointer-events: none;
+}
