@@ -426,9 +426,9 @@ const ServiceDetail = () => {
                 </strong>
 
 
-                <span>
+                {/* <span>
                   People • Process • Performance
-                </span>
+                </span> */}
 
               </div>
 

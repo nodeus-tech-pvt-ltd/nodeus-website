@@ -334,7 +334,6 @@
 // export default SolutionsPreview;
 
 
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -343,345 +342,709 @@ import "../../styles/home/SolutionsPreview.css";
 
 import {
   Headphones,
-  UserCheck,
+  HeartHandshake,
+  Users,
+  Database,
   BriefcaseBusiness,
-  Megaphone,
-  Share2,
   ShoppingCart,
-  Bot,
+  LifeBuoy,
   Truck,
   ArrowUpRight,
   ArrowLeft,
   ArrowRight,
 } from "lucide-react";
 
+
+// ============================================================
+// SOLUTIONS
+// ============================================================
+
 const solutions = [
   {
     // number: "01",
-    slug: "customer-services",
+
+    slug: "customer-service",
+
     icon: Headphones,
-    title: "Customer Services",
+
+    title: "Customer Service",
+
     description:
-      "Deliver exceptional customer experiences with dedicated teams handling inquiries, support requests, and day-to-day customer interactions.",
+      "Reliable customer service that keeps your customers supported and satisfied.",
+
     services: [
+      "Customer Service",
       "Customer Support",
-      "Inbound Support",
+      "Phone Support",
       "Email Support",
-      "Live Chat Support",
-      "Omnichannel Support",
+      "Chat Support",
+      "Customer Care",
+      "Order & Account Support",
+      "Ticket Management",
     ],
   },
+
+
   {
     // number: "02",
-    slug: "customer-success",
-    icon: UserCheck,
-    title: "Customer Success",
+
+    slug: "customer-success-retention",
+
+    icon: HeartHandshake,
+
+    title: "Customer Success & Retention",
+
     description:
-      "Build lasting customer relationships with dedicated teams focused on engagement, retention, satisfaction, and long-term customer value.",
+      "Proactively engage customers, improve satisfaction, and increase long-term retention.",
+
     services: [
       "Customer Onboarding",
-      "Customer Engagement",
-      "Retention Support",
+      "Customer Success",
+      "Customer Retention",
+      "At-risk Management",
+      "Renewals Support",
       "Account Management",
-      "Customer Experience",
+      "Complaint & Escalation Management",
     ],
   },
+
+
   {
     // number: "03",
-    slug: "executive-assistant",
-    icon: BriefcaseBusiness,
-    title: "Executive Assistant",
+
+    slug: "sales-support-lead-management",
+
+    icon: Users,
+
+    title: "Sales Support & Lead Management",
+
     description:
-      "Give your executives more time to focus on strategic priorities with reliable support for schedules, communication, research, and daily operations.",
+      "Extend your sales team with dedicated support for lead management and revenue-generating activities.",
+
     services: [
-      "Calendar Management",
-      "Email Management",
-      "Meeting Coordination",
-      "Research & Reporting",
-      "Administrative Support",
+      "Lead Generation",
+      "Lead Qualification",
+      "Business Development",
+      "Appointment Setting",
+      "Prospect Research",
+      "CRM Management",
+      "Pipeline Management",
     ],
   },
+
+
   {
     // number: "04",
-    slug: "marketing-assistant",
-    icon: Megaphone,
-    title: "Marketing Assistant",
+
+    slug: "back-office-operations",
+
+    icon: Database,
+
+    title: "Back-Office Operations",
+
     description:
-      "Extend your marketing team with skilled professionals who support campaigns, content, research, coordination, and everyday marketing operations.",
+      "Streamline your day-to-day operations with reliable outsourced back-office support.",
+
     services: [
-      "Marketing Coordination",
-      "Content Support",
-      "Market Research",
-      "Campaign Support",
-      "Marketing Operations",
+      "Data Entry",
+      "Data Processing",
+      "Data Verification",
+      "CRM Administration",
+      "Database Management",
+      "Document Processing",
+      "Records Management",
+      "Reporting & Data Management",
+      "Quality Assurance",
     ],
   },
+
+
   {
     // number: "05",
-    slug: "social-media-manager",
-    icon: Share2,
-    title: "Social Media Manager",
+
+    slug: "virtual-assistant-administrative-support",
+
+    icon: BriefcaseBusiness,
+
+    title: "Virtual Assistant & Administrative Support",
+
     description:
-      "Strengthen your digital presence with dedicated social media support covering content, community engagement, publishing, and performance monitoring.",
+      "Dedicated remote professionals to handle your administrative workload.",
+
     services: [
-      "Content Management",
-      "Social Media Posting",
-      "Community Management",
-      "Content Scheduling",
-      "Social Media Analytics",
+      "Virtual Assistance",
+      "Executive Assistance",
+      "Email & Inbox Management",
+      "Calendar Management",
+      "Appointment Scheduling",
+      "Meeting Coordination",
+      "Online Research",
+      "Document Preparation",
+      "General Administrative Support",
     ],
   },
+
+
   {
     // number: "06",
+
     slug: "ecommerce-support",
+
     icon: ShoppingCart,
+
     title: "E-commerce Support",
+
     description:
-      "Keep your online store running smoothly with dedicated teams supporting customers, orders, product operations, and day-to-day e-commerce workflows.",
+      "Deliver seamless customer and operational support throughout the e-commerce journey.",
+
     services: [
+      "E-commerce Customer Service",
       "Order Management",
-      "Customer Support",
-      "Product Management",
+      "Order Tracking",
       "Returns & Refunds",
-      "E-commerce Operations",
+      "Product Listing Management",
+      "Product Catalog Management",
+      "Payment & Billing Support",
+      "Post-Purchase Support",
+      "Shopify Support",
     ],
   },
+
+
   {
     // number: "07",
-    slug: "ai-transformation",
-    icon: Bot,
-    title: "AI Transformation",
+
+    slug: "helpdesk-technical-support",
+
+    icon: LifeBuoy,
+
+    title: "Helpdesk & Technical Support",
+
     description:
-      "Transform your business with practical AI solutions that automate repetitive work, improve workflows, and create smarter customer and operational experiences.",
+      "First-line support that resolves issues quickly and keeps customers productive.",
+
     services: [
-      "AI Automation",
-      "AI Chatbots",
-      "Workflow Automation",
-      "AI Integration",
-      "Process Optimization",
+      "Helpdesk Support",
+      "Ticket Management",
+      "First-Level Technical Support",
+      "Troubleshooting",
+      "Knowledge Base Support",
     ],
   },
+
+
   {
     // number: "08",
-    slug: "truck-dispatching",
+
+    slug: "transportation-fleet-operations",
+
     icon: Truck,
-    title: "Truck Dispatching",
+
+    title: "Transportation & Fleet Operations",
+
     description:
-      "Keep your fleet moving with professional dispatch support covering load coordination, driver communication, route planning, and carrier operations.",
+      "Professional transportation and fleet support covering dispatch, freight coordination, driver support, compliance, and day-to-day fleet operations.",
+
     services: [
-      "Load Booking",
-      "Driver Communication",
-      "Route Coordination",
-      "Rate Negotiation",
-      "Dispatch Operations",
+      "Truck Dispatcher",
+      "Freight Dispatcher",
+      "Dispatch Coordinator",
+      "Load Planner",
+      "Track & Trace Specialist",
+      "Driver Support Coordinator",
+      "Logistics Coordinator",
+      "Carrier Setup Specialist",
+      "Safety & Compliance Specialist",
+      "DOT Compliance Specialist",
+      "Driver Qualification Specialist",
+      "Fleet Safety Coordinator",
     ],
   },
 ];
 
-function SolutionsPreview() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
 
-  const activeSolution = solutions[activeIndex];
-  const Icon = activeSolution.icon;
+// ============================================================
+// COMPONENT
+// ============================================================
+
+function SolutionsPreview() {
+
+  const [activeIndex, setActiveIndex] =
+    useState(0);
+
+  const [direction, setDirection] =
+    useState(1);
+
+
+  const activeSolution =
+    solutions[activeIndex];
+
+
+  const Icon =
+    activeSolution.icon;
+
+
+  // ==========================================================
+  // NEXT SOLUTION
+  // ==========================================================
 
   const showNext = () => {
+
     setDirection(1);
 
-    setActiveIndex((currentIndex) =>
-      currentIndex === solutions.length - 1
-        ? 0
-        : currentIndex + 1
+    setActiveIndex(
+      (currentIndex) =>
+        currentIndex === solutions.length - 1
+          ? 0
+          : currentIndex + 1
     );
+
   };
+
+
+  // ==========================================================
+  // PREVIOUS SOLUTION
+  // ==========================================================
 
   const showPrevious = () => {
+
     setDirection(-1);
 
-    setActiveIndex((currentIndex) =>
-      currentIndex === 0
-        ? solutions.length - 1
-        : currentIndex - 1
+    setActiveIndex(
+      (currentIndex) =>
+        currentIndex === 0
+          ? solutions.length - 1
+          : currentIndex - 1
     );
+
   };
+
+
+  // ==========================================================
+  // SLIDE ANIMATION
+  // ==========================================================
 
   const slideVariants = {
+
     enter: (direction) => ({
-      x: direction > 0 ? 80 : -80,
+
+      x:
+        direction > 0
+          ? 80
+          : -80,
+
       opacity: 0,
+
     }),
+
 
     center: {
+
       x: 0,
+
       opacity: 1,
+
     },
 
+
     exit: (direction) => ({
-      x: direction > 0 ? -80 : 80,
+
+      x:
+        direction > 0
+          ? -80
+          : 80,
+
       opacity: 0,
+
     }),
+
   };
 
-  return (
-    <section className="solutions-slider-section">
-      <div className="solutions-slider-container">
 
-        {/* HEADER */}
-        <div className="solutions-slider-header">
+  return (
+
+    <section
+      className="solutions-slider-section"
+    >
+
+      <div
+        className="solutions-slider-container"
+      >
+
+
+        {/* ==================================================
+            HEADER
+        =================================================== */}
+
+        <div
+          className="solutions-slider-header"
+        >
+
           <div>
-            <span className="section-eyebrow">
+
+            <span
+              className="section-eyebrow"
+            >
+
               WHAT WE HELP YOU BUILD
+
             </span>
 
+
             <h2>
+
               The right people.
+
               <br />
-              <span>The right capabilities.</span>
+
+              <span>
+                The right capabilities.
+              </span>
+
             </h2>
+
           </div>
 
+
           <p>
-            From customer services and executive support to
-            marketing, e-commerce, AI transformation, and
-            transportation operations, we build dedicated
+
+            From customer service and
+            customer success to sales,
+            back-office operations,
+            e-commerce, technical
+            support, and transportation
+            operations, we build dedicated
             capabilities around your business.
+
           </p>
+
         </div>
 
-        {/* SLIDER */}
-        <div className="solutions-slider-wrapper">
+
+        {/* ==================================================
+            SLIDER
+        =================================================== */}
+
+        <div
+          className="solutions-slider-wrapper"
+        >
+
 
           <AnimatePresence
             mode="wait"
             custom={direction}
           >
+
             <motion.div
-              key={activeSolution.slug}
+
+              key={
+                activeSolution.slug
+              }
+
               className="solution-slider-motion"
+
               custom={direction}
+
               variants={slideVariants}
+
               initial="enter"
+
               animate="center"
+
               exit="exit"
+
               transition={{
                 duration: 0.45,
                 ease: "easeOut",
               }}
+
             >
-              {/* ENTIRE CARD IS CLICKABLE */}
+
+
+              {/* ============================================
+                  ENTIRE CARD IS CLICKABLE
+              ============================================= */}
+
               <Link
-                to={`/solutions/${activeSolution.slug}`}
+
+                to={
+                  `/solutions/${activeSolution.slug}`
+                }
+
                 className="solution-slider-card-link"
-                aria-label={`Explore ${activeSolution.title}`}
+
+                aria-label={
+                  `Explore ${activeSolution.title}`
+                }
+
               >
-                <article className="solution-slider-card">
 
-                  {/* LEFT SIDE */}
-                  <div className="solution-slider-left">
+                <article
+                  className="solution-slider-card"
+                >
 
-                    <span className="solution-slider-number">
-                      {activeSolution.number}
+
+                  {/* ========================================
+                      LEFT SIDE
+                  ========================================= */}
+
+                  <div
+                    className="solution-slider-left"
+                  >
+
+
+                    {/* NUMBER */}
+
+                    <span
+                      className="solution-slider-number"
+                    >
+
+                      {
+                        activeSolution.number
+                      }
+
                     </span>
 
-                    <div className="solution-slider-content">
+
+                    {/* CONTENT */}
+
+                    <div
+                      className="solution-slider-content"
+                    >
+
+
+                      {/* TITLE */}
 
                       <h3>
-                        {activeSolution.title}
+
+                        {
+                          activeSolution.title
+                        }
+
                       </h3>
 
+
+                      {/* DESCRIPTION */}
+
                       <p>
-                        {activeSolution.description}
+
+                        {
+                          activeSolution.description
+                        }
+
                       </p>
 
-                      <div className="solution-slider-services">
-                        {activeSolution.services.map((service) => (
-                          <span key={service}>
-                            {service}
-                          </span>
-                        ))}
+
+                      {/* SERVICES */}
+
+                      <div
+                        className="solution-slider-services"
+                      >
+
+                        {
+                          activeSolution.services.map(
+                            (service) => (
+
+                              <span
+                                key={service}
+                              >
+
+                                {
+                                  service
+                                }
+
+                              </span>
+
+                            )
+                          )
+                        }
+
                       </div>
 
-                      <span className="solution-slider-link">
+
+                      {/* EXPLORE LINK */}
+
+                      <span
+                        className="solution-slider-link"
+                      >
+
                         Explore solution
-                        <ArrowUpRight size={18} />
+
+                        <ArrowUpRight
+                          size={18}
+                        />
+
                       </span>
 
                     </div>
+
                   </div>
 
-                  {/* RIGHT SIDE ICON */}
-                  <div className="solution-slider-right">
-                    <div className="solution-slider-icon">
-                      <Icon size={34} strokeWidth={1.7} />
+
+                  {/* ========================================
+                      RIGHT SIDE ICON
+                  ========================================= */}
+
+                  <div
+                    className="solution-slider-right"
+                  >
+
+                    <div
+                      className="solution-slider-icon"
+                    >
+
+                      <Icon
+                        size={34}
+                        strokeWidth={1.7}
+                      />
+
                     </div>
 
-                    {/* <span className="solution-slider-arrow">
-                      <ArrowUpRight size={24} />
-                    </span> */}
                   </div>
 
                 </article>
+
               </Link>
+
             </motion.div>
+
           </AnimatePresence>
 
-          {/* CONTROLS */}
-          <div className="solution-slider-controls">
 
-            <div className="solution-slider-counter">
+          {/* =================================================
+              CONTROLS
+          ================================================== */}
+
+          <div
+            className="solution-slider-controls"
+          >
+
+
+            {/* COUNTER */}
+
+            <div
+              className="solution-slider-counter"
+            >
+
               <strong>
-                {String(activeIndex + 1).padStart(2, "0")}
+
+                {
+                  String(
+                    activeIndex + 1
+                  ).padStart(2, "0")
+                }
+
               </strong>
 
+
               <span>
-                / {String(solutions.length).padStart(2, "0")}
+
+                /
+                {" "}
+                {
+                  String(
+                    solutions.length
+                  ).padStart(2, "0")
+                }
+
               </span>
+
             </div>
 
-            <div className="solution-slider-buttons">
+
+            {/* BUTTONS */}
+
+            <div
+              className="solution-slider-buttons"
+            >
 
               <button
+
                 type="button"
-                onClick={showPrevious}
+
+                onClick={
+                  showPrevious
+                }
+
                 aria-label="Previous solution"
+
               >
-                <ArrowLeft size={19} />
+
+                <ArrowLeft
+                  size={19}
+                />
+
               </button>
 
+
               <button
+
                 type="button"
-                onClick={showNext}
+
+                onClick={
+                  showNext
+                }
+
                 aria-label="Next solution"
+
               >
-                <ArrowRight size={19} />
+
+                <ArrowRight
+                  size={19}
+                />
+
               </button>
 
             </div>
 
           </div>
+
         </div>
 
-        {/* FOOTER */}
-        <div className="solutions-slider-footer">
+
+        {/* ==================================================
+            FOOTER
+        =================================================== */}
+
+        <div
+          className="solutions-slider-footer"
+        >
 
           <p>
-            Explore our services and find the right capabilities
-            to support and scale your business.
+
+            Explore our services and find
+            the right capabilities to support
+            and scale your business.
+
           </p>
 
+
           <Link
+
             to="/solutions"
+
             className="all-solutions-link"
+
           >
+
             Explore all solutions
-            <ArrowUpRight size={18} />
+
+            <ArrowUpRight
+              size={18}
+            />
+
           </Link>
 
         </div>
 
       </div>
+
     </section>
+
   );
+
 }
 
+
 export default SolutionsPreview;
+

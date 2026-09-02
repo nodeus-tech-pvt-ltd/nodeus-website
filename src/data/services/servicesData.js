@@ -6829,14 +6829,12 @@
 import {
   Headphones,
   HeartHandshake,
-  BriefcaseBusiness,
-  Megaphone,
-  Share2,
-  ShoppingCart,
-  BrainCircuit,
-  Truck,
-
   Users,
+  Database,
+  BriefcaseBusiness,
+  ShoppingCart,
+  LifeBuoy,
+  Truck,
   MessageSquareText,
   Mail,
   Phone,
@@ -6855,7 +6853,6 @@ import {
   RefreshCw,
   Bot,
   Settings2,
-  Database,
   Layers3,
   CheckCircle2,
   Zap,
@@ -6863,15 +6860,8 @@ import {
   PackageCheck,
   CreditCard,
   ReceiptText,
-  Video,
-  Palette,
-  PenTool,
-  LineChart,
-  Settings,
   MonitorSmartphone,
-  CircleCheck,
 } from "lucide-react";
-
 
 // ============================================================
 // COMMON COMPLIANCE / TRUST INFORMATION
@@ -6881,100 +6871,74 @@ const compliance = [
   {
     title: "ISO 27001:2013",
     shortTitle: "27001:2013",
-    description:
-      "Certified Information Security Management",
+    description: "Certified Information Security Management",
     icon: ShieldCheck,
   },
-
   {
     title: "HIPAA Compliant",
     shortTitle: "HIPAA",
-    description:
-      "Patient Rights Under HIPAA are Protected",
+    description: "Patient Rights Under HIPAA are Protected",
     icon: ShieldCheck,
   },
-
   {
     title: "AICPA SOC 2",
     shortTitle: "SOC 2",
-    description:
-      "Fully Compliant",
+    description: "Fully Compliant",
     icon: CheckCircle2,
   },
-
   {
     title: "California Consumer Privacy",
     shortTitle: "CCPA",
-    description:
-      "Fully Compliant",
+    description: "Fully Compliant",
     icon: ShieldCheck,
   },
-
   {
     title: "GDPR",
     shortTitle: "GDPR",
-    description:
-      "2018 General Data Protection Regulation",
+    description: "2018 General Data Protection Regulation",
     icon: ShieldCheck,
   },
 ];
 
-
 // ============================================================
-// CUSTOMER SERVICES
+// 01. CUSTOMER SERVICE
 // ============================================================
 
-const customerServices = {
-  slug: "customer-services",
-
-  title: "Customer Services",
-
+const customerService = {
+  slug: "customer-service",
+  title: "Customer Service",
   category: "Customer Experience",
-
   heroIcon: Headphones,
 
   seo: {
-    title:
-      "Customer Service Outsourcing & Support Teams | Nodeus",
-
+    title: "Customer Service Outsourcing & Support Teams | Nodeus",
     description:
-      "Improve customer experiences with dedicated customer service teams for chat, email, phone, social media, and omnichannel support.",
-
+      "Improve customer experiences with dedicated customer service teams for phone, email, chat, customer care, order support, and ticket management.",
     keywords: [
       "customer service outsourcing",
       "customer support outsourcing",
       "customer service team",
       "outsourced customer support",
-      "omnichannel customer service",
+      "phone support",
+      "email support",
+      "chat support",
     ],
   },
 
   hero: {
     eyebrow: "CUSTOMER EXPERIENCE & SUPPORT",
-
-    title:
-      "Customer Service That Feels Like an Extension of Your Team",
-
+    title: "Customer Service That Feels Like an Extension of Your Team",
     description:
       "Deliver reliable, responsive, and personalized customer experiences with dedicated professionals who understand your business, customers, processes, and service standards.",
-
-    primaryButton:
-      "Build Your Customer Service Team",
-
-    secondaryButton:
-      "Talk to Our Team",
-
-    image:
-      "/images/services/customer-services-hero.jpg",
+    primaryButton: "Build Your Customer Service Team",
+    secondaryButton: "Talk to Our Team",
+    image: "/images/services/customer-services-hero.jpg",
   },
 
   overview: {
-    title:
-      "Support built around your customers.",
-
+    title: "Support built around your customers.",
     text:
       "Our customer service teams work as an extension of your organization. We learn your products, processes, communication style, and customer expectations so your customers receive consistent support at every interaction.",
-
     points: [
       "Dedicated customer service professionals",
       "Flexible support coverage",
@@ -6983,67 +6947,50 @@ const customerServices = {
     ],
   },
 
-  capabilitiesTitle:
-    "Everything your customers need, in one support operation.",
-
+  capabilitiesTitle: "Everything your customers need, in one support operation.",
   capabilitiesText:
-    "Create a customer support experience across the channels your customers already use.",
+    "Create a customer support experience across the channels and workflows your customers already use.",
 
   capabilities: [
     {
-      icon: MessageSquareText,
-      title: "Live Chat Support",
-      text:
-        "Provide fast, real-time assistance through live chat and website messaging.",
+      icon: Headphones,
+      title: "Customer Service",
+      text: "Provide dependable day-to-day customer service through trained support professionals.",
     },
-
     {
-      icon: Mail,
-      title: "Email Support",
-      text:
-        "Manage customer questions, requests, and follow-ups with clear and professional communication.",
+      icon: MessageSquareText,
+      title: "Customer Support",
+      text: "Resolve questions, requests, and customer issues with clear and professional communication.",
     },
-
     {
       icon: Phone,
       title: "Phone Support",
-      text:
-        "Deliver helpful voice support through trained customer service representatives.",
+      text: "Deliver helpful voice support through trained customer service representatives.",
     },
-
     {
-      icon: Share2,
-      title: "Social Media Support",
-      text:
-        "Respond to customer questions and concerns across the social platforms where your audience is active.",
+      icon: Mail,
+      title: "Email Support",
+      text: "Manage customer questions, requests, and follow-ups through professional email communication.",
     },
-
     {
-      icon: Globe,
-      title: "Omnichannel Support",
-      text:
-        "Connect customer interactions across chat, email, phone, social media, and other channels.",
+      icon: MessageSquareText,
+      title: "Chat Support",
+      text: "Provide fast, real-time assistance through live chat and website messaging.",
     },
-
     {
-      icon: ShieldCheck,
-      title: "Complaint Handling",
-      text:
-        "Handle customer concerns through structured communication and resolution processes.",
+      icon: HeartHandshake,
+      title: "Customer Care",
+      text: "Build positive customer experiences through attentive and personalized support.",
     },
-
     {
-      icon: Route,
-      title: "Escalation Management",
-      text:
-        "Route complex issues through defined escalation workflows with the right context.",
+      icon: ShoppingCart,
+      title: "Order & Account Support",
+      text: "Help customers with order questions, account requests, updates, and related issues.",
     },
-
     {
-      icon: BarChart3,
-      title: "Quality Monitoring",
-      text:
-        "Use structured processes and performance monitoring to maintain consistent service quality.",
+      icon: ClipboardCheck,
+      title: "Ticket Management",
+      text: "Organize, prioritize, update, and resolve customer tickets through structured workflows.",
     },
   ],
 
@@ -7071,41 +7018,30 @@ const customerServices = {
     {
       icon: Users,
       title: "Dedicated Specialists",
-      text:
-        "Build a team trained around your customers, products, processes, and brand.",
+      text: "Build a team trained around your customers, products, processes, and brand.",
     },
-
     {
       icon: Clock3,
       title: "Flexible Coverage",
-      text:
-        "Scale support coverage around customer demand and operational requirements.",
+      text: "Scale support coverage around customer demand and operational requirements.",
     },
-
     {
       icon: ShieldCheck,
       title: "Consistent Quality",
-      text:
-        "Create dependable customer experiences through structured processes and quality controls.",
+      text: "Create dependable customer experiences through structured processes and quality controls.",
     },
-
     {
       icon: TrendingUp,
       title: "Scalable Operations",
-      text:
-        "Expand your support capacity as your customer base and business requirements grow.",
+      text: "Expand your support capacity as your customer base and business requirements grow.",
     },
   ],
 
   customerStory: {
     eyebrow: "CUSTOMER STORY",
-
-    title:
-      "A support operation designed around the customer journey.",
-
+    title: "A support operation designed around the customer journey.",
     text:
       "Customer service teams can be structured around your specific products, channels, workflows, escalation procedures, and service expectations.",
-
     results: [
       "More consistent customer communication",
       "Structured support workflows",
@@ -7120,141 +7056,99 @@ const customerServices = {
     {
       number: "01",
       title: "Discover",
-      text:
-        "We understand your business, customers, support requirements, channels, and existing workflows.",
+      text: "We understand your business, customers, support requirements, channels, and existing workflows.",
     },
-
     {
       number: "02",
       title: "Design",
-      text:
-        "We create a support model around your processes, technology, service expectations, and goals.",
+      text: "We create a support model around your processes, technology, service expectations, and goals.",
     },
-
     {
       number: "03",
       title: "Build",
-      text:
-        "We identify and prepare the right professionals, workflows, documentation, and systems.",
+      text: "We identify and prepare the right professionals, workflows, documentation, and systems.",
     },
-
     {
       number: "04",
       title: "Launch",
-      text:
-        "Your dedicated team begins operations with defined processes, communication standards, and reporting.",
+      text: "Your dedicated team begins operations with defined processes, communication standards, and reporting.",
     },
-
     {
       number: "05",
       title: "Optimize",
-      text:
-        "We continuously identify opportunities to improve workflows, quality, productivity, and customer experience.",
+      text: "We continuously identify opportunities to improve workflows, quality, productivity, and customer experience.",
     },
   ],
 
   faqs: [
     {
-      question:
-        "Can Nodeus provide dedicated customer service representatives?",
-
+      question: "Can Nodeus provide dedicated customer service representatives?",
       answer:
         "Yes. We can structure dedicated customer service teams around your business, products, customers, processes, and support requirements.",
     },
-
     {
-      question:
-        "What customer support channels can you support?",
-
+      question: "What customer support channels can you support?",
       answer:
-        "Support can be structured across channels such as email, live chat, phone, social media, help desk platforms, and other communication channels used by your customers.",
+        "Support can be structured across email, live chat, phone, help desk platforms, and other communication channels used by your customers.",
     },
-
     {
-      question:
-        "Can your team follow our existing processes?",
-
+      question: "Can your team follow our existing processes?",
       answer:
         "Yes. Our teams can be trained around your existing workflows, documentation, communication standards, escalation procedures, and technology.",
     },
-
     {
-      question:
-        "Can customer support scale as our business grows?",
-
+      question: "Can customer support scale as our business grows?",
       answer:
         "Yes. Team capacity and coverage can be structured around changing customer demand and business requirements.",
     },
   ],
 
   cta: {
-    title:
-      "Ready to build a stronger customer service operation?",
-
+    title: "Ready to build a stronger customer service operation?",
     text:
       "Tell us about your customers, support requirements, and business goals. Our team can help you design the right support model.",
-
-    button:
-      "Talk to Nodeus",
+    button: "Talk to Nodeus",
   },
 };
 
-
 // ============================================================
-// CUSTOMER SUCCESS
+// 02. CUSTOMER SUCCESS & RETENTION
 // ============================================================
 
-const customerSuccess = {
-  slug: "customer-success",
-
-  title: "Customer Success",
-
+const customerSuccessRetention = {
+  slug: "customer-success-retention",
+  title: "Customer Success & Retention",
   category: "Customer Experience",
-
   heroIcon: HeartHandshake,
 
   seo: {
-    title:
-      "Customer Success Services & Outsourcing | Nodeus",
-
+    title: "Customer Success & Retention Services | Nodeus",
     description:
-      "Build stronger customer relationships with customer success teams focused on onboarding, engagement, adoption, retention, and long-term customer value.",
-
+      "Proactively engage customers with dedicated support for onboarding, success, retention, renewals, account management, at-risk customers, and escalations.",
     keywords: [
       "customer success outsourcing",
-      "customer success services",
+      "customer retention services",
       "customer onboarding",
-      "customer retention",
-      "customer engagement",
+      "customer success team",
+      "renewals support",
+      "account management",
     ],
   },
 
   hero: {
-    eyebrow: "CUSTOMER GROWTH & RETENTION",
-
-    title:
-      "Turn Customer Relationships Into Long-Term Growth",
-
+    eyebrow: "CUSTOMER SUCCESS & RETENTION",
+    title: "Turn Customer Relationships Into Long-Term Growth",
     description:
       "Create proactive customer experiences that help customers adopt your products, achieve their goals, stay engaged, and build long-term relationships with your business.",
-
-    primaryButton:
-      "Build Your Customer Success Team",
-
-    secondaryButton:
-      "Talk to Our Team",
-
-    image:
-      "/images/services/customer-success-hero.jpg",
+    primaryButton: "Build Your Customer Success Team",
+    secondaryButton: "Talk to Our Team",
+    image: "/images/services/customer-success-hero.jpg",
   },
 
   overview: {
-    title:
-      "Customer success is more than support.",
-
+    title: "Customer success is more than support.",
     text:
-      "Our customer success teams focus on the customer journey beyond individual support interactions. We help organize onboarding, engagement, communication, account support, and ongoing customer relationships.",
-
+      "Our customer success teams focus on the customer journey beyond individual support interactions. We help organize onboarding, engagement, communication, account support, retention, and ongoing customer relationships.",
     points: [
       "Structured customer onboarding",
       "Proactive customer communication",
@@ -7263,9 +7157,7 @@ const customerSuccess = {
     ],
   },
 
-  capabilitiesTitle:
-    "Build stronger customer relationships at every stage.",
-
+  capabilitiesTitle: "Build stronger customer relationships at every stage.",
   capabilitiesText:
     "Create a proactive customer success operation designed around your customer lifecycle.",
 
@@ -7273,57 +7165,37 @@ const customerSuccess = {
     {
       icon: UserPlus,
       title: "Customer Onboarding",
-      text:
-        "Help new customers understand your product, services, processes, and next steps.",
+      text: "Help new customers understand your products, services, processes, and next steps.",
     },
-
-    {
-      icon: Target,
-      title: "Customer Adoption",
-      text:
-        "Support customers as they adopt and incorporate your products or services into their workflows.",
-    },
-
     {
       icon: HeartHandshake,
-      title: "Relationship Management",
-      text:
-        "Maintain consistent communication and relationship-building throughout the customer lifecycle.",
+      title: "Customer Success",
+      text: "Support customers throughout their lifecycle and help them achieve ongoing value.",
     },
-
     {
       icon: RefreshCw,
-      title: "Retention Support",
-      text:
-        "Identify customer needs and opportunities for proactive engagement that supports long-term relationships.",
+      title: "Customer Retention",
+      text: "Support proactive engagement and relationship management designed to strengthen retention.",
     },
-
     {
-      icon: BarChart3,
-      title: "Customer Health Monitoring",
-      text:
-        "Organize customer information and signals to help teams understand account health and priorities.",
+      icon: Target,
+      title: "At-risk Management",
+      text: "Identify customer concerns and organize proactive engagement around at-risk accounts.",
     },
-
     {
-      icon: MessageSquareText,
-      title: "Customer Communication",
-      text:
-        "Keep customers informed through timely, professional, and personalized communication.",
+      icon: RefreshCw,
+      title: "Renewals Support",
+      text: "Support renewal workflows, customer communication, follow-ups, and account coordination.",
     },
-
     {
-      icon: TrendingUp,
-      title: "Expansion Support",
-      text:
-        "Identify relevant opportunities to help customers discover additional value from your products and services.",
+      icon: Users,
+      title: "Account Management",
+      text: "Maintain structured communication and relationship support across customer accounts.",
     },
-
     {
-      icon: ClipboardCheck,
-      title: "Feedback Management",
-      text:
-        "Collect, organize, and communicate customer feedback to help improve products and experiences.",
+      icon: Route,
+      title: "Complaint & Escalation Management",
+      text: "Coordinate complex customer concerns through defined escalation and resolution workflows.",
     },
   ],
 
@@ -7351,41 +7223,30 @@ const customerSuccess = {
     {
       icon: HeartHandshake,
       title: "Stronger Relationships",
-      text:
-        "Create more consistent and proactive customer interactions throughout the customer lifecycle.",
+      text: "Create more consistent and proactive customer interactions throughout the customer lifecycle.",
     },
-
     {
       icon: Target,
       title: "Customer-Focused Processes",
-      text:
-        "Structure workflows around customer goals, milestones, adoption, and engagement.",
+      text: "Structure workflows around customer goals, milestones, adoption, and engagement.",
     },
-
     {
       icon: BarChart3,
       title: "Better Visibility",
-      text:
-        "Organize customer information and reporting to help teams make informed decisions.",
+      text: "Organize customer information and reporting to help teams make informed decisions.",
     },
-
     {
       icon: TrendingUp,
       title: "Long-Term Value",
-      text:
-        "Create processes designed to support customer engagement, retention, and growth.",
+      text: "Create processes designed to support customer engagement, retention, and growth.",
     },
   ],
 
   customerStory: {
     eyebrow: "CUSTOMER STORY",
-
-    title:
-      "A proactive approach to customer relationships.",
-
+    title: "A proactive approach to customer relationships.",
     text:
       "A structured customer success operation can help businesses move from reactive support toward proactive customer engagement and relationship management.",
-
     results: [
       "More structured onboarding",
       "Consistent customer communication",
@@ -7400,202 +7261,566 @@ const customerSuccess = {
     {
       number: "01",
       title: "Understand",
-      text:
-        "We learn about your customers, lifecycle, products, goals, and existing customer processes.",
+      text: "We learn about your customers, lifecycle, products, goals, and existing customer processes.",
     },
-
     {
       number: "02",
       title: "Map",
-      text:
-        "We map key customer touchpoints, responsibilities, workflows, and communication requirements.",
+      text: "We map key customer touchpoints, responsibilities, workflows, and communication requirements.",
     },
-
     {
       number: "03",
       title: "Build",
-      text:
-        "We create the team structure, processes, documentation, and reporting model.",
+      text: "We create the team structure, processes, documentation, and reporting model.",
     },
-
     {
       number: "04",
       title: "Launch",
-      text:
-        "Your customer success team begins working with your customers according to the defined model.",
+      text: "Your customer success team begins working with your customers according to the defined model.",
     },
-
     {
       number: "05",
       title: "Improve",
-      text:
-        "We continuously review customer feedback, processes, and performance opportunities.",
+      text: "We continuously review customer feedback, processes, and performance opportunities.",
     },
   ],
 
   faqs: [
     {
-      question:
-        "What is the difference between customer service and customer success?",
-
+      question: "What is the difference between customer service and customer success?",
       answer:
         "Customer service generally focuses on resolving customer questions and issues, while customer success takes a proactive approach to helping customers achieve ongoing value from a product or service.",
     },
-
     {
-      question:
-        "Can Nodeus support customer onboarding?",
-
+      question: "Can Nodeus support customer onboarding?",
       answer:
         "Yes. Customer onboarding can be structured around your product, customer journey, documentation, communication requirements, and milestones.",
     },
-
     {
-      question:
-        "Can you work with our CRM?",
-
+      question: "Can you support at-risk customers and renewals?",
+      answer:
+        "Yes. Support can include proactive customer communication, at-risk account coordination, renewal workflows, and escalation management.",
+    },
+    {
+      question: "Can you work with our CRM?",
       answer:
         "Our teams can work with the CRM and customer management platforms used within your operation, subject to the specific tools and access requirements.",
     },
   ],
 
   cta: {
-    title:
-      "Ready to build stronger customer relationships?",
-
-    text:
-      "Let's design a customer success operation around your customers and business goals.",
-
-    button:
-      "Talk to Nodeus",
+    title: "Ready to build stronger customer relationships?",
+    text: "Let's design a customer success operation around your customers and business goals.",
+    button: "Talk to Nodeus",
   },
 };
 
-
 // ============================================================
-// EXECUTIVE ASSISTANT
+// 03. SALES SUPPORT & LEAD MANAGEMENT
 // ============================================================
 
-const executiveAssistant = {
-  slug: "executive-assistant",
-
-  title: "Executive Assistant",
-
-  category: "Business Operations",
-
-  heroIcon: BriefcaseBusiness,
+const salesSupportLeadManagement = {
+  slug: "sales-support-lead-management",
+  title: "Sales Support & Lead Management",
+  category: "Sales & Business Development",
+  heroIcon: Users,
 
   seo: {
-    title:
-      "Executive Assistant Services & Virtual Executive Support | Nodeus",
-
+    title: "Sales Support & Lead Management Services | Nodeus",
     description:
-      "Free your leadership team from time-consuming administrative work with dedicated executive assistant support for scheduling, communication, research, coordination, and operations.",
-
+      "Extend your sales team with dedicated support for lead generation, qualification, business development, appointment setting, prospect research, CRM, and pipeline management.",
     keywords: [
-      "executive assistant services",
-      "virtual executive assistant",
-      "remote executive assistant",
-      "executive support services",
-      "outsourced executive assistant",
+      "sales support outsourcing",
+      "lead generation services",
+      "lead qualification",
+      "appointment setting",
+      "sales development outsourcing",
+      "CRM management",
     ],
   },
 
   hero: {
-    eyebrow: "EXECUTIVE & BUSINESS SUPPORT",
-
-    title:
-      "Give Your Leadership Team More Time to Focus on What Matters",
-
+    eyebrow: "SALES SUPPORT & LEAD MANAGEMENT",
+    title: "Extend Your Sales Team With Reliable Execution",
     description:
-      "Delegate administrative, organizational, research, scheduling, and coordination responsibilities to dedicated executive support professionals.",
-
-    primaryButton:
-      "Build Your Executive Support Team",
-
-    secondaryButton:
-      "Talk to Our Team",
-
-    image:
-      "/images/services/executive-assistant-hero.jpg",
+      "Give your sales organization dedicated support for finding prospects, qualifying leads, managing CRM activity, setting appointments, and keeping the pipeline organized.",
+    primaryButton: "Build Your Sales Support Team",
+    secondaryButton: "Talk to Our Team",
+    image: "/images/services/sales-support-lead-management-hero.jpg",
   },
 
   overview: {
-    title:
-      "Executive support built around your working style.",
-
+    title: "Keep your sales team focused on selling.",
     text:
-      "Our executive assistants work around your priorities, communication preferences, schedules, systems, and daily operating rhythm so leaders can spend more time on strategic work.",
-
+      "Our sales support professionals handle the research, qualification, coordination, CRM, and administrative work that keeps sales activity moving.",
     points: [
-      "Calendar and schedule management",
-      "Inbox and communication support",
-      "Research and reporting",
-      "Meeting and administrative coordination",
+      "Lead generation and research",
+      "Lead qualification",
+      "Appointment setting",
+      "CRM and pipeline support",
     ],
   },
 
-  capabilitiesTitle:
-    "Reliable support for the work behind the work.",
-
+  capabilitiesTitle: "Support across the sales workflow.",
   capabilitiesText:
-    "Delegate recurring administrative and operational responsibilities without losing control or visibility.",
+    "Build dedicated sales support around the prospecting, qualification, coordination, and CRM activities your team needs.",
 
   capabilities: [
     {
-      icon: CalendarDays,
-      title: "Calendar Management",
-      text:
-        "Manage schedules, meetings, appointments, priorities, and calendar coordination.",
+      icon: Search,
+      title: "Lead Generation",
+      text: "Research and identify potential prospects according to your target market and qualification criteria.",
     },
-
     {
-      icon: Mail,
-      title: "Inbox Management",
-      text:
-        "Organize email, prioritize communications, prepare responses, and keep important conversations moving.",
+      icon: ClipboardCheck,
+      title: "Lead Qualification",
+      text: "Review prospects against defined criteria and organize qualified opportunities for your sales team.",
     },
-
+    {
+      icon: TrendingUp,
+      title: "Business Development",
+      text: "Support prospecting and business development activities that help create new sales opportunities.",
+    },
+    {
+      icon: CalendarDays,
+      title: "Appointment Setting",
+      text: "Coordinate outreach and schedule qualified meetings for your sales representatives.",
+    },
     {
       icon: Search,
-      title: "Research",
-      text:
-        "Conduct structured research and organize findings into useful information for decision-making.",
+      title: "Prospect Research",
+      text: "Research companies, decision-makers, industries, and relevant business information.",
     },
+    {
+      icon: Database,
+      title: "CRM Management",
+      text: "Maintain accurate lead, contact, activity, and opportunity information inside your CRM.",
+    },
+    {
+      icon: Workflow,
+      title: "Pipeline Management",
+      text: "Support opportunity tracking, follow-ups, pipeline organization, and sales administration.",
+    },
+  ],
 
+  platforms: [
+    "Salesforce",
+    "HubSpot",
+    "Zoho CRM",
+    "Microsoft Dynamics",
+    "Pipedrive",
+    "Apollo",
+    "LinkedIn",
+  ],
+
+  tools: [
+    "CRM",
+    "Sales Intelligence",
+    "Lead Databases",
+    "Email",
+    "Calendar",
+    "Reporting",
+    "Pipeline Management",
+  ],
+
+  benefits: [
+    {
+      icon: Zap,
+      title: "More Sales Capacity",
+      text: "Reduce administrative work so your sales team can spend more time on qualified opportunities.",
+    },
+    {
+      icon: Search,
+      title: "Better Prospecting",
+      text: "Create structured processes for finding and researching relevant prospects.",
+    },
+    {
+      icon: Database,
+      title: "Cleaner CRM Data",
+      text: "Keep lead, contact, and opportunity information organized and up to date.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Pipeline Visibility",
+      text: "Create more consistent tracking across sales activities and opportunities.",
+    },
+  ],
+
+  customerStory: {
+    eyebrow: "GROWTH STORY",
+    title: "Turning sales administration into a structured growth operation.",
+    text:
+      "Dedicated sales support can help internal sales teams spend more time selling while qualified professionals manage research, lead workflows, CRM activity, and appointments.",
+    results: [
+      "More organized prospecting",
+      "Better lead qualification workflows",
+      "Cleaner CRM activity",
+      "Additional sales capacity",
+    ],
+  },
+
+  compliance,
+
+  process: [
+    {
+      number: "01",
+      title: "Discover",
+      text: "We learn your target market, sales process, CRM, qualification criteria, and business development goals.",
+    },
+    {
+      number: "02",
+      title: "Define",
+      text: "We establish responsibilities, workflows, lead criteria, communication standards, and reporting requirements.",
+    },
+    {
+      number: "03",
+      title: "Prepare",
+      text: "We train the support team around your products, market, sales process, tools, and expectations.",
+    },
+    {
+      number: "04",
+      title: "Launch",
+      text: "Your sales support team begins managing agreed prospecting, qualification, appointment, and CRM responsibilities.",
+    },
+    {
+      number: "05",
+      title: "Optimize",
+      text: "We review activity and identify opportunities to improve lead quality, workflow efficiency, and pipeline visibility.",
+    },
+  ],
+
+  faqs: [
+    {
+      question: "Can Nodeus help generate and qualify leads?",
+      answer:
+        "Yes. Sales support can include prospect research, lead generation, lead qualification, CRM management, and appointment setting.",
+    },
+    {
+      question: "Can your team work inside our CRM?",
+      answer:
+        "Yes. Support can be structured around the CRM and sales tools already used by your organization.",
+    },
+    {
+      question: "Can you set appointments for our sales team?",
+      answer:
+        "Yes. Appointment setting can be included as part of a broader sales support and lead management operation.",
+    },
+  ],
+
+  cta: {
+    title: "Ready to strengthen your sales operation?",
+    text:
+      "Tell us about your sales process, target market, and growth goals. We'll help design the right support model.",
+    button: "Talk to Nodeus",
+  },
+};
+
+// ============================================================
+// 04. BACK-OFFICE OPERATIONS
+// ============================================================
+
+const backOfficeOperations = {
+  slug: "back-office-operations",
+  title: "Back-Office Operations",
+  category: "Business Operations",
+  heroIcon: Database,
+
+  seo: {
+    title: "Back-Office Operations & Outsourcing Services | Nodeus",
+    description:
+      "Streamline day-to-day operations with dedicated support for data entry, processing, verification, CRM administration, document processing, records, reporting, and quality assurance.",
+    keywords: [
+      "back office outsourcing",
+      "back office support",
+      "data entry outsourcing",
+      "data processing",
+      "document processing",
+      "CRM administration",
+      "quality assurance",
+    ],
+  },
+
+  hero: {
+    eyebrow: "BACK-OFFICE OPERATIONS",
+    title: "Reliable Support for the Work Behind Your Business",
+    description:
+      "Streamline recurring operational tasks with dedicated professionals who keep data, documents, records, systems, and reporting organized.",
+    primaryButton: "Build Your Back-Office Team",
+    secondaryButton: "Talk to Our Team",
+    image: "/images/services/back-office-operations-hero.jpg",
+  },
+
+  overview: {
+    title: "Make your day-to-day operations easier to manage.",
+    text:
+      "Our back-office teams take ownership of structured operational work so internal teams can focus on customers, growth, and higher-value responsibilities.",
+    points: [
+      "Accurate data handling",
+      "Structured document processing",
+      "CRM and database administration",
+      "Reporting and quality assurance",
+    ],
+  },
+
+  capabilitiesTitle: "Operational support built around your workflows.",
+  capabilitiesText:
+    "Delegate recurring back-office responsibilities while maintaining visibility, consistency, and control.",
+
+  capabilities: [
+    {
+      icon: FileText,
+      title: "Data Entry",
+      text: "Enter and organize information accurately across business systems and records.",
+    },
+    {
+      icon: Database,
+      title: "Data Processing",
+      text: "Process structured information according to defined business rules and workflows.",
+    },
+    {
+      icon: ClipboardCheck,
+      title: "Data Verification",
+      text: "Review information for completeness, consistency, and accuracy.",
+    },
+    {
+      icon: Settings2,
+      title: "CRM Administration",
+      text: "Maintain records, fields, activities, and administrative workflows within your CRM.",
+    },
+    {
+      icon: Database,
+      title: "Database Management",
+      text: "Organize and maintain business information across databases and operational systems.",
+    },
+    {
+      icon: FileText,
+      title: "Document Processing",
+      text: "Process, organize, classify, and maintain business documents and records.",
+    },
+    {
+      icon: Layers3,
+      title: "Records Management",
+      text: "Maintain structured records and support document organization and retrieval.",
+    },
+    {
+      icon: BarChart3,
+      title: "Reporting & Data Management",
+      text: "Organize operational information and prepare recurring reports and data outputs.",
+    },
+    {
+      icon: CheckCircle2,
+      title: "Quality Assurance",
+      text: "Apply defined review and quality-control processes to operational work.",
+    },
+  ],
+
+  platforms: [
+    "Salesforce",
+    "HubSpot",
+    "Microsoft Dynamics",
+    "Zoho",
+    "Google Workspace",
+    "Microsoft 365",
+    "SharePoint",
+  ],
+
+  tools: [
+    "CRM",
+    "Databases",
+    "Spreadsheets",
+    "Document Management",
+    "Reporting",
+    "Workflow Management",
+    "Quality Control",
+  ],
+
+  benefits: [
+    {
+      icon: Database,
+      title: "Organized Information",
+      text: "Keep operational data and records structured and easier to manage.",
+    },
+    {
+      icon: Zap,
+      title: "Operational Efficiency",
+      text: "Reduce repetitive administrative work and create more efficient workflows.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Quality Control",
+      text: "Build defined review processes around accuracy and consistency.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Scalable Support",
+      text: "Expand back-office capacity as business activity and data volumes grow.",
+    },
+  ],
+
+  customerStory: {
+    eyebrow: "OPERATIONS STORY",
+    title: "Turning repetitive operational work into a structured support function.",
+    text:
+      "Dedicated back-office professionals can take ownership of recurring data, documentation, records, CRM, reporting, and quality tasks.",
+    results: [
+      "More organized operational data",
+      "Structured document workflows",
+      "Improved administrative capacity",
+      "More consistent quality control",
+    ],
+  },
+
+  compliance,
+
+  process: [
+    {
+      number: "01",
+      title: "Understand",
+      text: "We learn your processes, systems, data requirements, documentation, and operational priorities.",
+    },
+    {
+      number: "02",
+      title: "Map",
+      text: "We document responsibilities, workflows, quality requirements, and escalation procedures.",
+    },
+    {
+      number: "03",
+      title: "Prepare",
+      text: "We train the team around your systems, processes, documentation, and quality standards.",
+    },
+    {
+      number: "04",
+      title: "Operate",
+      text: "Your dedicated team manages agreed back-office responsibilities within your operating environment.",
+    },
+    {
+      number: "05",
+      title: "Optimize",
+      text: "We review workflows and identify opportunities to improve efficiency, accuracy, and visibility.",
+    },
+  ],
+
+  faqs: [
+    {
+      question: "What back-office tasks can Nodeus support?",
+      answer:
+        "Support can include data entry, data processing, data verification, CRM administration, database management, document processing, records management, reporting, and quality assurance.",
+    },
+    {
+      question: "Can your team work with our existing systems?",
+      answer:
+        "Yes. The support model can be built around the business systems and tools already used by your organization.",
+    },
+    {
+      question: "Can back-office support scale with our workload?",
+      answer:
+        "Yes. Team capacity and workflows can be structured around changing operational requirements and business volumes.",
+    },
+  ],
+
+  cta: {
+    title: "Ready to streamline your back-office operations?",
+    text:
+      "Tell us about the operational work consuming your team's time and we'll help design the right support model.",
+    button: "Talk to Nodeus",
+  },
+};
+
+// ============================================================
+// 05. VIRTUAL ASSISTANT & ADMINISTRATIVE SUPPORT
+// ============================================================
+
+const virtualAssistantAdministrativeSupport = {
+  slug: "virtual-assistant-administrative-support",
+  title: "Virtual Assistant & Administrative Support",
+  category: "Business Operations",
+  heroIcon: BriefcaseBusiness,
+
+  seo: {
+    title: "Virtual Assistant & Administrative Support Services | Nodeus",
+    description:
+      "Dedicated remote professionals for virtual assistance, executive support, inbox and calendar management, scheduling, research, documents, meetings, and administrative work.",
+    keywords: [
+      "virtual assistant services",
+      "administrative support",
+      "virtual administrative assistant",
+      "executive assistant",
+      "remote virtual assistant",
+      "administrative outsourcing",
+    ],
+  },
+
+  hero: {
+    eyebrow: "VIRTUAL ASSISTANT & ADMINISTRATIVE SUPPORT",
+    title: "Reliable Administrative Support for the Work That Keeps Business Moving",
+    description:
+      "Delegate recurring administrative responsibilities to dedicated remote professionals who work around your systems, priorities, schedules, and operating style.",
+    primaryButton: "Build Your Administrative Support Team",
+    secondaryButton: "Talk to Our Team",
+    image: "/images/services/executive-assistant-hero.jpg",
+  },
+
+  overview: {
+    title: "Administrative support built around the way you work.",
+    text:
+      "Our virtual assistants support the daily administrative workload behind your business, helping leaders and teams stay organized and focused on higher-value priorities.",
+    points: [
+      "Virtual and executive assistance",
+      "Inbox and calendar management",
+      "Scheduling and meeting coordination",
+      "Research and document support",
+    ],
+  },
+
+  capabilitiesTitle: "Practical support for your everyday workload.",
+  capabilitiesText:
+    "Delegate recurring administrative tasks without losing control or visibility.",
+
+  capabilities: [
+    {
+      icon: BriefcaseBusiness,
+      title: "Virtual Assistance",
+      text: "Handle recurring administrative tasks and day-to-day support responsibilities.",
+    },
+    {
+      icon: Users,
+      title: "Executive Assistance",
+      text: "Provide dedicated support around leadership priorities, schedules, communication, and coordination.",
+    },
+    {
+      icon: Mail,
+      title: "Email & Inbox Management",
+      text: "Organize inboxes, prioritize messages, prepare responses, and keep important conversations moving.",
+    },
+    {
+      icon: CalendarDays,
+      title: "Calendar Management",
+      text: "Manage schedules, meetings, appointments, priorities, and calendar coordination.",
+    },
+    {
+      icon: CalendarDays,
+      title: "Appointment Scheduling",
+      text: "Coordinate appointments and scheduling requirements across internal and external stakeholders.",
+    },
     {
       icon: ClipboardCheck,
       title: "Meeting Coordination",
-      text:
-        "Coordinate meetings, agendas, reminders, notes, follow-ups, and action items.",
+      text: "Coordinate meetings, agendas, reminders, notes, follow-ups, and action items.",
     },
-
+    {
+      icon: Search,
+      title: "Online Research",
+      text: "Conduct structured online research and organize findings into useful information.",
+    },
     {
       icon: FileText,
-      title: "Document Support",
-      text:
-        "Assist with documents, presentations, reports, spreadsheets, and administrative materials.",
+      title: "Document Preparation",
+      text: "Assist with documents, presentations, reports, spreadsheets, and administrative materials.",
     },
-
-    {
-      icon: Users,
-      title: "Stakeholder Coordination",
-      text:
-        "Coordinate communication with internal teams, clients, vendors, and other stakeholders.",
-    },
-
-    {
-      icon: Clock3,
-      title: "Task Management",
-      text:
-        "Track priorities, deadlines, recurring responsibilities, and follow-up activities.",
-    },
-
     {
       icon: Workflow,
-      title: "Operational Support",
-      text:
-        "Support recurring business processes and administrative workflows that keep operations moving.",
+      title: "General Administrative Support",
+      text: "Support recurring administrative processes that keep your business organized and moving.",
     },
   ],
 
@@ -7623,41 +7848,30 @@ const executiveAssistant = {
     {
       icon: Clock3,
       title: "More Time",
-      text:
-        "Reduce the administrative workload competing for leadership attention.",
+      text: "Reduce the administrative workload competing for leadership and team attention.",
     },
-
     {
       icon: Workflow,
       title: "Better Organization",
-      text:
-        "Create structured systems for schedules, tasks, communication, and follow-ups.",
+      text: "Create structured systems for schedules, tasks, communication, and follow-ups.",
     },
-
     {
       icon: Users,
       title: "Dedicated Support",
-      text:
-        "Work with professionals who learn your preferences, responsibilities, and operating style.",
+      text: "Work with professionals who learn your preferences, responsibilities, and operating style.",
     },
-
     {
       icon: ShieldCheck,
       title: "Reliable Execution",
-      text:
-        "Keep important administrative responsibilities organized and moving forward.",
+      text: "Keep important administrative responsibilities organized and moving forward.",
     },
   ],
 
   customerStory: {
-    eyebrow: "CUSTOMER STORY",
-
-    title:
-      "Turning administrative overload into organized execution.",
-
+    eyebrow: "OPERATIONS STORY",
+    title: "Turning administrative overload into organized execution.",
     text:
-      "A dedicated executive assistant can take ownership of recurring administrative responsibilities while giving leadership greater visibility and control.",
-
+      "Dedicated virtual assistants can take ownership of recurring administrative responsibilities while giving leadership and teams greater visibility and control.",
     results: [
       "Better calendar organization",
       "More structured communication",
@@ -7672,746 +7886,150 @@ const executiveAssistant = {
     {
       number: "01",
       title: "Understand",
-      text:
-        "We learn your role, responsibilities, priorities, communication style, and preferred tools.",
+      text: "We learn your role, responsibilities, priorities, communication style, and preferred tools.",
     },
-
     {
       number: "02",
       title: "Match",
-      text:
-        "We identify the appropriate support profile based on your responsibilities and working requirements.",
+      text: "We identify the appropriate support profile based on your responsibilities and working requirements.",
     },
-
     {
       number: "03",
       title: "Onboard",
-      text:
-        "Your assistant becomes familiar with your workflows, systems, documentation, and expectations.",
+      text: "Your assistant becomes familiar with your workflows, systems, documentation, and expectations.",
     },
-
     {
       number: "04",
       title: "Operate",
-      text:
-        "Your dedicated assistant handles agreed responsibilities and maintains regular communication.",
+      text: "Your dedicated assistant handles agreed responsibilities and maintains regular communication.",
     },
-
     {
       number: "05",
       title: "Optimize",
-      text:
-        "We identify opportunities to improve organization, workflows, and productivity over time.",
+      text: "We identify opportunities to improve organization, workflows, and productivity over time.",
     },
   ],
 
   faqs: [
     {
-      question:
-        "What can an executive assistant handle?",
-
+      question: "What can a virtual assistant handle?",
       answer:
-        "Responsibilities can include calendar management, inbox support, research, meeting coordination, document preparation, task tracking, communication, and other administrative workflows.",
+        "Responsibilities can include inbox and calendar management, scheduling, research, meeting coordination, document preparation, task tracking, communication, and general administrative workflows.",
     },
-
     {
-      question:
-        "Can the assistant work with my existing tools?",
-
+      question: "Can the assistant work with my existing tools?",
       answer:
         "Yes. The support model can be built around the tools and platforms already used by your business.",
     },
-
     {
-      question:
-        "Can I have a dedicated executive assistant?",
-
+      question: "Can I have a dedicated virtual assistant?",
       answer:
         "Yes. Dedicated support can be structured around your responsibilities, schedule, preferred working style, and business requirements.",
     },
   ],
 
   cta: {
-    title:
-      "Give your leadership team more time.",
-
-    text:
-      "Let's build an executive support solution around the way you work.",
-
-    button:
-      "Talk to Nodeus",
+    title: "Ready to take administrative work off your plate?",
+    text: "Let's build an administrative support solution around the way you work.",
+    button: "Talk to Nodeus",
   },
 };
 
-
 // ============================================================
-// MARKETING ASSISTANT
-// ============================================================
-
-const marketingAssistant = {
-  slug: "marketing-assistant",
-
-  title: "Marketing Assistant",
-
-  category: "Marketing & Growth",
-
-  heroIcon: Megaphone,
-
-  seo: {
-    title:
-      "Marketing Assistant Services & Outsourcing | Nodeus",
-
-    description:
-      "Extend your marketing team with dedicated support for research, content coordination, campaign management, reporting, lead research, and marketing operations.",
-
-    keywords: [
-      "marketing assistant",
-      "marketing outsourcing",
-      "virtual marketing assistant",
-      "marketing support services",
-      "digital marketing assistant",
-    ],
-  },
-
-  hero: {
-    eyebrow: "MARKETING OPERATIONS & GROWTH",
-
-    title:
-      "Extend Your Marketing Team Without Slowing Down",
-
-    description:
-      "Get dedicated marketing support for research, content coordination, campaign execution, reporting, lead research, and everyday marketing operations.",
-
-    primaryButton:
-      "Build Your Marketing Team",
-
-    secondaryButton:
-      "Talk to Our Team",
-
-    image:
-      "/images/services/marketing-assistant-hero.jpg",
-  },
-
-  overview: {
-    title:
-      "Marketing support that keeps execution moving.",
-
-    text:
-      "Our marketing assistants support the operational work behind your marketing strategy, helping your internal team stay focused on planning, creativity, growth, and high-value activities.",
-
-    points: [
-      "Marketing research",
-      "Campaign coordination",
-      "Content support",
-      "Lead and market research",
-    ],
-  },
-
-  capabilitiesTitle:
-    "Practical support across your marketing workflow.",
-
-  capabilitiesText:
-    "Add reliable execution capacity to the marketing activities that keep your business visible and growing.",
-
-  capabilities: [
-    {
-      icon: Search,
-      title: "Market Research",
-      text:
-        "Research industries, competitors, customers, trends, and market opportunities.",
-    },
-
-    {
-      icon: FileText,
-      title: "Content Support",
-      text:
-        "Support content planning, organization, publishing workflows, and marketing materials.",
-    },
-
-    {
-      icon: Megaphone,
-      title: "Campaign Support",
-      text:
-        "Coordinate campaign tasks, assets, schedules, communications, and execution activities.",
-    },
-
-    {
-      icon: UserPlus,
-      title: "Lead Research",
-      text:
-        "Research and organize potential prospects according to your defined target criteria.",
-    },
-
-    {
-      icon: Mail,
-      title: "Email Marketing Support",
-      text:
-        "Support email campaign preparation, list organization, scheduling, and reporting.",
-    },
-
-    {
-      icon: BarChart3,
-      title: "Marketing Reporting",
-      text:
-        "Organize campaign information and performance data into useful reports.",
-    },
-
-    {
-      icon: Palette,
-      title: "Creative Coordination",
-      text:
-        "Coordinate marketing assets, creative requests, approvals, and publishing workflows.",
-    },
-
-    {
-      icon: Workflow,
-      title: "Marketing Operations",
-      text:
-        "Support recurring marketing processes, task management, calendars, and documentation.",
-    },
-  ],
-
-  platforms: [
-    "HubSpot",
-    "Mailchimp",
-    "Google Analytics",
-    "Google Ads",
-    "Meta Business Suite",
-    "LinkedIn",
-    "Canva",
-  ],
-
-  tools: [
-    "CRM",
-    "Email Marketing",
-    "Analytics",
-    "Project Management",
-    "Content Management",
-    "Social Media",
-    "Design",
-  ],
-
-  benefits: [
-    {
-      icon: Zap,
-      title: "Faster Execution",
-      text:
-        "Add operational capacity so your marketing team can keep campaigns and projects moving.",
-    },
-
-    {
-      icon: Users,
-      title: "Extended Team",
-      text:
-        "Add dedicated marketing support without having to build every capability internally.",
-    },
-
-    {
-      icon: Workflow,
-      title: "Organized Operations",
-      text:
-        "Create structured workflows for campaigns, content, research, and recurring marketing activities.",
-    },
-
-    {
-      icon: BarChart3,
-      title: "Better Visibility",
-      text:
-        "Organize marketing activities and performance information for clearer decision-making.",
-    },
-  ],
-
-  customerStory: {
-    eyebrow: "CUSTOMER STORY",
-
-    title:
-      "More marketing execution without adding operational complexity.",
-
-    text:
-      "A dedicated marketing assistant can take ownership of recurring research, coordination, reporting, and execution tasks so your core marketing team can focus on strategy and growth.",
-
-    results: [
-      "More consistent campaign execution",
-      "Better marketing task organization",
-      "Additional research capacity",
-      "More time for strategic marketing work",
-    ],
-  },
-
-  compliance,
-
-  process: [
-    {
-      number: "01",
-      title: "Discover",
-      text:
-        "We understand your marketing strategy, channels, workflows, tools, and priorities.",
-    },
-
-    {
-      number: "02",
-      title: "Plan",
-      text:
-        "We define responsibilities, workflows, communication processes, and performance expectations.",
-    },
-
-    {
-      number: "03",
-      title: "Build",
-      text:
-        "We prepare the right marketing support profile and provide the necessary onboarding.",
-    },
-
-    {
-      number: "04",
-      title: "Launch",
-      text:
-        "Your marketing support begins operating within your existing systems and workflows.",
-    },
-
-    {
-      number: "05",
-      title: "Optimize",
-      text:
-        "We continuously improve processes and identify opportunities to increase operational efficiency.",
-    },
-  ],
-
-  faqs: [
-    {
-      question:
-        "What can a marketing assistant do?",
-
-      answer:
-        "Marketing assistants can support research, content coordination, campaign execution, lead research, email marketing, reporting, social media activities, and general marketing operations.",
-    },
-
-    {
-      question:
-        "Can the assistant work with our marketing platforms?",
-
-      answer:
-        "Yes. Support can be structured around the marketing platforms and tools already used by your organization.",
-    },
-
-    {
-      question:
-        "Can Nodeus support an existing marketing team?",
-
-      answer:
-        "Yes. Our marketing support model can complement your existing team by taking ownership of recurring operational and execution responsibilities.",
-    },
-  ],
-
-  cta: {
-    title:
-      "Ready to extend your marketing team?",
-
-    text:
-      "Tell us what is slowing down your marketing operation and we'll help design the right support model.",
-
-    button:
-      "Talk to Nodeus",
-  },
-};
-
-
-// ============================================================
-// SOCIAL MEDIA MANAGER
-// ============================================================
-
-const socialMediaManager = {
-  slug: "social-media-manager",
-
-  title: "Social Media Manager",
-
-  category: "Marketing & Creative",
-
-  heroIcon: Share2,
-
-  seo: {
-    title:
-      "Social Media Management Services | Nodeus",
-
-    description:
-      "Build a stronger social media presence with dedicated social media management for content planning, publishing, community engagement, monitoring, and reporting.",
-
-    keywords: [
-      "social media management",
-      "social media manager",
-      "social media outsourcing",
-      "social media marketing support",
-      "social media management services",
-    ],
-  },
-
-  hero: {
-    eyebrow: "SOCIAL MEDIA & DIGITAL PRESENCE",
-
-    title:
-      "Build a Social Presence Your Audience Remembers",
-
-    description:
-      "Keep your social channels active, organized, and engaging with dedicated support for content planning, publishing, community management, and performance monitoring.",
-
-    primaryButton:
-      "Build Your Social Media Team",
-
-    secondaryButton:
-      "Talk to Our Team",
-
-    image:
-      "/images/services/social-media-manager-hero.jpg",
-  },
-
-  overview: {
-    title:
-      "Consistency creates momentum.",
-
-    text:
-      "Our social media professionals help businesses manage the daily work required to maintain an active digital presence while keeping content aligned with your brand, audience, and marketing goals.",
-
-    points: [
-      "Social media strategy support",
-      "Content planning and scheduling",
-      "Community management",
-      "Performance monitoring and reporting",
-    ],
-  },
-
-  capabilitiesTitle:
-    "Everything you need to manage your social presence.",
-
-  capabilitiesText:
-    "Combine planning, publishing, engagement, and reporting into one coordinated social media operation.",
-
-  capabilities: [
-    {
-      icon: Share2,
-      title: "Social Media Management",
-      text:
-        "Manage daily social media activities across your selected platforms.",
-    },
-
-    {
-      icon: CalendarDays,
-      title: "Content Planning",
-      text:
-        "Build structured content calendars around campaigns, themes, events, and business priorities.",
-    },
-
-    {
-      icon: PenTool,
-      title: "Content Coordination",
-      text:
-        "Coordinate captions, creative assets, publishing requirements, and content approvals.",
-    },
-
-    {
-      icon: MessageSquareText,
-      title: "Community Management",
-      text:
-        "Monitor and respond to comments, questions, mentions, and relevant customer interactions.",
-    },
-
-    {
-      icon: Search,
-      title: "Social Listening",
-      text:
-        "Monitor conversations, mentions, trends, and audience signals relevant to your brand.",
-    },
-
-    {
-      icon: Video,
-      title: "Short-Form Content Support",
-      text:
-        "Support the planning and coordination of short-form social content and creative assets.",
-    },
-
-    {
-      icon: BarChart3,
-      title: "Performance Reporting",
-      text:
-        "Track and organize social media performance information for ongoing analysis.",
-    },
-
-    {
-      icon: TrendingUp,
-      title: "Growth Support",
-      text:
-        "Use content, engagement, and performance insights to support ongoing social media growth.",
-    },
-  ],
-
-  platforms: [
-    "Instagram",
-    "Facebook",
-    "LinkedIn",
-    "TikTok",
-    "X",
-    "YouTube",
-    "Pinterest",
-  ],
-
-  tools: [
-    "Meta Business Suite",
-    "Canva",
-    "Buffer",
-    "Hootsuite",
-    "Later",
-    "Google Analytics",
-    "Social Analytics",
-  ],
-
-  benefits: [
-    {
-      icon: CalendarDays,
-      title: "Consistent Publishing",
-      text:
-        "Keep your social channels organized around a consistent content and publishing workflow.",
-    },
-
-    {
-      icon: Users,
-      title: "Dedicated Management",
-      text:
-        "Have a dedicated professional responsible for the day-to-day social media operation.",
-    },
-
-    {
-      icon: MessageSquareText,
-      title: "Better Engagement",
-      text:
-        "Stay responsive to your audience through structured community management.",
-    },
-
-    {
-      icon: BarChart3,
-      title: "Performance Visibility",
-      text:
-        "Understand what is happening across your social channels through structured reporting.",
-    },
-  ],
-
-  customerStory: {
-    eyebrow: "CUSTOMER STORY",
-
-    title:
-      "Turning inconsistent social activity into a structured content operation.",
-
-    text:
-      "A dedicated social media manager can bring structure to content planning, publishing, community management, and reporting while keeping your brand voice consistent.",
-
-    results: [
-      "More consistent content publishing",
-      "Better social media organization",
-      "Faster community responses",
-      "Clearer performance reporting",
-    ],
-  },
-
-  compliance,
-
-  process: [
-    {
-      number: "01",
-      title: "Discover",
-      text:
-        "We learn your brand, audience, platforms, content style, goals, and existing social workflow.",
-    },
-
-    {
-      number: "02",
-      title: "Plan",
-      text:
-        "We build a content and management workflow around your campaigns and publishing requirements.",
-    },
-
-    {
-      number: "03",
-      title: "Create",
-      text:
-        "Content and creative assets are coordinated according to your brand and approval process.",
-    },
-
-    {
-      number: "04",
-      title: "Publish",
-      text:
-        "Content is scheduled and published across your selected social platforms.",
-    },
-
-    {
-      number: "05",
-      title: "Analyze",
-      text:
-        "Performance information and audience feedback are reviewed to identify opportunities for improvement.",
-    },
-  ],
-
-  faqs: [
-    {
-      question:
-        "Which social media platforms can you manage?",
-
-      answer:
-        "Support can be structured around platforms such as Instagram, Facebook, LinkedIn, TikTok, YouTube, X, Pinterest, and other platforms relevant to your business.",
-    },
-
-    {
-      question:
-        "Can you follow our brand guidelines?",
-
-      answer:
-        "Yes. Your social media team can work according to your brand voice, visual guidelines, content standards, approval process, and communication requirements.",
-    },
-
-    {
-      question:
-        "Do you provide social media reporting?",
-
-      answer:
-        "Yes. Reporting can be structured around the platforms, metrics, campaigns, and business objectives that matter to your organization.",
-    },
-  ],
-
-  cta: {
-    title:
-      "Ready to take your social media seriously?",
-
-    text:
-      "Let's build a social media operation around your brand, audience, and growth goals.",
-
-    button:
-      "Talk to Nodeus",
-  },
-};
-
-
-// ============================================================
-// E-COMMERCE SUPPORT
+// 06. E-COMMERCE SUPPORT
 // ============================================================
 
 const ecommerceSupport = {
   slug: "ecommerce-support",
-
   title: "E-commerce Support",
-
   category: "E-commerce Operations",
-
   heroIcon: ShoppingCart,
 
   seo: {
-    title:
-      "E-commerce Support Services & Outsourcing | Nodeus",
-
+    title: "E-commerce Support Services & Outsourcing | Nodeus",
     description:
-      "Improve e-commerce operations with dedicated support for customers, orders, products, marketplaces, returns, refunds, and daily store management.",
-
+      "Improve e-commerce operations with dedicated support for customers, orders, tracking, returns, refunds, products, payments, post-purchase support, and Shopify.",
     keywords: [
       "ecommerce support",
       "ecommerce outsourcing",
       "ecommerce customer support",
       "shopify support",
+      "order management",
       "ecommerce operations",
     ],
   },
 
   hero: {
     eyebrow: "E-COMMERCE OPERATIONS & SUPPORT",
-
-    title:
-      "Keep Your E-commerce Business Moving",
-
+    title: "Keep Your E-commerce Business Moving",
     description:
-      "Give your online store dependable operational support for customers, orders, products, marketplaces, returns, and everyday e-commerce workflows.",
-
-    primaryButton:
-      "Build Your E-commerce Team",
-
-    secondaryButton:
-      "Talk to Our Team",
-
-    image:
-      "/images/services/ecommerce-support-hero.jpg",
+      "Give your online store dependable operational support for customers, orders, products, payments, returns, and everyday e-commerce workflows.",
+    primaryButton: "Build Your E-commerce Team",
+    secondaryButton: "Talk to Our Team",
+    image: "/images/services/ecommerce-support-hero.jpg",
   },
 
   overview: {
-    title:
-      "Support every step of the customer order journey.",
-
+    title: "Support every step of the customer order journey.",
     text:
       "Our e-commerce support teams help businesses manage the operational work behind online sales, from customer questions and order processing to product information and post-purchase support.",
-
     points: [
       "E-commerce customer support",
-      "Order and fulfillment coordination",
+      "Order management and tracking",
       "Product and catalog support",
-      "Returns and refund assistance",
+      "Returns, refunds, and billing support",
     ],
   },
 
-  capabilitiesTitle:
-    "Operational support for modern e-commerce.",
-
+  capabilitiesTitle: "Operational support for modern e-commerce.",
   capabilitiesText:
-    "Build a support operation around the platforms, marketplaces, products, customers, and workflows that power your online business.",
+    "Build a support operation around the platforms, products, customers, and workflows that power your online business.",
 
   capabilities: [
     {
-      icon: MessageSquareText,
-      title: "E-commerce Customer Support",
-      text:
-        "Answer customer questions about products, orders, shipping, returns, and account issues.",
+      icon: ShoppingCart,
+      title: "E-commerce Customer Service",
+      text: "Answer customer questions about products, orders, shipping, returns, and accounts.",
     },
-
     {
       icon: PackageCheck,
       title: "Order Management",
-      text:
-        "Support order processing, status updates, changes, cancellations, and coordination.",
+      text: "Support order processing, status updates, changes, cancellations, and coordination.",
     },
-
+    {
+      icon: Route,
+      title: "Order Tracking",
+      text: "Support customers with order status, shipment progress, delivery updates, and related questions.",
+    },
     {
       icon: ReceiptText,
       title: "Returns & Refunds",
-      text:
-        "Manage customer communication and administrative workflows around returns and refunds.",
+      text: "Manage customer communication and administrative workflows around returns and refunds.",
     },
-
     {
       icon: ShoppingCart,
-      title: "Product Management",
-      text:
-        "Support product information, catalog organization, descriptions, and operational updates.",
+      title: "Product Listing Management",
+      text: "Support product listings, information updates, descriptions, and operational changes.",
     },
-
-    {
-      icon: CreditCard,
-      title: "Payment Support",
-      text:
-        "Assist customers with payment-related questions and coordinate appropriate resolutions.",
-    },
-
-    {
-      icon: Route,
-      title: "Shipping Coordination",
-      text:
-        "Support customers and internal teams with shipping status, delivery questions, and coordination.",
-    },
-
     {
       icon: Database,
-      title: "Marketplace Support",
-      text:
-        "Provide operational support across relevant e-commerce marketplaces and sales channels.",
+      title: "Product Catalog Management",
+      text: "Maintain organized product information and catalog data across your e-commerce operation.",
     },
-
     {
-      icon: BarChart3,
-      title: "E-commerce Reporting",
-      text:
-        "Organize operational information and customer data into useful reports.",
+      icon: CreditCard,
+      title: "Payment & Billing Support",
+      text: "Assist customers with payment and billing questions and coordinate appropriate resolutions.",
+    },
+    {
+      icon: MessageSquareText,
+      title: "Post-Purchase Support",
+      text: "Provide customer assistance after purchase through delivery, returns, refunds, and account support.",
+    },
+    {
+      icon: ShoppingCart,
+      title: "Shopify Support",
+      text: "Support daily customer and operational workflows for Shopify-based businesses.",
     },
   ],
 
@@ -8439,41 +8057,30 @@ const ecommerceSupport = {
     {
       icon: ShoppingCart,
       title: "Customer-Focused Support",
-      text:
-        "Provide responsive assistance throughout the online shopping journey.",
+      text: "Provide responsive assistance throughout the online shopping journey.",
     },
-
     {
       icon: PackageCheck,
       title: "Operational Efficiency",
-      text:
-        "Create structured processes for orders, products, returns, and customer requests.",
+      text: "Create structured processes for orders, products, returns, and customer requests.",
     },
-
     {
       icon: Users,
       title: "Dedicated Specialists",
-      text:
-        "Work with professionals trained around your store, products, customers, and processes.",
+      text: "Work with professionals trained around your store, products, customers, and processes.",
     },
-
     {
       icon: TrendingUp,
       title: "Scalable Support",
-      text:
-        "Expand operational support as order volume, channels, and customer demand change.",
+      text: "Expand operational support as order volume, channels, and customer demand change.",
     },
   ],
 
   customerStory: {
     eyebrow: "CUSTOMER STORY",
-
-    title:
-      "From daily e-commerce tasks to a structured support operation.",
-
+    title: "From daily e-commerce tasks to a structured support operation.",
     text:
       "A dedicated e-commerce support team can help organize customer communication and operational workflows so internal teams can focus on growth and product development.",
-
     results: [
       "More consistent customer communication",
       "Better order support workflows",
@@ -8488,270 +8095,186 @@ const ecommerceSupport = {
     {
       number: "01",
       title: "Understand",
-      text:
-        "We learn your products, store, customers, order flow, marketplaces, and operational requirements.",
+      text: "We learn your products, store, customers, order flow, marketplaces, and operational requirements.",
     },
-
     {
       number: "02",
       title: "Map",
-      text:
-        "We map customer journeys, operational workflows, responsibilities, and escalation processes.",
+      text: "We map customer journeys, operational workflows, responsibilities, and escalation processes.",
     },
-
     {
       number: "03",
       title: "Prepare",
-      text:
-        "We train the support team around your products, policies, tools, and processes.",
+      text: "We train the support team around your products, policies, tools, and processes.",
     },
-
     {
       number: "04",
       title: "Launch",
-      text:
-        "Your team begins managing agreed e-commerce responsibilities within your operating environment.",
+      text: "Your team begins managing agreed e-commerce responsibilities within your operating environment.",
     },
-
     {
       number: "05",
       title: "Optimize",
-      text:
-        "We review workflows and identify opportunities to improve efficiency and customer experience.",
+      text: "We review workflows and identify opportunities to improve efficiency and customer experience.",
     },
   ],
 
   faqs: [
     {
-      question:
-        "Can you support Shopify stores?",
-
+      question: "Can you support Shopify stores?",
       answer:
         "Yes. E-commerce support can be structured around Shopify and other e-commerce platforms used by your business.",
     },
-
     {
-      question:
-        "Can you handle customer service for an online store?",
-
+      question: "Can you handle customer service for an online store?",
       answer:
         "Yes. Support can include product questions, order status, shipping questions, returns, refunds, and other customer service responsibilities.",
     },
-
     {
-      question:
-        "Can you support multiple marketplaces?",
-
+      question: "Can you support multiple marketplaces?",
       answer:
         "Yes. The support model can be designed around multiple e-commerce platforms and marketplaces depending on your operational requirements.",
     },
   ],
 
   cta: {
-    title:
-      "Ready to simplify your e-commerce operations?",
-
-    text:
-      "Let's build a support team around your store, customers, and operational workflows.",
-
-    button:
-      "Talk to Nodeus",
+    title: "Ready to simplify your e-commerce operations?",
+    text: "Let's build a support team around your store, customers, and operational workflows.",
+    button: "Talk to Nodeus",
   },
 };
 
-
 // ============================================================
-// AI TRANSFORMATION
+// 07. HELPDESK & TECHNICAL SUPPORT
 // ============================================================
 
-const aiTransformation = {
-  slug: "ai-transformation",
-
-  title: "AI Transformation",
-
-  category: "Technology & AI",
-
-  heroIcon: BrainCircuit,
+const helpdeskTechnicalSupport = {
+  slug: "helpdesk-technical-support",
+  title: "Helpdesk & Technical Support",
+  category: "Technology & Support",
+  heroIcon: LifeBuoy,
 
   seo: {
-    title:
-      "AI Transformation & Business Automation Services | Nodeus",
-
+    title: "Helpdesk & Technical Support Services | Nodeus",
     description:
-      "Transform business operations with practical AI strategy, workflow automation, AI assistants, process optimization, integrations, and intelligent business solutions.",
-
+      "Provide dependable first-line technical support with helpdesk, ticket management, troubleshooting, knowledge base, and first-level technical support.",
     keywords: [
-      "AI transformation",
-      "AI automation",
-      "business process automation",
-      "AI consulting",
-      "AI implementation",
-      "AI business solutions",
+      "helpdesk support",
+      "technical support outsourcing",
+      "IT helpdesk outsourcing",
+      "first level technical support",
+      "ticket management",
+      "troubleshooting support",
     ],
   },
 
   hero: {
-    eyebrow: "AI STRATEGY, AUTOMATION & TRANSFORMATION",
-
-    title:
-      "Turn AI Into Practical Business Advantage",
-
+    eyebrow: "HELPDESK & TECHNICAL SUPPORT",
+    title: "First-Line Support That Keeps Your Customers Productive",
     description:
-      "Identify where AI can create real operational value and transform repetitive processes into smarter, faster, and more scalable workflows.",
-
-    primaryButton:
-      "Start Your AI Transformation",
-
-    secondaryButton:
-      "Talk to Our AI Team",
-
-    image:
-      "/images/services/ai-transformation-hero.jpg",
+      "Provide responsive first-line support that helps users resolve common issues, navigate products, and get the assistance they need.",
+    primaryButton: "Build Your Support Team",
+    secondaryButton: "Talk to Our Team",
+    image: "/images/services/helpdesk-technical-support-hero.jpg",
   },
 
   overview: {
-    title:
-      "AI should solve business problems — not create more complexity.",
-
+    title: "Resolve common issues quickly and consistently.",
     text:
-      "We help organizations identify practical opportunities for AI and automation, design useful workflows, integrate the right technologies, and create solutions that support real business operations.",
-
+      "Our helpdesk teams provide structured first-line support around your products, systems, knowledge base, ticket workflows, and escalation procedures.",
     points: [
-      "AI opportunity assessment",
-      "Business process automation",
-      "AI assistants and agents",
-      "Workflow and system integration",
+      "Helpdesk and ticket support",
+      "First-level technical assistance",
+      "Troubleshooting",
+      "Knowledge base support",
     ],
   },
 
-  capabilitiesTitle:
-    "From AI strategy to real-world implementation.",
-
+  capabilitiesTitle: "Technical support across the first line of service.",
   capabilitiesText:
-    "Build practical AI solutions around the processes, systems, customers, and teams that matter most to your business.",
+    "Create a dependable first-line support operation that resolves common issues and routes complex cases appropriately.",
 
   capabilities: [
     {
-      icon: BrainCircuit,
-      title: "AI Strategy",
-      text:
-        "Identify practical AI opportunities based on your business processes, goals, and operational priorities.",
+      icon: LifeBuoy,
+      title: "Helpdesk Support",
+      text: "Provide a central first-line support function for customer and user issues.",
     },
-
     {
-      icon: Workflow,
-      title: "Workflow Automation",
-      text:
-        "Automate repetitive business processes and connect tasks across your existing systems.",
+      icon: ClipboardCheck,
+      title: "Ticket Management",
+      text: "Create, categorize, prioritize, update, and resolve support tickets through structured workflows.",
     },
-
-    {
-      icon: Bot,
-      title: "AI Assistants",
-      text:
-        "Design AI-powered assistants that help customers, employees, and teams access information and complete tasks.",
-    },
-
     {
       icon: Settings2,
-      title: "AI Agents",
-      text:
-        "Explore intelligent workflows where AI can reason through tasks and support multi-step business processes.",
+      title: "First-Level Technical Support",
+      text: "Handle common technical questions and issues using defined procedures and documentation.",
     },
-
     {
-      icon: Database,
-      title: "Data & Knowledge Systems",
-      text:
-        "Connect business information and knowledge sources to make relevant information easier to access.",
+      icon: Search,
+      title: "Troubleshooting",
+      text: "Guide users through structured troubleshooting steps for common issues.",
     },
-
     {
-      icon: Layers3,
-      title: "System Integration",
-      text:
-        "Connect AI solutions with business platforms, applications, APIs, and existing workflows.",
-    },
-
-    {
-      icon: RefreshCw,
-      title: "Process Optimization",
-      text:
-        "Identify inefficiencies and redesign workflows around automation and intelligent tools.",
-    },
-
-    {
-      icon: BarChart3,
-      title: "AI Performance Monitoring",
-      text:
-        "Track AI workflows and identify opportunities for continuous improvement.",
+      icon: FileText,
+      title: "Knowledge Base Support",
+      text: "Use and maintain knowledge resources that help support teams provide consistent answers.",
     },
   ],
 
   platforms: [
-    "OpenAI",
-    "Google Gemini",
-    "Anthropic Claude",
-    "Microsoft Azure",
-    "AWS",
-    "Zapier",
-    "Make",
+    "Zendesk",
+    "Freshdesk",
+    "Intercom",
+    "Jira Service Management",
+    "ServiceNow",
+    "HubSpot",
+    "Microsoft Teams",
   ],
 
   tools: [
-    "AI Assistants",
-    "AI Agents",
-    "Workflow Automation",
-    "APIs",
-    "CRM Integration",
-    "Knowledge Bases",
-    "Analytics",
+    "Help Desk",
+    "Ticketing",
+    "Knowledge Base",
+    "Remote Support",
+    "Documentation",
+    "CRM",
+    "Reporting",
   ],
 
   benefits: [
     {
       icon: Zap,
-      title: "Greater Efficiency",
-      text:
-        "Reduce repetitive manual work and create more efficient business workflows.",
+      title: "Faster Resolution",
+      text: "Provide structured first-line support for common questions and issues.",
     },
-
-    {
-      icon: BrainCircuit,
-      title: "Smarter Operations",
-      text:
-        "Apply AI to processes where intelligent assistance can create meaningful operational value.",
-    },
-
     {
       icon: Workflow,
-      title: "Connected Workflows",
-      text:
-        "Connect tools and processes so information can move more efficiently across your organization.",
+      title: "Organized Ticketing",
+      text: "Create consistent processes for prioritization, routing, updates, and resolution.",
     },
-
+    {
+      icon: Users,
+      title: "Dedicated Support",
+      text: "Work with trained professionals who understand your products and support processes.",
+    },
     {
       icon: TrendingUp,
-      title: "Scalable Innovation",
-      text:
-        "Build an AI foundation that can evolve as your business and technology requirements change.",
+      title: "Scalable Coverage",
+      text: "Increase support capacity as users, customers, and ticket volumes grow.",
     },
   ],
 
   customerStory: {
-    eyebrow: "TRANSFORMATION STORY",
-
-    title:
-      "From repetitive work to intelligent workflows.",
-
+    eyebrow: "SUPPORT STORY",
+    title: "From reactive technical requests to a structured helpdesk operation.",
     text:
-      "The strongest AI implementations begin with a clear business problem. We focus on identifying repetitive or inefficient processes where automation and AI can provide practical value.",
-
+      "A dedicated first-line support team can help reduce response pressure on internal technical teams while providing users with consistent assistance.",
     results: [
-      "Reduced repetitive manual work",
-      "Faster access to information",
-      "More connected workflows",
-      "Better operational scalability",
+      "More structured ticket workflows",
+      "Consistent first-line support",
+      "Better issue routing",
+      "Additional technical support capacity",
     ],
   },
 
@@ -8760,212 +8283,169 @@ const aiTransformation = {
   process: [
     {
       number: "01",
-      title: "Assess",
-      text:
-        "We examine your business processes, technology environment, pain points, and AI opportunities.",
+      title: "Understand",
+      text: "We learn your products, systems, users, common issues, support processes, and escalation requirements.",
     },
-
     {
       number: "02",
-      title: "Prioritize",
-      text:
-        "We identify use cases based on business value, feasibility, complexity, and implementation requirements.",
+      title: "Document",
+      text: "We organize support procedures, knowledge resources, issue categories, and escalation paths.",
     },
-
     {
       number: "03",
-      title: "Design",
-      text:
-        "We design the AI workflow, integrations, user experience, data requirements, and operational model.",
+      title: "Train",
+      text: "We prepare support professionals around your products, tools, procedures, and service standards.",
     },
-
     {
       number: "04",
-      title: "Implement",
-      text:
-        "The selected AI solution is integrated into your workflow and tested against defined requirements.",
+      title: "Launch",
+      text: "Your helpdesk team begins handling agreed first-line support responsibilities.",
     },
-
     {
       number: "05",
-      title: "Optimize",
-      text:
-        "We monitor performance and continuously identify opportunities to improve the solution.",
+      title: "Improve",
+      text: "We review ticket trends, recurring issues, and workflow performance to identify improvements.",
     },
   ],
 
   faqs: [
     {
-      question:
-        "What is AI transformation?",
-
+      question: "What type of technical support can Nodeus provide?",
       answer:
-        "AI transformation is the process of identifying and implementing practical AI and automation opportunities across business operations, customer experiences, workflows, and systems.",
+        "Support can include helpdesk operations, ticket management, first-level technical support, troubleshooting, and knowledge base support.",
     },
-
     {
-      question:
-        "Do I need a large AI project?",
-
+      question: "Can your team follow our troubleshooting procedures?",
       answer:
-        "Not necessarily. Many businesses can begin with a focused workflow or process where AI can provide measurable operational value.",
+        "Yes. Teams can be trained around your documentation, troubleshooting workflows, knowledge base, escalation procedures, and support standards.",
     },
-
     {
-      question:
-        "Can AI integrate with our existing systems?",
-
+      question: "Can you escalate complex technical issues?",
       answer:
-        "Depending on the systems involved, AI solutions can often be integrated through APIs, automation platforms, databases, and other available technologies.",
-    },
-
-    {
-      question:
-        "Can Nodeus build an AI chatbot?",
-
-      answer:
-        "Yes. AI assistants and conversational systems can be designed around your website, knowledge base, business processes, customer support requirements, and lead-generation workflows.",
+        "Yes. Support workflows can include defined escalation paths for issues that require internal or higher-level technical attention.",
     },
   ],
 
   cta: {
-    title:
-      "Ready to turn AI into something useful for your business?",
-
+    title: "Ready to strengthen your first-line technical support?",
     text:
-      "Let's identify the processes where AI and automation can create the greatest practical impact.",
-
-    button:
-      "Start Your AI Journey",
+      "Tell us about your products, users, ticket volume, and support workflow. We'll help design the right model.",
+    button: "Talk to Nodeus",
   },
 };
 
-
 // ============================================================
-// TRUCK DISPATCHING
+// 08. TRANSPORTATION & FLEET OPERATIONS
 // ============================================================
 
-const truckDispatching = {
-  slug: "truck-dispatching",
-
-  title: "Truck Dispatching",
-
+const transportationFleetOperations = {
+  slug: "transportation-fleet-operations",
+  title: "Transportation & Fleet Operations",
   category: "Transportation & Logistics",
-
   heroIcon: Truck,
 
   seo: {
-    title:
-      "Truck Dispatching Services | Professional Freight Dispatch Support | Nodeus",
-
+    title: "Transportation & Fleet Operations Support | Nodeus",
     description:
-      "Professional truck dispatching support for carriers and owner-operators, including freight coordination, driver communication, load management, paperwork, and dispatch operations.",
-
+      "Dedicated transportation support for truck dispatching, freight coordination, load planning, tracking, driver support, carrier setup, safety, and compliance operations.",
     keywords: [
-      "truck dispatching services",
-      "truck dispatcher",
-      "freight dispatch services",
-      "owner operator dispatch",
-      "trucking dispatch services",
-      "remote truck dispatcher",
+      "truck dispatching",
+      "freight dispatch",
+      "transportation outsourcing",
+      "fleet operations",
+      "load planner",
+      "track and trace",
+      "DOT compliance",
+      "driver qualification",
     ],
   },
 
   hero: {
-    eyebrow: "TRANSPORTATION & LOGISTICS",
-
-    title:
-      "Professional Truck Dispatching Built Around Your Operation",
-
+    eyebrow: "TRANSPORTATION & FLEET OPERATIONS",
+    title: "Operational Support Built Around Your Fleet",
     description:
-      "Keep your trucks moving with dedicated dispatch support for freight research, load coordination, driver communication, paperwork, tracking, and daily carrier operations.",
-
-    primaryButton:
-      "Talk About Your Dispatch Needs",
-
-    secondaryButton:
-      "Contact Our Team",
-
-    image:
-      "/images/services/truck-dispatching-hero.jpg",
+      "Keep your transportation operation organized with dedicated support for dispatch, freight coordination, tracking, driver communication, carrier setup, safety, and compliance.",
+    primaryButton: "Talk About Your Fleet Needs",
+    secondaryButton: "Contact Our Team",
+    image: "/images/services/truck-dispatching-hero.jpg",
   },
 
   overview: {
-    title:
-      "More than finding loads. We support the operation.",
-
+    title: "More than dispatch. Support for the operation.",
     text:
-      "Our truck dispatching support is designed around the daily responsibilities involved in keeping carriers organized and moving. From freight research and load coordination to driver communication, tracking, paperwork, and customer updates, we help support the operational side of your trucking business.",
-
+      "Our transportation professionals support the day-to-day responsibilities involved in keeping carriers organized and moving, from freight and dispatch coordination to driver support, tracking, paperwork, safety, and compliance.",
     points: [
-      "Freight and load research",
-      "Driver and carrier communication",
-      "Rate confirmation and paperwork support",
-      "Load tracking and customer updates",
+      "Dispatch and freight coordination",
+      "Driver and fleet support",
+      "Track and trace operations",
+      "Safety and compliance support",
     ],
   },
 
-  capabilitiesTitle:
-    "Dispatch support for the entire load cycle.",
-
+  capabilitiesTitle: "Support across transportation and fleet operations.",
   capabilitiesText:
-    "Create a more organized dispatch operation with support across freight, drivers, paperwork, tracking, and communication.",
+    "Build a dedicated transportation support operation around dispatch, drivers, freight, compliance, and fleet administration.",
 
   capabilities: [
     {
-      icon: Search,
-      title: "Freight & Load Research",
-      text:
-        "Research available freight and loads using relevant load boards and freight sources based on your requirements.",
+      icon: Truck,
+      title: "Truck Dispatcher",
+      text: "Support carriers and owner-operators with freight research, load coordination, communication, and daily dispatch responsibilities.",
     },
-
+    {
+      icon: Search,
+      title: "Freight Dispatcher",
+      text: "Research freight and coordinate loads based on carrier requirements, equipment, lanes, and operating preferences.",
+    },
     {
       icon: Route,
-      title: "Load Coordination",
-      text:
-        "Coordinate loads, pickup information, delivery details, and dispatch requirements.",
+      title: "Dispatch Coordinator",
+      text: "Coordinate loads, drivers, brokers, schedules, paperwork, and operational communication.",
     },
-
     {
-      icon: Phone,
-      title: "Driver Communication",
-      text:
-        "Maintain communication with drivers regarding loads, schedules, locations, and operational updates.",
+      icon: CalendarDays,
+      title: "Load Planner",
+      text: "Support load planning and scheduling around equipment, routes, delivery requirements, and operational priorities.",
     },
-
-    {
-      icon: FileText,
-      title: "Carrier Paperwork",
-      text:
-        "Support carrier packets, rate confirmations, documents, and other dispatch-related paperwork.",
-    },
-
     {
       icon: MonitorSmartphone,
-      title: "Load Tracking",
-      text:
-        "Monitor load progress and communicate relevant updates through available tracking and communication systems.",
+      title: "Track & Trace Specialist",
+      text: "Monitor load progress and provide relevant updates through available tracking and communication systems.",
     },
-
     {
-      icon: MessageSquareText,
-      title: "Customer Communication",
-      text:
-        "Provide updates and coordinate communication with brokers, shippers, receivers, and other relevant parties.",
+      icon: Phone,
+      title: "Driver Support Coordinator",
+      text: "Maintain communication with drivers and support day-to-day operational questions and coordination.",
     },
-
+    {
+      icon: Workflow,
+      title: "Logistics Coordinator",
+      text: "Support logistics workflows, communication, scheduling, documentation, and operational coordination.",
+    },
+    {
+      icon: FileText,
+      title: "Carrier Setup Specialist",
+      text: "Support carrier packets, onboarding documentation, records, and setup workflows.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Safety & Compliance Specialist",
+      text: "Support transportation safety processes, records, documentation, and compliance workflows.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "DOT Compliance Specialist",
+      text: "Support defined DOT-related compliance processes, records, documentation, and administrative workflows.",
+    },
     {
       icon: ClipboardCheck,
-      title: "Dispatch Documentation",
-      text:
-        "Maintain organized records and documentation associated with dispatch operations.",
+      title: "Driver Qualification Specialist",
+      text: "Support driver qualification documentation, records, reviews, and administrative workflows.",
     },
-
     {
-      icon: BarChart3,
-      title: "Operational Reporting",
-      text:
-        "Organize dispatch information and operational data to provide greater visibility into activity.",
+      icon: ShieldCheck,
+      title: "Fleet Safety Coordinator",
+      text: "Support fleet safety administration, incident documentation, records, and coordination.",
     },
   ],
 
@@ -8992,42 +8472,31 @@ const truckDispatching = {
   benefits: [
     {
       icon: Search,
-      title: "Freight Research",
-      text:
-        "Support your operation with structured freight and load research based on your dispatch requirements.",
+      title: "Freight Support",
+      text: "Support your operation with structured freight and load research based on your requirements.",
     },
-
     {
       icon: Truck,
-      title: "Dedicated Dispatch Support",
-      text:
-        "Work with dispatch professionals who understand the daily requirements of trucking operations.",
+      title: "Dedicated Fleet Support",
+      text: "Work with transportation professionals who understand the daily requirements of fleet operations.",
     },
-
     {
       icon: MessageSquareText,
       title: "Driver Communication",
-      text:
-        "Keep communication organized between drivers, brokers, shippers, receivers, and your team.",
+      text: "Keep communication organized between drivers, brokers, shippers, receivers, and your team.",
     },
-
     {
       icon: Workflow,
       title: "Organized Operations",
-      text:
-        "Create structured workflows for dispatching, documentation, tracking, and communication.",
+      text: "Create structured workflows for dispatching, tracking, documentation, safety, and compliance.",
     },
   ],
 
   customerStory: {
     eyebrow: "OPERATIONS STORY",
-
-    title:
-      "A dispatch operation built around keeping your trucks moving.",
-
+    title: "A transportation operation built around keeping your fleet moving.",
     text:
-      "Professional dispatch support can help carriers reduce the administrative workload associated with freight research, driver communication, documentation, tracking, and daily coordination.",
-
+      "Dedicated transportation support can help carriers reduce the administrative workload associated with freight, drivers, tracking, documentation, safety, and daily coordination.",
     results: [
       "More organized dispatch workflows",
       "Consistent driver communication",
@@ -9042,116 +8511,76 @@ const truckDispatching = {
     {
       number: "01",
       title: "Understand",
-      text:
-        "We learn your fleet, equipment, lanes, preferences, operating requirements, and dispatch workflow.",
+      text: "We learn your fleet, equipment, lanes, preferences, operating requirements, and existing workflows.",
     },
-
     {
       number: "02",
       title: "Set Up",
-      text:
-        "We establish communication processes, load preferences, documentation requirements, and dispatch workflows.",
+      text: "We establish communication processes, documentation requirements, systems, and operational workflows.",
     },
-
     {
       number: "03",
-      title: "Research",
-      text:
-        "Our dispatch team researches available freight based on your defined requirements and operating preferences.",
+      title: "Prepare",
+      text: "We prepare the appropriate transportation support professionals around your requirements and procedures.",
     },
-
     {
       number: "04",
-      title: "Coordinate",
-      text:
-        "We coordinate loads, drivers, brokers, paperwork, tracking, and relevant operational communication.",
+      title: "Operate",
+      text: "Your team supports dispatch, drivers, freight, tracking, documentation, safety, and compliance responsibilities.",
     },
-
     {
       number: "05",
       title: "Improve",
-      text:
-        "We review dispatch activity and identify opportunities to improve organization and operational efficiency.",
+      text: "We review operational activity and identify opportunities to improve organization and efficiency.",
     },
   ],
 
   faqs: [
     {
-      question:
-        "What does a truck dispatcher do?",
-
+      question: "What transportation services can Nodeus support?",
       answer:
-        "A truck dispatcher can support freight research, load coordination, driver communication, paperwork, load tracking, broker communication, and other day-to-day dispatch responsibilities.",
+        "Support can include truck dispatching, freight dispatch, dispatch coordination, load planning, track and trace, driver support, logistics coordination, carrier setup, safety, and compliance administration.",
     },
-
     {
-      question:
-        "Do you work with owner-operators?",
-
+      question: "Do you work with owner-operators and carriers?",
       answer:
-        "Yes. Dispatch support can be structured for owner-operators as well as carriers with multiple trucks, depending on their operational requirements.",
+        "Yes. Transportation support can be structured for owner-operators as well as carriers with multiple trucks, depending on their operational requirements.",
     },
-
     {
-      question:
-        "Which load boards can you work with?",
-
+      question: "Which load boards and tracking systems can you work with?",
       answer:
-        "Dispatch operations may use load boards and freight sources such as DAT, Truckstop, and other platforms available to the carrier.",
+        "Transportation operations may use platforms such as DAT, Truckstop, 123Loadboard, Samsara, Motive, Geotab, and other systems available to the carrier.",
     },
-
     {
-      question:
-        "Can you communicate with brokers and shippers?",
-
+      question: "Can you support safety and compliance administration?",
       answer:
-        "Yes. Dispatch support can include professional communication with brokers, shippers, receivers, and other parties involved in the load.",
-    },
-
-    {
-      question:
-        "Can you track trucks?",
-
-      answer:
-        "Yes. Where appropriate systems and access are available, dispatch teams can support load and truck tracking using GPS, ELD, phone, email, and other communication methods.",
+        "Yes. Support can include defined safety, compliance, driver qualification, documentation, and administrative workflows based on your requirements.",
     },
   ],
 
   cta: {
-    title:
-      "Ready for a more organized dispatch operation?",
-
+    title: "Ready for a more organized transportation operation?",
     text:
-      "Tell us about your fleet and dispatch requirements and we'll help you build the right support model.",
-
-    button:
-      "Talk to Nodeus",
+      "Tell us about your fleet and operational requirements and we'll help you build the right support model.",
+    button: "Talk to Nodeus",
   },
 };
-
 
 // ============================================================
 // FINAL EXPORT
 // ============================================================
 
 export const servicesData = {
-  "customer-services": customerServices,
-
-  "customer-success": customerSuccess,
-
-  "executive-assistant": executiveAssistant,
-
-  "marketing-assistant": marketingAssistant,
-
-  "social-media-manager": socialMediaManager,
-
+  "customer-service": customerService,
+  "customer-success-retention": customerSuccessRetention,
+  "sales-support-lead-management": salesSupportLeadManagement,
+  "back-office-operations": backOfficeOperations,
+  "virtual-assistant-administrative-support":
+    virtualAssistantAdministrativeSupport,
   "ecommerce-support": ecommerceSupport,
-
-  "ai-transformation": aiTransformation,
-
-  "truck-dispatching": truckDispatching,
+  "helpdesk-technical-support": helpdeskTechnicalSupport,
+  "transportation-fleet-operations": transportationFleetOperations,
 };
-
 
 // ============================================================
 // HELPER FUNCTIONS
@@ -9164,4 +8593,3 @@ export const getServiceBySlug = (slug) => {
 export const getServiceSlugs = () => {
   return Object.keys(servicesData);
 };
-

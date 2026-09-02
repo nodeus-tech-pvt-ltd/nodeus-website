@@ -1921,6 +1921,7 @@
 
   .industry-outcomes-grid {
     grid-template-columns: 1fr;
+    justify-items: center
   }
 
 
@@ -1928,6 +1929,8 @@
     padding: 17px;
 
     border-radius: 13px;
+
+    justify-content: center
   }
 
 

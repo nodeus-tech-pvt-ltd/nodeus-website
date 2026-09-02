@@ -173,61 +173,76 @@ import {
   Headphones,
   HeartHandshake,
   BriefcaseBusiness,
-  Megaphone,
-  Share2,
   ShoppingCart,
-  BrainCircuit,
+  LifeBuoy,
   Truck,
+  Users,
+  Database,
 } from "lucide-react";
 
-import customerServicesImage from "../../assets/solutions/customer-services.png";
+import customerServicesImage from "../../assets/solutions/customer-service.png";
 import customerSuccessImage from "../../assets/solutions/customer-success.png";
-import executiveAssistantImage from "../../assets/solutions/executive-assistant.png";
-import marketingAssistantImage from "../../assets/solutions/marketing-assistant.png";
-import socialMediaManagerImage from "../../assets/solutions/social-media-manger.png";
+import salesSupportImage from "../../assets/solutions/sales-support.png";
+import backOfficeOperationsImage from "../../assets/solutions/back-office-operations.png";
+import virtualAssistantImage from "../../assets/solutions/executive-assistant.png";
 import ecommerceSupportImage from "../../assets/solutions/e-commerce-support.png";
-import aiTransformationImage from "../../assets/solutions/ai-transformation.png";
-import truckDispatchingImage from "../../assets/solutions/truck-dispatching.png";
+import helpdeskTechnicalSupportImage from "../../assets/solutions/helpdesk-technical-support.png";
+import transportationFleetOperationsImage from "../../assets/solutions/truck-dispatching.png";
 
 export const solutionsData = [
   {
-    slug: "customer-services",
+    slug: "customer-service",
 
-    title: "Customer Services",
+    title: "Customer Service",
 
-    shortTitle: "Customer Services",
+    shortTitle: "Customer Service",
 
     category: "Customer Experience",
 
     icon: Headphones,
 
     description:
-      "Deliver responsive, reliable, and personalized customer support through dedicated professionals who work as an extension of your team.",
+      "Reliable customer service that keeps your customers supported and satisfied.",
 
     cardDescription:
-      "Build a dependable customer support operation across chat, email, phone, social media, and other customer channels.",
+      "Provide responsive, reliable, and professional customer support across every major customer communication channel.",
 
     heroTag:
       "Customer Experience & Support",
 
     image: customerServicesImage,
 
-    accent: "customer-services",
+    accent: "customer-service",
 
     highlights: [
-      "Dedicated Support Teams",
-      "Omnichannel Support",
-      "Customer Communication",
-      "Complaint & Escalation Management",
+      "Customer Service",
+      "Customer Support",
+      "Phone Support",
+      "Email Support",
+      "Chat Support",
+      "Customer Care",
+      "Order & Account Support",
+      "Ticket Management",
     ],
 
-    route: "/solutions/customer-services",
+    services: [
+      "Customer Service",
+      "Customer Support",
+      "Phone Support",
+      "Email Support",
+      "Chat Support",
+      "Customer Care",
+      "Order & Account Support",
+      "Ticket Management",
+    ],
+
+    route: "/solutions/customer-service",
   },
 
   {
-    slug: "customer-success",
+    slug: "customer-success-retention",
 
-    title: "Customer Success",
+    title: "Customer Success & Retention",
 
     shortTitle: "Customer Success",
 
@@ -236,128 +251,188 @@ export const solutionsData = [
     icon: HeartHandshake,
 
     description:
-      "Help customers achieve more value from your products and services while strengthening relationships, engagement, retention, and long-term growth.",
+      "Proactively engage customers, improve satisfaction, and increase long-term retention.",
 
     cardDescription:
-      "Create proactive customer relationships designed to improve adoption, engagement, retention, and customer value.",
+      "Build stronger customer relationships through proactive engagement, account support, retention strategies, and ongoing customer success management.",
 
     heroTag:
       "Customer Growth & Retention",
 
     image: customerSuccessImage,
 
-    accent: "customer-success",
+    accent: "customer-success-retention",
 
     highlights: [
       "Customer Onboarding",
+      "Customer Success",
+      "Customer Retention",
+      "At-risk Management",
+      "Renewals Support",
       "Account Management",
-      "Customer Engagement",
-      "Retention Support",
+      "Complaint & Escalation Management",
     ],
 
-    route: "/solutions/customer-success",
+    services: [
+      "Customer Onboarding",
+      "Customer Success",
+      "Customer Retention",
+      "At-risk Management",
+      "Renewals Support",
+      "Account Management",
+      "Complaint & Escalation Management",
+    ],
+
+    route: "/solutions/customer-success-retention",
   },
 
   {
-    slug: "executive-assistant",
+    slug: "sales-support-lead-management",
 
-    title: "Executive Assistant",
+    title: "Sales Support & Lead Management",
 
-    shortTitle: "Executive Assistant",
+    shortTitle: "Sales Support",
+
+    category: "Sales & Business Development",
+
+    icon: Users,
+
+    description:
+      "Extend your sales team with dedicated support for lead management and revenue-generating activities.",
+
+    cardDescription:
+      "Strengthen your sales operation with dedicated professionals handling lead generation, qualification, prospect research, CRM management, and pipeline support.",
+
+    heroTag:
+      "Sales Support & Lead Management",
+
+    image: salesSupportImage,
+
+    accent: "sales-support-lead-management",
+
+    highlights: [
+      "Lead Generation",
+      "Lead Qualification",
+      "Business Development",
+      "Appointment Setting",
+      "Prospect Research",
+      "CRM Management",
+      "Pipeline Management",
+    ],
+
+    services: [
+      "Lead Generation",
+      "Lead Qualification",
+      "Business Development",
+      "Appointment Setting",
+      "Prospect Research",
+      "CRM Management",
+      "Pipeline Management",
+    ],
+
+    route: "/solutions/sales-support-lead-management",
+  },
+
+  {
+    slug: "back-office-operations",
+
+    title: "Back-Office Operations",
+
+    shortTitle: "Back-Office Operations",
+
+    category: "Business Operations",
+
+    icon: Database,
+
+    description:
+      "Streamline your day-to-day operations with reliable outsourced back-office support.",
+
+    cardDescription:
+      "Improve operational efficiency with dependable support for data, documents, records, CRM administration, reporting, and quality assurance.",
+
+    heroTag:
+      "Business Operations & Back-Office Support",
+
+    image: backOfficeOperationsImage,
+
+    accent: "back-office-operations",
+
+    highlights: [
+      "Data Entry",
+      "Data Processing",
+      "Data Verification",
+      "CRM Administration",
+      "Database Management",
+      "Document Processing",
+      "Records Management",
+      "Reporting & Data Management",
+      "Quality Assurance",
+    ],
+
+    services: [
+      "Data Entry",
+      "Data Processing",
+      "Data Verification",
+      "CRM Administration",
+      "Database Management",
+      "Document Processing",
+      "Records Management",
+      "Reporting & Data Management",
+      "Quality Assurance",
+    ],
+
+    route: "/solutions/back-office-operations",
+  },
+
+  {
+    slug: "virtual-assistant-administrative-support",
+
+    title: "Virtual Assistant & Administrative Support",
+
+    shortTitle: "Virtual Assistant",
 
     category: "Business Operations",
 
     icon: BriefcaseBusiness,
 
     description:
-      "Give executives and business leaders dependable operational support that keeps schedules, communication, research, and daily priorities organized.",
+      "Dedicated remote professionals to handle your administrative workload.",
 
     cardDescription:
-      "Delegate time-consuming administrative and operational responsibilities to a dedicated executive support professional.",
+      "Delegate administrative responsibilities to dedicated remote professionals who help manage schedules, communication, research, documents, and everyday business tasks.",
 
     heroTag:
-      "Executive & Business Support",
+      "Virtual Assistance & Administrative Support",
 
-    image: executiveAssistantImage,
+    image: virtualAssistantImage,
 
-    accent: "executive-assistant",
+    accent: "virtual-assistant-administrative-support",
 
     highlights: [
+      "Virtual Assistance",
+      "Executive Assistance",
+      "Email & Inbox Management",
       "Calendar Management",
-      "Inbox & Communication",
-      "Research & Reporting",
-      "Administrative Coordination",
+      "Appointment Scheduling",
+      "Meeting Coordination",
+      "Online Research",
+      "Document Preparation",
+      "General Administrative Support",
     ],
 
-    route: "/solutions/executive-assistant",
-  },
-
-  {
-    slug: "marketing-assistant",
-
-    title: "Marketing Assistant",
-
-    shortTitle: "Marketing Assistant",
-
-    category: "Marketing & Growth",
-
-    icon: Megaphone,
-
-    description:
-      "Extend your marketing team with skilled support for research, content coordination, campaigns, reporting, and day-to-day marketing operations.",
-
-    cardDescription:
-      "Get reliable marketing support that helps your team execute campaigns, manage content, conduct research, and stay organized.",
-
-    heroTag:
-      "Marketing Operations & Growth",
-
-    image: marketingAssistantImage,
-
-    accent: "marketing-assistant",
-
-    highlights: [
-      "Marketing Research",
-      "Content Coordination",
-      "Campaign Support",
-      "Marketing Reporting",
+    services: [
+      "Virtual Assistance",
+      "Executive Assistance",
+      "Email & Inbox Management",
+      "Calendar Management",
+      "Appointment Scheduling",
+      "Meeting Coordination",
+      "Online Research",
+      "Document Preparation",
+      "General Administrative Support",
     ],
 
-    route: "/solutions/marketing-assistant",
-  },
-
-  {
-    slug: "social-media-manager",
-
-    title: "Social Media Manager",
-
-    shortTitle: "Social Media Manager",
-
-    category: "Marketing & Creative",
-
-    icon: Share2,
-
-    description:
-      "Build a consistent social media presence with dedicated support for content planning, publishing, community engagement, and performance monitoring.",
-
-    cardDescription:
-      "Manage your social presence with a dedicated specialist focused on consistency, engagement, content, and growth.",
-
-    heroTag:
-      "Social Media & Digital Presence",
-
-    image: socialMediaManagerImage,
-
-    accent: "social-media-manager",
-
-    highlights: [
-      "Social Media Management",
-      "Content Planning",
-      "Community Management",
-      "Performance Monitoring",
-    ],
-
-    route: "/solutions/social-media-manager",
+    route: "/solutions/virtual-assistant-administrative-support",
   },
 
   {
@@ -372,10 +447,10 @@ export const solutionsData = [
     icon: ShoppingCart,
 
     description:
-      "Keep your online store running smoothly with dedicated support for customers, orders, products, marketplaces, and daily e-commerce operations.",
+      "Deliver seamless customer and operational support throughout the e-commerce journey.",
 
     cardDescription:
-      "Streamline customer service and daily store operations across e-commerce platforms and marketplaces.",
+      "Support your online store with dedicated professionals handling customers, orders, returns, product information, billing, and post-purchase operations.",
 
     heroTag:
       "E-commerce Operations & Support",
@@ -385,81 +460,130 @@ export const solutionsData = [
     accent: "ecommerce-support",
 
     highlights: [
+      "E-commerce Customer Service",
       "Order Management",
-      "Customer Support",
-      "Product Management",
-      "Marketplace Support",
+      "Order Tracking",
+      "Returns & Refunds",
+      "Product Listing Management",
+      "Product Catalog Management",
+      "Payment & Billing Support",
+      "Post-Purchase Support",
+      "Shopify Support",
+    ],
+
+    services: [
+      "E-commerce Customer Service",
+      "Order Management",
+      "Order Tracking",
+      "Returns & Refunds",
+      "Product Listing Management",
+      "Product Catalog Management",
+      "Payment & Billing Support",
+      "Post-Purchase Support",
+      "Shopify Support",
     ],
 
     route: "/solutions/ecommerce-support",
   },
 
   {
-    slug: "ai-transformation",
+    slug: "helpdesk-technical-support",
 
-    title: "AI Transformation",
+    title: "Helpdesk & Technical Support",
 
-    shortTitle: "AI Transformation",
+    shortTitle: "Helpdesk & Technical Support",
 
-    category: "Technology & AI",
+    category: "Technology & IT Support",
 
-    icon: BrainCircuit,
+    icon: LifeBuoy,
 
     description:
-      "Identify practical opportunities to use artificial intelligence and automation to improve workflows, customer experiences, productivity, and business operations.",
+      "First-line support that resolves issues quickly and keeps customers productive.",
 
     cardDescription:
-      "Turn repetitive processes into smarter workflows with practical AI strategy, automation, integration, and implementation.",
+      "Provide dependable first-line technical assistance, troubleshooting, ticket handling, and knowledge-base support to keep users productive.",
 
     heroTag:
-      "AI Strategy, Automation & Transformation",
+      "Helpdesk & Technical Support",
 
-    image: aiTransformationImage,
+    image: helpdeskTechnicalSupportImage,
 
-    accent: "ai-transformation",
+    accent: "helpdesk-technical-support",
 
     highlights: [
-      "AI Strategy",
-      "Workflow Automation",
-      "AI Assistants",
-      "Process Optimization",
+      "Helpdesk Support",
+      "Ticket Management",
+      "First-Level Technical Support",
+      "Troubleshooting",
+      "Knowledge Base Support",
     ],
 
-    route: "/solutions/ai-transformation",
+    services: [
+      "Helpdesk Support",
+      "Ticket Management",
+      "First-Level Technical Support",
+      "Troubleshooting",
+      "Knowledge Base Support",
+    ],
+
+    route: "/solutions/helpdesk-technical-support",
   },
 
   {
-    slug: "truck-dispatching",
+    slug: "transportation-fleet-operations",
 
-    title: "Truck Dispatching",
+    title: "Transportation & Fleet Operations",
 
-    shortTitle: "Truck Dispatching",
+    shortTitle: "Transportation & Fleet Operations",
 
     category: "Transportation & Logistics",
 
     icon: Truck,
 
     description:
-      "Support carriers and owner-operators with professional dispatch operations, freight coordination, driver communication, paperwork, and day-to-day logistics support.",
+      "Professional transportation and fleet support covering dispatch, freight coordination, driver support, compliance, and day-to-day fleet operations.",
 
     cardDescription:
-      "Professional truck dispatching support focused on freight coordination, driver communication, paperwork, and operational efficiency.",
+      "Extend your transportation operation with experienced professionals supporting dispatch, freight, drivers, carriers, safety, compliance, and fleet operations.",
 
     heroTag:
-      "Transportation & Logistics",
+      "Transportation & Fleet Operations",
 
-    image: truckDispatchingImage,
+    image: transportationFleetOperationsImage,
 
-    accent: "truck-dispatching",
+    accent: "transportation-fleet-operations",
 
     highlights: [
-      "Freight & Load Coordination",
-      "Driver Communication",
-      "Rate & Documentation Support",
-      "Dispatch Operations",
+      "Truck Dispatcher",
+      "Freight Dispatcher",
+      "Dispatch Coordinator",
+      "Load Planner",
+      "Track & Trace Specialist",
+      "Driver Support Coordinator",
+      "Logistics Coordinator",
+      "Carrier Setup Specialist",
+      "Safety & Compliance Specialist",
+      "DOT Compliance Specialist",
+      "Driver Qualification Specialist",
+      "Fleet Safety Coordinator",
     ],
 
-    route: "/solutions/truck-dispatching",
+    services: [
+      "Truck Dispatcher",
+      "Freight Dispatcher",
+      "Dispatch Coordinator",
+      "Load Planner",
+      "Track & Trace Specialist",
+      "Driver Support Coordinator",
+      "Logistics Coordinator",
+      "Carrier Setup Specialist",
+      "Safety & Compliance Specialist",
+      "DOT Compliance Specialist",
+      "Driver Qualification Specialist",
+      "Fleet Safety Coordinator",
+    ],
+
+    route: "/solutions/transportation-fleet-operations",
   },
 ];
 
