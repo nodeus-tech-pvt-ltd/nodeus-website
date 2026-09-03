@@ -237,11 +237,11 @@ function Careers() {
               </span>
 
 
-              <span>
+              {/* <span>
 
                 01 — 04
 
-              </span>
+              </span> */}
 
             </div>
 

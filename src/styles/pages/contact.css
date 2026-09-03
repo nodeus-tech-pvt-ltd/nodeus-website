@@ -1685,10 +1685,10 @@
   }
 
 
-  .contact-step {
+  /* .contact-step {
     grid-template-columns:
       1fr;
-  }
+  } */
 
 
   .contact-step > span {

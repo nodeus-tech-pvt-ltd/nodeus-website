@@ -1161,7 +1161,7 @@
 
   align-items: center;
 
-  justify-content: space-between;
+  justify-content: center;
 
   margin-bottom: 35px;
 }
@@ -2570,10 +2570,10 @@
   }
 
 
-  .about-process-item {
+  /* .about-process-item {
     grid-template-columns:
       1fr;
-  }
+  } */
 
 
   .about-process-number {
